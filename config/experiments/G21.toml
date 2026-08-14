@@ -1,0 +1,17 @@
+schema_version = 1
+group_id = "G21"
+name = "Strict-Q4 reversal by SPY historical volatility"
+wave = 1
+status = "completed_free_research_negative_control_lo_positive_mechanism_ls"
+risk_action = "high_vol_reversal"
+risk_source = "spy_hist"
+legacy_aliases = ["v3-regime-switch-prototype-v1", "v3-regime-switch-unified-start-v2"]
+
+[grid]
+reversal_lookbacks = [5, 20]
+
+[parameters]
+realized_vol_window = 21
+state_history_sessions = 756
+high_vol_quantile = 0.75
+state_rule = "strict_q4_no_hysteresis"

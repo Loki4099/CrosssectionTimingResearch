@@ -1,0 +1,52 @@
+source_sid,canonical_sid,preferred_donor,relationship,identity_status,evidence,notes
+yf_ticker::ABC,sec::COR,parent::yf_ticker::COR,same_security_continuation,verified_rename_chain,issuer ticker change ABC to COR,Use one continuous COR provider history
+yf_ticker::ARNC,sec::HWM,parent::yf_ticker::HWM,spinoff_parent_continuation,verified_provider_alias,Old Arconic renamed Howmet after the 2020 separation,Reject the recycled post-separation ARNC ticker series
+yf_ticker::ANTM,sec::ELV,parent::yf_ticker::ELV,same_security_continuation,verified_rename_chain,issuer ticker change ANTM to ELV,Use one continuous ELV provider history
+yf_ticker::BHGE,sec::BKR,parent::yf_ticker::BKR,same_security_continuation,verified_rename_chain,issuer ticker change BHGE to BKR,Use one continuous BKR provider history
+yf_ticker::BK,sec::BNY,parent::yf_ticker::BNY,same_security_continuation,verified_rename_chain,issuer ticker change BK to BNY effective 2026-05-21,Use one continuous BNY provider history
+yf_ticker::BLL,sec::BALL,parent::yf_ticker::BALL,same_security_continuation,verified_rename_chain,issuer ticker change BLL to BALL,Use one continuous BALL provider history
+yf_ticker::CTL,sec::LUMN,parent::yf_ticker::LUMN,same_security_continuation,verified_rename_chain,issuer ticker change CTL to LUMN,Use one continuous LUMN provider history
+yf_ticker::FI,sec::FISV,parent::yf_ticker::FISV,same_security_continuation,verified_rename_chain,issuer ticker chain FISV FI FISV,Use one continuous FISV provider history
+yf_ticker::FLT,sec::CPAY,parent::yf_ticker::CPAY,same_security_continuation,verified_rename_chain,issuer ticker change FLT to CPAY,Use one continuous CPAY provider history
+yf_ticker::HRS,sec::LHX,parent::yf_ticker::LHX,same_security_continuation,verified_rename_chain,Harris ticker continuation into LHX,LLL remains a separate merger source
+yf_ticker::JEC,sec::J,parent::yf_ticker::J,same_security_continuation,verified_rename_chain,issuer ticker change JEC to J,Use one continuous J provider history
+yf_ticker::KORS,sec::CPRI,parent::yf_ticker::CPRI,same_security_continuation,verified_rename_chain,issuer ticker change KORS to CPRI and duplicate public snapshots,Union membership and count once
+yf_ticker::MMC,sec::MRSH,parent::yf_ticker::MRSH,same_security_continuation,verified_rename_chain,issuer ticker change MMC to MRSH,Use one continuous MRSH provider history
+yf_ticker::NLOK,sec::GEN,parent::yf_ticker::GEN,same_security_continuation,verified_rename_chain,issuer ticker chain SYMC NLOK GEN,Use one continuous GEN provider history
+yf_ticker::SYMC,sec::GEN,parent::yf_ticker::GEN,same_security_continuation,verified_rename_chain,issuer ticker chain SYMC NLOK GEN,Use one continuous GEN provider history
+yf_ticker::PKI,sec::RVTY,parent::yf_ticker::RVTY,same_security_continuation,verified_rename_chain,issuer ticker change PKI to RVTY,Use one continuous RVTY provider history
+yf_ticker::RE,sec::EG,parent::yf_ticker::EG,same_security_continuation,verified_rename_chain,issuer ticker change RE to EG,Use one continuous EG provider history
+yf_ticker::SATS,sec::ECHO,parent::yf_ticker::ECHO,same_security_continuation,verified_rename_chain,issuer ticker change SATS to ECHO,Use one continuous ECHO provider history
+yf_ticker::TMK,sec::GL,parent::yf_ticker::GL,same_security_continuation,verified_rename_chain,issuer ticker change TMK to GL,Use one continuous GL provider history
+yf_ticker::WLTW,sec::WTW,parent::yf_ticker::WTW,same_security_continuation,verified_rename_chain,issuer ticker change WLTW to WTW,Use one continuous WTW provider history
+yf_ticker::FB,sec::META,parent::yf_ticker::META,same_security_continuation,verified_rename_chain,issuer ticker change FB to META,Reject recycled Yahoo FB ETF history
+yf_ticker::LB,sec::BBWI,parent::yf_ticker::BBWI,same_security_continuation,verified_rename_chain,issuer ticker change LB to BBWI,Reject recycled Yahoo LB history
+yf_ticker::UTX,sec::RTX,parent::yf_ticker::RTX,provider_continuous_total_return_history,verified_provider_alias,UTC RTX continuous Yahoo total-return history,Raytheon RTN remains separate merger source
+yf_ticker::COG,sec::CTRA,parent::yf_ticker::CTRA,same_security_continuation,verified_rename_chain,Cabot legal survivor and ticker change COG to CTRA,XEC remains separate merger source
+yf_ticker::ADS,sec::BFH,tiingo_query::BFH,same_security_continuation,verified_rename_chain,issuer ticker change ADS to BFH,Use Tiingo donor when available
+yf_ticker::FBHS,sec::FBIN,tiingo_query::FBIN,same_security_continuation,verified_rename_chain,issuer ticker change FBHS to FBIN,Use Tiingo donor when available
+yf_ticker::GPS,sec::GAP,tiingo_query::GAP,same_security_continuation,verified_rename_chain,issuer ticker change GPS to GAP,Use Tiingo donor when available
+yf_ticker::WYND,sec::TNL,tiingo_query::TNL,same_security_continuation,verified_rename_chain,issuer ticker change WYND to TNL,Use Tiingo donor when available
+yf_ticker::HFC,sec::DINO,tiingo_query::DINO,same_security_continuation,verified_rename_chain,HollyFrontier shareholder continuation into HF Sinclair DINO,Use one continuous DINO provider history
+yf_ticker::HCP,sec::PEAK,tiingo_query::PEAK,same_security_continuation,verified_rename_chain,issuer ticker change HCP to PEAK,PEAK merger into DOC handled as terminal event
+yf_ticker::PEAK,sec::PEAK,tiingo_query::PEAK,verified_exact_series,verified_same_security,Tiingo exact historical PEAK stock range,Do not use recycled pre-merger DOC history
+yf_ticker::CDAY,sec::DAY,tiingo_query::DAY,same_security_continuation,verified_rename_chain,issuer ticker change CDAY to DAY,Use Tiingo continuous DAY history
+yf_ticker::DAY,sec::DAY,tiingo_query::DAY,verified_exact_series,verified_same_security,Tiingo continuous DAY history,Parent Yahoo DAY is empty
+yf_ticker::VRSK,sec::VRSK,tiingo_query::VRSK,verified_exact_series,verified_same_security,Tiingo exact VRSK history,Full evaluation coverage
+yf_ticker::EVHC,sec::EVHC,tiingo_query::EVHC,verified_exact_series,verified_same_security,Tiingo exact EVHC historical range,Acquired after index removal
+yf_ticker::COL,sec::COL,tiingo_query::COL,verified_ticker_reuse_isolation,verified_ticker_reuse_isolated,Tiingo exact Rockwell Collins history,Reject recycled Yahoo COL penny-stock history
+yf_ticker::CBS,sec::PARA_B,,merger_chain_unavailable,unavailable_with_reason,Class B Paramount chain lacks a verified free continuous series,Keep membership but no ranking observation
+yf_ticker::VIAC,sec::PARA_B,,merger_chain_unavailable,unavailable_with_reason,Class B Paramount chain lacks a verified free continuous series,Do not substitute PARAA Class A
+yf_ticker::PARA,sec::PARA_B,,ticker_reuse_isolation,verified_ticker_reuse_isolated,Yahoo and Tiingo PARA responses contain a recycled wrong-security series,Keep membership but remove contaminated prices
+yf_ticker::INFO,sec::INFO,,ticker_reuse_isolation,verified_ticker_reuse_isolated,Current INFO response is a recycled ETF not IHS Markit,Keep membership but remove contaminated prices
+yf_ticker::STI,sec::STI,,ticker_reuse_isolation,verified_ticker_reuse_isolated,Current STI response is a recycled unrelated security,Use exact historical series only if repaired
+yf_ticker::APC,sec::APC,,ticker_reuse_isolation,verified_ticker_reuse_isolated,Current APC response is a recycled unrelated security,Use exact historical series only if repaired
+yf_ticker::SBNY,sec::SBNY,tiingo_query::SBNY,verified_provider_alias,verified_same_security,Tiingo sequence matches Signature Bank through failure and subsequent OTC trading,Do not use the unrelated Yahoo response
+yf_ticker::SIVB,sec::SIVB,tiingo_query::SIVB,verified_provider_alias,verified_same_security,Tiingo sequence matches SVB Financial through failure and subsequent OTC trading,Classify the terminal event as bankruptcy rather than normal removal
+yf_ticker::DISCA,sec::WBD,parent::yf_ticker::WBD,same_security_one_for_one_exchange,verified_merger_or_exchange,WBD provider history exactly matches DISCA on the 2022-04-06 through 2022-04-08 overlap,Discovery Class A converted one-for-one into WBD
+yf_ticker::CA,sec::CA,,ticker_reuse_isolation,verified_ticker_reuse_isolated,Current Tiingo CA response is a recycled ETF rather than CA Inc,Historical CA Inc remains unavailable
+yf_ticker::MON,sec::MON,,ticker_reuse_isolation,verified_ticker_reuse_isolated,Current Tiingo MON response is an unrelated recycled security,Historical Monsanto remains unavailable
+yf_ticker::FDXF,sec::FDXF,,future_placeholder_unavailable,unavailable_with_reason,Public membership source contains a 2026 placeholder without a verified traded series,Keep membership but exclude from ranking until externally verified
+yf_ticker::HONA,sec::HONA,,future_placeholder_unavailable,unavailable_with_reason,Public membership source contains a 2026 placeholder without a verified traded series,Keep membership but exclude from ranking until externally verified
+yf_ticker::FOX,sec::FOX,parent::yf_ticker::FOX,ticker_episode_isolation,verified_ticker_reuse_isolated,Current provider history starts at 2019 spin,Pre-2019 episode remains unavailable with reason
+yf_ticker::FOXA,sec::FOXA,parent::yf_ticker::FOXA,ticker_episode_isolation,verified_ticker_reuse_isolated,Current provider history starts at 2019 spin,Pre-2019 episode remains unavailable with reason

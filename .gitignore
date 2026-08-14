@@ -1,0 +1,26 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.venv/
+.env
+dist/
+build/
+*.egg-info/
+
+# Immutable research datasets and generated artifacts stay outside source control.
+data/raw/
+data/curated/
+data/manifests/
+data/external/
+data/quality/
+input/*
+!input/data_repair_v3/
+!input/data_repair_v3/**
+
+results/*
+!results/published/
+!results/published/**
+
+logs/

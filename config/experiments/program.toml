@@ -1,0 +1,57 @@
+schema_version = 1
+program_id = "momentum_reversal_systematic_v2"
+universe = "sp500_pit"
+benchmark = "SPY_total_return_proxy_for_sp500"
+execution = "signal_close_next_exchange_session_open"
+weighting = "equal_weight_each_rebalance"
+
+[dataset]
+default_version = "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate"
+freeze_record = "data/curated/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate/FROZEN.json"
+freeze_sha256 = "a3ef9ee72cd3d535c2e5bf06b3d1f520c54667a8552891543ee0f9ca50488296"
+status = "review"
+formal_eligible = false
+requires_allow_review_dataset = true
+
+[dates]
+price_history_start = "2013-01-02"
+strategy_forecast_history_start = "2014-06-30"
+first_common_signal_close = "2017-12-29"
+evaluation_start_open = "2018-01-02"
+evaluation_end_close = "2026-06-30"
+require_common_evaluation_start = true
+
+[grid]
+signals = ["mom_255_0", "mom_255_21", "mom_12_1"]
+top_n = [10, 20, 50]
+frequencies = ["weekly", "monthly"]
+portfolio_modes = ["long_only", "long_short"]
+
+[costs]
+scenarios_bps = [0, 5, 10, 20]
+weekly_primary_bps = 10
+monthly_primary_bps = 5
+
+[long_only]
+target_gross = 1.0
+target_net = 1.0
+unallocated_cash = "t_bill"
+
+[long_short]
+target_long_gross = 0.5
+target_short_gross = 0.5
+target_gross = 1.0
+target_net = 0.0
+collateral_return = "t_bill"
+borrow_fee_scenarios_annual = [0.0, 0.01, 0.03]
+primary_borrow_fee_annual = 0.01
+derive_traditional_wml_gross2 = true
+
+[bundle]
+manifest_schema = "momentum_reversal.experiment_manifest.v1"
+summary_schema = "momentum_reversal.experiment_summary.v1"
+artifacts_format = "parquet_long_table"
+
+[data_quality_exclusions]
+sids = []
+reason = "Frozen v3 restores canonical COL; no strategy-level exclusions"

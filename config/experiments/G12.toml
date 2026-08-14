@@ -1,0 +1,14 @@
+schema_version = 1
+group_id = "G12"
+name = "Continuous scaling by naked-book historical volatility"
+wave = 2
+status = "planned"
+risk_action = "continuous_scale"
+risk_source = "book_hist"
+legacy_aliases = []
+
+[parameters]
+book_realized_vol_window = 126
+annual_target_volatility = 0.15
+maximum_scale = 1.0
+book_source = "matching_G00_portfolio_mode"

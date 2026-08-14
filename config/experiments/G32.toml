@@ -1,0 +1,16 @@
+schema_version = 1
+group_id = "G32"
+name = "Strict-Q4 derisking by naked-book historical volatility"
+wave = 2
+status = "planned"
+risk_action = "high_vol_derisk"
+risk_source = "book_hist"
+legacy_aliases = []
+
+[parameters]
+book_realized_vol_window = 126
+state_history_sessions = 756
+high_vol_quantile = 0.75
+state_rule = "strict_q4_no_hysteresis"
+q4_scale_rule = "min_1_q75_over_sigma"
+book_source = "matching_G00_portfolio_mode"

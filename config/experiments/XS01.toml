@@ -1,0 +1,14 @@
+schema_version = 1
+group_id = "XS01"
+name = "Individual historical volatility in cross-sectional ranking"
+wave = 3
+status = "legacy_long_only_below_gate"
+risk_action = "cross_sectional_vol"
+risk_source = "individual_hist_vol"
+legacy_aliases = ["v2-cross-sectional-volatility-prototype-v1", "v2-cross-sectional-volatility-unified-start-v2"]
+
+[grid]
+individual_vol_windows = [20, 60]
+
+[parameters]
+score_rule = "momentum_div_realized_volatility"

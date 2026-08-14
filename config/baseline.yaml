@@ -1,0 +1,24 @@
+# Frozen first-batch baseline registry. Cost scenarios are reporting assumptions,
+# not additional strategy paths.
+universe: sp500_pit
+benchmark: sp500_total_return
+execution: next_exchange_session_open
+price_history_start: 2013-01-02
+strategy_forecast_history_start: 2014-06-30
+first_common_signal_close: 2017-12-29
+evaluation_start_open: 2018-01-02
+evaluation_end_close: 2026-06-30
+require_common_evaluation_start: true
+weighting: equal_weight_each_rebalance
+signals:
+  - mom_255_0
+  - mom_255_21
+  - mom_12_1
+top_n: [10, 20, 50]
+frequency: [weekly, monthly]
+cost_scenarios_bps: [0, 5, 10, 20]
+primary_cost_bps:
+  weekly: 10
+  monthly: 5
+leverage: 1.0
+long_only: true

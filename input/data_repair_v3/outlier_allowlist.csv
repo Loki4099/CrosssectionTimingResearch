@@ -1,0 +1,3 @@
+sid,date,metric,status,evidence,decision
+sec::ARNC,2020-04-01,open_close,reviewed,https://www.sec.gov/Archives/edgar/data/4281/000110465920011945/tm206942d1_ex99-1.htm,Retain; observed on the documented Arconic separation date and not an identity scale splice
+sec::GL,2024-04-11,open_close,reviewed,https://investors.globelifeinsurance.com/news-releases/2024/april/globe-life-inc-issues-statement-refuting-short-seller-allegations?accessibility=true,Retain; genuine intraday market decline after a short-seller report

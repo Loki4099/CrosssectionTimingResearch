@@ -1,0 +1,12 @@
+group_id,name,risk_action,risk_source,wave,program_scope,legacy_evidence,long_only_state,long_short_state
+G00,Naked momentum control,none,none,0,main_grid,g00-frozen-v3-v1,completed_free_research,completed_mechanism_control
+G11,Continuous scaling by SPY historical volatility,continuous_scale,spy_hist,2,main_grid,,planned_after_g00,planned_after_g00
+G12,Continuous scaling by naked-book historical volatility,continuous_scale,book_hist,2,main_grid,,planned_after_g00,planned_after_g00
+G13,Continuous scaling by naked-book forecast volatility,continuous_scale,book_forecast,2,main_grid,,planned_after_g00,planned_after_g00
+G21,Strict-Q4 reversal by SPY historical volatility,high_vol_reversal,spy_hist,1,main_grid,g21-frozen-v3-v1,completed_negative_control,completed_positive_mechanism_weak_absolute
+G22,Strict-Q4 reversal by naked-book historical volatility,high_vol_reversal,book_hist,1,main_grid,,planned_after_g00,planned_after_g00
+G23,Strict-Q4 reversal by naked-book forecast volatility,high_vol_reversal,book_forecast,1,main_grid,,planned_after_g00,planned_after_g00
+G31,Strict-Q4 derisking by SPY historical volatility,high_vol_derisk,spy_hist,2,main_grid,,planned_after_g00,planned_after_g00
+G32,Strict-Q4 derisking by naked-book historical volatility,high_vol_derisk,book_hist,2,main_grid,,planned_after_g00,planned_after_g00
+G33,Strict-Q4 derisking by naked-book forecast volatility,high_vol_derisk,book_forecast,2,main_grid,,planned_after_g00,planned_after_g00
+XS01,Individual historical volatility in cross-sectional ranking,cross_sectional_vol,individual_hist_vol,3,supplemental,,planned_after_main_grid,planned_after_main_grid

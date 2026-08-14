@@ -1,0 +1,11 @@
+schema_version = 1
+group_id = "G00"
+name = "Naked momentum control"
+wave = 0
+status = "completed_free_research"
+risk_action = "none"
+risk_source = "none"
+legacy_aliases = ["round1-baseline-prototype-v1", "round1-baseline-unified-start-v2"]
+
+[parameters]
+signal_allocation = 1.0

@@ -1,0 +1,2 @@
+override_id,canonical_sid,match_effective_from,match_effective_to,replacement_effective_from,replacement_effective_to,boundary_semantics,linked_action_id,evidence_url,reason,notes
+TSS_CLIP_20190919,sec::TSS,2008-01-02,2019-09-23,2008-01-02,2019-09-19,half_open,TSS_GPN_20190918,https://www.sec.gov/Archives/edgar/data/1123360/000112336019000034/gpn20190930-10q.htm,corporate_action_precedes_public_membership_removal,Exact-match replacement only; TSS must not be eligible on or after the 2019-09-19 pre-open conversion

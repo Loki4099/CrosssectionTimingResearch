@@ -1,0 +1,20 @@
+schema_version = 1
+group_id = "G23"
+name = "Strict-Q4 reversal by naked-book forecast volatility"
+wave = 1
+status = "planned"
+risk_action = "high_vol_reversal"
+risk_source = "book_forecast"
+legacy_aliases = []
+
+[grid]
+reversal_lookbacks = [5, 20]
+
+[parameters]
+forecast_model = "ewma"
+ewma_decay = 0.94
+forecast_horizon_sessions = 21
+state_history_sessions = 756
+high_vol_quantile = 0.75
+state_rule = "strict_q4_no_hysteresis"
+book_source = "matching_G00_portfolio_mode"

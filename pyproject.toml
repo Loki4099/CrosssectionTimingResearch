@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "momentum-reversal-research"
+version = "0.1.0"
+description = "Point-in-time momentum and reversal research framework"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=1.26,<3",
+  "pandas>=2.2,<4",
+]
+
+[project.scripts]
+momentum-reversal = "momentum_reversal.cli:main"
+
+[project.optional-dependencies]
+data = [
+  "duckdb>=1.0",
+  "exchange-calendars>=4.5",
+  "pyarrow>=16",
+  "yfinance>=0.2.54",
+]
+# The Tiingo EOD adapter uses urllib and a small local dotenv reader, so it has
+# no third-party runtime dependency.  This named extra keeps installation
+# commands/provider selection explicit without pulling a credential package.
+tiingo = []
+test = ["pytest>=8"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

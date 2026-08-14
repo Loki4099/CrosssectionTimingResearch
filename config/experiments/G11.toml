@@ -1,0 +1,13 @@
+schema_version = 1
+group_id = "G11"
+name = "Continuous scaling by SPY historical volatility"
+wave = 2
+status = "legacy_long_only_rebuild_required"
+risk_action = "continuous_scale"
+risk_source = "spy_hist"
+legacy_aliases = ["v1-volatility-scaling-prototype-v1", "v1-volatility-scaling-unified-start-v2"]
+
+[parameters]
+realized_vol_window = 21
+annual_target_volatility = 0.15
+maximum_scale = 1.0

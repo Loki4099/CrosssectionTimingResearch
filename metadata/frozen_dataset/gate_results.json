@@ -1,0 +1,124 @@
+{
+  "all_passed": true,
+  "candidate_version": "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate",
+  "gates": {
+    "all_signal_dates_present": {
+      "extra": 0,
+      "missing": 0,
+      "passed": true
+    },
+    "bank_halt_resolution": {
+      "gap_outlier_rows": 2,
+      "passed": true
+    },
+    "benchmark_and_rf": {
+      "benchmark_missing": 0,
+      "passed": true,
+      "rf_missing": 0
+    },
+    "boundary_dates": {
+      "passed": true
+    },
+    "corporate_action_valuation": {
+      "action_count": 58,
+      "duplicate_source_actions": 0,
+      "invalid_action_ids": [],
+      "passed": true
+    },
+    "coverage_factor_endpoints": {
+      "average_mom_12_1": 0.99106035240579,
+      "average_mom_255_0": 0.9910075891432797,
+      "average_mom_255_21": 0.9910400818173689,
+      "average_signal_close": 0.9914949098270646,
+      "minimum_mom_12_1": 0.9800796812749004,
+      "minimum_mom_255_0": 0.9800796812749004,
+      "minimum_mom_255_21": 0.9800796812749004,
+      "minimum_next_open": 0.9979757085020243,
+      "minimum_signal_close": 0.9801587301587301,
+      "passed": true
+    },
+    "coverage_next_open": {
+      "average_mom_12_1": 0.99106035240579,
+      "average_mom_255_0": 0.9910075891432797,
+      "average_mom_255_21": 0.9910400818173689,
+      "average_signal_close": 0.9914949098270646,
+      "minimum_mom_12_1": 0.9800796812749004,
+      "minimum_mom_255_0": 0.9800796812749004,
+      "minimum_mom_255_21": 0.9800796812749004,
+      "minimum_next_open": 0.9979757085020243,
+      "minimum_signal_close": 0.9801587301587301,
+      "passed": true
+    },
+    "coverage_signal_close": {
+      "average_mom_12_1": 0.99106035240579,
+      "average_mom_255_0": 0.9910075891432797,
+      "average_mom_255_21": 0.9910400818173689,
+      "average_signal_close": 0.9914949098270646,
+      "minimum_mom_12_1": 0.9800796812749004,
+      "minimum_mom_255_0": 0.9800796812749004,
+      "minimum_mom_255_21": 0.9800796812749004,
+      "minimum_next_open": 0.9979757085020243,
+      "minimum_signal_close": 0.9801587301587301,
+      "passed": true
+    },
+    "membership_boundary_overrides": {
+      "applied_rows": 1,
+      "passed": true
+    },
+    "membership_valid": {
+      "intervals": 754,
+      "passed": true
+    },
+    "price_structure": {
+      "invalid_numeric": 0,
+      "partial_ohlc": 0,
+      "passed": true
+    },
+    "provider_lineage": {
+      "missing": 0,
+      "passed": true,
+      "phantom_cp_rows": 0
+    },
+    "reproducible_double_build": {
+      "hashes_match": true,
+      "passed": true
+    },
+    "terminal_classified": {
+      "exits": 162,
+      "passed": true,
+      "unresolved": 0
+    },
+    "terminal_execution_weekly_monthly": {
+      "evaluated_rows": 324,
+      "failed_rows": 0,
+      "fallback_over_5_sessions": 0,
+      "maximum_accepted_stale_sessions": 6,
+      "passed": true,
+      "unresolved_rows": 0
+    },
+    "tradability_overrides": {
+      "masked_price_rows": 45,
+      "override_rows": 24,
+      "passed": true
+    },
+    "unique_price_key": {
+      "duplicates": 0,
+      "passed": true
+    }
+  },
+  "reproducible_double_build": true,
+  "source_version": "sp500-pit-free-research-2013warmup-2018eval-2026-v2-candidate",
+  "table_content_hashes": {
+    "benchmark_daily": "9fafab9fe22e0d4592df7e302ca1b5ed67b804bde93f7fd2c7eb60859c14f8bf",
+    "calendar": "882d8bad4dbceb4ac08029f47fcad0dcc28eea95cee34b4c057a15d455ecdef8",
+    "corporate_actions": "9bee0ba30435b89a0d9de96d1ff3458bf6ed471613fa6a74d5e908feb7ca064b",
+    "membership": "71c6edb99b1e18592ff42b4942bbf4c26b7facf7884438194bbec1f420aea57e",
+    "prices_daily": "a74e8b7e40635c7586c9418beed4e5a919ab9d73c01c77a41687a1d1b1121d95",
+    "provider_lineage": "03c9f3c8eefb40d673fa576a4c07f4d80f4e8fd8767473b49a5d8035902c9961",
+    "qa_summary": "b7979476443e6d84d682f19432ae705958d9656f104280c6af75e62f24b878f4",
+    "risk_free_daily": "09982b653b694913518d90037c6cacd6fdf438c14db1ac66c29e814935196937",
+    "security_identity_resolution": "3c14eb34a46fcfa19f89579c29a055c6febe6784e08b4d450234c742841437b0",
+    "security_master": "812b89e594741157e383c2eac3ce70e1e1dd69ea05ae25ed82e13163f897f198",
+    "universe_at_signal": "31435f34eaee5eba44d46aac6d102bd69d1af4ac263151483b6840f66853e14a"
+  }
+}

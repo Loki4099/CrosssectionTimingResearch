@@ -1,0 +1,16 @@
+schema_version = 1
+group_id = "G13"
+name = "Continuous scaling by naked-book forecast volatility"
+wave = 2
+status = "legacy_long_only_rebuild_required"
+risk_action = "continuous_scale"
+risk_source = "book_forecast"
+legacy_aliases = ["v4-forecast-volatility-prototype-v1", "v4-forecast-volatility-unified-start-v2"]
+
+[parameters]
+forecast_model = "ewma"
+ewma_decay = 0.94
+forecast_horizon_sessions = 21
+annual_target_volatility = 0.15
+maximum_scale = 1.0
+book_source = "matching_G00_portfolio_mode"
