@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "program_id": "recovery_persistence_round3b_v1",
+  "frozen_at_local_date": "2026-08-16",
+  "files": {
+    "config/experiments/round3b/program.toml": "184a5452a6fb1dc76b2d56bc3b3ba90b0cb80012b717b774980f071aa5a58bee",
+    "docs/20_experiments/R3B_recovery_persistence/design.md": "8a76f8ac038c6322e1f616b930c4613fc54ef3f04fcdc74f3ff9f406d9e3d043",
+    "docs/25_round3b_recovery_persistence_program_v1.md": "94698d30504759d4850ac7c8563e415eab1b321b5bbc39330bf843ee246e0172"
+  },
+  "inputs": {
+    "r2a_manifest_sha256": "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c",
+    "r2a_tree_sha256": "6985176ea1088d70c0191d6e24527dc7117e66ce81a1c0ece7ad7f539ed061ce",
+    "r2b_manifest_sha256": "831cf4c4c373a762d7726833fcaebf80db0214c091a640d94955afa283058559",
+    "r2b_tree_sha256": "3afe3a9a2ebea6ec852eec791e95420fde8ce0c91c1278f004275e9afffafed6",
+    "r3a_manifest_sha256": "6d399a8dc06c7718c5a5f2ae5391b5f62da588259a26412b2e2d582083abb332",
+    "r3a_tree_sha256": "259fa664b83365c7112fa3fda7bd369347cd16ba4c55f8779889c50c6f887a68",
+    "folds_sha256": "e0a18efcd533bd1e836cde4a8e9e9bc3dd0c343eb690b5a7ccc384093bf7c53c"
+  },
+  "authorization": {
+    "development": true,
+    "lockbox": false,
+    "mom255_transfer": false,
+    "alternative_models": false
+  },
+  "firewall": {
+    "maximum_prediction_signal": "2021-12-23",
+    "lockbox_start_signal": "2021-12-31",
+    "lockbox_targets_predictions_states_nav_forbidden": true
+  }
+}

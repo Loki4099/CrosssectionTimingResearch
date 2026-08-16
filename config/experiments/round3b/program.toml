@@ -1,0 +1,73 @@
+schema_version = 1
+program_id = "recovery_persistence_round3b_v1"
+status = "machine_preregistration_frozen_development_only"
+program_path = "docs/25_round3b_recovery_persistence_program_v1.md"
+design_path = "docs/20_experiments/R3B_recovery_persistence/design.md"
+run_id = "r3b-recovery-persistence-development-v1"
+formal_eligible = false
+
+[inputs]
+r2a_root = "C:/Users/17866/QuantWork/MomentumRversionMethod-runtime/data/round2/staging/R2A_DATA/r2a-long-free-20260816-v1"
+r2a_manifest_sha256 = "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c"
+r2a_tree_sha256 = "6985176ea1088d70c0191d6e24527dc7117e66ce81a1c0ece7ad7f539ed061ce"
+r2b_root = "C:/Users/17866/QuantWork/MomentumRversionMethod-runtime/results/experiments/round2/R2B_SIGNAL_DIAGNOSTICS/runs/r2b-free-core-v1"
+r2b_manifest_sha256 = "831cf4c4c373a762d7726833fcaebf80db0214c091a640d94955afa283058559"
+r2b_tree_sha256 = "3afe3a9a2ebea6ec852eec791e95420fde8ce0c91c1278f004275e9afffafed6"
+r3a_root = "C:/Users/17866/QuantWork/MomentumRversionMethod-runtime/results/experiments/round3/R3A_ASYMMETRIC_REENTRY/runs/r3a-asymmetric-reentry-development-v1"
+r3a_manifest_sha256 = "6d399a8dc06c7718c5a5f2ae5391b5f62da588259a26412b2e2d582083abb332"
+r3a_tree_sha256 = "259fa664b83365c7112fa3fda7bd369347cd16ba4c55f8779889c50c6f887a68"
+folds_path = "config/experiments/round2/folds.json"
+folds_sha256 = "e0a18efcd533bd1e836cde4a8e9e9bc3dd0c343eb690b5a7ccc384093bf7c53c"
+
+[target]
+name = "sustainable_attack_4w"
+continuous_name = "fwd_excess_logret_4w"
+positive_rule = "strictly_greater_than_zero"
+horizon_weeks = 4
+costs_in_target = false
+
+[features]
+names = ["spy_total_return_21d", "sma50_over_sma200_minus_1", "drawdown_from_252d_high", "log_rv21_over_rv126"]
+winsor_lower = 0.01
+winsor_upper = 0.99
+imputation = "training_median"
+standardization = "training_mean_sample_std"
+
+[model]
+family = "ridge_logistic"
+C = 1.0
+penalty = "l2"
+solver = "lbfgs"
+max_iter = 2000
+class_weight = "none"
+calibration = "none"
+
+[decision]
+price_recovery = "two_consecutive_closes_strictly_above_causal_sma21"
+probability_rule = "strictly_above_outer_train_base_rate"
+full_spy_weight = 1.0
+defense_spy_weight = 0.5
+main_cost_bps = 10
+stress_cost_bps = [0, 5, 20]
+
+[development]
+first_execution_year = 2005
+last_execution_year = 2021
+maximum_signal_date = "2021-12-23"
+minimum_train_rows = 520
+lockbox_start_signal = "2021-12-31"
+
+[gates]
+minimum_auc = 0.5
+minimum_positive_year_fraction = 0.60
+minimum_missed_upside_reduction = 0.25
+minimum_defense_benefit_retention = 0.75
+minimum_mdd_gain_retention = 0.75
+maximum_positive_year_concentration = 0.50
+endpoint_sensitivity_date = "2021-06-30"
+
+[authorization]
+development = true
+lockbox = false
+mom255_transfer = false
+alternative_models = false
