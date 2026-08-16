@@ -21,3 +21,5 @@
 [第二轮防御时点信号筛选与模型比较计划 v1](../23_round2_defense_timing_signal_program_v1.md)已建立，但尚未形成机器预注册或实验组。它先扩展 SPY/T-bill 与 PIT 数据，再以三目标、统一周频仓位政策和受限模型筛选至多一个防御时点信号；通过后才迁移到 `mom_255_0`。在各阶段 `design.md` 与机器配置冻结前，不在本表登记为 planned experiment。
 
 - [R2A_DATA 数据扩展冻结设计](./R2A_DATA/design.md)（[采集日志](./R2A_DATA/acquisition_log.md)）：免费 L 线 `r2a-long-free-20260816-v1` 已完成不可变 candidate 与双构建哈希验收；SPY/RF required gate 通过，VIX optional F3 因官方源缺一个周信号而取消。Norgate/PIT 增量线按用户决定暂缓；尚未计算任何 target、模型或策略结果。
+- [R2B_SIGNAL_DIAGNOSTICS 冻结设计](./R2B_signal_diagnostics/design.md)（[报告](./R2B_signal_diagnostics/report.md)）：`r2b-free-core-v1` 已通过公式、哈希、不可变和锁箱防火墙验收。单因子对下一周现金胜 SPY 的 AUC 仅 `0.471–0.517`，但 RV/回撤等可识别随后四周路径风险；没有产生 champion，只开放 R2C simple development。
+- [R2C_SPY_TBILL 冻结设计](./R2C_spy_tbill_timing/design.md)：当前只授权 sentinel、Ridge 与 additive GAM 的 development outer；复杂模型、mechanical lockbox 与 R2D 仍关闭。

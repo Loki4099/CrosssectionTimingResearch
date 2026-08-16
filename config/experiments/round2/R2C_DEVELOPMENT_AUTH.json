@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "program_id": "defense_timing_round2_v1",
+  "authorization_id": "r2c-development-simple-v1",
+  "authorized_at": "2026-08-16",
+  "status": "authorized_simple_development_only",
+  "inputs": {
+    "r2a_manifest_sha256": "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c",
+    "r2b_run_id": "r2b-free-core-v1",
+    "r2b_manifest_sha256": "831cf4c4c373a762d7726833fcaebf80db0214c091a640d94955afa283058559",
+    "r2b_tree_sha256": "3afe3a9a2ebea6ec852eec791e95420fde8ce0c91c1278f004275e9afffafed6",
+    "fold_manifest_sha256": "e0a18efcd533bd1e836cde4a8e9e9bc3dd0c343eb690b5a7ccc384093bf7c53c",
+    "program_sha256": "199eb9ee4c2c51c47f9d060ec8e0954acb059de5694d605140104f671bd951ca",
+    "amendment_sha256": "b6420fe237b80a6806b396164e321d0119517b7348c03806f6eb96aeac74b83e",
+    "r2b_design_sha256": "adb5c56bd793e9a5b747ebd5ce5eff5f0c855fa8a1341d71c4ced47214b8129c",
+    "r2c_design_sha256": "a3a377bb290bea688014d0330dccc2a1c1831a72b2bfb9aa1cea00a61db307ac",
+    "machine_config_sha256": "c4d09965f3ee9e30053165762a9c32ffe09885717f6f6dae58654668ea7d4b34"
+  },
+  "authorization": {
+    "r2c_simple_development": true,
+    "allowed_processes": [
+      "R2C__PROC_SENT_RV21",
+      "R2C__PROC_SENT_SMA_GAP",
+      "R2C__PROC_SENT_DRAWDOWN252",
+      "R2C__PROC_SENT_RET21",
+      "R2C__PROC_RIDGE",
+      "R2C__PROC_GAM"
+    ],
+    "r2c_complex_development": false,
+    "r2c_lockbox": false,
+    "r2d_transfer": false
+  },
+  "firewall": {
+    "maximum_signal_session": "2021-12-30",
+    "lockbox_start_signal": "2021-12-31",
+    "lockbox_targets_must_remain_absent": true,
+    "lockbox_predictions_forbidden": true,
+    "complex_processes_require_machine_gate": true
+  }
+}
