@@ -5,6 +5,7 @@ __pycache__/
 .mypy_cache/
 .venv/
 .env
+config/runtime.local.toml
 dist/
 build/
 *.egg-info/
@@ -24,3 +25,4 @@ results/*
 !results/published/**
 
 logs/
+cache/

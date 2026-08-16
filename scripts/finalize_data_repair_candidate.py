@@ -41,12 +41,13 @@ from momentum_reversal.data import (
     validate_canonical_prices,
 )
 from momentum_reversal.data.storage import sha256_file
+from momentum_reversal.runtime import resolve_runtime_paths
 
 from scripts import build_data_repair_candidate as v2_builder
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA_ROOT = ROOT / "data"
+DATA_ROOT = resolve_runtime_paths(cwd=ROOT).data_root
 SOURCE_VERSION = "sp500-pit-free-research-2013warmup-2018eval-2026-v2-candidate"
 CANDIDATE_VERSION = (
     "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate"

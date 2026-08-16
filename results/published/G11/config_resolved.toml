@@ -1,0 +1,108 @@
+schema_version = 1
+
+[program]
+schema_version = 1
+program_id = "momentum_reversal_systematic_v2"
+universe = "sp500_pit"
+benchmark = "SPY_total_return_proxy_for_sp500"
+execution = "signal_close_next_exchange_session_open"
+weighting = "equal_weight_each_rebalance"
+
+[program.dataset]
+default_version = "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate"
+freeze_record = "data/curated/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate/FROZEN.json"
+freeze_sha256 = "a3ef9ee72cd3d535c2e5bf06b3d1f520c54667a8552891543ee0f9ca50488296"
+status = "review"
+formal_eligible = false
+requires_allow_review_dataset = true
+
+[program.dates]
+price_history_start = "2013-01-02"
+strategy_forecast_history_start = "2014-06-30"
+first_common_signal_close = "2017-12-29"
+evaluation_start_open = "2018-01-02"
+evaluation_end_close = "2026-06-30"
+require_common_evaluation_start = true
+
+[program.grid]
+signals = ["mom_255_0", "mom_255_21", "mom_12_1"]
+top_n = [10, 20, 50]
+frequencies = ["weekly", "monthly"]
+portfolio_modes = ["long_only", "long_short"]
+
+[program.costs]
+scenarios_bps = [0, 5, 10, 20]
+weekly_primary_bps = 10
+monthly_primary_bps = 5
+
+[program.long_only]
+target_gross = 1.0
+target_net = 1.0
+unallocated_cash = "t_bill"
+
+[program.long_short]
+target_long_gross = 0.5
+target_short_gross = 0.5
+target_gross = 1.0
+target_net = 0.0
+collateral_return = "t_bill"
+borrow_fee_scenarios_annual = [0.0, 0.01, 0.03]
+primary_borrow_fee_annual = 0.01
+derive_traditional_wml_gross2 = true
+
+[program.bundle]
+manifest_schema = "momentum_reversal.experiment_manifest.v1"
+summary_schema = "momentum_reversal.experiment_summary.v1"
+artifacts_format = "parquet_long_table"
+
+[program.data_quality_exclusions]
+sids = []
+reason = "Frozen v3 restores canonical COL; no strategy-level exclusions"
+
+[group]
+schema_version = 1
+group_id = "G11"
+name = "Continuous scaling by SPY historical volatility"
+wave = 2
+status = "legacy_long_only_rebuild_required"
+risk_action = "continuous_scale"
+risk_source = "spy_hist"
+legacy_aliases = ["v1-volatility-scaling-prototype-v1", "v1-volatility-scaling-unified-start-v2"]
+
+[group.parameters]
+realized_vol_window = 21
+annual_target_volatility = 0.15
+maximum_scale = 1.0
+
+[resolved]
+spec_id = "G11"
+strategy_count = 36
+strategy_ids = ["G11__mom_255_0__top10__weekly__long_only", "G11__mom_255_0__top10__weekly__long_short", "G11__mom_255_0__top10__monthly__long_only", "G11__mom_255_0__top10__monthly__long_short", "G11__mom_255_0__top20__weekly__long_only", "G11__mom_255_0__top20__weekly__long_short", "G11__mom_255_0__top20__monthly__long_only", "G11__mom_255_0__top20__monthly__long_short", "G11__mom_255_0__top50__weekly__long_only", "G11__mom_255_0__top50__weekly__long_short", "G11__mom_255_0__top50__monthly__long_only", "G11__mom_255_0__top50__monthly__long_short", "G11__mom_255_21__top10__weekly__long_only", "G11__mom_255_21__top10__weekly__long_short", "G11__mom_255_21__top10__monthly__long_only", "G11__mom_255_21__top10__monthly__long_short", "G11__mom_255_21__top20__weekly__long_only", "G11__mom_255_21__top20__weekly__long_short", "G11__mom_255_21__top20__monthly__long_only", "G11__mom_255_21__top20__monthly__long_short", "G11__mom_255_21__top50__weekly__long_only", "G11__mom_255_21__top50__weekly__long_short", "G11__mom_255_21__top50__monthly__long_only", "G11__mom_255_21__top50__monthly__long_short", "G11__mom_12_1__top10__weekly__long_only", "G11__mom_12_1__top10__weekly__long_short", "G11__mom_12_1__top10__monthly__long_only", "G11__mom_12_1__top10__monthly__long_short", "G11__mom_12_1__top20__weekly__long_only", "G11__mom_12_1__top20__weekly__long_short", "G11__mom_12_1__top20__monthly__long_only", "G11__mom_12_1__top20__monthly__long_short", "G11__mom_12_1__top50__weekly__long_only", "G11__mom_12_1__top50__weekly__long_short", "G11__mom_12_1__top50__monthly__long_only", "G11__mom_12_1__top50__monthly__long_short"]
+
+[run]
+run_id = "g11-frozen-v3-v1"
+dataset_version = "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate"
+allow_review_dataset = true
+workers = 4
+project_root = "C:\\Users\\17866\\OneDrive\\桌面\\Ltq\\求职\\澳洲求职\\quantanalysis_intelligence_system\\FactorMachineLearning\\MomentumRversionMethod"
+data_root = "C:\\Users\\17866\\QuantWork\\MomentumRversionMethod-runtime\\data"
+output_root = "C:\\Users\\17866\\QuantWork\\MomentumRversionMethod-runtime\\results"
+bundle_dir = "C:\\Users\\17866\\QuantWork\\MomentumRversionMethod-runtime\\results\\experiments\\G11\\runs\\g11-frozen-v3-v1"
+formal_run_eligible = false
+resolved_spec_sha256 = "0a1b9ce0b11fb04ef017b693a88f20c597002474404bb321396af9559fee0885"
+design_sha256 = "c0e41c31fc5d8dc1fd53b466c7440fd5d02dc1cf77c48bd83f3a63bb452594c8"
+group_config_sha256 = "3464d030eac592f3419f1bfcc00743770a0a82ed1c24f9354ff387ba92b381a5"
+program_sha256 = "11394af02fa028abe4a11434874be31e33e692f55feb73e9236da9bf8d07d413"
+
+[run.dataset_anchor]
+manifest_path = "C:\\Users\\17866\\QuantWork\\MomentumRversionMethod-runtime\\data\\manifests\\sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate.json"
+manifest_sha256 = "65b628d604f7e2f456e8d1d43a3c3e88b6bd3e86cc1c9455cdcfe28b856a3ec7"
+freeze_record_path = "C:\\Users\\17866\\QuantWork\\MomentumRversionMethod-runtime\\data\\curated\\sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate\\FROZEN.json"
+freeze_record_sha256 = "a3ef9ee72cd3d535c2e5bf06b3d1f520c54667a8552891543ee0f9ca50488296"
+status = "review"
+research_tier = "free_research_candidate"
+
+[run.reference_g00]
+root = "C:\\Users\\17866\\QuantWork\\MomentumRversionMethod-runtime\\results\\experiments\\G00\\runs\\g00-frozen-v3-v1"
+run_id = "g00-frozen-v3-v1"
+manifest_sha256 = "8b875d4bcbb7b178b309c7b1edaa7dce9bbb15090e68b619fb045cec35411c66"

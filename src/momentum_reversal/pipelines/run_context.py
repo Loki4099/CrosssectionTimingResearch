@@ -62,6 +62,13 @@ class ExperimentRunContext:
             / self.run_id
         )
 
+    @property
+    def project_root(self) -> Path:
+        """Repository root derived from the registered spec, not data_root."""
+
+        # config/experiments/Gxx.toml -> repository root
+        return self.group.path.resolve().parents[2]
+
     def manifest_identity(self) -> dict[str, object]:
         return {
             "group_id": self.group_id,
@@ -152,7 +159,7 @@ def load_experiment_data(
     manifest_store = ManifestStore(layout)
     manifest = manifest_store.read(context.dataset_version)
     manifest_path = layout.manifest_path(context.dataset_version)
-    _verify_dataset_files(layout, manifest)
+    _verify_dataset_files(layout, manifest, project_root=context.project_root)
     status = str(manifest.get("status", "unknown"))
     if status == "review" and not allow_review_dataset:
         raise DataQualityError(
@@ -369,7 +376,12 @@ def _membership_from_frame(frame: pd.DataFrame) -> PITMembership:
     raise DataQualityError("curated membership table has an unknown schema")
 
 
-def _verify_dataset_files(layout: DatasetLayout, manifest: dict[str, object]) -> None:
+def _verify_dataset_files(
+    layout: DatasetLayout,
+    manifest: dict[str, object],
+    *,
+    project_root: Path | None = None,
+) -> None:
     """Verify immutable dataset artifacts while treating code as provenance.
 
     Some historical manifests recorded the build/runtime source files beside
@@ -392,13 +404,13 @@ def _verify_dataset_files(layout: DatasetLayout, manifest: dict[str, object]) ->
         if not path.is_file():
             raise DataQualityError(f"manifest-referenced dataset file is missing: {path}")
         if sha256_file(path) != str(record["sha256"]) and not _is_code_provenance(
-            path, layout
+            path, project_root or layout.root.parent
         ):
             raise DataQualityError(f"dataset file hash mismatch: {path}")
 
 
-def _is_code_provenance(path: Path, layout: DatasetLayout) -> bool:
-    project_root = layout.root.parent.resolve()
+def _is_code_provenance(path: Path, project_root: Path) -> bool:
+    project_root = Path(project_root).resolve()
     try:
         relative = path.resolve().relative_to(project_root)
     except ValueError:

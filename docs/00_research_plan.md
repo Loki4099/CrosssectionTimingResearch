@@ -1,8 +1,8 @@
 # 动量—反转研究总计划
 
-> 2026-08-14 更新：免费研究数据 v3 已冻结，旧 Round 1 与 V1–V4 结果因数据不合格退出当前证据集。当前实验边界以 [系统化实验计划 v2](./21_systematic_experiment_program_v2.md) 和 [冻结数据报告](./10_data/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate_implementation_report.md) 为准；有效结果为 [G00](./20_experiments/G00_baseline/report.md) 与 [G21](./20_experiments/G21_spy_reversal/report.md)。
+> 2026-08-16 更新：免费研究数据 v3 已冻结，旧 Round 1 与 V1–V4 结果因数据不合格退出当前证据集。当前实验边界以 [系统化实验计划 v2](./21_systematic_experiment_program_v2.md) 和 [冻结数据报告](./10_data/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate_implementation_report.md) 为准；G00 与 G11–G13、G21–G23、G31–G33 九宫格主网格均已完成。最后一格 [G23](./20_experiments/G23_book_forecast_reversal/report.md) 的 LO 以 0/36 失败，LS 以 33/36、月频 15/18、周频 18/18 通过预注册平台门槛，但仍成本/借券敏感且绝对表现弱。全部结果继续保留 `formal_run_eligible=false`；XS01 是九宫格外补充研究。
 
-> 状态：研究章程 v1；批次 0/1 与波动率 V1 已完成  
+> 状态：研究章程 v1；免费研究 v3 上 G00 与九宫格 G11–G13、G21–G23、G31–G33 已完成
 > 适用项目：`momentum_reversal`  
 > 配套文档：[第一轮基线规格](./01_round1_baseline_spec.md) · [数据契约与 QA](./02_data_contract_and_qa.md) · [实验台账规范](./03_experiment_ledger.md) · [系统化九宫格](./21_systematic_experiment_program_v2.md)
 

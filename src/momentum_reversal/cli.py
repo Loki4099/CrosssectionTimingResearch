@@ -10,26 +10,55 @@ from pathlib import Path
 import pandas as pd
 
 from momentum_reversal.data import convert_ken_french_daily_rf_zip
+from momentum_reversal.runtime import resolve_runtime_paths
 
 from momentum_reversal.pipelines import (
     BaselineRunConfig,
     DatasetBuildConfig,
     G00RunConfig,
+    G11RunConfig,
+    G12RunConfig,
+    G13RunConfig,
     G21RunConfig,
+    G22RunConfig,
+    G23RunConfig,
+    G31RunConfig,
+    G32RunConfig,
+    G33RunConfig,
     build_yfinance_dataset,
     prepare_experiment_run,
     run_g00,
+    run_g11,
+    run_g12,
+    run_g13,
     run_g21,
+    run_g22,
+    run_g23,
+    run_g31,
+    run_g32,
+    run_g33,
     run_frozen_baselines,
 )
 
 
 def build_parser() -> argparse.ArgumentParser:
+    runtime_paths = resolve_runtime_paths()
     parser = argparse.ArgumentParser(
         prog="momentum-reversal",
         description="Build PIT datasets and run registered momentum experiments.",
     )
     subparsers = parser.add_subparsers(dest="command", required=True)
+
+    runtime = subparsers.add_parser(
+        "runtime-status",
+        help="show the resolved local data, results, cache, and log roots",
+    )
+    runtime.add_argument(
+        "--create",
+        action="store_true",
+        help="create missing runtime directories without moving or deleting files",
+    )
+    runtime.set_defaults(handler=_handle_runtime_status, runtime_paths=runtime_paths)
 
     convert_rf = subparsers.add_parser(
         "convert-french-rf",
@@ -46,7 +75,7 @@ def build_parser() -> argparse.ArgumentParser:
     )
     build.add_argument("--security-master", required=True, type=Path)
     build.add_argument("--membership", required=True, type=Path)
-    build.add_argument("--data-root", type=Path, default=Path("data"))
+    build.add_argument("--data-root", type=Path, default=runtime_paths.data_root)
     build.add_argument("--dataset-version", required=True)
     build.add_argument("--snapshot-id", required=True)
     build.add_argument("--price-start", required=True, type=_date)
@@ -116,9 +145,9 @@ def build_parser() -> argparse.ArgumentParser:
         "run-baseline",
         help="verify one curated dataset and export all 18 baseline paths",
     )
-    run.add_argument("--data-root", type=Path, default=Path("data"))
+    run.add_argument("--data-root", type=Path, default=runtime_paths.data_root)
     run.add_argument("--dataset-version", required=True)
-    run.add_argument("--output-root", type=Path, default=Path("results"))
+    run.add_argument("--output-root", type=Path, default=runtime_paths.results_root)
     run.add_argument("--run-id", required=True)
     run.add_argument(
         "--costs-bps",
@@ -143,14 +172,16 @@ def build_parser() -> argparse.ArgumentParser:
         help="run or dry-validate one registered systematic experiment",
     )
     experiment.add_argument("--spec", required=True, type=Path)
-    experiment.add_argument("--data-root", type=Path, default=Path("data"))
+    experiment.add_argument("--data-root", type=Path, default=runtime_paths.data_root)
     experiment.add_argument("--dataset-version", required=True)
-    experiment.add_argument("--output-root", type=Path, default=Path("results"))
+    experiment.add_argument(
+        "--output-root", type=Path, default=runtime_paths.results_root
+    )
     experiment.add_argument("--run-id", required=True)
     experiment.add_argument(
         "--legacy-baseline-root",
         type=Path,
-        default=Path("results/g00-long-only-frozen-v3"),
+        default=runtime_paths.results_root / "g00-long-only-frozen-v3",
         help="fresh same-dataset 72-scenario long-only run used by the reproduction gate",
     )
     experiment.add_argument(
@@ -164,14 +195,32 @@ def build_parser() -> argparse.ArgumentParser:
     experiment.add_argument(
         "--reference-g00-root",
         type=Path,
-        default=Path("results/experiments/G00/runs/g00-frozen-v3-v1"),
-        help="completed same-dataset G00 bundle used by G21 incremental comparisons",
+        default=(
+            runtime_paths.results_root
+            / "experiments"
+            / "G00"
+            / "runs"
+            / "g00-frozen-v3-v1"
+        ),
+        help="completed same-dataset G00 bundle used by overlay comparisons",
+    )
+    experiment.add_argument(
+        "--reference-g31-root",
+        type=Path,
+        default=(
+            runtime_paths.results_root
+            / "experiments"
+            / "G31"
+            / "runs"
+            / "g31-frozen-v3-v1"
+        ),
+        help="completed same-dataset G31 bundle used by G32 provenance checks",
     )
     experiment.add_argument(
         "--workers",
         type=int,
         default=min(4, os.cpu_count() or 1),
-        help="G21 core-path worker processes (default: up to 4)",
+        help="registered core-path worker processes (default: up to 4)",
     )
     experiment.add_argument(
         "--allow-review-dataset",
@@ -195,6 +244,24 @@ def main(argv: list[str] | None = None) -> int:
     except Exception as error:
         print(f"error: {type(error).__name__}: {error}", file=sys.stderr)
         return 2
+
+
+def _handle_runtime_status(args: argparse.Namespace) -> int:
+    paths = args.runtime_paths
+    if args.create:
+        paths.create()
+    print(f"source={paths.source}")
+    print(f"config={paths.config_path or 'none'}")
+    print(f"runtime_root={paths.runtime_root or 'none'}")
+    for name, path in (
+        ("data_root", paths.data_root),
+        ("results_root", paths.results_root),
+        ("cache_root", paths.cache_root),
+        ("log_root", paths.log_root),
+    ):
+        print(f"{name}={path}")
+        print(f"{name}_exists={str(path.is_dir()).lower()}")
+    return 0
 
 
 def _handle_build_data(args: argparse.Namespace) -> int:
@@ -257,6 +324,7 @@ def _handle_run_baseline(args: argparse.Namespace) -> int:
             costs_bps=args.costs_bps,
             allow_review_dataset=args.allow_review_dataset,
             allow_invalid_dataset=args.allow_invalid_dataset,
+            project_root=Path.cwd(),
         )
     )
     print(f"run_id={result.run_id}")
@@ -277,9 +345,9 @@ def _handle_run_experiment(args: argparse.Namespace) -> int:
         require_dataset_manifest=False,
     )
     if not args.dry_run:
-        if context.group_id not in {"G00", "G21"}:
+        if context.group_id not in {"G00", "G11", "G12", "G13", "G21", "G22", "G23", "G31", "G32", "G33"}:
             raise RuntimeError(
-                f"actual execution is currently implemented only for G00/G21, got "
+                f"actual execution is currently implemented only for G00/G11/G12/G13/G21/G22/G23/G31/G32/G33, got "
                 f"{context.group_id}"
             )
         if context.group_id == "G00":
@@ -303,7 +371,49 @@ def _handle_run_experiment(args: argparse.Namespace) -> int:
                 "computed_long_short_scenarios="
                 f"{result.computed_long_short_scenario_count}"
             )
-        else:
+        elif context.group_id == "G11":
+            result = run_g11(
+                G11RunConfig(
+                    context=context,
+                    reference_g00_root=args.reference_g00_root,
+                    allow_review_dataset=args.allow_review_dataset,
+                    workers=args.workers,
+                )
+            )
+            print(f"run_id={result.run_id}")
+            print(f"strategy_paths={result.strategy_count}")
+            print(f"main_scenarios={result.scenario_count}")
+            print(f"comparison_rows={result.comparison_count}")
+            print(f"scaled_rebalance_rows={result.scaled_rebalance_count}")
+        elif context.group_id == "G12":
+            result = run_g12(
+                G12RunConfig(
+                    context=context,
+                    reference_g00_root=args.reference_g00_root,
+                    allow_review_dataset=args.allow_review_dataset,
+                    workers=args.workers,
+                )
+            )
+            print(f"run_id={result.run_id}")
+            print(f"strategy_paths={result.strategy_count}")
+            print(f"main_scenarios={result.scenario_count}")
+            print(f"comparison_rows={result.comparison_count}")
+            print(f"scaled_rebalance_rows={result.scaled_rebalance_count}")
+        elif context.group_id == "G13":
+            result = run_g13(
+                G13RunConfig(
+                    context=context,
+                    reference_g00_root=args.reference_g00_root,
+                    allow_review_dataset=args.allow_review_dataset,
+                    workers=args.workers,
+                )
+            )
+            print(f"run_id={result.run_id}")
+            print(f"strategy_paths={result.strategy_count}")
+            print(f"main_scenarios={result.scenario_count}")
+            print(f"comparison_rows={result.comparison_count}")
+            print(f"scaled_rebalance_rows={result.scaled_rebalance_count}")
+        elif context.group_id == "G21":
             result = run_g21(
                 G21RunConfig(
                     context=context,
@@ -320,6 +430,77 @@ def _handle_run_experiment(args: argparse.Namespace) -> int:
                 "conditional_diagnostic_rows="
                 f"{result.conditional_diagnostic_count}"
             )
+        elif context.group_id == "G22":
+            result = run_g22(
+                G22RunConfig(
+                    context=context,
+                    reference_g00_root=args.reference_g00_root,
+                    allow_review_dataset=args.allow_review_dataset,
+                    workers=args.workers,
+                )
+            )
+            print(f"run_id={result.run_id}")
+            print(f"strategy_paths={result.strategy_count}")
+            print(f"main_scenarios={result.scenario_count}")
+            print(f"comparison_rows={result.comparison_count}")
+            print(f"q4_rebalance_rows={result.q4_rebalance_count}")
+        elif context.group_id == "G23":
+            result = run_g23(
+                G23RunConfig(
+                    context=context,
+                    reference_g00_root=args.reference_g00_root,
+                    allow_review_dataset=args.allow_review_dataset,
+                    workers=args.workers,
+                )
+            )
+            print(f"run_id={result.run_id}")
+            print(f"strategy_paths={result.strategy_count}")
+            print(f"main_scenarios={result.scenario_count}")
+            print(f"comparison_rows={result.comparison_count}")
+            print(f"q4_rebalance_rows={result.q4_rebalance_count}")
+        elif context.group_id == "G31":
+            result = run_g31(
+                G31RunConfig(
+                    context=context,
+                    reference_g00_root=args.reference_g00_root,
+                    allow_review_dataset=args.allow_review_dataset,
+                    workers=args.workers,
+                )
+            )
+            print(f"run_id={result.run_id}")
+            print(f"strategy_paths={result.strategy_count}")
+            print(f"main_scenarios={result.scenario_count}")
+            print(f"comparison_rows={result.comparison_count}")
+            print(f"q4_rebalance_rows={result.q4_rebalance_count}")
+        elif context.group_id == "G32":
+            result = run_g32(
+                G32RunConfig(
+                    context=context,
+                    reference_g00_root=args.reference_g00_root,
+                    reference_g31_root=args.reference_g31_root,
+                    allow_review_dataset=args.allow_review_dataset,
+                    workers=args.workers,
+                )
+            )
+            print(f"run_id={result.run_id}")
+            print(f"strategy_paths={result.strategy_count}")
+            print(f"main_scenarios={result.scenario_count}")
+            print(f"comparison_rows={result.comparison_count}")
+            print(f"q4_rebalance_rows={result.q4_rebalance_count}")
+        else:
+            result = run_g33(
+                G33RunConfig(
+                    context=context,
+                    reference_g00_root=args.reference_g00_root,
+                    allow_review_dataset=args.allow_review_dataset,
+                    workers=args.workers,
+                )
+            )
+            print(f"run_id={result.run_id}")
+            print(f"strategy_paths={result.strategy_count}")
+            print(f"main_scenarios={result.scenario_count}")
+            print(f"comparison_rows={result.comparison_count}")
+            print(f"q4_rebalance_rows={result.q4_rebalance_count}")
         print(f"formal_run_eligible={str(result.formal_run_eligible).lower()}")
         print(f"manifest={result.manifest_path}")
         return 0
