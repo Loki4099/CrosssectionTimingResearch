@@ -2,6 +2,10 @@
 
 > 2026-08-16 更新：免费研究数据 v3 已冻结，旧 Round 1 与 V1–V4 结果因数据不合格退出当前证据集。当前实验边界以 [系统化实验计划 v2](./21_systematic_experiment_program_v2.md) 和 [冻结数据报告](./10_data/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate_implementation_report.md) 为准；G00 与 G11–G13、G21–G23、G31–G33 九宫格主网格均已完成。最后一格 [G23](./20_experiments/G23_book_forecast_reversal/report.md) 的 LO 以 0/36 失败，LS 以 33/36、月频 15/18、周频 18/18 通过预注册平台门槛，但仍成本/借券敏感且绝对表现弱。全部结果继续保留 `formal_run_eligible=false`；XS01 是九宫格外补充研究。
 
+> 2026-08-16 后续决策：第二轮将先扩长数据并独立筛选“何时防御”，不再把防御信号、动作与 `mom_255_0` 同时做笛卡尔积。第一版见[第二轮防御时点信号筛选与模型比较计划 v1](./23_round2_defense_timing_signal_program_v1.md)；其 planning 状态不授权正式运行，也不追溯修改第一轮冻结计划。
+
+> 2026-08-16 Round 2 治理修订：仅对 `defense_timing_round2_v1`，保留 expanding walk-forward，同时前瞻增加按完整执行年度冻结的 mechanical lockbox。该修订不使用随机切分；由于 2018–2026 已被研究过程观察，锁箱只约束模型选择，不能称为纯净外部确认，也不改写第一轮的历史章程。
+
 > 状态：研究章程 v1；免费研究 v3 上 G00 与九宫格 G11–G13、G21–G23、G31–G33 已完成
 > 适用项目：`momentum_reversal`  
 > 配套文档：[第一轮基线规格](./01_round1_baseline_spec.md) · [数据契约与 QA](./02_data_contract_and_qa.md) · [实验台账规范](./03_experiment_ledger.md) · [系统化九宫格](./21_systematic_experiment_program_v2.md)

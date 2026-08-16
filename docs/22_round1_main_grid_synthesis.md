@@ -124,3 +124,5 @@
 - 实盘前仍需机构级永久证券标识数据、官方总回报基准、真实借券/召回/冲击模型及 forward paper/live 证据。
 
 各组的冻结设计、完整审计和细分结果见 [实验组导航](./20_experiments/README.md)，精简机器可读结果见 [`results/published`](../results/published/README.md)。
+
+用户在复盘后决定把“何时防御”与“如何防御”拆开：先在更长历史上用统一 SPY/T-bill 机械政策筛选防御时点信号，再把唯一晋级信号迁移到 `mom_255_0`。该后续决策与治理边界见[第二轮防御时点信号筛选与模型比较计划 v1](./23_round2_defense_timing_signal_program_v1.md)。XS01 的历史建议保留但延后，不追溯改写本轮结论。

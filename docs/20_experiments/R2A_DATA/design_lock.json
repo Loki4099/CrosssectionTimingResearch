@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "program_id": "defense_timing_round2_v1",
+  "batch_id": "R2A_DATA",
+  "status": "design_frozen_data_not_built",
+  "frozen_on": "2026-08-16",
+  "design": {
+    "path": "docs/20_experiments/R2A_DATA/design.md",
+    "sha256": "15bda92c9620448187f54f021a10abc7bbdcdcd5437ac8b8bfe32c5c87a616f3"
+  },
+  "machine_config": {
+    "path": "config/data/round2/R2A_DATA.toml",
+    "sha256": "02b966a72ce90d3d52b36d6ea73f987d517d0f5b297060ae7e572604f964b328"
+  },
+  "program": {
+    "path": "docs/23_round2_defense_timing_signal_program_v1.md",
+    "sha256": "199eb9ee4c2c51c47f9d060ec8e0954acb059de5694d605140104f671bd951ca"
+  },
+  "authorization": {
+    "data_acquisition_and_qa": true,
+    "paid_purchase": false,
+    "targets": false,
+    "features": false,
+    "models": false,
+    "backtests": false
+  },
+  "line_status": {
+    "long_market_core": "ready_for_acquisition",
+    "pit_constituents": "blocked_external_dependency"
+  }
+}

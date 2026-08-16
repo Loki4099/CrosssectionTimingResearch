@@ -59,6 +59,7 @@ _REQUIRED_FIELDS = frozenset(
         "adjHigh",
         "adjLow",
         "adjClose",
+        "adjVolume",
         "divCash",
         "splitFactor",
     }
@@ -286,6 +287,20 @@ def normalize_tiingo_response(payload: object, asset: AssetRef) -> pd.DataFrame:
         )
     converted["volume"] = volume.to_numpy(dtype=float)
 
+    adjusted_volume = pd.to_numeric(source["adjVolume"], errors="coerce")
+    if (
+        adjusted_volume.isna()
+        | ~np.isfinite(adjusted_volume)
+        | (adjusted_volume < 0)
+    ).any():
+        raise DataSchemaError(
+            f"Tiingo field adjVolume for {asset.symbol} contains invalid values"
+        )
+    # Keep raw and split-adjusted volume separately.  The canonical ``volume``
+    # column remains raw for backward compatibility with frozen v3; Round 2
+    # explicitly consumes ``adjusted_volume`` only after its volume QA gates.
+    converted["adjusted_volume"] = adjusted_volume.to_numpy(dtype=float)
+
     dividends = pd.to_numeric(source["divCash"], errors="coerce")
     if (dividends.isna() | ~np.isfinite(dividends)).any():
         raise DataSchemaError(
@@ -309,7 +324,7 @@ def normalize_tiingo_response(payload: object, asset: AssetRef) -> pd.DataFrame:
     converted["sid"] = asset.sid
     converted = converted.set_index(["date", "sid"])
 
-    ordered = [*CANONICAL_PRICE_COLUMNS, "source_symbol"]
+    ordered = [*CANONICAL_PRICE_COLUMNS, "adjusted_volume", "source_symbol"]
     result = canonicalize_prices(converted.loc[:, ordered])
     validate_canonical_prices(result)
     return result

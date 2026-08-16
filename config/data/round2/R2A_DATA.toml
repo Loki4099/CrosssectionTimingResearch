@@ -1,0 +1,144 @@
+schema_version = 1
+program_id = "defense_timing_round2_v1"
+batch_id = "R2A_DATA"
+status = "design_frozen_data_not_built"
+design_path = "docs/20_experiments/R2A_DATA/design.md"
+design_sha256 = "15bda92c9620448187f54f021a10abc7bbdcdcd5437ac8b8bfe32c5c87a616f3"
+program_path = "docs/23_round2_defense_timing_signal_program_v1.md"
+program_sha256 = "199eb9ee4c2c51c47f9d060ec8e0954acb059de5694d605140104f671bd951ca"
+freeze_cutoff = "2026-06-30"
+allow_targets = false
+allow_features = false
+allow_models = false
+allow_backtests = false
+
+[runtime]
+output_namespace = "round2/R2A_DATA"
+immutable = true
+raw_in_git = false
+credential_values_in_manifest = false
+parquet_compression = "zstd"
+stable_sort = true
+canonical_content_hash = "sha256_arrow_ipc"
+file_hash = "sha256"
+
+[long_line]
+dataset_version = "round2-market-core-1993-2026-v1-candidate"
+status = "ready_for_acquisition"
+start = "1993-01-29"
+end = "2026-06-30"
+calendar_id = "XNYS"
+benchmark_asset_id = "SPY"
+benchmark_kind = "investable_total_return_proxy"
+required_sources = ["tiingo_eod", "ken_french_daily_rf", "xnys"]
+optional_sources = ["cboe_vix"]
+
+[long_line.tiingo]
+provider = "Tiingo"
+dataset = "EOD"
+symbol = "SPY"
+token_env_var = "TIINGO_API_TOKEN"
+raw_fields = ["date", "open", "high", "low", "close", "volume", "adjOpen", "adjHigh", "adjLow", "adjClose", "adjVolume", "divCash", "splitFactor"]
+return_price_fields = ["adjOpen", "adjHigh", "adjLow", "adjClose"]
+ordinary_actions_already_in_adjusted_prices = true
+allow_gap_fallback_provider = false
+
+[long_line.vix]
+provider = "Cboe"
+dataset = "VIX Historical Price Data"
+required_field = "close"
+required = false
+current_csv_url = "https://cdn.cboe.com/api/global/us_indices/daily_prices/VIX_History.csv"
+legacy_xls_url = "https://cdn.cboe.com/resources/us/indices/vixarchive.xls"
+legacy_policy = "same_provider_reconciliation_and_missing_row_recovery_only"
+missing_policy = "invalidate_F3_no_fill"
+
+[long_line.risk_free]
+provider = "Kenneth R. French Data Library"
+dataset = "F-F Research Data Factors daily"
+source_unit = "percent_per_session"
+stored_unit = "simple_decimal_per_session"
+same_day_feature_allowed = false
+availability_policy = "next_xnys_open_research_proxy"
+missing_policy = "fatal_no_fill"
+
+[long_line.calendar]
+provider = "exchange_calendars"
+exchange = "XNYS"
+signal_rule = "last_XNYS_session_of_W-FRI_period_close"
+execution_rule = "next_XNYS_session_open"
+
+[pit_line]
+dataset_version = "round2-sp500-pit-norgate-1990-2026-v1-candidate"
+status = "blocked_external_dependency"
+earliest_requested_start = "1990-01-01"
+end = "2026-06-30"
+provider = "Norgate Data"
+minimum_package = "US Stocks Platinum"
+required_capability = "Historical Index Constituents"
+index = "S&P 500"
+python_package = "norgatedata"
+allow_modern_constituent_backfill = false
+allow_ticker_only_identity = false
+allow_cross_provider_row_fill = false
+raw_data_in_git = false
+
+[pit_line.coverage]
+per_signal_min = 0.98
+full_period_median_min = 0.99
+invalid_signal_fraction_max = 0.02
+invalid_consecutive_weeks_max = 4
+missing_week_policy = "paired_carry_forward_no_overlay_rebalance"
+
+[pit_line.price_breadth]
+mask = "pit_member_and_valid_adjusted_price_and_not_masked_untradable"
+may_run_without_volume = true
+
+[pit_line.volume_breadth]
+mask = "pit_member_and_valid_raw_adjusted_price_and_positive_finite_volume_and_not_masked_untradable_and_valid_split_provider_policy"
+normalize_per_security_before_aggregation = true
+raw_aggregate_volume_forbidden = true
+turnover_without_pit_shares_outstanding_forbidden = true
+failure_policy = "block_F5_only"
+
+[gates]
+spy_required_session_coverage = 1.0
+risk_free_required_session_coverage = 1.0
+target_path_required_session_coverage = 1.0
+vix_fill_allowed = false
+future_data_causality_required = true
+clean_build_repetitions = 2
+clean_build_canonical_hashes_must_match = true
+overlap_reconcile_start = "2013-01-02"
+overlap_reconcile_end = "2026-06-30"
+frozen_v3_mutation_allowed = false
+
+[outputs]
+long_required = [
+  "raw/source_ledger.json",
+  "raw/download_manifest.json",
+  "curated/market_daily.parquet",
+  "curated/vix_daily.parquet",
+  "curated/risk_free_daily.parquet",
+  "curated/decision_calendar.parquet",
+  "qa/gates.json",
+  "qa/overlap_reconciliation.parquet",
+  "qa/adjustment_events.parquet",
+  "manifest.json",
+  "FROZEN.json",
+]
+pit_required = [
+  "raw/source_ledger.json",
+  "raw/extraction_manifest.json",
+  "curated/security_master.parquet",
+  "curated/membership_intervals.parquet",
+  "curated/prices_daily.parquet",
+  "curated/breadth_input_coverage.parquet",
+  "qa/gates.json",
+  "qa/membership_audit.parquet",
+  "qa/price_volume_adjustment_audit.parquet",
+  "qa/overlap_reconciliation.parquet",
+  "manifest.json",
+  "FROZEN.json",
+]
+forbidden = ["features_weekly", "targets_weekly", "predictions", "nav", "model_scores", "strategy_report"]

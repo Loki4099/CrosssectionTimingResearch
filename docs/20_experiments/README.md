@@ -15,3 +15,9 @@
 | XS01 | 横截面风险调整 | 个股历史波动率 | 未在冻结数据上运行；九宫格外 |
 
 每组在进入执行波次时建立独立的 `design.md` 和 `report.md`。九宫格主网格现已全部完成，仍为 `formal_run_eligible=false` 的免费研究证据；G22 v1 因 provenance 文字不一致保留为未发布无效证据，有效运行是完整重跑的 v2。G23 的 LS 是首个跨总数和双频率门槛的平台结果，但不构成 long-only 或部署支持。XS01 为单独预注册的九宫格外补充实验。
+
+## Round 2 planning
+
+[第二轮防御时点信号筛选与模型比较计划 v1](../23_round2_defense_timing_signal_program_v1.md)已建立，但尚未形成机器预注册或实验组。它先扩展 SPY/T-bill 与 PIT 数据，再以三目标、统一周频仓位政策和受限模型筛选至多一个防御时点信号；通过后才迁移到 `mom_255_0`。在各阶段 `design.md` 与机器配置冻结前，不在本表登记为 planned experiment。
+
+- [R2A_DATA 数据扩展冻结设计](./R2A_DATA/design.md)（[采集日志](./R2A_DATA/acquisition_log.md)）：已完成 L 线首次 staging，SPY/RF required gate 通过；VIX optional F3 因官方源仍缺一个周信号而取消。许可确认和双构建哈希验收前不创建 FROZEN，也未计算任何 target/模型/策略结果。

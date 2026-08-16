@@ -21,6 +21,10 @@ All accepted results use one frozen free-research dataset and the common evaluat
 
 The full nine-cell action × risk-source main grid is complete. G22 v1 remains unpublished invalid audit evidence; its valid rerun is `g22-frozen-v3-v2`. G23 provides the first preregistered platform-level long-short result, without rescuing long-only or satisfying deployment criteria. All runs remain free-research evidence with `formal_run_eligible=false`; XS01 is a separate supplemental experiment, not an automatic continuation.
 
+## Next program (planning)
+
+[Round-two defense-timing plan v1](docs/23_round2_defense_timing_signal_program_v1.md) specifies data expansion, three-target signal diagnostics, a constrained model ladder, and a gated transfer to `mom_255_0`. It is a planning document, not current evidence, a machine preregistration, or run authorization.
+
 Compact machine-readable results are committed under [`results/published/`](results/published/). Daily NAV, trades, holdings, provider payloads, and price Parquet files are intentionally excluded from Git.
 
 ## Local runtime storage
