@@ -6,6 +6,7 @@ import numpy as np
 import pandas as pd
 
 from momentum_reversal.pipelines.round3b_persistence import (
+    _jsonable,
     build_four_week_attack_targets,
     build_persistence_confirmed_states,
 )
@@ -66,6 +67,12 @@ class Round3BPersistenceTests(unittest.TestCase):
         out = build_persistence_confirmed_states(price, predictions, daily)
         self.assertEqual(out.loc[0, "r3b_target_spy_weight"], 0.5)
         self.assertEqual(out.loc[1, "r3b_target_spy_weight"], 0.5)
+
+    def test_numpy_scalars_are_json_serializable_without_value_drift(self) -> None:
+        import json
+
+        payload = _jsonable({"passed": np.bool_(True), "score": np.float64(0.25)})
+        self.assertEqual(json.loads(json.dumps(payload)), {"passed": True, "score": 0.25})
 
 
 if __name__ == "__main__":

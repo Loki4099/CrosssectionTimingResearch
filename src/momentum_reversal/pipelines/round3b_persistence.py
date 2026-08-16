@@ -387,7 +387,7 @@ def build_r3b_development_bundle(
     model_metrics = _model_metrics(predictions, ledger, old_targets)
     mechanism = _mechanism(main_nav, control_nav, market)
     controls = _controls(main_nav, control_nav, avg_weight, vol_weight)
-    gate = _gate(model_metrics, main_nav, control_nav, summary_rows, mechanism)
+    gate = _jsonable(_gate(model_metrics, main_nav, control_nav, summary_rows, mechanism))
     status = (
         "completed_persistence_candidate"
         if gate["all_development_gates_pass"]
@@ -461,7 +461,11 @@ def build_r3b_development_bundle(
         "files": [_file_record(path, bundle) for path in sorted(written)],
     }
     manifest_path = bundle / "manifest.json"
-    manifest_path.write_text(json.dumps(manifest, sort_keys=True, indent=2) + "\n", encoding="utf-8", newline="\n")
+    manifest_path.write_text(
+        json.dumps(_jsonable(manifest), sort_keys=True, indent=2) + "\n",
+        encoding="utf-8",
+        newline="\n",
+    )
     return R3BResult(bundle, manifest_path, status, len(predictions), len(states))
 
 
@@ -661,3 +665,14 @@ def _build_provenance(root: Path) -> dict[str, Any]:
 
 def _file_record(path: Path, root: Path) -> dict[str, Any]:
     return {"path": path.relative_to(root).as_posix(), "size_bytes": path.stat().st_size, "sha256": sha256_file(path)}
+
+
+def _jsonable(value: Any) -> Any:
+    """Convert NumPy scalars recursively without changing numeric values."""
+    if isinstance(value, np.generic):
+        return value.item()
+    if isinstance(value, dict):
+        return {key: _jsonable(item) for key, item in value.items()}
+    if isinstance(value, (list, tuple)):
+        return [_jsonable(item) for item in value]
+    return value
