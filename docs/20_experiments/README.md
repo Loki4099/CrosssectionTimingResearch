@@ -20,4 +20,4 @@
 
 [第二轮防御时点信号筛选与模型比较计划 v1](../23_round2_defense_timing_signal_program_v1.md)已建立，但尚未形成机器预注册或实验组。它先扩展 SPY/T-bill 与 PIT 数据，再以三目标、统一周频仓位政策和受限模型筛选至多一个防御时点信号；通过后才迁移到 `mom_255_0`。在各阶段 `design.md` 与机器配置冻结前，不在本表登记为 planned experiment。
 
-- [R2A_DATA 数据扩展冻结设计](./R2A_DATA/design.md)（[采集日志](./R2A_DATA/acquisition_log.md)）：已完成 L 线首次 staging，SPY/RF required gate 通过；VIX optional F3 因官方源仍缺一个周信号而取消。许可确认和双构建哈希验收前不创建 FROZEN，也未计算任何 target/模型/策略结果。
+- [R2A_DATA 数据扩展冻结设计](./R2A_DATA/design.md)（[采集日志](./R2A_DATA/acquisition_log.md)）：免费 L 线 `r2a-long-free-20260816-v1` 已完成不可变 candidate 与双构建哈希验收；SPY/RF required gate 通过，VIX optional F3 因官方源缺一个周信号而取消。Norgate/PIT 增量线按用户决定暂缓；尚未计算任何 target、模型或策略结果。

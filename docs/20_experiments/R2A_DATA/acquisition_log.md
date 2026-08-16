@@ -53,3 +53,29 @@ Cboe 当前 CSV 原缺 1997-01-31、1997-11-26、1999-12-31。用同一 Cboe 官
 - 未计算 target、特征、模型、预测、NAV 或回测；
 - S/PIT 线因 `norgatedata`、本地数据库与订阅尚未就绪，保持 `blocked_external_dependency`；
 - 下一门是：确认源许可仅供本地非分发研究，然后对同一 source snapshot 做第二次 clean build，核对 canonical-content hashes 后才允许冻结 L 线 candidate。
+
+## 2026-08-16：免费 L 线 completed candidate
+
+- snapshot：`r2a-long-free-20260816-v1`
+- 本地路径：`C:\Users\17866\QuantWork\MomentumRversionMethod-runtime\data\round2\staging\R2A_DATA\r2a-long-free-20260816-v1`
+- 状态：`completed_candidate`；`formal_eligible=false`
+- 父 snapshot：`r2a-long-preflight-20260816-v1`；四个 raw source files 逐 bytes/SHA 验证后复用，未重新联网下载，父目录未修改。
+- 许可：`approved_for_local_research`，仅限本地、不分发研究；manifest 不含 Tiingo token。
+- 代码提交：`76c94430894c62ea12ef4ac6e2b7cfb52a0761aa`；构建时 workspace clean。
+- manifest SHA256：`071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c`
+- 16 文件 tree SHA256：`6985176ea1088d70c0191d6e24527dc7117e66ce81a1c0ece7ad7f539ed061ce`
+- `FROZEN.json` 的 manifest SHA、设计/配置/程序哈希、4 个代码文件哈希和 5 个依赖版本均已写入并匹配。
+
+### 完成门禁
+
+| 项目 | 结果 |
+|---|---|
+| SPY / RF / XNYS | 8,411 / 8,411 / 8,411，required 缺口均为 0 |
+| 周频 decision calendar | 1,744 行，1993-01-29 至 2026-06-26 的实际交易周 |
+| VIX | 8,409 行；仍缺 1997-01-31、1997-11-26，其中前者是周信号日，故 F3=`invalid_data/not_available` |
+| canonical clean rebuild | 四张表逐项等于 manifest；second-build hashes 为 market `2b999436...0edb`、RF `864b4fdb...8401`、VIX `aea00953...d2b6`、calendar `a7a67461...9cc6` |
+| manifest 文件记录 | 15/15 bytes 与 SHA256 全匹配；第 16 个文件为 `FROZEN.json` |
+| 禁止输出 | target / feature / model / prediction / NAV / backtest 均不存在 |
+| immutable rerun | 同 snapshot ID 在读数据前即 `FileExistsError`；candidate tree 不变 |
+
+R2A 免费 long-core 至此完成。S/PIT 线按用户决定继续暂缓；下一步只允许依据此 candidate 的 calendar 与 manifest 冻结 R2B/R2C machine preregistration，仍不得先查看 target 或模型表现。
