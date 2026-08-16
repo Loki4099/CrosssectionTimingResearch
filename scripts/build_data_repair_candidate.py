@@ -34,10 +34,11 @@ from momentum_reversal.data import (
     validate_canonical_prices,
 )
 from momentum_reversal.data.storage import sha256_file
+from momentum_reversal.runtime import resolve_runtime_paths
 
 
 ROOT = Path(__file__).resolve().parents[1]
-DATA_ROOT = ROOT / "data"
+DATA_ROOT = resolve_runtime_paths(cwd=ROOT).data_root
 PARENT_VERSION = "sp500-pit-yf-tiingo-prototype-2013warmup-2018eval-2026-v1"
 CANDIDATE_VERSION = "sp500-pit-free-research-2013warmup-2018eval-2026-v2-candidate"
 REPAIR_SNAPSHOT = "repair-v2-20260814"

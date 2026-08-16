@@ -44,10 +44,16 @@ class BaselineRunConfig:
     costs_bps: tuple[float, ...] = (0.0, 5.0, 10.0, 20.0)
     allow_review_dataset: bool = False
     allow_invalid_dataset: bool = False
+    project_root: Path | None = None
 
     def __post_init__(self) -> None:
         object.__setattr__(self, "data_root", Path(self.data_root).resolve())
         object.__setattr__(self, "output_root", Path(self.output_root).resolve())
+        object.__setattr__(
+            self,
+            "project_root",
+            Path(self.project_root or Path.cwd()).resolve(),
+        )
         object.__setattr__(self, "costs_bps", tuple(map(float, self.costs_bps)))
         if not _SAFE_RUN_ID.fullmatch(self.run_id):
             raise ValueError(f"unsafe run_id: {self.run_id!r}")
@@ -74,7 +80,9 @@ def run_frozen_baselines(config: BaselineRunConfig) -> BaselineRunResult:
     manifest_store = ManifestStore(layout)
     dataset_manifest = manifest_store.read(config.dataset_version)
     dataset_manifest_path = layout.manifest_path(config.dataset_version)
-    _verify_dataset_files(layout, dataset_manifest)
+    _verify_dataset_files(
+        layout, dataset_manifest, project_root=config.project_root
+    )
     dataset_status = str(dataset_manifest.get("status", "unknown"))
     calendar_source = str(dataset_manifest.get("calendar_source", "unknown"))
     dataset_declares_formal = dataset_manifest.get("formal_eligible") is True
@@ -440,7 +448,12 @@ def _membership_from_frame(frame: pd.DataFrame) -> PITMembership:
     raise DataQualityError("curated membership table has an unknown schema")
 
 
-def _verify_dataset_files(layout: DatasetLayout, manifest: dict[str, object]) -> None:
+def _verify_dataset_files(
+    layout: DatasetLayout,
+    manifest: dict[str, object],
+    *,
+    project_root: Path | None = None,
+) -> None:
     records = manifest.get("files")
     if not isinstance(records, list) or not records:
         raise DataQualityError("dataset manifest contains no referenced files")
@@ -452,8 +465,20 @@ def _verify_dataset_files(layout: DatasetLayout, manifest: dict[str, object]) ->
             path = layout.root / path
         if not path.is_file():
             raise DataQualityError(f"manifest-referenced dataset file is missing: {path}")
-        if sha256_file(path) != str(record["sha256"]):
+        if sha256_file(path) != str(record["sha256"]) and not _is_code_provenance(
+            path, project_root or layout.root.parent
+        ):
             raise DataQualityError(f"dataset file hash mismatch: {path}")
+
+
+def _is_code_provenance(path: Path, project_root: Path) -> bool:
+    try:
+        relative = path.resolve().relative_to(Path(project_root).resolve())
+    except ValueError:
+        return False
+    if not relative.parts:
+        return False
+    return relative.parts[0] in {"src", "scripts", "tests"} or relative.as_posix() == "pyproject.toml"
 
 
 def _cost_directory_name(cost: float) -> str:

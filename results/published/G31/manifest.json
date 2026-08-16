@@ -1,0 +1,216 @@
+{
+  "accounting": {
+    "long_only_cash": "unallocated cash compounds at daily T-bill RF",
+    "long_short_collateral": "cash compounds at daily T-bill RF",
+    "risk_allocation_timing": "signal close determines next-open target and holds until next rebalance"
+  },
+  "artifact_contract": {
+    "diagnostics": [
+      "group_id",
+      "strategy_id",
+      "portfolio_mode",
+      "variant_id",
+      "cost_bps",
+      "borrow_fee_annual",
+      "scope",
+      "diagnostic",
+      "value"
+    ],
+    "holdings": [
+      "group_id",
+      "strategy_id",
+      "portfolio_mode",
+      "variant_id",
+      "cost_bps",
+      "borrow_fee_annual",
+      "signal_date",
+      "execution_date",
+      "sid",
+      "target_weight"
+    ],
+    "nav": [
+      "group_id",
+      "strategy_id",
+      "portfolio_mode",
+      "variant_id",
+      "cost_bps",
+      "borrow_fee_annual",
+      "date",
+      "nav",
+      "daily_return",
+      "factor_excess_return",
+      "derived_gross2_factor_return",
+      "long_value",
+      "short_value",
+      "cash_value",
+      "long_exposure",
+      "short_exposure",
+      "gross_exposure",
+      "net_exposure",
+      "short_borrow_fee_amount"
+    ],
+    "rebalances": [
+      "group_id",
+      "strategy_id",
+      "portfolio_mode",
+      "variant_id",
+      "cost_bps",
+      "borrow_fee_annual",
+      "signal_date",
+      "execution_date",
+      "pretrade_long_exposure",
+      "pretrade_short_exposure",
+      "pretrade_gross_exposure",
+      "pretrade_net_exposure",
+      "requested_long_exposure",
+      "requested_short_exposure",
+      "requested_gross_exposure",
+      "requested_net_exposure",
+      "target_long_exposure",
+      "target_short_exposure",
+      "target_gross_exposure",
+      "target_net_exposure",
+      "target_cash_weight",
+      "l1_turnover",
+      "one_way_turnover",
+      "cost_amount",
+      "execution_status",
+      "unfilled_selected_count",
+      "unfilled_selected_sids",
+      "missing_target_count",
+      "missing_target_sids",
+      "missing_existing_count",
+      "missing_existing_sids",
+      "terminal_liquidation_count",
+      "terminal_liquidation_sids",
+      "terminal_liquidation_fallback_dates"
+    ],
+    "trades": [
+      "group_id",
+      "strategy_id",
+      "portfolio_mode",
+      "variant_id",
+      "cost_bps",
+      "borrow_fee_annual",
+      "execution_date",
+      "sid",
+      "pretrade_weight",
+      "target_weight",
+      "trade_weight"
+    ]
+  },
+  "comparison_rows": 1440,
+  "counts": {
+    "core_strategies": 36,
+    "main_scenarios": 288,
+    "primary_q4_rebalances": 2664,
+    "primary_scenarios": 36
+  },
+  "created_at_utc": "2026-08-14T14:43:12.660049+00:00",
+  "dataset": {
+    "manifest_sha256": "65b628d604f7e2f456e8d1d43a3c3e88b6bd3e86cc1c9455cdcfe28b856a3ec7",
+    "research_tier": "free_research_candidate",
+    "review_override_explicit": true,
+    "status": "review"
+  },
+  "dataset_version": "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate",
+  "evaluation": {
+    "end_close": "2026-06-30",
+    "sessions": 2134,
+    "start_open": "2018-01-02"
+  },
+  "execution": {
+    "cost_scenarios": "exact homogeneous-NAV replay from zero-cost event paths",
+    "event_paths_simulated": 72,
+    "reported_scenarios": 288,
+    "worker_processes": 4
+  },
+  "files": [
+    {
+      "bytes": 17271,
+      "path": "artifacts/diagnostics.parquet",
+      "sha256": "ad90e15f189cdb7b48ca3e90f4fb1833f297548af6b01a590bb7ea9c2809a0b3"
+    },
+    {
+      "bytes": 646375,
+      "path": "artifacts/holdings.parquet",
+      "sha256": "b3a5bfb8978708cb83ac69dc2026bcb825af20d38bc16173268d6232f32e5c06"
+    },
+    {
+      "bytes": 46673391,
+      "path": "artifacts/nav.parquet",
+      "sha256": "f803bae0b6c4691a9eb048a6a79fd64461f57624b8e9bea1be97f80fbefa8eb4"
+    },
+    {
+      "bytes": 1528468,
+      "path": "artifacts/rebalances.parquet",
+      "sha256": "4fa045fded40ea19eaaf4d2a9d9278c7d907609065a8fd9d4ee4c0b56d4e79c5"
+    },
+    {
+      "bytes": 7831948,
+      "path": "artifacts/trades.parquet",
+      "sha256": "07062f477f5bfab8bb40f835140398e00028c19fa08ad38774a591727b7033cd"
+    },
+    {
+      "bytes": 256432,
+      "path": "comparison.csv",
+      "sha256": "2384cdb9316e13cd722e3cbf65685571043f49b3616f75f447a92047e19a7cf6"
+    },
+    {
+      "bytes": 3962,
+      "path": "config_resolved.toml",
+      "sha256": "67a100be69079c4e4cdda51d2a092b1151ae83d69cfb0cb31c545a9a404ea468"
+    },
+    {
+      "bytes": 247910,
+      "path": "summary.csv",
+      "sha256": "997dd912cb038af1423d9372568ff9219f58d20b8273cf037a4cf9e438bf644d"
+    }
+  ],
+  "formal_blockers": [
+    "SPY total-return proxy instead of official S&P 500 Total Return index",
+    "dataset_status_review",
+    "free Yahoo/Tiingo coverage with documented unavailable securities",
+    "free public PIT membership",
+    "systematic_G31_bundle_is_prototype"
+  ],
+  "formal_run_eligible": false,
+  "group_id": "G31",
+  "limitations": [
+    "free-research dataset and SPY total-return proxy",
+    "strict Q4 derisking is a frozen mechanism test, not a deployment claim"
+  ],
+  "portfolio_modes": [
+    "long_only",
+    "long_short"
+  ],
+  "reference_g00": {
+    "comparison_rows": 1440,
+    "manifest_sha256": "8b875d4bcbb7b178b309c7b1edaa7dce9bbb15090e68b619fb045cec35411c66",
+    "run_id": "g00-frozen-v3-v1"
+  },
+  "regime": {
+    "evaluation_daily_q4_fraction": 0.2717900656044986,
+    "hysteresis": false,
+    "minimum_signal_allocation": 0.1639833301025106,
+    "normal_state_allocation": 1.0,
+    "q4_scale_rule": "min(1, lagged_q75 / current_RV21)",
+    "risk_source": "SPY RV21",
+    "signal_q4_fraction": 0.280561122244489,
+    "threshold": "strictly greater than lagged rolling 756-session q75"
+  },
+  "research_tier": "prototype",
+  "run_id": "g31-frozen-v3-v1",
+  "runtime_code": {
+    "engine_sha256": "cafcbc127d11c3786b8f12d30a1b68c10fdb2ddde7eb3b34ff781bd0f0d65c3e",
+    "g21_regime_helper_sha256": "50cdd8c7446bde7a6b1e817f4fb4994088b735d49281a020d020703057596c1c",
+    "g31_sha256": "716ae21d35c3aeb69f3ccfa53fffe405db9bda8b9ca59b54f01b638c30f9693e"
+  },
+  "schema_version": "momentum_reversal.experiment_manifest.v1",
+  "spec_id": "G31",
+  "spec_sha256": "67a100be69079c4e4cdda51d2a092b1151ae83d69cfb0cb31c545a9a404ea468",
+  "status": "completed",
+  "strategy_count": 36,
+  "summary_rows": 288,
+  "summary_schema": "momentum_reversal.experiment_summary.v1"
+}

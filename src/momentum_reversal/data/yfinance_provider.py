@@ -5,11 +5,12 @@ from __future__ import annotations
 from collections.abc import Callable
 import os
 from pathlib import Path
-import tempfile
 from typing import Any
 
 import numpy as np
 import pandas as pd
+
+from momentum_reversal.runtime import resolve_runtime_paths
 
 from .provider import AssetRef, PriceRequest
 from .schema import CANONICAL_PRICE_COLUMNS, DataSchemaError, canonicalize_prices
@@ -50,8 +51,10 @@ class YFinanceProvider:
         self.repair = repair
         self.threads = threads
         configured = cache_dir or os.environ.get("YFINANCE_CACHE_DIR")
-        self.cache_dir = Path(configured) if configured else (
-            Path(tempfile.gettempdir()) / "momentum_reversal_yfinance_cache"
+        self.cache_dir = (
+            Path(configured)
+            if configured
+            else resolve_runtime_paths().cache_root / "yfinance"
         )
         self._cache_configured = False
 

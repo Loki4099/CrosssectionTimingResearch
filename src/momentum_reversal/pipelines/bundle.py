@@ -183,6 +183,7 @@ def write_experiment_bundle(
     artifacts: Mapping[str, pd.DataFrame] | None = None,
     status: str = "completed",
     extra_manifest: Mapping[str, object] | None = None,
+    resolved_config_toml: str | None = None,
 ) -> BundleWriteResult:
     """Write one immutable group run using a staging directory and atomic rename.
 
@@ -193,6 +194,11 @@ def write_experiment_bundle(
 
     if status not in {"prepared", "completed"}:
         raise ValueError("bundle status must be prepared or completed")
+    if resolved_config_toml is not None:
+        if not isinstance(resolved_config_toml, str):
+            raise TypeError("resolved_config_toml must be a string")
+        if not resolved_config_toml or not resolved_config_toml.endswith("\n"):
+            raise ValueError("resolved_config_toml must be non-empty and end with newline")
     _validate_columns(summary, SUMMARY_COLUMNS, "summary")
     _validate_columns(comparison, COMPARISON_COLUMNS, "comparison")
     _validate_identity(summary, context)
@@ -220,7 +226,13 @@ def write_experiment_bundle(
         artifacts_dir = staging / "artifacts"
         artifacts_dir.mkdir()
         (staging / "config_resolved.toml").write_text(
-            context.group.resolved_toml(), encoding="utf-8", newline="\n"
+            (
+                context.group.resolved_toml()
+                if resolved_config_toml is None
+                else resolved_config_toml
+            ),
+            encoding="utf-8",
+            newline="\n",
         )
         summary.to_csv(staging / "summary.csv", index=False)
         comparison.to_csv(staging / "comparison.csv", index=False)

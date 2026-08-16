@@ -1,0 +1,12 @@
+schema_version = 1
+
+# Copy this file to config/runtime.local.toml and edit the path.  The local
+# file is ignored by Git.  Large data, complete results, cache, and logs will
+# be placed under this root; source code stays in the repository.
+runtime_root = 'C:\Users\YOUR_NAME\QuantWork\CrosssectionTimingResearch-runtime'
+
+# Optional overrides, resolved relative to runtime_root when not absolute:
+# data_root = 'data'
+# results_root = 'results'
+# cache_root = 'cache'
+# log_root = 'logs'

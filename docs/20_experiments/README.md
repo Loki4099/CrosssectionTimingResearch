@@ -3,15 +3,15 @@
 | 组 | 动作 | 风险变量 | 当前阶段 |
 |---|---|---|---|
 | [G00](./G00_baseline/design.md)（[报告](./G00_baseline/report.md)） | 裸策略控制组 | 无 | 已在冻结 v3 数据完成并通过 free-research 验收 |
-| G11 | 连续约束 | SPY 历史波动率 | 未在冻结数据上运行 |
-| G12 | 连续约束 | book 历史波动率 | 未在冻结数据上运行 |
-| G13 | 连续约束 | book 未来预测波动率 | 未在冻结数据上运行 |
+| [G11](./G11_spy_continuous_scale/design.md)（[报告](./G11_spy_continuous_scale/report.md)） | 连续约束 | SPY 历史波动率 | 已完成：long-only H1 0/18 失败、CAGR/Sharpe 18/18 下降且 MDD 18/18 改善；long-short 机制在全部成本/借券压力场景中稳健，但绝对表现弱 |
+| [G12](./G12_book_hist_continuous_scale/design.md)（[报告](./G12_book_hist_continuous_scale/report.md)） | 连续约束 | book 历史波动率 | 已完成：LO H1 0/18 失败、CAGR/Sharpe 18/18 下降、MDD 16/18 改善且持续过度保险；LS 17/18 主场景及 204/216 压力场景同时改善 Sharpe/MDD，但绝对表现弱 |
+| [G13](./G13_book_forecast_continuous_scale/design.md)（[报告](./G13_book_forecast_continuous_scale/report.md)） | 连续约束 | book 未来预测波动率 | 已完成：LO H1 0/18 失败，CAGR/Sharpe 18/18 下降、MDD 18/18 改善且持续过度保险；LS 12/18 主场景与 132/216 压力场景同时改善 Sharpe/MDD，但成本/借券敏感且绝对表现弱 |
 | [G21](./G21_spy_reversal/design.md)（[报告](./G21_spy_reversal/report.md)） | 高波反转 | SPY 历史波动率 | 已完成：long-only 失败负对照，WML 机制成立但绝对收益弱 |
-| G22 | 高波反转 | book 历史波动率 | 未在冻结数据上运行 |
-| G23 | 高波反转 | book 未来预测波动率 | 未在冻结数据上运行 |
-| G31 | 高波减仓 | SPY 历史波动率 | 未在冻结数据上运行 |
-| G32 | 高波减仓 | book 历史波动率 | 未在冻结数据上运行 |
-| G33 | 高波减仓 | book 未来预测波动率 | 未在冻结数据上运行 |
+| [G22](./G22_book_hist_reversal/design.md)（[报告](./G22_book_hist_reversal/report.md)） | 高波反转 | book 历史波动率 | 已完成：LO 4/36 联合改善、H1 失败；LS 23/36 且月频 8/18，未过平台门槛，周频为成本敏感局部机制 |
+| [G23](./G23_book_forecast_reversal/design.md)（[报告](./G23_book_forecast_reversal/report.md)） | 高波反转 | book 未来预测波动率 | 已完成：LO 0/36 失败；LS 33/36、月15/18、周18/18 通过平台门槛，但成本/借券敏感且绝对表现弱 |
+| [G31](./G31_spy_derisk/design.md)（[报告](./G31_spy_derisk/report.md)） | 高波减仓 | SPY 历史波动率 | 已完成：long-only 回撤 18/18 改善但 H1 失败；long-short 机制为正、绝对表现弱 |
+| [G32](./G32_book_hist_derisk/design.md)（[报告](./G32_book_hist_derisk/report.md)） | 高波减仓 | book 历史波动率 | 已完成：long-only H1 失败、CAGR/Sharpe 18/18 下降且 MDD 混合；long-short 17/18 同时改善 Sharpe/MDD，压力下机制稳健但绝对表现弱 |
+| [G33](./G33_book_forecast_derisk/design.md)（[报告](./G33_book_forecast_derisk/report.md)） | 高波减仓 | book 未来预测波动率 | 已完成：long-only H1 0/18 失败、CAGR/Sharpe 18/18 下降且 MDD 18/18 改善；long-short 10/18 同时改善 Sharpe/MDD，MDD 改善稳健，Sharpe 对成本/借券费敏感且绝对表现弱 |
 | XS01 | 横截面风险调整 | 个股历史波动率 | 未在冻结数据上运行；九宫格外 |
 
-每组在进入执行波次时建立独立的 `design.md` 和 `report.md`。尚未执行的组不创建空报告，以免把计划误认为结果。根据 G21，long-only 下一优先级为 G31 高波减仓；WML 继续作为论文机制诊断，不成为个人投资主线。
+每组在进入执行波次时建立独立的 `design.md` 和 `report.md`。九宫格主网格现已全部完成，仍为 `formal_run_eligible=false` 的免费研究证据；G22 v1 因 provenance 文字不一致保留为未发布无效证据，有效运行是完整重跑的 v2。G23 的 LS 是首个跨总数和双频率门槛的平台结果，但不构成 long-only 或部署支持。XS01 为单独预注册的九宫格外补充实验。

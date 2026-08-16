@@ -1,0 +1,242 @@
+{
+  "artifact_contract": {
+    "diagnostics": [
+      "group_id",
+      "strategy_id",
+      "portfolio_mode",
+      "variant_id",
+      "cost_bps",
+      "borrow_fee_annual",
+      "scope",
+      "diagnostic",
+      "value"
+    ],
+    "holdings": [
+      "group_id",
+      "strategy_id",
+      "portfolio_mode",
+      "variant_id",
+      "cost_bps",
+      "borrow_fee_annual",
+      "signal_date",
+      "execution_date",
+      "sid",
+      "target_weight"
+    ],
+    "nav": [
+      "group_id",
+      "strategy_id",
+      "portfolio_mode",
+      "variant_id",
+      "cost_bps",
+      "borrow_fee_annual",
+      "date",
+      "nav",
+      "daily_return",
+      "factor_excess_return",
+      "derived_gross2_factor_return",
+      "long_value",
+      "short_value",
+      "cash_value",
+      "long_exposure",
+      "short_exposure",
+      "gross_exposure",
+      "net_exposure",
+      "short_borrow_fee_amount"
+    ],
+    "rebalances": [
+      "group_id",
+      "strategy_id",
+      "portfolio_mode",
+      "variant_id",
+      "cost_bps",
+      "borrow_fee_annual",
+      "signal_date",
+      "execution_date",
+      "pretrade_long_exposure",
+      "pretrade_short_exposure",
+      "pretrade_gross_exposure",
+      "pretrade_net_exposure",
+      "requested_long_exposure",
+      "requested_short_exposure",
+      "requested_gross_exposure",
+      "requested_net_exposure",
+      "target_long_exposure",
+      "target_short_exposure",
+      "target_gross_exposure",
+      "target_net_exposure",
+      "target_cash_weight",
+      "l1_turnover",
+      "one_way_turnover",
+      "cost_amount",
+      "execution_status",
+      "unfilled_selected_count",
+      "unfilled_selected_sids",
+      "missing_target_count",
+      "missing_target_sids",
+      "missing_existing_count",
+      "missing_existing_sids",
+      "terminal_liquidation_count",
+      "terminal_liquidation_sids",
+      "terminal_liquidation_fallback_dates"
+    ],
+    "trades": [
+      "group_id",
+      "strategy_id",
+      "portfolio_mode",
+      "variant_id",
+      "cost_bps",
+      "borrow_fee_annual",
+      "execution_date",
+      "sid",
+      "pretrade_weight",
+      "target_weight",
+      "trade_weight"
+    ]
+  },
+  "comparison_rows": 2880,
+  "counts": {
+    "comparison_rows": 2880,
+    "core_strategies": 72,
+    "daily_regime_rows": 217296,
+    "main_scenarios": 576,
+    "nav_rows": 1229184,
+    "primary_scenarios": 72
+  },
+  "created_at_utc": "2026-08-16T01:37:38.295933+00:00",
+  "dataset": {
+    "manifest_sha256": "65b628d604f7e2f456e8d1d43a3c3e88b6bd3e86cc1c9455cdcfe28b856a3ec7",
+    "research_tier": "free_research_candidate",
+    "review_override_explicit": true,
+    "status": "review"
+  },
+  "dataset_version": "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate",
+  "evaluation": {
+    "end_close": "2026-06-30",
+    "sessions": 2134,
+    "start_open": "2018-01-02"
+  },
+  "execution": {
+    "cost_scenarios": "exact homogeneous-NAV replay from one zero-cost event path per borrow-fee scenario",
+    "event_paths_simulated": 144,
+    "reported_scenarios": 576,
+    "worker_processes": 4
+  },
+  "files": [
+    {
+      "bytes": 7921551,
+      "path": "artifacts/diagnostics.parquet",
+      "sha256": "acf7fcaa608ad9e7d22e5d10524635ed3196ffac10c5fd7bf452ad2778010c67"
+    },
+    {
+      "bytes": 1190846,
+      "path": "artifacts/holdings.parquet",
+      "sha256": "a09a44e64d15c8f4d2f5e37c41ae5e545d840f422aa77f50d274c94b7228becc"
+    },
+    {
+      "bytes": 149767594,
+      "path": "artifacts/nav.parquet",
+      "sha256": "da9b4f4abdcdde9126fc20c9c8faa927473cbb4e0df9ae5886d05db8b8f8a2c9"
+    },
+    {
+      "bytes": 3082667,
+      "path": "artifacts/rebalances.parquet",
+      "sha256": "e6e7fffe24709ec5cf4452bdc38a3f3b6f4c189e9fb722e3cc5d436f3fd79429"
+    },
+    {
+      "bytes": 15283080,
+      "path": "artifacts/trades.parquet",
+      "sha256": "d1bebd09ce7d8e0626e9d454786b1db2edd4d21179406761bdc13b8b8dcdbed5"
+    },
+    {
+      "bytes": 531024,
+      "path": "comparison.csv",
+      "sha256": "7d1236cbc8148c59fd2394bbc4989eb7049c3961074a531a9f5b7976bd322d92"
+    },
+    {
+      "bytes": 7908,
+      "path": "config_resolved.toml",
+      "sha256": "182b56783cd9950532c8df5dee4787dcd32922d1651ed4e7a000de198d5d8a28"
+    },
+    {
+      "bytes": 444441,
+      "path": "summary.csv",
+      "sha256": "51babe89d699b9250df963402a0f811106c02d8f934adba1c8c3b9733e506674"
+    }
+  ],
+  "formal_blockers": [
+    "SPY total-return proxy instead of official S&P 500 Total Return index",
+    "dataset_status_review",
+    "free Yahoo/Tiingo coverage with documented unavailable securities",
+    "free public PIT membership",
+    "systematic_G23_bundle_is_prototype"
+  ],
+  "formal_run_eligible": false,
+  "group_id": "G23",
+  "limitations": [
+    "free-research dataset; formal_run_eligible is false",
+    "strict Q4 direct reversal is a mechanism test, not a deployment claim",
+    "G12/G21/G32 may only be used after completion for descriptive interpretation"
+  ],
+  "portfolio_modes": [
+    "long_only",
+    "long_short"
+  ],
+  "preregistration": {
+    "design_path": "docs/20_experiments/G23_book_forecast_reversal/design.md",
+    "design_sha256": "1f3c3ea2c9079f6e554acb8643c4875b4ebfbaf03443fdf176578352fbe3a077",
+    "freeze_record_sha256": "a3ef9ee72cd3d535c2e5bf06b3d1f520c54667a8552891543ee0f9ca50488296",
+    "group_config_sha256": "29a79c3e57a15ce73dda3c6ebe5efc39b4b50ec210ea6c0d3ff85456499146c8",
+    "program_sha256": "11394af02fa028abe4a11434874be31e33e692f55feb73e9236da9bf8d07d413"
+  },
+  "reference_g00": {
+    "comparison_rows": 2880,
+    "manifest_sha256": "8b875d4bcbb7b178b309c7b1edaa7dce9bbb15090e68b619fb045cec35411c66",
+    "role": "only formal reference and only prior experiment runtime input",
+    "run_id": "g00-frozen-v3-v1"
+  },
+  "research_tier": "prototype",
+  "risk_rule": {
+    "allocation_scaling": false,
+    "annualization": "sqrt(252 * EWMA variance)",
+    "daily_q4_fraction": 0.22158714380384362,
+    "ewma_decay": 0.94,
+    "forecast_horizon_sessions": 21,
+    "forecast_model": "EWMA adjust=False",
+    "hysteresis": false,
+    "naked_book_borrow_fee_annual": 0.0,
+    "naked_book_cash_return": 0.0,
+    "naked_book_cost_bps": 0.0,
+    "naked_book_history_start": "2014-06-30",
+    "q1_q3_action": "unchanged matching G00 momentum ranking",
+    "q4_action": "pure direct reversal ranking",
+    "q4_rebalance_rows": 5788,
+    "q4_rule": "current forecast volatility strictly greater than lagged q75",
+    "quartile_current_observation_excluded": true,
+    "quartile_history_sessions": 756,
+    "reversal_lookbacks": [
+      5,
+      20
+    ],
+    "risk_source": "matching G00 naked-book causal EWMA forecast"
+  },
+  "run_id": "g23-frozen-v3-v1",
+  "runtime_code": {
+    "bundle_sha256": "0bd30300892a2f2772e961c04a100dbbe34d04b04bf207af9dcac4c884133619",
+    "engine_sha256": "cafcbc127d11c3786b8f12d30a1b68c10fdb2ddde7eb3b34ff781bd0f0d65c3e",
+    "g00_sha256": "86c32f5a1bac8fda8b23f54ee852b207abb97a30f04dc8aff96f4314977e8e81",
+    "g21_sha256": "50cdd8c7446bde7a6b1e817f4fb4994088b735d49281a020d020703057596c1c",
+    "g23_sha256": "49fccee6850e42b9b0ae8d41d7096def17bfdbc6293229536d44304da43f3023",
+    "g32_sha256": "995478452a8f4c6be842991e24ac02f8d675a7d892724f2596e4800df63e7ea3",
+    "g33_sha256": "e433089b14ad6d70f2cd25b8d55b5f4e53eb7464fc960570e4578186ca03628e",
+    "regime_sha256": "c54e4366cd75ca68d5f4f50e734fe06bca6999ace6bc445d0025c6fe6d2acf09",
+    "run_context_sha256": "2097cee6aa2d37686ad63bed0ab5176e6773494b22c136ac07ad77ac7a5150b7"
+  },
+  "schema_version": "momentum_reversal.experiment_manifest.v1",
+  "spec_id": "G23",
+  "spec_sha256": "71b72d6c560d0380e2a8669846ae504e9c69c96fd228438489d7f593c7da0812",
+  "status": "completed",
+  "strategy_count": 72,
+  "summary_rows": 576,
+  "summary_schema": "momentum_reversal.experiment_summary.v1"
+}
