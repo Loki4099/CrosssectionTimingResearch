@@ -131,7 +131,7 @@ net_timing      = gross_timing - incremental_cost_vs_ALWAYS_SPY
 ### H4：不由单一危机或终点制造
 
 - 正年度贡献最大值 / 正年度贡献之和 <=50%；
-- 逐一删除 dot-com、GFC、COVID selloff 后，相对同平均暴露 timing value 仍 >0；
+- 按 [amendment 1](./24_round3_asymmetric_defense_reentry_program_v1_amendment_1.md) 逐一删除 development 内实际存在的 GFC、COVID selloff 后，相对同平均暴露 timing value 仍 >0；dot-com 位于 2005 评价起点之前，不参与硬门；
 - 截止 2021-06-30 的终点敏感性不翻为负。
 
 任一必要门失败即 `completed_no_reentry_candidate`，禁止解封锁箱、改均线、改确认天数、改仓位、追加成交量、替换信号或直接迁移到 `mom_255_0`。

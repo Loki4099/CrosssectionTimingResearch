@@ -4,9 +4,10 @@
   "frozen_at_local_date": "2026-08-16",
   "research_scope": "single development candidate; no parameter search",
   "files": {
-    "config/experiments/round3/program.toml": "39d90d675b8b736cd824cc77f49d324763986dac12c14f5a4e370f44d426fd07",
+    "config/experiments/round3/program.toml": "0b2f129386f4ae43b72dfcd50b5c5b0c2377ed62c779dd04de1172b681aa0312",
     "docs/20_experiments/R3A_asymmetric_reentry/design.md": "dfa9be7c57b917665b5b210218cef20999becae7b486a3b45563295cfbf3d38b",
-    "docs/24_round3_asymmetric_defense_reentry_program_v1.md": "72ea262ae645195ff642463cd4dc3e2a97eb4feb670b8a97e694f9783393796e"
+    "docs/24_round3_asymmetric_defense_reentry_program_v1.md": "b5c9c0a8e48fd84da24d4614a99dc434b896f18bba536659115255edded32f22",
+    "docs/24_round3_asymmetric_defense_reentry_program_v1_amendment_1.md": "043860622c868da14682ece9a64df64c1b7794784bc688d555b1351010efa71e"
   },
   "inputs": {
     "r2a_manifest_sha256": "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c",

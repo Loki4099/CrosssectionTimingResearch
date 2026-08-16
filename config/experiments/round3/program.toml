@@ -60,7 +60,7 @@ minimum_positive_year_fraction = 0.60
 minimum_symmetric_mdd_gain_retention = 0.75
 maximum_positive_year_concentration = 0.50
 endpoint_sensitivity_date = "2021-06-30"
-development_crises = ["dotcom", "gfc", "covid_selloff"]
+development_crises = ["gfc", "covid_selloff"]
 
 [crisis_windows]
 dotcom = ["2000-03-24", "2002-10-09"]
