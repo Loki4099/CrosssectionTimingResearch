@@ -6,6 +6,16 @@
 
 G23 是主网格最后一格。LO 为 0/36 三项联合改善，Sharpe 0/36、MDD 0/36 改善，H1-LO 明确失败。LS 为 33/36 三项联合改善，月频 15/18、周频 18/18，且三项中位 delta 全正，**通过预注册平台门槛**；但最高 20bps+3% 压力组合降至 23/36，绝对均值也只有 CAGR 5.52%、Sharpe 0.252，因此结论是“LS 反转机制获得平台支持，但仍成本/借券敏感且不构成部署建议”。
 
+## 主场景曲线诊断
+
+下图只使用冻结 completed bundle 的 **primary 主成本场景**（月频 5bps、周频 10bps；long-short 年化借券费 1%）。主动财富为严格同键的 `G23 / G00 - 1`；long-short 面板中的 SPY 只作市场环境背景，不是同风险基准。
+
+![G23 long-only 代表路径：净值、主动财富与反转状态](../../figures/round1/G23/representative-long-only.png)
+
+![G23 long-short 代表路径：净值、主动财富与反转状态](../../figures/round1/G23/representative-long-short.png)
+
+图表是 completed bundle 上的只读诊断，用于观察路径与动作切换，不改变预注册假设、门槛或正式判定。
+
 ## 冻结输入与不可变证据
 
 下列 G23 config SHA 是运行时冻结锚。运行完成后仅允许把当前台账状态改为 completed，不反写 bundle。
@@ -156,3 +166,12 @@ G13/G21/G22/G33 均不是 G23 runtime input，以下不改变正式判定。
 - **部署：不通过。** LO 联合 0/36；LS 绝对表现仍弱且最高压力组合跌破平台门槛。
 
 至此九宫格主网格全部完成。下一项 XS01 属于九宫格外补充实验，必须另行预注册；本报告不自动启动它。
+
+## 图表附录
+
+全部 primary 路径按频率分面，供逐策略检查：
+
+- [Long-only 月频 atlas](../../figures/round1/G23/atlas-long-only-monthly.png)
+- [Long-only 周频 atlas](../../figures/round1/G23/atlas-long-only-weekly.png)
+- [Long-short 月频 atlas](../../figures/round1/G23/atlas-long-short-monthly.png)
+- [Long-short 周频 atlas](../../figures/round1/G23/atlas-long-short-weekly.png)

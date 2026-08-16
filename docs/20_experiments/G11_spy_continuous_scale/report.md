@@ -6,6 +6,16 @@
 
 连续 15% 目标缩放把 long-only 的最大回撤在 18/18 个主场景中压低，但 CAGR 与 T-bill 超额 Sharpe 也在 18/18 个场景下降，Sharpe 与 MDD 同时改善为 **0/18**，预注册 H1 因而失败。Long-short/WML 则在 18/18 个主场景、乃至全部 216/216 个成本×借券压力场景中同时改善 Sharpe 与 MDD，机制非常稳定；但主场景绝对 CAGR/Sharpe 仅为 4.77%/0.194，仍是弱的机制诊断。事后动作层比较中，G11 相对 G31 的 LO CAGR/Sharpe/MDD 更差，LS 则更好；这不能改写正式 G11-G00 判定。18 个 LO 路径的数值部署联合通过为 **0/18**，且 `formal_run_eligible=false`。
 
+## 主场景曲线诊断
+
+下图只使用冻结 completed bundle 的 **primary 主成本场景**（月频 5bps、周频 10bps；long-short 年化借券费 1%）。主动财富为严格同键的 `G11 / G00 - 1`；long-short 面板中的 SPY 只作市场环境背景，不是同风险基准。
+
+![G11 long-only 代表路径：净值、主动财富与风险暴露](../../figures/round1/G11/representative-long-only.png)
+
+![G11 long-short 代表路径：净值、主动财富与风险暴露](../../figures/round1/G11/representative-long-short.png)
+
+图表是 completed bundle 上的只读诊断，用于观察路径和暴露，不改变预注册假设、门槛或正式判定。
+
 ## 运行与审计有效性
 
 - 运行包含 36 条核心路径、72 条零成本事件路径、288 个成本/借券场景、36 个主场景和 1,440 行同场景 G00 比较；long-only/long-short 分别为 72/216 个报告场景。
@@ -425,3 +435,12 @@ WML 不要求跑赢 SPY，但仍须接受绝对质量审视：主场景 CAGR 4.7
 - 危机窗口是冻结的描述性切片；九路径均值不是可交易的二级组合。Episode 也不是独立样本或新通过门槛。
 - 免费 PIT、SPY 总回报代理、固定线性成本和统一借券费仍是 formal blockers。只有机构级永久证券标识、官方总回报基准、真实冲击/借券数据重新验收后，才可能讨论部署。
 - 完整 NAV、风险状态、持仓、交易和诊断只保留在本地 runtime；Git/OneDrive 只发布 summary、comparison、resolved config、manifest 与本报告。不可变 bundle 不得原地覆盖。
+
+## 图表附录
+
+全部 primary 路径按频率分面，供逐策略检查：
+
+- [Long-only 月频 atlas](../../figures/round1/G11/atlas-long-only-monthly.png)
+- [Long-only 周频 atlas](../../figures/round1/G11/atlas-long-only-weekly.png)
+- [Long-short 月频 atlas](../../figures/round1/G11/atlas-long-short-monthly.png)
+- [Long-short 周频 atlas](../../figures/round1/G11/atlas-long-short-weekly.png)

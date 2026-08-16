@@ -6,6 +6,16 @@
 
 G13 的运行和会计有效，但 LO H1 明确失败：18/18 主路径回撤改善，CAGR 与 Sharpe 却均为 0/18 改善，Sharpe+MDD 联合改善为 0/18；中位 `ΔSharpe=-.2189`、`ΔMDD=+13.957pp`。连续预测缩放把 LO 年化波动从 29.04% 压至 16.46%，却也把平均 CAGR 从 18.87% 压至 9.04%。LS 有 12/18 Sharpe+MDD 改善，但仅 10/18 同时改善 CAGR/Sharpe/MDD，且压力下明显退化，属于局部、成本敏感且绝对表现弱的机制证据。Completed 后比较显示：G13 的 LO 比 G12 略高 Sharpe、明显低回撤但 CAGR 仍略低；G13 的 LS 弱于 G11、G12 和 G33。所有部署联合通过仍为 0。
 
+## 主场景曲线诊断
+
+下图只使用冻结 completed bundle 的 **primary 主成本场景**（月频 5bps、周频 10bps；long-short 年化借券费 1%）。主动财富为严格同键的 `G13 / G00 - 1`；long-short 面板中的 SPY 只作市场环境背景，不是同风险基准。
+
+![G13 long-only 代表路径：净值、主动财富与风险暴露](../../figures/round1/G13/representative-long-only.png)
+
+![G13 long-short 代表路径：净值、主动财富与风险暴露](../../figures/round1/G13/representative-long-short.png)
+
+图表是 completed bundle 上的只读诊断，用于观察路径和暴露，不改变预注册假设、门槛或正式判定。
+
 ## 运行与严格审计
 
 首个建议 ID `g13-frozen-v3-v1` 在 36 条路径全部计算完、写 bundle 之前，因 formal rebalances 缺两个派生审计列而触发 `KeyError`。该目录从未创建。修复只把已冻结的 `target_scaled_source_volatility` 与 `cap_is_binding` 映射到调仓审计表，不改变收益、状态、持仓或动作；设计的失败纪律要求使用新 ID，因此正式结果为 `g13-frozen-v3-v2`。
@@ -225,3 +235,12 @@ G13 与 G33 使用同一 forecast，但 G13 在 LO 月/周信号中分别有 810
 G13 是运行有效但经济上失败的 LO 实验。因果 EWMA 预测能够排序未来风险并显著改善危机左尾，但把固定 15% 目标连续应用到 LO 裸账簿，造成常态和反弹期长期低仓；保险成本远大于 T-bill 与成本节省。LS 的 short 腿减损存在，却被 long 腿机会成本大量抵销，并在高成本/借券下失去 Sharpe 优势。
 
 G11–G13 阶段至此全部完成，且旧计划从未冻结三组内部顺序。本轮不自动开启新的未预注册组；后续若继续，应先根据系统研究计划另行冻结下一阶段的独立设计，而不能用本结果回填参数或改写 H1。
+
+## 图表附录
+
+全部 primary 路径按频率分面，供逐策略检查：
+
+- [Long-only 月频 atlas](../../figures/round1/G13/atlas-long-only-monthly.png)
+- [Long-only 周频 atlas](../../figures/round1/G13/atlas-long-only-weekly.png)
+- [Long-short 月频 atlas](../../figures/round1/G13/atlas-long-short-monthly.png)
+- [Long-short 周频 atlas](../../figures/round1/G13/atlas-long-short-weekly.png)

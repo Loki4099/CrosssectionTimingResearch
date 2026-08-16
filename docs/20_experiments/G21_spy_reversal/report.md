@@ -6,6 +6,16 @@
 
 SPY RV21 进入滚动 Q4 后直接买入近期 loser，并没有保护 long-only：平均 CAGR 下降 1.97 个百分点，Sharpe 下降 0.10，最大回撤反而恶化约 21 个百分点。相同规则在 dollar-neutral WML 上则平均提高 CAGR 1.95 个百分点、Sharpe 0.09，并改善最大回撤 8.83 个百分点。论文中的“高波反转修复动量崩溃”主要是 loser/short 腿机制，不能直接外推为保留美股 beta 的 long-only 风控。
 
+## 主场景曲线诊断
+
+下图只使用冻结 completed bundle 的 **primary 主成本场景**（月频 5bps、周频 10bps；long-short 年化借券费 1%）。主动财富为严格同键的 `G21 / G00 - 1`；long-short 面板中的 SPY 只作市场环境背景，不是同风险基准。
+
+![G21 long-only 代表路径：净值、主动财富与反转状态](../../figures/round1/G21/representative-long-only.png)
+
+![G21 long-short 代表路径：净值、主动财富与反转状态](../../figures/round1/G21/representative-long-short.png)
+
+图表是 completed bundle 上的只读诊断，用于观察路径与动作切换，不改变预注册假设、门槛或正式判定。
+
 ## 主场景汇总
 
 周频采用双边 10bps，月频 5bps；long-short 另计 1% 年化借券费。
@@ -79,3 +89,12 @@ Q4 中裸 long-only 动量并未失效：周频下一持有期平均收益约 0.
 运行包含 72 条核心路径、576 个有效场景、2,880 行 G00 对照和 3,456 行条件诊断；主 summary 的场景身份唯一。数据仍为 `review/free_research_candidate`，基准是 SPY 总回报代理，因此结论属于免费数据研究级，不是部署级证明。
 
 完整运行目录为 `results/experiments/G21/runs/g21-frozen-v3-v1/`；Git 只发布 summary、comparison、配置与 manifest，日度 NAV 等大产物保留在本地冻结研究目录。
+
+## 图表附录
+
+全部 primary 路径按频率分面，供逐策略检查：
+
+- [Long-only 月频 atlas](../../figures/round1/G21/atlas-long-only-monthly.png)
+- [Long-only 周频 atlas](../../figures/round1/G21/atlas-long-only-weekly.png)
+- [Long-short 月频 atlas](../../figures/round1/G21/atlas-long-short-monthly.png)
+- [Long-short 周频 atlas](../../figures/round1/G21/atlas-long-short-weekly.png)

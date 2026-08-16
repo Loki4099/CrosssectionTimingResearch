@@ -6,6 +6,16 @@
 
 裸账簿 RV126 能压缩 Q4 持有期左尾，但没有形成 long-only 跨参数平台：18 个主场景中 **0/18** 同时改善 T-bill 超额 Sharpe 与最大回撤，Sharpe 改善为 **0/18**，MDD 改善为 **11/18**；配对变化中位数为 Sharpe `-0.1198`、MDD `+0.251pp`。平均 CAGR 从 G00 的 18.87% 降至 14.29%。机制失败主要来自识别时点不对称：long-only 在 COVID 下跌期进入过晚，却在 69 个反弹交易日中 18/18 条路径全程处于 Q4。G32 不能替代 G31，也不能在 G33 完成前把失败最终归因于减仓动作本身。
 
+## 主场景曲线诊断
+
+下图只使用冻结 completed bundle 的 **primary 主成本场景**（月频 5bps、周频 10bps；long-short 年化借券费 1%）。主动财富为严格同键的 `G32 / G00 - 1`；long-short 面板中的 SPY 只作市场环境背景，不是同风险基准。
+
+![G32 long-only 代表路径：净值、主动财富与风险暴露](../../figures/round1/G32/representative-long-only.png)
+
+![G32 long-short 代表路径：净值、主动财富与风险暴露](../../figures/round1/G32/representative-long-short.png)
+
+图表是 completed bundle 上的只读诊断，用于观察路径和暴露，不改变预注册假设、门槛或正式判定。
+
 ## 运行与审计有效性
 
 本次本地运行包含 36 条核心路径、72 条完整正式事件路径、288 个成本/借券费场景、36 个主场景和 1,440 行同场景 G00 比较。Long-only/long-short 分别为 72/216 个报告场景；全部场景覆盖 2018-01-02 至 2026-06-30 的 2,134 个 XNYS 交易日。
@@ -363,3 +373,12 @@ Long-only 在每个成本档位都无法通过 H1；即使交易成本为零，1
 - G00 危机逐腿贡献按与 G32 相同的余额流量公式只读复算；G32 逐日组件已持久化在 NAV artifact。两者均未改变 bundle。
 - 数据是免费研究候选，SPY 是总回报代理而非官方 S&P 500 Total Return；借券费、可借量、冲击和容量均非机构级输入。
 - 完整大产物只位于本地 runtime；本报告不复制 NAV、裸账簿状态、持仓或交易到 Git/OneDrive。
+
+## 图表附录
+
+全部 primary 路径按频率分面，供逐策略检查：
+
+- [Long-only 月频 atlas](../../figures/round1/G32/atlas-long-only-monthly.png)
+- [Long-only 周频 atlas](../../figures/round1/G32/atlas-long-only-weekly.png)
+- [Long-short 月频 atlas](../../figures/round1/G32/atlas-long-short-monthly.png)
+- [Long-short 周频 atlas](../../figures/round1/G32/atlas-long-short-weekly.png)

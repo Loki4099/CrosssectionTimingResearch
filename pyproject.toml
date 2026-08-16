@@ -23,6 +23,11 @@ data = [
   "pyarrow>=16",
   "yfinance>=0.2.54",
 ]
+viz = [
+  "matplotlib>=3.9,<4",
+  "pyarrow>=16",
+  "Pillow>=10",
+]
 # The Tiingo EOD adapter uses urllib and a small local dotenv reader, so it has
 # no third-party runtime dependency.  This named extra keeps installation
 # commands/provider selection explicit without pulling a credential package.

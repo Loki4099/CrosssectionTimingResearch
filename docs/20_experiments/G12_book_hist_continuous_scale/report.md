@@ -6,6 +6,16 @@
 
 裸账簿 RV126 连续 15% 目标缩放明显过度保险 long-only：18 个主场景中 CAGR 与 T-bill 超额 Sharpe 改善均为 **0/18**，最大回撤改善 16/18，但 Sharpe 与 MDD 同时改善仍为 **0/18**，预注册 H1 明确失败。平均 CAGR/Sharpe 从 G00 的 18.87%/0.645 降至 9.10%/0.426，平均 MDD 从 -40.87% 改善到 -33.58%。Long-short/WML 则有 17/18 个主场景、204/216 个压力场景同时改善 Sharpe 与 MDD，机制较强，但绝对 CAGR/Sharpe 仅 4.88%/0.208，仍不足以支持部署。事后同键比较中，G12 的 LO 比 G11、G32 都差，而 LS 比二者平均更好；这不能改写正式 G12-G00 判定。18 个 LO 路径的部署联合通过为 **0/18**，且 `formal_run_eligible=false`。
 
+## 主场景曲线诊断
+
+下图只使用冻结 completed bundle 的 **primary 主成本场景**（月频 5bps、周频 10bps；long-short 年化借券费 1%）。主动财富为严格同键的 `G12 / G00 - 1`；long-short 面板中的 SPY 只作市场环境背景，不是同风险基准。
+
+![G12 long-only 代表路径：净值、主动财富与风险暴露](../../figures/round1/G12/representative-long-only.png)
+
+![G12 long-short 代表路径：净值、主动财富与风险暴露](../../figures/round1/G12/representative-long-short.png)
+
+图表是 completed bundle 上的只读诊断，用于观察路径和暴露，不改变预注册假设、门槛或正式判定。
+
 ## 运行与审计有效性
 
 - 冻结设计 SHA256 为 `5c8b66da4287b3229eb51cd6afb2fc0485df3515056cceb1b1e85e893dc0dcb9`，运行时 G12 配置为 `d1aed4c75d69b650e132d575864667153ca82baad0aef59f58159d8168d992fa`，程序配置为 `11394af02fa028abe4a11434874be31e33e692f55feb73e9236da9bf8d07d413`，resolved spec 为 `f70ee19862b98460f6e8bd4977d3524956f62e04d856fb5080503e31c4a26d23`。
@@ -255,3 +265,12 @@ G12 比 G11/G32 进一步压低 LO 风险，却同时大幅降低 CAGR/Sharpe，
 G12 是有效但经济上失败的 LO 实验：连续路径级 RV126 把目标长期压得过低，危机保护没有补偿常态与反弹期的 long 机会成本。LS 的 204/216 压力联合改善证明同步缩放 winner/loser 腿有稳定的风险控制作用，但低绝对收益与低 Sharpe 只支持机制解释。
 
 这轮完成 G12 后停止。计划中尚未完成的同阶段组只剩 G13；旧计划没有冻结 G11–G13 的内部顺序。若继续，必须先在任何 G13 结果前单独冻结其设计、实现与门禁，不能把 G12 的结果回填为 G13 的参数选择。
+
+## 图表附录
+
+全部 primary 路径按频率分面，供逐策略检查：
+
+- [Long-only 月频 atlas](../../figures/round1/G12/atlas-long-only-monthly.png)
+- [Long-only 周频 atlas](../../figures/round1/G12/atlas-long-only-weekly.png)
+- [Long-short 月频 atlas](../../figures/round1/G12/atlas-long-short-monthly.png)
+- [Long-short 周频 atlas](../../figures/round1/G12/atlas-long-short-weekly.png)

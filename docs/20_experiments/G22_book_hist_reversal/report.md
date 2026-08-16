@@ -6,6 +6,16 @@
 
 G22 没有通过任一模式的预注册平台门槛。LO 只有 4/36 个主场景同时改善 CAGR、T-bill 超额 Sharpe 与最大回撤，周/月各 2/18，且中位最大回撤 delta 为负；H1-LO 明确失败。LS 为 23/36，距离总门槛少 1 条，但月频仅 8/18，同样失败；周频 15/18 和 36/36 最大回撤改善说明路径级 Q4 反转存在局部 WML 机制，却不足以称跨参数平台支持。两种模式均无部署候选。
 
+## 主场景曲线诊断
+
+下图只使用冻结 completed bundle 的 **primary 主成本场景**（月频 5bps、周频 10bps；long-short 年化借券费 1%）。主动财富为严格同键的 `G22 / G00 - 1`；long-short 面板中的 SPY 只作市场环境背景，不是同风险基准。
+
+![G22 long-only 代表路径：净值、主动财富与反转状态](../../figures/round1/G22/representative-long-only.png)
+
+![G22 long-short 代表路径：净值、主动财富与反转状态](../../figures/round1/G22/representative-long-short.png)
+
+图表是 completed bundle 上的只读诊断，用于观察路径与动作切换，不改变预注册假设、门槛或正式判定。
+
 ## 治理与有效运行
 
 首个运行 `g22-frozen-v3-v1` 的七个科学结果文件均自洽，但完成后的逐条设计审计发现：设计正文误写了 `program.toml` SHA。实际正式前预检、代码硬门禁和运行输入使用的正确 SHA 为 `11394af02fa028abe4a11434874be31e33e692f55feb73e9236da9bf8d07d413`。依照预注册失败规则，v1 保留为本地未发布、不得进入结论的治理无效证据。
@@ -170,3 +180,12 @@ SPY CAGR 为 14.6210%。G22 LO 的 36 个主场景中，31/36 CAGR 高于 SPY，
 - `formal_run_eligible=false` 永久保留；不得把 v1、单一 variant、周频子组或 COVID rebound 事后赢家冒充平台成功。
 
 下一未完成主网格是 G23。G23 必须另行预注册和运行，不读取本报告来改动冻结参数预算。
+
+## 图表附录
+
+全部 primary 路径按频率分面，供逐策略检查：
+
+- [Long-only 月频 atlas](../../figures/round1/G22/atlas-long-only-monthly.png)
+- [Long-only 周频 atlas](../../figures/round1/G22/atlas-long-only-weekly.png)
+- [Long-short 月频 atlas](../../figures/round1/G22/atlas-long-short-monthly.png)
+- [Long-short 周频 atlas](../../figures/round1/G22/atlas-long-short-weekly.png)

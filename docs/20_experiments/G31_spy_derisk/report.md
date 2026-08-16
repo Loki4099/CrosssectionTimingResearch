@@ -6,6 +6,16 @@
 
 严格 Q4 减仓确实降低了风险：18/18 个 long-only 主场景的最大回撤都优于 G00，平均改善 10.64 个百分点，年化波动下降 3.43 个百分点，beta 从 1.16 降至 0.91。但保险代价过高：18/18 个场景 CAGR 都下降，只有 2/18 同时改善 Sharpe 与回撤，周频为 0/9，配对 Sharpe 变化中位数为 -0.040。因此 G31 只能记为“回撤有效、风险调整收益平台失败”，不能围绕两个局部月频点宣称成功。
 
+## 主场景曲线诊断
+
+下图只使用冻结 completed bundle 的 **primary 主成本场景**（月频 5bps、周频 10bps；long-short 年化借券费 1%）。主动财富为严格同键的 `G31 / G00 - 1`；long-short 面板中的 SPY 只作市场环境背景，不是同风险基准。
+
+![G31 long-only 代表路径：净值、主动财富与风险暴露](../../figures/round1/G31/representative-long-only.png)
+
+![G31 long-short 代表路径：净值、主动财富与风险暴露](../../figures/round1/G31/representative-long-short.png)
+
+图表是 completed bundle 上的只读诊断，用于观察路径和暴露，不改变预注册假设、门槛或正式判定。
+
 ## 运行与审计有效性
 
 本次运行使用本地 runtime 的冻结数据和 G00 参考包，未向 OneDrive 写入大型结果。运行包含 36 条核心策略、72 条完整事件路径、288 个成本/借券场景和 1,440 行同场景 G00 比较。所有场景均覆盖 2018-01-02 至 2026-06-30 的 2,134 个 XNYS 交易日。
@@ -109,3 +119,12 @@ SPY 总回报代理的全样本 CAGR、Sharpe、MDD 分别为 14.62%、0.662 和
 当前 artifact 没有逐日 winner、loser、风险资产和 T-bill 的流量式 P&L 贡献表；`long_value`、`short_value`、`cash_value` 是余额，不能直接差分冒充腿贡献。因此本报告不作未经支持的逐腿 P&L 归因声明，这一诊断若要完成，必须新增引擎级 attribution artifact 并使用新的不可变 run。
 
 数据仍为 `review / free_research_candidate`，基准是 SPY 总回报代理，`formal_run_eligible=false`。完整 bundle 位于本地 runtime 的 `results/experiments/G31/runs/g31-frozen-v3-v1/`；Git 只发布 summary、comparison、resolved config 与 manifest。
+
+## 图表附录
+
+全部 primary 路径按频率分面，供逐策略检查：
+
+- [Long-only 月频 atlas](../../figures/round1/G31/atlas-long-only-monthly.png)
+- [Long-only 周频 atlas](../../figures/round1/G31/atlas-long-only-weekly.png)
+- [Long-short 月频 atlas](../../figures/round1/G31/atlas-long-short-monthly.png)
+- [Long-short 周频 atlas](../../figures/round1/G31/atlas-long-short-weekly.png)

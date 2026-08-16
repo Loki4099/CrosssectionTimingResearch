@@ -6,6 +6,16 @@
 
 因果 EWMA 风险源把 long-only 的最大回撤在 18/18 个主场景中压低，但 CAGR 与 T-bill 超额 Sharpe 也在 18/18 个场景下降，Sharpe 与 MDD 同时改善为 **0/18**，预注册 H1 因而失败。保护主要发生在 2018 Q4 和 COVID 下跌；COVID 反弹期月/周频 long-only 相对 G00 少赚约 24.5/25.8 个百分点，保险成本超过左尾收益。Long-short 有 10/18 个主场景同时改善 Sharpe 与 MDD，但全压力网格仅 128/216，且绝对 Sharpe 仍弱。事后同键比较中，G31 的 LO 最好、G32 的 LS 最好；G31/G32/G33 的部署联合通过均为 0。
 
+## 主场景曲线诊断
+
+下图只使用冻结 completed bundle 的 **primary 主成本场景**（月频 5bps、周频 10bps；long-short 年化借券费 1%）。主动财富为严格同键的 `G33 / G00 - 1`；long-short 面板中的 SPY 只作市场环境背景，不是同风险基准。
+
+![G33 long-only 代表路径：净值、主动财富与风险暴露](../../figures/round1/G33/representative-long-only.png)
+
+![G33 long-short 代表路径：净值、主动财富与风险暴露](../../figures/round1/G33/representative-long-short.png)
+
+图表是 completed bundle 上的只读诊断，用于观察路径和暴露，不改变预注册假设、门槛或正式判定。
+
 ## 运行与审计有效性
 
 - 运行包含 36 条核心路径、288 个成本/借券场景、36 个主场景和 1,440 行同场景 G00 比较；long-only/long-short 分别为 72/216 个报告场景。
@@ -315,3 +325,12 @@ Long-short 的 12 个成本×借券格如下；联合列是 18 条路径中同�
 - 危机窗口是冻结的描述性切片；路径均值不是可交易的二级组合。
 - G00 逐腿贡献按与 G33 相同的余额流量公式只读重建；bridge 是闭合桶而非证券级因果收益。
 - 完整 NAV、预测状态、持仓、交易和诊断只保留在本地 runtime；Git/OneDrive 仅发布 summary、comparison、resolved config、manifest 与本报告。
+
+## 图表附录
+
+全部 primary 路径按频率分面，供逐策略检查：
+
+- [Long-only 月频 atlas](../../figures/round1/G33/atlas-long-only-monthly.png)
+- [Long-only 周频 atlas](../../figures/round1/G33/atlas-long-only-weekly.png)
+- [Long-short 月频 atlas](../../figures/round1/G33/atlas-long-short-monthly.png)
+- [Long-short 周频 atlas](../../figures/round1/G33/atlas-long-short-weekly.png)

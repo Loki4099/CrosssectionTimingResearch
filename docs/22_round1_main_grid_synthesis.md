@@ -36,6 +36,24 @@
 
 各组的预注册联合判定并不完全相同：连续缩放和减仓主要要求 Sharpe 与 MDD 同时改善；反转组要求 CAGR、Sharpe 与 MDD 三项同时改善，并有双频率门槛。因此本表适合比较经济量级，正式通过/失败仍以各组设计和报告为准。
 
+## 净值、主动财富与择时价值
+
+以下图表只纳入冻结 completed bundle 的 **primary 主成本场景**（月频 5bps、周频 10bps；long-short 年化借券费 1%）。`active wealth` 定义为严格同路径键（含 variant）的 `Gx / G00 - 1`，用于隔离实验动作相对冻结基线的累计增量；它不是净值直接相减。Long-short 图中的 SPY 仅提供市场环境背景，不是同风险基准。
+
+![Long-only 主场景净值总览](figures/round1/overview-nav-long-only.png)
+
+![Long-short 主场景净值总览](figures/round1/overview-nav-long-short.png)
+
+![Long-only 相对 G00 主动财富总览](figures/round1/overview-active-long-only.png)
+
+![Long-short 相对 G00 主动财富总览](figures/round1/overview-active-long-short.png)
+
+下图把动态规则与等平均暴露、等实现波动率的静态反事实放在一起。若动态路径不能持续优于相应静态控制，回撤改善更应解释为少承担风险，而不是准确识别了防守与进攻时点。
+
+![波动率动作的择时价值与静态风险暴露反事实](figures/round1/timing-value.png)
+
+这些图表是 completed bundle 上的只读事后诊断，只帮助观察路径、暴露和机会成本；不修改任何预注册假设、门槛或正式判定。每组报告另提供代表路径和全 primary 路径 atlas。
+
 ## 按动作总结
 
 ### 连续波动率缩放
