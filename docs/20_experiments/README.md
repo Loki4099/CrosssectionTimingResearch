@@ -23,3 +23,7 @@
 - [R2A_DATA 数据扩展冻结设计](./R2A_DATA/design.md)（[采集日志](./R2A_DATA/acquisition_log.md)）：免费 L 线 `r2a-long-free-20260816-v1` 已完成不可变 candidate 与双构建哈希验收；SPY/RF required gate 通过，VIX optional F3 因官方源缺一个周信号而取消。Norgate/PIT 增量线按用户决定暂缓；尚未计算任何 target、模型或策略结果。
 - [R2B_SIGNAL_DIAGNOSTICS 冻结设计](./R2B_signal_diagnostics/design.md)（[报告](./R2B_signal_diagnostics/report.md)）：`r2b-free-core-v1` 已通过公式、哈希、不可变和锁箱防火墙验收。单因子对下一周现金胜 SPY 的 AUC 仅 `0.471–0.517`，但 RV/回撤等可识别随后四周路径风险；没有产生 champion，只开放 R2C simple development。
 - [R2C_SPY_TBILL 冻结设计](./R2C_spy_tbill_timing/design.md)（[报告](./R2C_spy_tbill_timing/report.md)）：simple development 已完成，没有 process 同时通过信号与经济硬门；复杂模型未开放，mechanical lockbox 未查看，R2D 因无 candidate 停止。
+
+## Round 3 planning
+
+[非对称防守与重新进攻计划 v1](../24_round3_asymmetric_defense_reentry_program_v1.md)是 Round 2 停止后的独立开发计划。[R3A 设计](./R3A_asymmetric_reentry/design.md)只登记一个状态机：RV21 负责进入 50% 防守，连续两个收盘站上因果 SMA21 负责恢复 100% 风险；不搜索参数、不启用复杂模型，且 2022–2026 锁箱继续封存。机器锁已冻结，只授权 development。

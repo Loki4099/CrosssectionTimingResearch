@@ -26,6 +26,10 @@ The full nine-cell action × risk-source main grid is complete. G22 v1 remains u
 
 [Round-two defense-timing plan v1](docs/23_round2_defense_timing_signal_program_v1.md) remains the frozen historical plan. Execution stopped at its preregistered simple-stage gate with no candidate; any further defense-timing work requires a new preregistration rather than reopening the sealed lockbox or promoting a runner-up.
 
+## Round-three development plan
+
+[Round-three asymmetric defense/re-entry plan v1](docs/24_round3_asymmetric_defense_reentry_program_v1.md) is the new, separate development-only preregistration. It fixes RV21 as the defense-entry sentinel and tests one causal price-recovery exit, without parameter search, complex models, or access to the sealed 2022–2026 outcomes.
+
 Compact machine-readable results are committed under [`results/published/`](results/published/). Daily NAV, trades, holdings, provider payloads, and price Parquet files are intentionally excluded from Git.
 
 ## Local runtime storage
