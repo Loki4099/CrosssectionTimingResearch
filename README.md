@@ -18,12 +18,13 @@ All accepted results use one frozen free-research dataset and the common evaluat
 - [G33 naked-book forecast-volatility derisking](docs/20_experiments/G33_book_forecast_derisk/report.md) ([design](docs/20_experiments/G33_book_forecast_derisk/design.md)): failed long-only H1 at 0/18; CAGR and Sharpe fell while maximum drawdown improved in all 18 main scenarios. Long-short drawdown improvement was robust, but only 10/18 main scenarios jointly improved Sharpe and drawdown; Sharpe gains were cost/borrow-sensitive and absolute performance remained weak.
 - [Systematic experiment program](docs/21_systematic_experiment_program_v2.md): the action × risk-source grid and frozen stage boundaries.
 - [Round-one main-grid synthesis](docs/22_round1_main_grid_synthesis.md): consolidated economic conclusions, paper-alignment limits, and implications after completing all nine cells.
+- [Round-two R2B signal diagnostics](docs/20_experiments/R2B_signal_diagnostics/report.md) and [R2C simple-stage report](docs/20_experiments/R2C_spy_tbill_timing/report.md): the free 1993–2026 core line was built and the 2005–2021 pre-lockbox walk-forward completed. Volatility/trend variables retained four-week path-risk information, but no sentinel, Ridge, or additive GAM process passed both the probability-signal and exposure-matched economic gates. Complex models, the 2022–2026 mechanical lockbox, and `mom_255_0` transfer were therefore not opened.
 
 The full nine-cell action × risk-source main grid is complete. G22 v1 remains unpublished invalid audit evidence; its valid rerun is `g22-frozen-v3-v2`. G23 provides the first preregistered platform-level long-short result, without rescuing long-only or satisfying deployment criteria. All runs remain free-research evidence with `formal_run_eligible=false`; XS01 is a separate supplemental experiment, not an automatic continuation.
 
-## Next program (planning)
+## Round-two status
 
-[Round-two defense-timing plan v1](docs/23_round2_defense_timing_signal_program_v1.md) specifies data expansion, three-target signal diagnostics, a constrained model ladder, and a gated transfer to `mom_255_0`. It is a planning document, not current evidence, a machine preregistration, or run authorization.
+[Round-two defense-timing plan v1](docs/23_round2_defense_timing_signal_program_v1.md) remains the frozen historical plan. Execution stopped at its preregistered simple-stage gate with no candidate; any further defense-timing work requires a new preregistration rather than reopening the sealed lockbox or promoting a runner-up.
 
 Compact machine-readable results are committed under [`results/published/`](results/published/). Daily NAV, trades, holdings, provider payloads, and price Parquet files are intentionally excluded from Git.
 
