@@ -18,7 +18,7 @@ fwd_excess_logret_4w = log(SPY_TR_open[e_(t+4)] / SPY_TR_open[e_t])
 sustainable_attack_4w = 1[fwd_excess_logret_4w > 0]
 ```
 
-等于 0 归非持续；成本不进入标签。标签在 `e_(t+4)` 开盘及对应 RF 全部可用后才成熟。2021-12-31 signal 及以后标签必须保持空白。
+等于 0 归非持续；成本不进入标签。标签在 `e_(t+4)` 开盘及对应 RF 全部可用后才成熟。按 [amendment 1](./25_round3b_recovery_persistence_program_v1_amendment_1.md)，2021-12-31 及以后 signal，或终点进入 2022-01-03 及以后锁箱的跨界四周标签，均必须保持空白。
 
 `fwd_worst_excess_4w` 只作否决诊断，不另拟合模型。
 

@@ -3,9 +3,10 @@
   "program_id": "recovery_persistence_round3b_v1",
   "frozen_at_local_date": "2026-08-16",
   "files": {
-    "config/experiments/round3b/program.toml": "184a5452a6fb1dc76b2d56bc3b3ba90b0cb80012b717b774980f071aa5a58bee",
+    "config/experiments/round3b/program.toml": "66e6a9b96042918a3a3ce6f282afd6f4cc611de2946d198c19f87462023755bf",
     "docs/20_experiments/R3B_recovery_persistence/design.md": "8a76f8ac038c6322e1f616b930c4613fc54ef3f04fcdc74f3ff9f406d9e3d043",
-    "docs/25_round3b_recovery_persistence_program_v1.md": "94698d30504759d4850ac7c8563e415eab1b321b5bbc39330bf843ee246e0172"
+    "docs/25_round3b_recovery_persistence_program_v1.md": "88a5d9f9d0233cf7c4619bf6ab98f383c7d22a8b069bd5dc85888fd3cd791430",
+    "docs/25_round3b_recovery_persistence_program_v1_amendment_1.md": "274809463fb1cfd50aee6d9d95f19b3f41e8fbe015dbec5786c26d4de538d9a0"
   },
   "inputs": {
     "r2a_manifest_sha256": "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c",
