@@ -1,0 +1,59 @@
+{
+  "H1": {
+    "annual_attack_rate_non_degenerate": false,
+    "brier_skill_positive": false,
+    "positive_brier_year_fraction_at_least_60pct": false,
+    "return_spearman_positive": false,
+    "roc_auc_above_half": false
+  },
+  "H2": {
+    "active_vs_r3a_positive": false,
+    "active_vs_symmetric_positive": false,
+    "cagr_vs_symmetric_positive": false,
+    "defense_benefit_retention_at_least_75pct": true,
+    "missed_upside_reduction_at_least_25pct": false,
+    "positive_year_fraction_at_least_60pct": false
+  },
+  "H3": {
+    "benefit_to_missed_above_one": false,
+    "mdd_gain_positive": true,
+    "mdd_gain_retention_at_least_75pct": true,
+    "net_timing_positive": false,
+    "timing_value_vs_average_positive": true,
+    "timing_value_vs_same_vol_nonnegative": true
+  },
+  "H4": {
+    "covid_selloff_leaveout_positive": false,
+    "endpoint_2021_06_30_positive": true,
+    "gfc_leaveout_positive": false,
+    "positive_year_concentration_at_most_50pct": false,
+    "stress_cost_direction_positive": false
+  },
+  "all_development_gates_pass": false,
+  "diagnostics": {
+    "annual_attack_rate_non_degenerate": false,
+    "baseline_brier": 0.2267998453638645,
+    "brier": 0.22972209362106308,
+    "brier_skill": -0.012884701277067867,
+    "defense_benefit_retention": 0.9697437212591077,
+    "endpoint_2021_06_30": 0.010658198671822309,
+    "evaluation_rows": 883,
+    "leaveout": {
+      "covid_selloff": -0.09463159197842946,
+      "gfc": -0.18848092377500267
+    },
+    "mdd_gain_retention": 0.8939053209963163,
+    "missed_upside_reduction": -0.04943970364954864,
+    "positive_brier_year_fraction": 0.23529411764705882,
+    "positive_year_concentration": 0.5259011380040874,
+    "positive_year_fraction_vs_symmetric": 0.23529411764705882,
+    "roc_auc": 0.4800278093793452,
+    "spearman_fwd_excess_logret_4w": -0.07836677662614833,
+    "spearman_fwd_worst_excess_4w": -0.001454302927880901
+  },
+  "h1_pass": false,
+  "h2_pass": false,
+  "h3_pass": false,
+  "h4_pass": false,
+  "lockbox_authorized": false
+}

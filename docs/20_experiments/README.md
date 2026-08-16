@@ -28,4 +28,4 @@
 
 [非对称防守与重新进攻计划 v1](../24_round3_asymmetric_defense_reentry_program_v1.md)是 Round 2 停止后的独立开发计划。[R3A](./R3A_asymmetric_reentry/design.md)（[报告](./R3A_asymmetric_reentry/report.md)）已完成：价格恢复出口虽减少 68.7% 的错失上涨，却损失更多防守收益，相对对称 RV21 终值低 14.16%，只保留 5.43% 的 MDD 改善；H1–H4 全失败，锁箱继续封存。
 
-[R3B 恢复持续性确认计划](../25_round3b_recovery_persistence_program_v1.md)（[设计](./R3B_recovery_persistence/design.md)）是新的单候选 development 预注册：固定四特征 Ridge 只确认价格恢复后的未来四周正超额收益，不搜索模型或参数；机器锁已冻结，仅授权 development。
+[R3B 恢复持续性确认计划](../25_round3b_recovery_persistence_program_v1.md)（[设计](./R3B_recovery_persistence/design.md)，[报告](./R3B_recovery_persistence/report.md)）已完成：固定 Ridge 的 Brier skill 为 -1.29%、AUC 为 0.480，10bp 终值相对对称 RV21 低 21.67%；H1–H4 全失败，锁箱与动量迁移继续封存。

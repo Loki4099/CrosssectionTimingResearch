@@ -30,7 +30,7 @@ The full nine-cell action × risk-source main grid is complete. G22 v1 remains u
 
 [Round-three asymmetric defense/re-entry plan v1](docs/24_round3_asymmetric_defense_reentry_program_v1.md) has completed its single development candidate ([R3A report](docs/20_experiments/R3A_asymmetric_reentry/report.md)). The faster SMA21 recovery exit reduced missed upside but destroyed more defense benefit, failed all four preregistered gates, and did not open the sealed 2022–2026 outcomes or momentum transfer.
 
-[R3B recovery-persistence plan v1](docs/25_round3b_recovery_persistence_program_v1.md) is the next separate development preregistration candidate. It fixes one four-feature Ridge confirmation model and does not alter the failed R3A parameters or access the sealed outcomes.
+[R3B recovery-persistence plan v1](docs/25_round3b_recovery_persistence_program_v1.md) has also completed ([report](docs/20_experiments/R3B_recovery_persistence/report.md)). Its fixed four-feature Ridge had negative Brier skill, AUC below 0.5, and negative return rank correlation; the confirmed strategy lagged both symmetric RV21 and R3A. All development gates failed, so the sealed outcomes and momentum transfer remain closed.
 
 Compact machine-readable results are committed under [`results/published/`](results/published/). Daily NAV, trades, holdings, provider payloads, and price Parquet files are intentionally excluded from Git.
 

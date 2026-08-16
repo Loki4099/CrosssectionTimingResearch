@@ -1,0 +1,182 @@
+{
+  "anchors": {
+    "folds_sha256": "e0a18efcd533bd1e836cde4a8e9e9bc3dd0c343eb690b5a7ccc384093bf7c53c",
+    "prereg_lock_sha256": "77e227c461a1ac247f7444641ece157cfc647f2dbcd14d44c816020d1d642eeb",
+    "r2a_manifest_sha256": "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c",
+    "r2b_manifest_sha256": "831cf4c4c373a762d7726833fcaebf80db0214c091a640d94955afa283058559",
+    "r3a_manifest_sha256": "6d399a8dc06c7718c5a5f2ae5391b5f62da588259a26412b2e2d582083abb332"
+  },
+  "batch_id": "R3B_RECOVERY_PERSISTENCE",
+  "build_provenance": {
+    "code_file_sha256": {
+      "scripts/build_round3b_r3b.py": "12887bbbb7860891bfd79edcc8ca484d9a45db307d8e84ea8792bfd0ed0ede68",
+      "src/momentum_reversal/pipelines/round3_reentry.py": "dc1cc1c91fa1bcd71ae1f98548e4c9b304572b1b13ae66babdaf796eb52f43b4",
+      "src/momentum_reversal/pipelines/round3b_persistence.py": "e3e8267bb2fa652a59a34c912b5e5ee6ebd113a914b3ade674e52b34b8a72b35"
+    },
+    "dependency_versions": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "pyarrow": "25.0.1",
+      "scikit-learn": "1.9.0",
+      "scipy": "1.18.0"
+    },
+    "git_commit": "f24becf44db450eb144ba77f31a8b152634d4adf",
+    "workspace_dirty": false
+  },
+  "counts": {
+    "confirmed_exits": 20,
+    "control_nav_rows": 8560,
+    "defense_entries": 21,
+    "model_years": 17,
+    "nav_rows": 68480,
+    "predictions": 887,
+    "rearms": 20,
+    "targets": 1744,
+    "weekly_states": 887
+  },
+  "files": [
+    {
+      "path": "config_resolved.toml",
+      "sha256": "66e6a9b96042918a3a3ce6f282afd6f4cc611de2946d198c19f87462023755bf",
+      "size_bytes": 2781
+    },
+    {
+      "path": "control_nav.parquet",
+      "sha256": "81c1911121c7b39b340ad299eddaa3f251c948b2f9bdabac74ced9d6fc2601e1",
+      "size_bytes": 306189
+    },
+    {
+      "path": "controls.csv",
+      "sha256": "4aec41180b0d7bbc455fb1e3d2e387b7919a7695ca41f62b96724b34a4e84f24",
+      "size_bytes": 249
+    },
+    {
+      "path": "gate.json",
+      "sha256": "5ec8bc969cd4f917596192de053f2c2fa18a3b60c4db98aefa45e02f812e6670",
+      "size_bytes": 2028
+    },
+    {
+      "path": "mechanism.csv",
+      "sha256": "262155f13a2a401e1967af3997e972fc5feeb5ffe5876131e1993649484c62a7",
+      "size_bytes": 456
+    },
+    {
+      "path": "model_ledger.csv",
+      "sha256": "bf69ff14cf37b4e687fa3af83ec5ea1f635a42d249235309db44b712aed22aec",
+      "size_bytes": 5071
+    },
+    {
+      "path": "model_metrics.csv",
+      "sha256": "d9b23656ed7318fa717d3fda83fabb3ed29a494b757982b70adc335a252d75ce",
+      "size_bytes": 332
+    },
+    {
+      "path": "nav.parquet",
+      "sha256": "1b210f977ec0cb628f476fee6fb5e63ce838bc889a73bb9380ab9f88fe1549da",
+      "size_bytes": 947289
+    },
+    {
+      "path": "predictions_oos.parquet",
+      "sha256": "2f0ccaa5dd28dad53b6fed46e7b1739d5425b4d93736718431d5941d89212ae9",
+      "size_bytes": 39269
+    },
+    {
+      "path": "summary.csv",
+      "sha256": "5654512abebfcf9a39df3c652a9e63c6603b166a17e458605a512cd57186a115",
+      "size_bytes": 3079
+    },
+    {
+      "path": "targets_weekly.parquet",
+      "sha256": "9295168ba695bc05bce35a7850a260247f0965d873190ee5ad042b9d368a0a67",
+      "size_bytes": 79974
+    },
+    {
+      "path": "weekly_states.parquet",
+      "sha256": "3f362cebb84e80263f7bee969657afa34f081c57cbbaf8fa9c58ed3b1e286c40",
+      "size_bytes": 95477
+    }
+  ],
+  "formal_eligible": false,
+  "gate": {
+    "H1": {
+      "annual_attack_rate_non_degenerate": false,
+      "brier_skill_positive": false,
+      "positive_brier_year_fraction_at_least_60pct": false,
+      "return_spearman_positive": false,
+      "roc_auc_above_half": false
+    },
+    "H2": {
+      "active_vs_r3a_positive": false,
+      "active_vs_symmetric_positive": false,
+      "cagr_vs_symmetric_positive": false,
+      "defense_benefit_retention_at_least_75pct": true,
+      "missed_upside_reduction_at_least_25pct": false,
+      "positive_year_fraction_at_least_60pct": false
+    },
+    "H3": {
+      "benefit_to_missed_above_one": false,
+      "mdd_gain_positive": true,
+      "mdd_gain_retention_at_least_75pct": true,
+      "net_timing_positive": false,
+      "timing_value_vs_average_positive": true,
+      "timing_value_vs_same_vol_nonnegative": true
+    },
+    "H4": {
+      "covid_selloff_leaveout_positive": false,
+      "endpoint_2021_06_30_positive": true,
+      "gfc_leaveout_positive": false,
+      "positive_year_concentration_at_most_50pct": false,
+      "stress_cost_direction_positive": false
+    },
+    "all_development_gates_pass": false,
+    "h1_pass": false,
+    "h2_pass": false,
+    "h3_pass": false,
+    "h4_pass": false,
+    "lockbox_authorized": false
+  },
+  "lockbox_authorized": false,
+  "lockbox_materialized": false,
+  "mom255_transfer_authorized": false,
+  "preregistration": {
+    "authorization": {
+      "alternative_models": false,
+      "development": true,
+      "lockbox": false,
+      "mom255_transfer": false
+    },
+    "files": {
+      "config/experiments/round3b/program.toml": "66e6a9b96042918a3a3ce6f282afd6f4cc611de2946d198c19f87462023755bf",
+      "docs/20_experiments/R3B_recovery_persistence/design.md": "8a76f8ac038c6322e1f616b930c4613fc54ef3f04fcdc74f3ff9f406d9e3d043",
+      "docs/25_round3b_recovery_persistence_program_v1.md": "88a5d9f9d0233cf7c4619bf6ab98f383c7d22a8b069bd5dc85888fd3cd791430",
+      "docs/25_round3b_recovery_persistence_program_v1_amendment_1.md": "274809463fb1cfd50aee6d9d95f19b3f41e8fbe015dbec5786c26d4de538d9a0"
+    },
+    "firewall": {
+      "lockbox_start_signal": "2021-12-31",
+      "lockbox_targets_predictions_states_nav_forbidden": true,
+      "maximum_prediction_signal": "2021-12-23"
+    },
+    "frozen_at_local_date": "2026-08-16",
+    "inputs": {
+      "folds_sha256": "e0a18efcd533bd1e836cde4a8e9e9bc3dd0c343eb690b5a7ccc384093bf7c53c",
+      "r2a_manifest_sha256": "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c",
+      "r2a_tree_sha256": "6985176ea1088d70c0191d6e24527dc7117e66ce81a1c0ece7ad7f539ed061ce",
+      "r2b_manifest_sha256": "831cf4c4c373a762d7726833fcaebf80db0214c091a640d94955afa283058559",
+      "r2b_tree_sha256": "3afe3a9a2ebea6ec852eec791e95420fde8ce0c91c1278f004275e9afffafed6",
+      "r3a_manifest_sha256": "6d399a8dc06c7718c5a5f2ae5391b5f62da588259a26412b2e2d582083abb332",
+      "r3a_tree_sha256": "259fa664b83365c7112fa3fda7bd369347cd16ba4c55f8779889c50c6f887a68"
+    },
+    "program_id": "recovery_persistence_round3b_v1",
+    "schema_version": 1
+  },
+  "program_id": "recovery_persistence_round3b_v1",
+  "range": {
+    "first_signal": "2004-12-31",
+    "last_signal": "2021-12-23",
+    "nav_end": "2021-12-31"
+  },
+  "run_id": "r3b-recovery-persistence-development-v1",
+  "schema_version": 1,
+  "stage": "development",
+  "status": "completed_no_persistence_candidate"
+}
