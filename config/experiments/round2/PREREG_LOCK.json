@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "program_id": "defense_timing_round2_v1",
+  "status": "machine_preregistration_frozen_targets_unopened",
+  "frozen_on": "2026-08-16",
+  "program": {
+    "path": "docs/23_round2_defense_timing_signal_program_v1.md",
+    "sha256": "199eb9ee4c2c51c47f9d060ec8e0954acb059de5694d605140104f671bd951ca"
+  },
+  "amendment_1": {
+    "path": "docs/23_round2_defense_timing_signal_program_v1_amendment_1.md",
+    "sha256": "b6420fe237b80a6806b396164e321d0119517b7348c03806f6eb96aeac74b83e"
+  },
+  "r2b_design": {
+    "path": "docs/20_experiments/R2B_signal_diagnostics/design.md",
+    "sha256": "adb5c56bd793e9a5b747ebd5ce5eff5f0c855fa8a1341d71c4ced47214b8129c"
+  },
+  "r2c_design": {
+    "path": "docs/20_experiments/R2C_spy_tbill_timing/design.md",
+    "sha256": "a3a377bb290bea688014d0330dccc2a1c1831a72b2bfb9aa1cea00a61db307ac"
+  },
+  "machine_config": {
+    "path": "config/experiments/round2/program.toml",
+    "sha256": "c4d09965f3ee9e30053165762a9c32ffe09885717f6f6dae58654668ea7d4b34"
+  },
+  "fold_manifest": {
+    "path": "config/experiments/round2/folds.json",
+    "sha256": "e0a18efcd533bd1e836cde4a8e9e9bc3dd0c343eb690b5a7ccc384093bf7c53c"
+  },
+  "r2a_manifest_sha256": "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c",
+  "trial_registry": {
+    "path": "experiments/round2_registry.csv",
+    "registered_arms": 17
+  },
+  "authorization": {
+    "targets_and_features": true,
+    "signal_diagnostics": true,
+    "development_models": false,
+    "lockbox": false,
+    "mom255_transfer": false
+  }
+}

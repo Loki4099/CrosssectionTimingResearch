@@ -1,0 +1,160 @@
+schema_version = 1
+program_id = "defense_timing_round2_v1"
+status = "machine_preregistration_candidate"
+program_path = "docs/23_round2_defense_timing_signal_program_v1.md"
+program_sha256 = "199eb9ee4c2c51c47f9d060ec8e0954acb059de5694d605140104f671bd951ca"
+amendment_path = "docs/23_round2_defense_timing_signal_program_v1_amendment_1.md"
+amendment_sha256 = "b6420fe237b80a6806b396164e321d0119517b7348c03806f6eb96aeac74b83e"
+fold_manifest_path = "config/experiments/round2/folds.json"
+fold_manifest_sha256 = "e0a18efcd533bd1e836cde4a8e9e9bc3dd0c343eb690b5a7ccc384093bf7c53c"
+r2b_design_path = "docs/20_experiments/R2B_signal_diagnostics/design.md"
+r2b_design_sha256 = "adb5c56bd793e9a5b747ebd5ce5eff5f0c855fa8a1341d71c4ced47214b8129c"
+r2c_design_path = "docs/20_experiments/R2C_spy_tbill_timing/design.md"
+r2c_design_sha256 = "a3a377bb290bea688014d0330dccc2a1c1831a72b2bfb9aa1cea00a61db307ac"
+
+[r2a_anchor]
+dataset_version = "round2-market-core-1993-2026-v1-candidate"
+snapshot_id = "r2a-long-free-20260816-v1"
+manifest_sha256 = "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c"
+tree_sha256 = "6985176ea1088d70c0191d6e24527dc7117e66ce81a1c0ece7ad7f539ed061ce"
+formal_eligible = false
+license_scope = "approved_for_local_research_not_for_distribution"
+vix_f3_status = "invalid_data_not_available"
+pit01_status = "not_opened_user_deferred_paid_pit_data"
+
+[calendar]
+signal_rule = "last_XNYS_session_of_W-FRI_period_close"
+execution_rule = "next_XNYS_session_open"
+first_feature_complete_signal = "1994-01-28"
+development_first_execution_year = 2005
+development_last_execution_year = 2021
+lockbox_start_signal = "2021-12-31"
+lockbox_start_execution = "2022-01-03"
+lockbox_end_signal = "2026-06-26"
+lockbox_end_execution = "2026-06-29"
+lockbox_weeks = 235
+boundary_excluded_signals = 5
+
+[targets]
+selection_target = "cash_wins_1w"
+diagnostic_targets = ["fwd_excess_logret_1w", "fwd_worst_excess_4w"]
+t2_zero_policy = "risk_on"
+t3_include_zero_origin = true
+t3_terminal = "fourth_week_execution_open"
+costs_in_targets = false
+
+[features]
+core = [
+  "spy_total_return_21d",
+  "spy_total_return_126d",
+  "sma50_over_sma200_minus_1",
+  "drawdown_from_252d_high",
+  "log_spy_rv126",
+  "log_rv21_over_rv126",
+  "downside_variance_share_63d",
+  "return_skew_63d",
+  "return_excess_kurtosis_126d",
+]
+sentinel_only = ["spy_rv21"]
+f3_variance_risk_gap_enabled = false
+pit_features_enabled = false
+include_signal_close = true
+rv_ddof = 1
+annualization = 252
+winsor_lower = 0.01
+winsor_upper = 0.99
+imputation = "training_median"
+standardization = "training_mean_sample_std"
+
+[evaluation]
+primary_bootstrap_block_weeks = 13
+sensitivity_bootstrap_block_weeks = [4, 26]
+bootstrap_repetitions = 2000
+main_cost_bps = 10
+stress_cost_bps = [0, 5, 20]
+risk_on_spy_weight = 1.0
+defense_spy_weight = 0.5
+alert_quantile = 0.75
+alert_rate_min = 0.05
+alert_rate_max = 0.50
+minimum_positive_outer_year_fraction = 0.60
+lockbox_confidence_level = 0.90
+
+[crisis_windows]
+dotcom = ["2000-03-24", "2002-10-09"]
+gfc = ["2007-10-09", "2009-03-09"]
+covid_selloff = ["2020-02-19", "2020-03-23"]
+covid_rebound_diagnostic = ["2020-03-24", "2020-08-18"]
+bear_2022 = ["2022-01-03", "2022-10-12"]
+
+[model_protocol]
+simple_arms = 11
+conditional_complex_arms = 6
+total_registered_arms = 17
+maximum_outer_processes = 9
+complexity_order = ["sentinel", "ridge", "gam", "hmm", "random_forest", "xgboost"]
+selection_rule = "paired_brier_13w_block_one_standard_error"
+platt_penalty = "none"
+platt_max_iter = 1000
+platt_slope_must_be_positive = true
+random_seed = 20260816
+
+[ridge]
+l2_lambda = [0.01, 0.1, 1.0, 10.0]
+fit_intercept = true
+intercept_penalized = false
+solver = "lbfgs"
+max_iter = 2000
+
+[gam]
+spline_n_knots = 3
+spline_degree = 2
+spline_knots = "quantile"
+spline_extrapolation = "linear"
+spline_include_bias = false
+interactions = false
+l2_lambda = [0.1, 1.0, 10.0]
+solver = "lbfgs"
+max_iter = 2000
+
+[random_forest]
+n_estimators = 1000
+max_depth = 3
+min_samples_leaf_fraction = 0.10
+max_features = "sqrt"
+bootstrap = true
+class_weight = "none"
+oob_selection = false
+
+[xgboost]
+max_depth = [1, 2]
+n_estimators = [25, 75]
+learning_rate = 0.05
+reg_lambda = 1.0
+subsample = 1.0
+colsample_bytree = 1.0
+tree_method = "exact"
+grow_policy = "depthwise"
+min_child_weight_per_training_row = 0.025
+actual_leaf_min_fraction = 0.10
+
+[hmm]
+n_states = 2
+covariance_type = "diag"
+observations = ["hmm_spy_logret_1w", "log_spy_rv126", "log_rv21_over_rv126"]
+restart_seeds = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+max_iter = 500
+tol = 1e-6
+covariance_floor = 1e-6
+minimum_state_occupancy = 0.10
+off_diagonal_transition_min = 1e-4
+off_diagonal_transition_max = 0.9999
+score = "one_step_filtered_risk_state_probability"
+smoothed_state_forbidden = true
+
+[authorization]
+r2b_targets_and_features = true
+r2b_signal_diagnostics = true
+r2c_development_models = false
+r2c_lockbox = false
+r2d_transfer = false
