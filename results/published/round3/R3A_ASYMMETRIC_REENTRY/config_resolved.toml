@@ -1,0 +1,74 @@
+schema_version = 1
+program_id = "asymmetric_defense_reentry_round3_v1"
+status = "machine_preregistration_frozen_development_only"
+program_path = "docs/24_round3_asymmetric_defense_reentry_program_v1.md"
+design_path = "docs/20_experiments/R3A_asymmetric_reentry/design.md"
+run_id = "r3a-asymmetric-reentry-development-v1"
+formal_eligible = false
+
+[input]
+r2a_root = "C:/Users/17866/QuantWork/MomentumRversionMethod-runtime/data/round2/staging/R2A_DATA/r2a-long-free-20260816-v1"
+r2a_manifest_sha256 = "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c"
+r2a_tree_sha256 = "6985176ea1088d70c0191d6e24527dc7117e66ce81a1c0ece7ad7f539ed061ce"
+folds_path = "config/experiments/round2/folds.json"
+folds_sha256 = "e0a18efcd533bd1e836cde4a8e9e9bc3dd0c343eb690b5a7ccc384093bf7c53c"
+
+[development]
+first_execution_year = 2005
+last_execution_year = 2021
+maximum_signal_date = "2021-12-30"
+lockbox_start_signal = "2021-12-31"
+lockbox_start_execution = "2022-01-03"
+lockbox_materialization_authorized = false
+
+[entry]
+rv_window_sessions = 21
+rv_ddof = 1
+annualization = 252
+quantile_history_sessions = 756
+quantile = 0.75
+quantile_interpolation = "linear"
+strict_greater_than = true
+
+[reentry]
+sma_window_sessions = 21
+confirmation_sessions = 2
+strict_greater_than = true
+minimum_defense_holding_weeks = 1
+hysteresis_requires_rv_at_or_below_q75 = true
+entry_precedes_exit_on_conflict = true
+
+[allocation]
+full_spy_weight = 1.0
+defense_spy_weight = 0.5
+minimum_spy_weight = 0.0
+maximum_spy_weight = 1.0
+shorting = false
+leverage = false
+
+[execution]
+signal_rule = "last_XNYS_session_of_W-FRI_period_close"
+execution_rule = "next_XNYS_session_open"
+rebalance_each_week = true
+main_cost_bps = 10
+stress_cost_bps = [0, 5, 20]
+cash_earns_execution_day_rf = true
+
+[gates]
+minimum_missed_upside_reduction = 0.25
+minimum_positive_year_fraction = 0.60
+minimum_symmetric_mdd_gain_retention = 0.75
+maximum_positive_year_concentration = 0.50
+endpoint_sensitivity_date = "2021-06-30"
+development_crises = ["gfc", "covid_selloff"]
+
+[crisis_windows]
+dotcom = ["2000-03-24", "2002-10-09"]
+gfc = ["2007-10-09", "2009-03-09"]
+covid_selloff = ["2020-02-19", "2020-03-23"]
+covid_rebound = ["2020-03-24", "2020-08-18"]
+
+[authorization]
+development = true
+lockbox = false
+mom255_transfer = false

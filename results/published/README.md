@@ -12,6 +12,7 @@ This directory contains the compact, reviewable outputs committed to Git. Full d
 - `G31/`: SPY RV21 strict-Q4 derisking experiment, frozen v3 dataset; long-only drawdown improved in 18/18 main scenarios but H1 failed, while the long-short mechanism was positive with weak absolute performance.
 - `G32/`: naked-book RV126 strict-Q4 derisking experiment, frozen v3 dataset; long-only H1 failed with CAGR and Sharpe down in 18/18 main scenarios and mixed drawdown results, while 17/18 long-short scenarios improved both Sharpe and drawdown under a mechanism robust to registered cost/borrow stresses but weak in absolute performance.
 - `G33/`: naked-book causal-EWMA forecast-volatility strict-Q4 derisking experiment, frozen v3 dataset; long-only H1 failed at 0/18 with CAGR and Sharpe down but drawdown improved in all 18 main scenarios, while long-short drawdown improvement was robust but only 10/18 scenarios jointly improved Sharpe and drawdown, with Sharpe gains sensitive to cost/borrow and weak absolute performance.
+- `round3/R3A_ASYMMETRIC_REENTRY/`: compact development evidence for the single RV21-entry/SMA21-recovery state machine. The candidate failed H1–H4 and did not authorize the 2022–2026 lockbox or `mom_255_0` transfer. Full daily NAV and state files remain local.
 
 Each folder includes `summary.csv`, `comparison.csv`, the resolved TOML config, and the run manifest. Economic interpretation lives in `docs/20_experiments/`; the CSV files remain the machine-readable source of truth.
 

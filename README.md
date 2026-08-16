@@ -28,7 +28,7 @@ The full nine-cell action × risk-source main grid is complete. G22 v1 remains u
 
 ## Round-three development plan
 
-[Round-three asymmetric defense/re-entry plan v1](docs/24_round3_asymmetric_defense_reentry_program_v1.md) is the new, separate development-only preregistration. It fixes RV21 as the defense-entry sentinel and tests one causal price-recovery exit, without parameter search, complex models, or access to the sealed 2022–2026 outcomes.
+[Round-three asymmetric defense/re-entry plan v1](docs/24_round3_asymmetric_defense_reentry_program_v1.md) has completed its single development candidate ([R3A report](docs/20_experiments/R3A_asymmetric_reentry/report.md)). The faster SMA21 recovery exit reduced missed upside but destroyed more defense benefit, failed all four preregistered gates, and did not open the sealed 2022–2026 outcomes or momentum transfer.
 
 Compact machine-readable results are committed under [`results/published/`](results/published/). Daily NAV, trades, holdings, provider payloads, and price Parquet files are intentionally excluded from Git.
 

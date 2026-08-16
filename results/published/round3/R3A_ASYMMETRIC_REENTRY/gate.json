@@ -1,0 +1,49 @@
+{
+  "H1": {
+    "active_vs_symmetric_positive": false,
+    "cagr_delta_vs_symmetric_positive": false,
+    "missed_upside_reduction_at_least_25pct": true,
+    "positive_year_fraction_at_least_60pct": false
+  },
+  "H2": {
+    "benefit_to_missed_ratio_above_one": false,
+    "net_timing_positive": false,
+    "timing_value_vs_average_positive": false,
+    "timing_value_vs_same_vol_nonnegative": true
+  },
+  "H3": {
+    "covid_selloff_not_jointly_worse": true,
+    "gfc_not_jointly_worse": true,
+    "mdd_gain_positive": true,
+    "symmetric_mdd_gain_retention_at_least_75pct": false
+  },
+  "H4": {
+    "covid_selloff_leaveout_positive": false,
+    "endpoint_2021_06_30_positive": false,
+    "gfc_leaveout_positive": false,
+    "positive_year_concentration_at_most_50pct": false
+  },
+  "all_development_gates_pass": false,
+  "diagnostics": {
+    "active_vs_symmetric": -0.14164231630057422,
+    "cagr_delta_vs_symmetric": -0.009929576665808293,
+    "endpoint_2021_06_30": -0.028942052552342657,
+    "leaveout": {
+      "covid_selloff": -0.1798003243144435,
+      "gfc": -0.018255308709215417
+    },
+    "mdd_gain_asymmetric": 0.012046025739263388,
+    "mdd_gain_retention": 0.05430883076081474,
+    "mdd_gain_symmetric": 0.22180602252911907,
+    "missed_upside_reduction": 0.6871720004188806,
+    "positive_year_concentration": 0.6029402058879176,
+    "positive_year_fraction_vs_symmetric": 0.35294117647058826,
+    "timing_value_vs_average": -0.02812939459407926,
+    "timing_value_vs_same_vol": 0.01871539115692067
+  },
+  "h1_pass": false,
+  "h2_pass": false,
+  "h3_pass": false,
+  "h4_pass": false,
+  "lockbox_authorized": false
+}

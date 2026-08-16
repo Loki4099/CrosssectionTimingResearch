@@ -1,0 +1,153 @@
+{
+  "anchors": {
+    "prereg_lock_sha256": "e32de6b95197758132c22b0a4181b307cf92b05b884fa409016aa37fe2c1c1e9",
+    "r2a_manifest_sha256": "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c",
+    "r2a_tree_sha256": "6985176ea1088d70c0191d6e24527dc7117e66ce81a1c0ece7ad7f539ed061ce",
+    "round2_folds_sha256": "e0a18efcd533bd1e836cde4a8e9e9bc3dd0c343eb690b5a7ccc384093bf7c53c"
+  },
+  "batch_id": "R3A_ASYMMETRIC_REENTRY",
+  "build_provenance": {
+    "code_file_sha256": {
+      "scripts/build_round3_r3a.py": "8534ce9dbe160e5a05c7d304a958e8d56ec4769b660cb21420f7e9f5781dd3cc",
+      "src/momentum_reversal/pipelines/round2_models.py": "b46be4e04432efaa1dcfa9a5abe60c1a0b2db48daf5d209543a5258962e45450",
+      "src/momentum_reversal/pipelines/round3_reentry.py": "dc1cc1c91fa1bcd71ae1f98548e4c9b304572b1b13ae66babdaf796eb52f43b4"
+    },
+    "dependency_versions": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "pyarrow": "25.0.1",
+      "scipy": "1.18.0"
+    },
+    "git_commit": "aaa7ddc1485a38b96cc46166c4b03427d2775955",
+    "workspace_dirty": false
+  },
+  "counts": {
+    "control_nav_rows": 8560,
+    "defense_entries": 28,
+    "mechanism_rows": 5,
+    "nav_rows": 51360,
+    "rearms": 27,
+    "recovery_exits": 27,
+    "summary_rows": 12,
+    "weekly_states": 887
+  },
+  "files": [
+    {
+      "path": "config_resolved.toml",
+      "sha256": "0b2f129386f4ae43b72dfcd50b5c5b0c2377ed62c779dd04de1172b681aa0312",
+      "size_bytes": 2274
+    },
+    {
+      "path": "control_nav.parquet",
+      "sha256": "cfd31a4faddde165cde46a56e4adf746c627e2c5210589a13f6b858f409a42b0",
+      "size_bytes": 305524
+    },
+    {
+      "path": "controls.csv",
+      "sha256": "286268007e72704e1bc934a9dfc8af79b99e57f03f228ae55dd1fcfc5f3c6c25",
+      "size_bytes": 393
+    },
+    {
+      "path": "gate.json",
+      "sha256": "288592617de22aa5382d67f76159803a19286520ae5930316b3ab79c4dfb01bc",
+      "size_bytes": 1631
+    },
+    {
+      "path": "mechanism.csv",
+      "sha256": "a18df9035ed2bfcf730d1809f681fa7114883d2288f0a79e3b525cf664683a50",
+      "size_bytes": 715
+    },
+    {
+      "path": "nav.parquet",
+      "sha256": "c8618308acbcb633753e7ed913f3b009436d5bb18e7ad500f1a876084d56f6fe",
+      "size_bytes": 732772
+    },
+    {
+      "path": "summary.csv",
+      "sha256": "7338550dc95151e3d83e051c258ca085d19325952bc32e26627f3845656723e0",
+      "size_bytes": 2302
+    },
+    {
+      "path": "weekly_states.parquet",
+      "sha256": "4f6e92e90eb0555278843edffb2d9171d4cf55920acd6664b824ff3d66b10ccf",
+      "size_bytes": 82140
+    }
+  ],
+  "formal_eligible": false,
+  "gate": {
+    "H1": {
+      "active_vs_symmetric_positive": false,
+      "cagr_delta_vs_symmetric_positive": false,
+      "missed_upside_reduction_at_least_25pct": true,
+      "positive_year_fraction_at_least_60pct": false
+    },
+    "H2": {
+      "benefit_to_missed_ratio_above_one": false,
+      "net_timing_positive": false,
+      "timing_value_vs_average_positive": false,
+      "timing_value_vs_same_vol_nonnegative": true
+    },
+    "H3": {
+      "covid_selloff_not_jointly_worse": true,
+      "gfc_not_jointly_worse": true,
+      "mdd_gain_positive": true,
+      "symmetric_mdd_gain_retention_at_least_75pct": false
+    },
+    "H4": {
+      "covid_selloff_leaveout_positive": false,
+      "endpoint_2021_06_30_positive": false,
+      "gfc_leaveout_positive": false,
+      "positive_year_concentration_at_most_50pct": false
+    },
+    "all_development_gates_pass": false,
+    "h1_pass": false,
+    "h2_pass": false,
+    "h3_pass": false,
+    "h4_pass": false,
+    "lockbox_authorized": false
+  },
+  "lockbox_authorized": false,
+  "lockbox_materialized": false,
+  "mom255_transfer_authorized": false,
+  "preregistration": {
+    "authorization": {
+      "complex_models": false,
+      "development": true,
+      "lockbox": false,
+      "mom255_transfer": false,
+      "volume_or_breadth": false
+    },
+    "files": {
+      "config/experiments/round3/program.toml": "0b2f129386f4ae43b72dfcd50b5c5b0c2377ed62c779dd04de1172b681aa0312",
+      "docs/20_experiments/R3A_asymmetric_reentry/design.md": "dfa9be7c57b917665b5b210218cef20999becae7b486a3b45563295cfbf3d38b",
+      "docs/24_round3_asymmetric_defense_reentry_program_v1.md": "b5c9c0a8e48fd84da24d4614a99dc434b896f18bba536659115255edded32f22",
+      "docs/24_round3_asymmetric_defense_reentry_program_v1_amendment_1.md": "043860622c868da14682ece9a64df64c1b7794784bc688d555b1351010efa71e"
+    },
+    "firewall": {
+      "lockbox_outcomes_must_not_be_materialized": true,
+      "lockbox_start_signal": "2021-12-31",
+      "maximum_development_signal_date": "2021-12-30"
+    },
+    "frozen_at_local_date": "2026-08-16",
+    "inputs": {
+      "r2a_manifest_sha256": "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c",
+      "r2a_tree_sha256": "6985176ea1088d70c0191d6e24527dc7117e66ce81a1c0ece7ad7f539ed061ce",
+      "round2_folds_sha256": "e0a18efcd533bd1e836cde4a8e9e9bc3dd0c343eb690b5a7ccc384093bf7c53c"
+    },
+    "program_id": "asymmetric_defense_reentry_round3_v1",
+    "research_scope": "single development candidate; no parameter search",
+    "schema_version": 1
+  },
+  "program_id": "asymmetric_defense_reentry_round3_v1",
+  "range": {
+    "first_execution": "2005-01-03",
+    "first_signal": "2004-12-31",
+    "last_execution": "2021-12-27",
+    "last_signal": "2021-12-23",
+    "nav_end": "2021-12-31"
+  },
+  "run_id": "r3a-asymmetric-reentry-development-v1",
+  "schema_version": 1,
+  "stage": "development",
+  "status": "completed_no_reentry_candidate"
+}

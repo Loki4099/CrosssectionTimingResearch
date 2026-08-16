@@ -1,0 +1,2 @@
+experiment_id,batch_id,status,assessment,run_id,formal_eligible,lockbox_authorized,mom255_transfer_authorized
+R3A__ASYMMETRIC_REENTRY,R3A_ASYMMETRIC_REENTRY,completed,completed_no_reentry_candidate_fast_price_exit_lost_defense_value,r3a-asymmetric-reentry-development-v1,false,false,false
