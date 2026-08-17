@@ -36,6 +36,8 @@ The full nine-cell action × risk-source main grid is complete. G22 v1 remains u
 
 [Round-four defense-factor audit v1](docs/26_round4_defense_factor_audit_program_v1.md) is complete; see the [decision memo](docs/27_round4_factor_audit_decision_memo.md). Seventeen of twenty registered factors passed the free-data gate, only RSP/SPY63 received a non-robust positive reference label, and no factor passed the robust gate. The target audit found that magnitude loss and horizon mismatch matter more than a small change to the zero threshold. The program stopped as preregistered; models, `mom_255_0`, position optimization, and the 2022–2026 lockbox remain closed.
 
+[Round-five continuous-MAE13 single-factor review](docs/28_round5_mae13_single_factor_program_v1.md) is complete; see its [decision memo](docs/29_round5_mae13_single_factor_decision_memo.md). RSP/SPY63 is the sole robust development-positive factor under the 5% dead-zone target and fixed 100/50 SPY-cash proxy. The lockbox, models, and momentum transfer remain closed.
+
 Compact machine-readable results are committed under [`results/published/`](results/published/). Daily NAV, trades, holdings, provider payloads, and price Parquet files are intentionally excluded from Git.
 
 ## Local runtime storage

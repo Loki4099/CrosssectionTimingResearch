@@ -15,6 +15,7 @@ This directory contains the compact, reviewable outputs committed to Git. Full d
 - `round3/R3A_ASYMMETRIC_REENTRY/`: compact development evidence for the single RV21-entry/SMA21-recovery state machine. The candidate failed H1–H4 and did not authorize the 2022–2026 lockbox or `mom_255_0` transfer. Full daily NAV and state files remain local.
 - `round3/R3B_RECOVERY_PERSISTENCE/`: compact development evidence for the fixed four-feature Ridge recovery confirmation. Model and economic gates failed, so the 2022–2026 lockbox and `mom_255_0` transfer remain unauthorized. Full OOS predictions, model ledger, targets, daily NAV, controls, and state files remain local.
 - `round4/`: compact R4A–R4D evidence for the bounded 20-arm free-data gate, 17-arm original-T2 single-factor screen, candidate-independent target sanity check, and 1993–2021 SPY drawdown atlas. Only RSP/SPY63 received a non-robust positive reference label; zero arms passed the robust gate. The program stopped pending a user decision on target revision, with models, momentum transfer, and the 2022–2026 lockbox closed.
+- `round5/`: compact continuous-MAE13/5% dead-zone single-factor, fixed SPY/cash proxy, and robustness evidence. RSP/SPY63 is the sole robust development-positive factor; models, momentum transfer, and lockbox remain closed.
 
 Each folder includes `summary.csv`, `comparison.csv`, the resolved TOML config, and the run manifest. Economic interpretation lives in `docs/20_experiments/`; the CSV files remain the machine-readable source of truth.
 

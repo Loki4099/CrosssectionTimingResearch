@@ -1,0 +1,79 @@
+schema_version = 1
+program_id = "defense_mae13_single_factor_round5_v1"
+status = "preregistered_development_authorized"
+formal_eligible = false
+run_ids = [
+  "r5a-mae13-target-20260817-v1",
+  "r5b-mae13-single-factor-20260817-v1",
+  "r5c-spy-cash-proxy-20260817-v1",
+  "r5d-mae13-robustness-20260817-v1",
+]
+
+[parent]
+r4a_run_id = "r4a-free-factor-data-20260817-v1"
+r4a_manifest_sha256 = "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f"
+r4a_tree_sha256 = "12ad10c68ae2d708ce6999cf599d5155429532efc947da84ed99f08afb5cd096"
+r4_prereg_lock_sha256 = "6d6cc352f544473f232e22a1c6a94a64163be83a4bbab9200bf6321a1f163ae9"
+eligible_arms = 17
+
+[development]
+first_execution_year = 2005
+last_execution_year = 2021
+maximum_target_signal = "2021-09-24"
+maximum_policy_signal = "2021-12-23"
+nav_end = "2021-12-31"
+lockbox_start_signal = "2021-12-31"
+lockbox_start_execution = "2022-01-03"
+minimum_threshold_history_weeks = 260
+
+[target]
+name = "excess_mae13_deadzone5"
+horizon_scheduled_weeks = 13
+path_points = "daily_total_return_close_plus_terminal_execution_open"
+baseline = "same_path_daily_rf_cash"
+raw_loss = "one_minus_exp_of_min_spy_minus_cash_log_wealth"
+deadzone_simple_decimal = 0.05
+formula = "max(raw_excess_mae13_simple_decimal-0.05,0)"
+raw_mae_sensitivity = true
+deadzone10_sensitivity = true
+alternative_target_selection = false
+
+[signal]
+quantile = 0.75
+quantile_method = "linear"
+comparison = "strictly_greater_than"
+risk_on_spy_weight = 1.0
+defense_spy_weight = 0.5
+missing_week = "carry_prior_state_no_overlay_trade"
+initial_state = "risk_on"
+
+[costs]
+main_bps = 10
+stress_bps = [0, 5, 20]
+
+[inference]
+block_weeks = 13
+bootstrap_repetitions = 2000
+seed = 20260817
+fdr_method = "benjamini_hochberg"
+fdr_level = 0.10
+alert_budget = 0.25
+
+[authorization]
+target_materialization = true
+signal_evaluation = true
+strategy_nav = true
+robustness_audit = true
+lockbox = false
+mom255_transfer = false
+models = false
+factor_additions = false
+window_search = false
+position_search = false
+
+[hard_stop]
+after_batch = "R5D_MAE13_ROBUSTNESS"
+status = "completed_pending_user_factor_combination_decision"
+automatic_champion = false
+automatic_model_stage = false
+automatic_lockbox = false

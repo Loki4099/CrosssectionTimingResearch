@@ -1,0 +1,5 @@
+batch_id,status,authorization,objective,depends_on
+R5A_MAE13_TARGET,completed_development,target_only,Build causal raw MAE13 and frozen 5pct dead-zone target,ROUND5_PREREG_LOCK
+R5B_MAE13_SINGLE_FACTOR,completed_development,signal_only,Audit seventeen frozen single factors against continuous MAE13 severity,R5A_MAE13_TARGET
+R5C_SPY_CASH_PROXY,completed_development,strategy_proxy,Replay one fixed 100/50 SPY-cash measurement wrapper,R5B_MAE13_SINGLE_FACTOR
+R5D_MAE13_ROBUSTNESS,completed_development,robustness_only,Apply common-sample block-FDR and leave-one-event gates,R5B_MAE13_SINGLE_FACTOR+R5C_SPY_CASH_PROXY

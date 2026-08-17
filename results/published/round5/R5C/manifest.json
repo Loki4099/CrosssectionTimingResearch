@@ -1,0 +1,51 @@
+{
+  "batch_id": "R5C_SPY_CASH_PROXY",
+  "counts": {
+    "eligible_arms": 17,
+    "nav_rows": 861024,
+    "signal_rows": 15079
+  },
+  "factor_additions_run": false,
+  "files": [
+    {
+      "path": "annual_thresholds.parquet",
+      "sha256": "ea1ed63b64f6e265f393fcda9f003418438782b4803b816c5ed89fd581c9f9dc",
+      "size_bytes": 6755
+    },
+    {
+      "path": "economic_summary.csv",
+      "sha256": "41f5adb0b1fde9a1631c6a79725527312df39e2faaceb9b505f42ce89fe0e945",
+      "size_bytes": 14073
+    },
+    {
+      "path": "nav_daily.parquet",
+      "sha256": "2389d92d77aed8ab9cf0729282966c120246db1dc24b3eddfdd99f5b0d75783b",
+      "size_bytes": 14666162
+    },
+    {
+      "path": "signals_weekly.parquet",
+      "sha256": "62f743469cff4d609cb5153c1f342b26d9668e6ffc6fd2f7ac5ca39b6e2fc835",
+      "size_bytes": 165516
+    },
+    {
+      "path": "yearly_active.csv",
+      "sha256": "a1312bc4372b2704ab687e82befe91ee380fbad30cf067d713694af9aea9d71c",
+      "size_bytes": 13145
+    }
+  ],
+  "formal_eligible": false,
+  "git_commit": "d4fda97cc3382884bf272c612d5dcbe206c8181c",
+  "lockbox_read": false,
+  "maximum_policy_signal": "2021-12-23",
+  "maximum_target_signal": "2021-09-24",
+  "models_run": false,
+  "parent_manifests": {},
+  "position_search_run": false,
+  "prereg_lock_sha256": "0d007b6c093f86a8eb93448531e1145c42d275d02b86116c984494d7485b607f",
+  "program_id": "defense_mae13_single_factor_round5_v1",
+  "r4a_manifest_sha256": "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f",
+  "run_id": "r5c-spy-cash-proxy-20260817-v1",
+  "schema_version": 1,
+  "status": "completed_development",
+  "window_search_run": false
+}

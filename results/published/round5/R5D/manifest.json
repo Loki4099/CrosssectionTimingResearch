@@ -1,0 +1,52 @@
+{
+  "batch_id": "R5D_MAE13_ROBUSTNESS",
+  "counts": {
+    "common_weeks": 874,
+    "eligible_arms": 17,
+    "major_events": 6,
+    "reference_positive": 2,
+    "robust_reference_positive": 1
+  },
+  "factor_additions_run": false,
+  "files": [
+    {
+      "path": "common_intersection.csv",
+      "sha256": "8a9ccf44e17348770cca488bf43ba1a95b0b77de0663c72c93badbe173e75ed3",
+      "size_bytes": 1388
+    },
+    {
+      "path": "cost_robustness.csv",
+      "sha256": "7a0303a0e0f48d65ebe07ad0dcac967f6e80cebec7ff2a450c74adf9a8b48301",
+      "size_bytes": 3889
+    },
+    {
+      "path": "final_assessment.csv",
+      "sha256": "3c6ba0e633f8ab5c36784f979e60f254718900357415ac150c96a41d8002660d",
+      "size_bytes": 11589
+    },
+    {
+      "path": "leave_one_event_out.csv",
+      "sha256": "9d61688f6faed5b2091610877f1a409cf6d398afa0b5170120777bd67fea624b",
+      "size_bytes": 4846
+    }
+  ],
+  "formal_eligible": false,
+  "git_commit": "d4fda97cc3382884bf272c612d5dcbe206c8181c",
+  "lockbox_read": false,
+  "maximum_policy_signal": "2021-12-23",
+  "maximum_target_signal": "2021-09-24",
+  "models_run": false,
+  "parent_manifests": {
+    "r5a": "1475104c9e7c6eb415500bb29f65ac27cc78736828022058760a526702ef233a",
+    "r5b": "cad91aec0bbd78f7944bc536cfd515709fdc94ef2bfb06b00124fa6818d75499",
+    "r5c": "ce005043aa78a08d6312d7dff5d7841e055005be0c13c9f9adaeb3d3e287945c"
+  },
+  "position_search_run": false,
+  "prereg_lock_sha256": "0d007b6c093f86a8eb93448531e1145c42d275d02b86116c984494d7485b607f",
+  "program_id": "defense_mae13_single_factor_round5_v1",
+  "r4a_manifest_sha256": "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f",
+  "run_id": "r5d-mae13-robustness-20260817-v1",
+  "schema_version": 1,
+  "status": "completed_development",
+  "window_search_run": false
+}

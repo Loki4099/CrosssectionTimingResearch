@@ -35,3 +35,7 @@
 [原目标单因子扩展、target 审计与熊市事件图谱计划 v1](../26_round4_defense_factor_audit_program_v1.md)已经完成，并形成[决策备忘录](../27_round4_factor_audit_decision_memo.md)。[R4A](./R4A_factor_data/report.md)确认20臂中17臂可用；[R4B](./R4B_t2_single_factor/report.md)只有RSP/SPY63获得普通参考阳性、0臂通过robust门；[R4C](./R4C_target_sanity/report.md)确认一周二分类的主要问题是幅度丢失与期限错位；[R4D](./R4D_spy_drawdown_atlas/report.md)得到10/5/3个-10/-15/-20%事件并显示风险因子有局部预警但误报很多。
 
 程序状态为 `completed_pending_user_target_decision`。模型、多 target 投票、仓位搜索、`mom_255_0` 迁移和 2022–2026 锁箱均未打开。
+
+## Round 5（已完成并按计划停止）
+
+[连续MAE13单因子复审计划](../28_round5_mae13_single_factor_program_v1.md)已完成，并形成[决策备忘录](../29_round5_mae13_single_factor_decision_memo.md)。[R5A](./R5A_mae13_target/report.md)冻结了 `max(MAE13-5%,0)`；[R5B](./R5B_mae13_single_factor/report.md)发现RSP/SPY63是唯一FDR后阳性；[R5C](./R5C_spy_cash_proxy/report.md)确认其相对同暴露静态控制有正timing value；[R5D](./R5D_mae13_robustness/report.md)确认逐一剔除主要回撤后仍不翻转。最终1条robust、1条普通reference，程序停止等待用户决定是否做低维组合或直接冻结单因子候选。锁箱、模型与动量迁移仍关闭。

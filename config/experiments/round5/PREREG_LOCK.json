@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "program_id": "defense_mae13_single_factor_round5_v1",
+  "lock_type": "development_batches_r5a_r5b_r5c_r5d",
+  "frozen_at_local_date": "2026-08-17",
+  "parent_r4_prereg_lock_sha256": "6d6cc352f544473f232e22a1c6a94a64163be83a4bbab9200bf6321a1f163ae9",
+  "files": {
+    "config/experiments/round5/factor_registry.csv": "053a778f6c3a0f8c5364c954761b13a39c657e4940dbd8ea96faf29256868b57",
+    "config/experiments/round5/program.toml": "f4b21ea0ab5e04ff9554e4e2f73a83a7769246f56089e59d6ca944b6afa91b88",
+    "docs/20_experiments/R5A_mae13_target/design.md": "0edd286ac7103a3e3fd33d603e892c788ddeee525d2317e261bc8ea5758911bf",
+    "docs/20_experiments/R5B_mae13_single_factor/design.md": "2c85acdbaddb8e4b0b620b2ae784e0b1d28ba120474b4967be2d909878c8f05f",
+    "docs/20_experiments/R5C_spy_cash_proxy/design.md": "0ac3bee2b67e55a9b9fd1c00ed801fc21432692b5e654896d7193cf3335c7c08",
+    "docs/20_experiments/R5D_mae13_robustness/design.md": "b37db30883523a0c91f6be95cc19d83d6d7a67b6f0d3585e5f270896571017ff",
+    "docs/28_round5_mae13_single_factor_program_v1.md": "1f0aed05e08b4c79577074b7d9c011891d12718c38001d04c84d41e78f7829cc"
+  },
+  "r4a": {
+    "run_id": "r4a-free-factor-data-20260817-v1",
+    "manifest_sha256": "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f",
+    "tree_sha256": "12ad10c68ae2d708ce6999cf599d5155429532efc947da84ed99f08afb5cd096",
+    "eligible_arms": 17
+  },
+  "authorization": {
+    "authorized_batches": [
+      "R5A_MAE13_TARGET",
+      "R5B_MAE13_SINGLE_FACTOR",
+      "R5C_SPY_CASH_PROXY",
+      "R5D_MAE13_ROBUSTNESS"
+    ],
+    "target_materialization": true,
+    "signal_evaluation": true,
+    "strategy_nav": true,
+    "robustness_audit": true,
+    "lockbox": false,
+    "mom255_transfer": false,
+    "models": false,
+    "factor_additions": false,
+    "window_search": false,
+    "position_search": false
+  },
+  "firewall": {
+    "maximum_target_signal": "2021-09-24",
+    "maximum_policy_signal": "2021-12-23",
+    "lockbox_start_signal": "2021-12-31",
+    "lockbox_start_execution": "2022-01-03",
+    "outcomes_from_lockbox_start_forbidden": true
+  },
+  "target": {
+    "horizon_scheduled_weeks": 13,
+    "deadzone_simple_decimal": 0.05,
+    "primary_name": "excess_mae13_deadzone5",
+    "alternative_target_selection": false
+  },
+  "hard_stop": {
+    "after_batch": "R5D_MAE13_ROBUSTNESS",
+    "status": "completed_pending_user_factor_combination_decision",
+    "automatic_champion": false,
+    "automatic_model_stage": false,
+    "automatic_lockbox": false
+  }
+}

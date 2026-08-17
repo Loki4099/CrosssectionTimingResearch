@@ -6,6 +6,7 @@
 - [第二轮防御时点计划 v1](../23_round2_defense_timing_signal_program_v1.md)：历史冻结计划；simple development 无候选后按门禁停止；
 - [第三轮非对称恢复计划](../24_round3_asymmetric_defense_reentry_program_v1.md)与 [R3B 恢复持续性计划](../25_round3b_recovery_persistence_program_v1.md)：均已在开发期完成并失败，锁箱未开放；
 - [第四轮单因子与 target 审计计划 v1](../26_round4_defense_factor_audit_program_v1.md)（[决策备忘录](../27_round4_factor_audit_decision_memo.md)）：R4A–R4D 已完成并按硬停止规则等待用户选择下一 target；
+- [第五轮连续 MAE13 单因子复审计划 v1](../28_round5_mae13_single_factor_program_v1.md)（[决策备忘录](../29_round5_mae13_single_factor_decision_memo.md)）：已完成；RSP/SPY63为唯一robust阳性，等待低维组合或单因子锁箱决策；
 - [研究总计划](../00_research_plan.md)：长期研究目标与共同原则；
 - [实验台账规范](../03_experiment_ledger.md)：experiment/scenario/run 层级、状态和审计字段；
 - [九宫格覆盖与下一阶段](../20_risk_overlay_coverage_and_next_plan.md)：当前结果、空白格和研究优先级。

@@ -1,0 +1,18 @@
+arm_id,family,display_name,defense_score_definition,source,high_means_defense,eligible,replacement_allowed
+R4B__RV21,realized_risk,SPY RV21,log(annualized_sample_std_simple_return_21d),R4A frozen market core,true,true,false
+R4B__RV126,realized_risk,SPY RV126,log(annualized_sample_std_simple_return_126d),R4A frozen market core,true,true,false
+R4B__RV_RATIO,realized_risk,RV21 over RV126,log(RV21/RV126),R4A frozen market core,true,true,false
+R4B__DOWNSIDE_VAR63,realized_risk,Downside variance share 63d,downside_variance_share_63d,R4A frozen market core,true,true,false
+R4B__RET21,price_trend,Negative 21d total return,-(P_t/P_t_minus_21-1),R4A frozen market core,true,true,false
+R4B__RET126,price_trend,Negative 126d total return,-(P_t/P_t_minus_126-1),R4A frozen market core,true,true,false
+R4B__SMA_GAP,price_trend,Negative SMA50/SMA200 gap,-(SMA50/SMA200-1),R4A frozen market core,true,true,false
+R4B__DRAWDOWN252,price_path,Drawdown from 252d high,-(P_t/max(P_t_minus_251_through_t)-1),R4A frozen market core,true,true,false
+R4B__SKEW63,tail_shape,Negative skew 63d,-sample_return_skew_63d,R4A frozen market core,true,true,false
+R4B__KURT126,tail_shape,Excess kurtosis 126d,sample_return_excess_kurtosis_126d,R4A frozen market core,true,true,false
+R4B__VIX_LEVEL,implied_risk,VIX level,log(VIX_close_percent/100),R4A Cboe snapshot,true,true,false
+R4B__VIX_RV_GAP,implied_risk,VIX minus RV variance proxy,(VIX_close_percent/100)^2-RV21^2,R4A Cboe plus market core,true,true,false
+R4B__DOWN_VOLUME21,volume_price,Down-move dollar-volume share 21d,sum(DV*abs(TR_logret)*I[TR_logret<0])/sum(DV*abs(TR_logret)),R4A SPY OHLCV,true,true,false
+R4B__VOLUME_SHOCK,volume_price,Dollar-volume shock 21 over 252,log(mean(DV_21)/median(DV_252)),R4A SPY OHLCV,true,true,false
+R4B__YC_10Y3M,yield_curve,Negative 10Y minus 3M,-(DGS10-DGS3MO),R4A FRED lagged one XNYS session,true,true,false
+R4B__YC_10Y2Y,yield_curve,Negative 10Y minus 2Y,-(DGS10-DGS2),R4A FRED lagged one XNYS session,true,true,false
+R4B__RSP_SPY63,participation_proxy,Negative RSP versus SPY 63d relative return,-delta_63d_log(RSP_TR_close/SPY_TR_close),R4A Tiingo RSP proxy,true,true,false

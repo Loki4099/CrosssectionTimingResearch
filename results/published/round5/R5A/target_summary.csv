@@ -1,0 +1,2 @@
+available_weeks,first_signal,last_signal,zero_y5_fraction,raw_mae_ge_2_fraction,raw_mae_ge_5_fraction,raw_mae_ge_10_fraction,mean_raw_mae,median_raw_mae,mean_y5,lag1_raw_mae_autocorr
+1496,1993-01-29,2021-09-24,0.6677807486631016,0.6270053475935828,0.3322192513368984,0.142379679144385,0.05004254359959462,0.03160586743843857,0.02085566508346248,0.9363401545785915
