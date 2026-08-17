@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "program_id": "defense_factor_audit_round4_v1",
+  "batch_id": "R4A_FREE_FACTOR_DATA",
+  "run_id": "r4a-free-factor-data-20260817-v1",
+  "status": "accepted_completed_candidate",
+  "formal_eligible": false,
+  "manifest_sha256": "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f",
+  "tree_sha256": "12ad10c68ae2d708ce6999cf599d5155429532efc947da84ed99f08afb5cd096",
+  "canonical_content_sha256": {
+    "availability_weekly": "8eeef9109cc69da6af53cacc76357ca583e1482be90306dddfcd5aac92021f31",
+    "feature_inputs_weekly": "2640b2628417ad869168a01b80f8aea6dd5ec7e7d067460e12c7496b421269b6",
+    "factor_eligibility": "8d6c3e473c4b69cb414b35f0409d4363fb2d16d636b7430fdecda8f84552fecd",
+    "common_mask_candidate": "3856df5ed5496408194730c446f55eb4ef196b28ba86f12db9b1b4731d95fde6"
+  },
+  "counts": {
+    "registered_arms": 20,
+    "reference_eligible_arms": 17,
+    "invalid_arms": 3,
+    "weekly_feature_rows": 30180,
+    "common_weeks": 961
+  },
+  "invalid_arms": [
+    "R4B__HY_OAS_LEVEL",
+    "R4B__HY_OAS_CHANGE21",
+    "R4B__NFCI"
+  ],
+  "double_build_canonical_equal": true,
+  "immutable_rerun_rejected": true,
+  "targets_materialized": false,
+  "signal_evaluation_run": false,
+  "strategy_nav_run": false,
+  "event_outcomes_run": false,
+  "lockbox_read": false
+}

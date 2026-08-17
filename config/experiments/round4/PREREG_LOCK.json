@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "program_id": "defense_factor_audit_round4_v1",
+  "lock_type": "development_batches_r4b_r4c_r4d",
+  "frozen_at_local_date": "2026-08-17",
+  "parent_plan_lock_sha256": "3cd84a0ffa762648ffc023267a56999fe439e758e74411e00871aef925393d40",
+  "files": {
+    "config/experiments/round4/R4A_ACCEPTANCE.json": "592877adb6bc523ad305118fabd63bb2d21994ed07fa7520dd89ad0aa0a4e900",
+    "config/experiments/round4/factor_registry_resolved.csv": "43968a23473e6b9b753432afe913168662333bd1471a4e082ba199e3772c031b",
+    "config/experiments/round4/program.toml": "aa428127484b38cfe84d413d255a6ce9defb7ce5ae6de49973b080f4716d393c",
+    "docs/20_experiments/R4B_t2_single_factor/design.md": "b4014da54e6d61986755df6a0e88879336b90d48d904728760743f9f1b44001b",
+    "docs/20_experiments/R4C_target_sanity/design.md": "917bc493119301c8c0f440b42bc7bc0266fd2b1d327ba768ad4b6eadbb71120a",
+    "docs/20_experiments/R4D_spy_drawdown_atlas/design.md": "a244d7cdcae543385a0e14e5c3e6b637dc94fc1fa0018a9c1a4690130b203a92"
+  },
+  "r4a": {
+    "run_id": "r4a-free-factor-data-20260817-v1",
+    "manifest_sha256": "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f",
+    "tree_sha256": "12ad10c68ae2d708ce6999cf599d5155429532efc947da84ed99f08afb5cd096",
+    "eligible_arms": 17,
+    "invalid_arms": 3,
+    "common_weeks": 961
+  },
+  "authorization": {
+    "authorized_batches": [
+      "R4B_T2_SINGLE_FACTOR_REFERENCE",
+      "R4C_TARGET_SANITY",
+      "R4D_SPY_DRAWDOWN_ATLAS"
+    ],
+    "target_materialization": true,
+    "signal_evaluation": true,
+    "strategy_nav": true,
+    "event_outcomes": true,
+    "lockbox": false,
+    "mom255_transfer": false,
+    "models": false,
+    "position_search": false
+  },
+  "firewall": {
+    "maximum_prediction_signal": "2021-12-23",
+    "lockbox_start_signal": "2021-12-31",
+    "lockbox_start_execution": "2022-01-03",
+    "outcomes_from_lockbox_start_forbidden": true
+  },
+  "hard_stop": {
+    "after_batch": "R4D_SPY_DRAWDOWN_ATLAS",
+    "status": "completed_pending_user_target_decision",
+    "automatic_champion": false,
+    "automatic_target_v2": false,
+    "automatic_model_stage": false
+  }
+}

@@ -1,0 +1,22 @@
+schema_version = 1
+program_id = "defense_factor_audit_round4_v1"
+batch_id = "R4A_FREE_FACTOR_DATA"
+run_id = "r4a-free-factor-data-20260817-v1"
+dataset_version = "round4-factor-data-free-1993-2021-v1-candidate"
+formal_eligible = false
+targets_materialized = false
+signal_evaluation_run = false
+strategy_nav_run = false
+event_outcomes_run = false
+lockbox_read = false
+
+[paths]
+parent_r2a = "C:/Users/17866/QuantWork/MomentumRversionMethod-runtime/data/round2/staging/R2A_DATA/r2a-long-free-20260816-v1"
+output = "C:/Users/17866/QuantWork/MomentumRversionMethod-runtime/data/round4/staging/R4A_FREE_FACTOR_DATA/r4a-free-factor-data-20260817-v1"
+
+[raw_sha256]
+alfred_nfci_form = "fb6e1fd6eae19edf5168d11c6d7933012c6e41e7c1b9c509bdc8edefd68dfd82"
+fred_hy_oas = "ed0f50fc21900e46fecd94fdfd3476af6c9fdff6c900e4b80d61844905c07d07"
+fred_nfci_current = "932d98606bb5f585ef0c99aab6ce4aea406598979af2466ec25201d6e1530524"
+fred_treasury = "7111743e03acea2307f5d8a7f8b66c954ac2660f5484d0c09b794d200652e22e"
+tiingo_rsp = "26e8a3bfa091fcf05fdec3fa66b101d5139e077b8d315aa812bd3216593aac4c"

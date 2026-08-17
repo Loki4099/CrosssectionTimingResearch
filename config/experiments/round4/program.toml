@@ -1,0 +1,67 @@
+schema_version = 1
+program_id = "defense_factor_audit_round4_v1"
+status = "preregistered_development_authorized"
+formal_eligible = false
+run_ids = ["r4b-t2-single-factor-20260817-v1", "r4c-target-sanity-20260817-v1", "r4d-spy-drawdown-atlas-20260817-v1"]
+
+[r4a]
+run_id = "r4a-free-factor-data-20260817-v1"
+manifest_sha256 = "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f"
+tree_sha256 = "12ad10c68ae2d708ce6999cf599d5155429532efc947da84ed99f08afb5cd096"
+feature_inputs_sha256 = "f598299c1768c3cedc7eec956c028b9a4d17973754c79d9d2e784c756bf6a87f"
+eligibility_sha256 = "8d6c3e473c4b69cb414b35f0409d4363fb2d16d636b7430fdecda8f84552fecd"
+common_mask_sha256 = "3856df5ed5496408194730c446f55eb4ef196b28ba86f12db9b1b4731d95fde6"
+eligible_arms = 17
+invalid_arms = 3
+common_weeks = 961
+
+[development]
+first_execution_year = 2005
+last_execution_year = 2021
+maximum_prediction_signal = "2021-12-23"
+lockbox_start_signal = "2021-12-31"
+minimum_threshold_history_weeks = 260
+minimum_reference_oos_weeks = 400
+minimum_reference_oos_years = 8
+
+[target]
+t1 = "execution_open_to_next_execution_open_spy_minus_rf_log_return"
+t2 = "strict_t1_less_than_zero"
+costs_in_target = false
+
+[signal]
+quantile = 0.75
+quantile_method = "linear"
+comparison = "strictly_greater_than"
+risk_on_spy_weight = 1.0
+defense_spy_weight = 0.5
+missing_week = "carry_prior_state_no_overlay_trade"
+initial_state = "risk_on"
+
+[costs]
+main_bps = 10
+stress_bps = [0, 5, 20]
+
+[inference]
+block_weeks = 13
+bootstrap_repetitions = 2000
+seed = 20260817
+fdr_method = "benjamini_hochberg"
+fdr_level = 0.10
+
+[authorization]
+target_materialization = true
+signal_evaluation = true
+strategy_nav = true
+event_outcomes = true
+lockbox = false
+mom255_transfer = false
+models = false
+position_search = false
+
+[hard_stop]
+after_batch = "R4D_SPY_DRAWDOWN_ATLAS"
+status = "completed_pending_user_target_decision"
+automatic_champion = false
+automatic_target_v2 = false
+automatic_model_stage = false

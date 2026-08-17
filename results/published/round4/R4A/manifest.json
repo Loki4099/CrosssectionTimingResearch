@@ -1,0 +1,117 @@
+{
+  "batch_id": "R4A_FREE_FACTOR_DATA",
+  "build_provenance": {
+    "built_at_utc": "2026-08-17T11:03:00.251438+00:00",
+    "code_file_sha256": {
+      "scripts/build_round4_r4a.py": "6fb2ab464d94284e74a15370573fddf6280e95d88094266767296aa6fd607d2b",
+      "src/momentum_reversal/data/round4_factors.py": "0f6a1081dbe390b0f8e05743a1787fe9c0d0d3ebbfa94a6b393f0dfd27a39fc7",
+      "src/momentum_reversal/pipelines/round2_signals.py": "301bd6493201655f8a4e7aad764a7bb7ed120b8c056aeee18f3b7788763512e2",
+      "src/momentum_reversal/pipelines/round4_data.py": "bba99c8880d33935d43e92f001dc43834e54a2fb0c5a76ce264c9f52c4868e19"
+    },
+    "dependency_versions": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1",
+      "pyarrow": "25.0.1"
+    },
+    "git_commit": "2e42d2495668bf401dcd73f26f114b078c5e20a0",
+    "workspace_dirty": true
+  },
+  "canonical_content_sha256": {
+    "availability_weekly": "8eeef9109cc69da6af53cacc76357ca583e1482be90306dddfcd5aac92021f31",
+    "common_mask_candidate": "3856df5ed5496408194730c446f55eb4ef196b28ba86f12db9b1b4731d95fde6",
+    "factor_eligibility": "8d6c3e473c4b69cb414b35f0409d4363fb2d16d636b7430fdecda8f84552fecd",
+    "feature_inputs_weekly": "2640b2628417ad869168a01b80f8aea6dd5ec7e7d067460e12c7496b421269b6"
+  },
+  "config_sha256": "d526b7a049b43a7b9f534609d59f09486480feece77ce4e7f8d280068a56a6d4",
+  "counts": {
+    "common_weeks": 961,
+    "invalid_arms": 3,
+    "reference_eligible_arms": 17,
+    "registered_arms": 20,
+    "weekly_feature_rows": 30180
+  },
+  "dataset_version": "round4-factor-data-free-1993-2021-v1-candidate",
+  "design_sha256": "69184d19fe60365e3062146030cef4dd926b5614dd6068a27091728812d87b7f",
+  "development_firewall": {
+    "event_outcomes_run": false,
+    "lockbox_read": false,
+    "maximum_prediction_signal": "2021-12-23",
+    "signal_evaluation_run": false,
+    "strategy_nav_run": false,
+    "targets_materialized": false
+  },
+  "factor_catalog_sha256": "88e62b3f8b017681d35ac96875d6f03ea02566be1cfa4298c287c036dc29cfa8",
+  "files": [
+    {
+      "path": "availability_weekly.parquet",
+      "sha256": "20e999cbcb000a0d264dd7c56f0e93a4fe8426155b80012ab64e81c2e385ab7c",
+      "size_bytes": 120149
+    },
+    {
+      "path": "common_mask_candidate.csv",
+      "sha256": "3856df5ed5496408194730c446f55eb4ef196b28ba86f12db9b1b4731d95fde6",
+      "size_bytes": 29278
+    },
+    {
+      "path": "config_resolved.toml",
+      "sha256": "56729b379cb09909d0b66a5636459a9ace988fa88a29bdbd317836ab4c18675d",
+      "size_bytes": 1073
+    },
+    {
+      "path": "factor_eligibility.csv",
+      "sha256": "8d6c3e473c4b69cb414b35f0409d4363fb2d16d636b7430fdecda8f84552fecd",
+      "size_bytes": 2010
+    },
+    {
+      "path": "feature_inputs_weekly.parquet",
+      "sha256": "f598299c1768c3cedc7eec956c028b9a4d17973754c79d9d2e784c756bf6a87f",
+      "size_bytes": 377758
+    },
+    {
+      "path": "qa_summary.csv",
+      "sha256": "ad88709f59065731b1d3313740be7719ea5ce8e8d30e539455f06ce02326f2a5",
+      "size_bytes": 295
+    },
+    {
+      "path": "raw/r4a_alfred_nfci_form.html",
+      "sha256": "fb6e1fd6eae19edf5168d11c6d7933012c6e41e7c1b9c509bdc8edefd68dfd82",
+      "size_bytes": 94455
+    },
+    {
+      "path": "raw/r4a_hyoas_current.csv",
+      "sha256": "ed0f50fc21900e46fecd94fdfd3476af6c9fdff6c900e4b80d61844905c07d07",
+      "size_bytes": 12718
+    },
+    {
+      "path": "raw/r4a_nfci_current_probe.csv",
+      "sha256": "932d98606bb5f585ef0c99aab6ce4aea406598979af2466ec25201d6e1530524",
+      "size_bytes": 27137
+    },
+    {
+      "path": "raw/r4a_tiingo_rsp_2003_2021.json",
+      "sha256": "26e8a3bfa091fcf05fdec3fa66b101d5139e077b8d315aa812bd3216593aac4c",
+      "size_bytes": 1188014
+    },
+    {
+      "path": "raw/r4a_treasury.csv",
+      "sha256": "7111743e03acea2307f5d8a7f8b66c954ac2660f5484d0c09b794d200652e22e",
+      "size_bytes": 309096
+    },
+    {
+      "path": "source_inventory.csv",
+      "sha256": "35656abbcdd591d1064a22356ec2ef93969d93809449b679be577c7fb01d8f60",
+      "size_bytes": 1623
+    }
+  ],
+  "formal_eligible": false,
+  "parents": {
+    "r2_folds_sha256": "e0a18efcd533bd1e836cde4a8e9e9bc3dd0c343eb690b5a7ccc384093bf7c53c",
+    "r2a_manifest_sha256": "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c",
+    "r2a_snapshot_id": "r2a-long-free-20260816-v1",
+    "round4_plan_lock_sha256": "3cd84a0ffa762648ffc023267a56999fe439e758e74411e00871aef925393d40"
+  },
+  "program_id": "defense_factor_audit_round4_v1",
+  "run_id": "r4a-free-factor-data-20260817-v1",
+  "schema_version": 1,
+  "status": "completed_candidate"
+}

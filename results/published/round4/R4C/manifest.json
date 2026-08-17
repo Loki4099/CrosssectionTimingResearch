@@ -1,0 +1,52 @@
+{
+  "batch_id": "R4C_TARGET_SANITY",
+  "counts": {
+    "h1_weeks": 1508,
+    "outcome_rows": 1509,
+    "thresholds": 7
+  },
+  "files": [
+    {
+      "path": "horizon_conflicts.csv",
+      "sha256": "61205e595aa8970a2bc47eecbe5147b98ed0cd07ab6107d65ea7d9436ceb2db5",
+      "size_bytes": 187
+    },
+    {
+      "path": "horizon_outcomes.parquet",
+      "sha256": "17fa4bf65040ba86fb8101c4e61041ac88d53bb402c4d42ffee3d2486d384ad9",
+      "size_bytes": 189463
+    },
+    {
+      "path": "oracle_paths.csv",
+      "sha256": "9700ef1aab64d8a2776acde5533491a73c0aa30d2ebbadd1fbc053b0ec1fb41b",
+      "size_bytes": 532
+    },
+    {
+      "path": "state_runs.csv",
+      "sha256": "5320d2e13ed8f881672aadb6f4adf5803adc91bef117cd1275701a5915eb6739",
+      "size_bytes": 9712
+    },
+    {
+      "path": "target_sanity_summary.csv",
+      "sha256": "c34a291051a6c45510f9144448d0f1ba4ff7dbb39f08b069af082cb3b7b585f8",
+      "size_bytes": 307
+    },
+    {
+      "path": "threshold_sensitivity.csv",
+      "sha256": "e6de10b9e5d2399d6f0716dd71487c1e77e9e990e3efda3ac7b0aa6fc5617180",
+      "size_bytes": 374
+    }
+  ],
+  "formal_eligible": false,
+  "git_commit": "2e42d2495668bf401dcd73f26f114b078c5e20a0",
+  "lockbox_read": false,
+  "maximum_signal": "2021-12-23",
+  "models_run": false,
+  "position_search_run": false,
+  "prereg_lock_sha256": "6d6cc352f544473f232e22a1c6a94a64163be83a4bbab9200bf6321a1f163ae9",
+  "program_id": "defense_factor_audit_round4_v1",
+  "r4a_manifest_sha256": "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f",
+  "run_id": "r4c-target-sanity-20260817-v1",
+  "schema_version": 1,
+  "status": "completed_development"
+}

@@ -1,0 +1,22 @@
+{
+  "arms": 17,
+  "audit_id": "R4B_ALL_QUALIFIED_COMMON_INTERSECTION",
+  "common_evaluation_start": "2009-01-05",
+  "common_mask_weeks": 961,
+  "files": [
+    {
+      "bytes": 3079975,
+      "path": "common_nav_daily.parquet",
+      "sha256": "e10dde55f90509be244e5467761453cf412da5d0e823fadeee7cefa7cc26e547"
+    },
+    {
+      "bytes": 2449,
+      "path": "common_summary.csv",
+      "sha256": "6e11276b96e6ba67ca2d370c16ffa6513ffddaed18cfafca9b45a4033fbfec6b"
+    }
+  ],
+  "lockbox_read": false,
+  "parent_r4b_manifest_sha256": "bfbeb494c5abbb2403468b94b9190a75f41638cc418be6e39366952a747cc588",
+  "r4a_common_mask_sha256": "3856df5ed5496408194730c446f55eb4ef196b28ba86f12db9b1b4731d95fde6",
+  "schema_version": 1
+}

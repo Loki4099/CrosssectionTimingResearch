@@ -32,6 +32,10 @@ The full nine-cell action × risk-source main grid is complete. G22 v1 remains u
 
 [R3B recovery-persistence plan v1](docs/25_round3b_recovery_persistence_program_v1.md) has also completed ([report](docs/20_experiments/R3B_recovery_persistence/report.md)). Its fixed four-feature Ridge had negative Brier skill, AUC below 0.5, and negative return rank correlation; the confirmed strategy lagged both symmetric RV21 and R3A. All development gates failed, so the sealed outcomes and momentum transfer remain closed.
 
+## Round-four frozen plan
+
+[Round-four defense-factor audit v1](docs/26_round4_defense_factor_audit_program_v1.md) is complete; see the [decision memo](docs/27_round4_factor_audit_decision_memo.md). Seventeen of twenty registered factors passed the free-data gate, only RSP/SPY63 received a non-robust positive reference label, and no factor passed the robust gate. The target audit found that magnitude loss and horizon mismatch matter more than a small change to the zero threshold. The program stopped as preregistered; models, `mom_255_0`, position optimization, and the 2022–2026 lockbox remain closed.
+
 Compact machine-readable results are committed under [`results/published/`](results/published/). Daily NAV, trades, holdings, provider payloads, and price Parquet files are intentionally excluded from Git.
 
 ## Local runtime storage

@@ -1,0 +1,10 @@
+metric,value
+h1_weeks,1508
+t2_positive_rate,0.42572944297082227
+near_zero_20bp_fraction,0.10079575596816977
+negative_amount_top_quartile_share,0.8977014464640704
+t2_lag1_autocorrelation,-0.052916284011308524
+risk_on_deep_mae13_weeks,82
+defense_shallow_mae13_weeks,114
+lockbox_read,False
+factors_rerun,False

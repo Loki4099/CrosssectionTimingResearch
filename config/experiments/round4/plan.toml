@@ -1,0 +1,77 @@
+schema_version = 1
+program_id = "defense_factor_audit_round4_v1"
+status = "plan_frozen_r4a_data_only"
+frozen_local_date = "2026-08-17"
+program_path = "docs/26_round4_defense_factor_audit_program_v1.md"
+r4a_design_path = "docs/20_experiments/R4A_factor_data/design.md"
+factor_catalog_path = "config/experiments/round4/factor_catalog_plan.csv"
+formal_eligible = false
+
+[inputs]
+r2a_snapshot_id = "r2a-long-free-20260816-v1"
+r2a_manifest_sha256 = "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c"
+r2a_tree_sha256 = "6985176ea1088d70c0191d6e24527dc7117e66ce81a1c0ece7ad7f539ed061ce"
+r2_folds_path = "config/experiments/round2/folds.json"
+r2_folds_sha256 = "e0a18efcd533bd1e836cde4a8e9e9bc3dd0c343eb690b5a7ccc384093bf7c53c"
+r2b_design_sha256 = "adb5c56bd793e9a5b747ebd5ce5eff5f0c855fa8a1341d71c4ced47214b8129c"
+
+[catalog]
+registered_arms = 20
+legacy_anchor_arms = 10
+new_free_data_arms = 10
+replacement_allowed = false
+models_allowed = false
+interactions_allowed = false
+
+[development]
+first_execution_year = 2005
+last_execution_year = 2021
+maximum_prediction_signal = "2021-12-23"
+lockbox_start_signal = "2021-12-31"
+lockbox_start_execution = "2022-01-03"
+minimum_threshold_history_weeks = 260
+minimum_reference_oos_weeks = 400
+minimum_reference_oos_years = 8
+minimum_common_intersection_weeks = 520
+
+[target]
+primary_name = "cash_wins_1w"
+continuous_name = "fwd_excess_logret_1w"
+positive_rule = "strictly_less_than_zero"
+costs_in_target = false
+target_changes_allowed = false
+
+[measurement]
+risk_on_spy_weight = 1.0
+defense_spy_weight = 0.5
+main_cost_bps = 10
+stress_cost_bps = [0, 5, 20]
+score_quantile = 0.75
+quantile_method = "linear"
+alert_rule = "score_strictly_greater_than_frozen_q75"
+tie_state = "risk_on"
+same_average_exposure_control = true
+
+[authorization]
+data = true
+target_materialization = false
+signal_evaluation = false
+strategy_nav = false
+event_outcomes = false
+lockbox = false
+mom255_transfer = false
+models = false
+position_search = false
+
+[next_lock]
+required_name = "PREREG_LOCK.json"
+required_before_batches = ["R4B_T2_SINGLE_FACTOR_REFERENCE", "R4C_TARGET_SANITY", "R4D_SPY_DRAWDOWN_ATLAS"]
+automatic_authorization = false
+
+[hard_stop]
+after_batch = "R4D_SPY_DRAWDOWN_ATLAS"
+status = "completed_pending_user_target_decision"
+automatic_champion = false
+automatic_target_v2 = false
+automatic_model_stage = false
+position_search = false

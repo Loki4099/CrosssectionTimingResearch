@@ -1,0 +1,13 @@
+qa_key,qa_value
+registered_arms,20
+feature_rows,30180
+reference_eligible_arms,17
+invalid_arms,3
+common_weeks,961
+legacy_anchor_exact_match,True
+target_columns_present,False
+targets_materialized,False
+signal_evaluation_run,False
+strategy_nav_run,False
+event_outcomes_run,False
+lockbox_read,False

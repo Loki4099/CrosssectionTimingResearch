@@ -1,0 +1,21 @@
+arm_id,family,display_name,defense_score_definition,planned_source,legacy_anchor,planned_status,replacement_allowed
+R4B__RV21,realized_risk,SPY RV21,log(annualized_sample_std_simple_return_21d),R2A market core,true,registered,false
+R4B__RV126,realized_risk,SPY RV126,log(annualized_sample_std_simple_return_126d),R2A market core,true,registered,false
+R4B__RV_RATIO,realized_risk,RV21 over RV126,log(RV21/RV126),R2A market core,true,registered,false
+R4B__RET21,price_trend,Negative 21d total return,-(P_t/P_t_minus_21-1),R2A market core,true,registered,false
+R4B__RET126,price_trend,Negative 126d total return,-(P_t/P_t_minus_126-1),R2A market core,true,registered,false
+R4B__SMA_GAP,price_trend,Negative SMA50/SMA200 gap,-(SMA50/SMA200-1),R2A market core,true,registered,false
+R4B__DRAWDOWN252,price_path,Drawdown from 252d high,-(P_t/max(P_t_minus_251_through_t)-1),R2A market core,true,registered,false
+R4B__DOWNSIDE_VAR63,realized_risk,Downside variance share 63d,downside_variance_share_63d,R2A market core,true,registered,false
+R4B__SKEW63,tail_shape,Negative skew 63d,-sample_return_skew_63d,R2A market core,true,registered,false
+R4B__KURT126,tail_shape,Excess kurtosis 126d,sample_return_excess_kurtosis_126d,R2A market core,true,registered,false
+R4B__VIX_LEVEL,implied_risk,VIX level,log(VIX_close_percent/100),Cboe official,false,registered_pending_data_gate,false
+R4B__VIX_RV_GAP,implied_risk,VIX minus RV variance proxy,(VIX_close_percent/100)^2-RV21^2,Cboe official plus R2A,false,registered_pending_data_gate,false
+R4B__DOWN_VOLUME21,volume_price,Down-move dollar-volume share 21d,sum(DV*abs(TR_logret)*I[TR_logret<0])/sum(DV*abs(TR_logret)) over 21 sessions,free SPY OHLCV snapshot,false,registered_pending_data_gate,false
+R4B__VOLUME_SHOCK,volume_price,Dollar-volume shock 21 over 252,log(mean(DV_21)/median(DV_252)),free SPY OHLCV snapshot,false,registered_pending_data_gate,false
+R4B__HY_OAS_LEVEL,credit,HY OAS level,log(BAMLH0A0HYM2),FRED,false,registered_pending_data_gate,false
+R4B__HY_OAS_CHANGE21,credit,HY OAS change 21d,BAMLH0A0HYM2_t-BAMLH0A0HYM2_t_minus_21_sessions,FRED,false,registered_pending_data_gate,false
+R4B__YC_10Y3M,yield_curve,Negative 10Y minus 3M,-(DGS10-DGS3MO),FRED,false,registered_pending_data_gate,false
+R4B__YC_10Y2Y,yield_curve,Negative 10Y minus 2Y,-(DGS10-DGS2),FRED,false,registered_pending_data_gate,false
+R4B__NFCI,financial_conditions,NFCI vintage level,NFCI_as_of_signal_release_vintage,ALFRED,false,registered_pending_data_gate,false
+R4B__RSP_SPY63,participation_proxy,Negative RSP versus SPY 63d relative return,-delta_63d_log(RSP_TR_close/SPY_TR_close),free RSP TR snapshot plus R2A,false,registered_pending_data_gate,false

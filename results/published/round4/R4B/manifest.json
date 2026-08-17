@@ -1,0 +1,57 @@
+{
+  "batch_id": "R4B_T2_SINGLE_FACTOR_REFERENCE",
+  "counts": {
+    "eligible_arms": 17,
+    "summary_rows": 17,
+    "target_rows": 1509
+  },
+  "files": [
+    {
+      "path": "annual_thresholds.parquet",
+      "sha256": "6754830d16642edd9ea2331384f5b7ac2414ef268ade7fb05f9fc5fd1a5f386b",
+      "size_bytes": 6754
+    },
+    {
+      "path": "arm_summary.csv",
+      "sha256": "21e5c442d2049b6f563b6e2a02831dcb8957c1603335e4bcf53aed1da0017ce4",
+      "size_bytes": 6458
+    },
+    {
+      "path": "nav_daily.parquet",
+      "sha256": "1bce82219e8ba055e5c5a72442d2f3fdecddfe67d7caeceb30d82aa07c5dc367",
+      "size_bytes": 11801061
+    },
+    {
+      "path": "quintiles.csv",
+      "sha256": "4e0c82897544c8d1038d1b67532cc5dcc495c9670e25fe2e36b7f3da18a4d018",
+      "size_bytes": 5234
+    },
+    {
+      "path": "signals_weekly.parquet",
+      "sha256": "899b0712d3530dcff568659f1d4fd1368be6b8f6c71550e39d5f3ff99d30d8da",
+      "size_bytes": 165507
+    },
+    {
+      "path": "targets_weekly.parquet",
+      "sha256": "64cd9018a09dedae8f3f3dd2893c0631da1af672c69da370842c6aee58149b5a",
+      "size_bytes": 58389
+    },
+    {
+      "path": "yearly_contributions.csv",
+      "sha256": "8a1a88c2149eb04ffadb5af2ba0e277c0f80f72150a934a01329411d0040da3a",
+      "size_bytes": 13145
+    }
+  ],
+  "formal_eligible": false,
+  "git_commit": "2e42d2495668bf401dcd73f26f114b078c5e20a0",
+  "lockbox_read": false,
+  "maximum_signal": "2021-12-23",
+  "models_run": false,
+  "position_search_run": false,
+  "prereg_lock_sha256": "6d6cc352f544473f232e22a1c6a94a64163be83a4bbab9200bf6321a1f163ae9",
+  "program_id": "defense_factor_audit_round4_v1",
+  "r4a_manifest_sha256": "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f",
+  "run_id": "r4b-t2-single-factor-20260817-v1",
+  "schema_version": 1,
+  "status": "completed_development"
+}

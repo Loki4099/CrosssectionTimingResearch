@@ -1,0 +1,67 @@
+schema_version = 1
+program_id = "defense_factor_audit_round4_v1"
+batch_id = "R4A_FREE_FACTOR_DATA"
+status = "plan_locked_authorized_not_run"
+dataset_version = "round4-factor-data-free-1993-2021-v1-candidate"
+formal_eligible = false
+design_path = "docs/20_experiments/R4A_factor_data/design.md"
+factor_catalog_path = "config/experiments/round4/factor_catalog_plan.csv"
+
+[dates]
+history_start = "1993-01-01"
+development_cutoff = "2021-12-31"
+maximum_prediction_signal = "2021-12-23"
+lockbox_start_signal = "2021-12-31"
+lockbox_start_execution = "2022-01-03"
+
+[parents]
+r2a_snapshot_id = "r2a-long-free-20260816-v1"
+r2a_manifest_sha256 = "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c"
+r2a_tree_sha256 = "6985176ea1088d70c0191d6e24527dc7117e66ce81a1c0ece7ad7f539ed061ce"
+r2_folds_sha256 = "e0a18efcd533bd1e836cde4a8e9e9bc3dd0c343eb690b5a7ccc384093bf7c53c"
+
+[sources]
+paid_sources_allowed = false
+norgate_allowed = false
+cboe_vix = "required_for_vix_arms"
+fred_hy_oas = "BAMLH0A0HYM2"
+fred_treasury = ["DGS10", "DGS3MO", "DGS2"]
+alfred_nfci_vintage_required = true
+spy_volume_provider = "resolve_and_freeze_before_outcomes"
+rsp_provider = "resolve_and_freeze_before_outcomes"
+pit_constituent_breadth = "blocked_not_an_arm"
+
+[availability]
+market_series_fill = "none"
+maximum_missing_fraction = 0.02
+maximum_consecutive_missing_weeks = 4
+fred_daily_lag_xnys_sessions = 1
+fred_daily_max_staleness_sessions = 5
+nfci_max_staleness_calendar_days = 14
+pre_inception_counts_as_missing = false
+missing_signal_policy = "carry_prior_overlay_state_in_later_replay"
+initial_overlay_state = "risk_on"
+
+[qa]
+double_build_hash_required = true
+source_license_required = true
+raw_payload_hash_required = true
+available_at_required = true
+future_invariance_required = true
+overlap_reconciliation_required = true
+target_columns_forbidden = true
+strategy_outputs_forbidden = true
+event_outcomes_forbidden = true
+
+[authorization]
+network_acquisition = true
+normalization = true
+feature_input_construction = true
+target_materialization = false
+signal_evaluation = false
+strategy_nav = false
+event_outcomes = false
+lockbox = false
+mom255_transfer = false
+models = false
+position_search = false

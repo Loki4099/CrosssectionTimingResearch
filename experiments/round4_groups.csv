@@ -1,0 +1,5 @@
+batch_id,status,authorization,objective,depends_on
+R4A_FREE_FACTOR_DATA,plan_locked_authorized_not_run,data_only,Acquire and QA frozen free inputs for the registered factor catalog,PLAN_LOCK
+R4B_T2_SINGLE_FACTOR_REFERENCE,planned_waiting_prereg,not_authorized,Run all eligible single factors against original T2 with one fixed 100/50 wrapper,R4A_FREE_FACTOR_DATA+PREREG_LOCK
+R4C_TARGET_SANITY,planned_waiting_prereg,not_authorized,Audit original T2 independently of candidate factors without changing it,R4A_FREE_FACTOR_DATA+PREREG_LOCK
+R4D_SPY_DRAWDOWN_ATLAS,planned_waiting_prereg,not_authorized,Build development-only SPY drawdown and counterexample event atlas,R4A_FREE_FACTOR_DATA+PREREG_LOCK

@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "program_id": "defense_factor_audit_round4_v1",
+  "lock_type": "plan_and_r4a_data_only",
+  "frozen_at_local_date": "2026-08-17",
+  "files": {
+    "config/data/round4/R4A_FACTOR_DATA.toml": "d526b7a049b43a7b9f534609d59f09486480feece77ce4e7f8d280068a56a6d4",
+    "config/experiments/round4/factor_catalog_plan.csv": "88e62b3f8b017681d35ac96875d6f03ea02566be1cfa4298c287c036dc29cfa8",
+    "config/experiments/round4/plan.toml": "770a879d87fe19b8ffb26b27d1b18c576a5d31d4a79eefa17dfeb1862d7608ae",
+    "docs/20_experiments/R4A_factor_data/design.md": "69184d19fe60365e3062146030cef4dd926b5614dd6068a27091728812d87b7f",
+    "docs/26_round4_defense_factor_audit_program_v1.md": "74ff88e160df7293b7075463ea7c5f142a06cc09ea956eb1916a403ad3a7c873",
+    "experiments/round4_groups.csv": "269129a6a0cf8d1367e4ccc8ecae6539a5e20ef60bac141e3e141ee8c729d252",
+    "experiments/round4_registry.csv": "6eb1242155f0bb0712155a2b6a7e070e4da1ad211746a44d5fb8d9995c958602"
+  },
+  "inputs": {
+    "r2a_snapshot_id": "r2a-long-free-20260816-v1",
+    "r2a_manifest_sha256": "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c",
+    "r2a_tree_sha256": "6985176ea1088d70c0191d6e24527dc7117e66ce81a1c0ece7ad7f539ed061ce",
+    "r2_folds_sha256": "e0a18efcd533bd1e836cde4a8e9e9bc3dd0c343eb690b5a7ccc384093bf7c53c",
+    "r2b_design_sha256": "adb5c56bd793e9a5b747ebd5ce5eff5f0c855fa8a1341d71c4ced47214b8129c"
+  },
+  "counts": {
+    "registered_factor_arms": 20,
+    "legacy_anchor_arms": 10,
+    "new_free_data_arms": 10,
+    "registered_batches": 4,
+    "authorized_batches": 1
+  },
+  "authorization": {
+    "authorized_batch": "R4A_FREE_FACTOR_DATA",
+    "data": true,
+    "target_materialization": false,
+    "signal_evaluation": false,
+    "strategy_nav": false,
+    "event_outcomes": false,
+    "lockbox": false,
+    "mom255_transfer": false,
+    "models": false,
+    "position_search": false
+  },
+  "next_lock": {
+    "required_path": "config/experiments/round4/PREREG_LOCK.json",
+    "must_not_exist_before_r4a_acceptance": true,
+    "authorized_batches_after_separate_freeze": [
+      "R4B_T2_SINGLE_FACTOR_REFERENCE",
+      "R4C_TARGET_SANITY",
+      "R4D_SPY_DRAWDOWN_ATLAS"
+    ]
+  },
+  "firewall": {
+    "maximum_prediction_signal": "2021-12-23",
+    "lockbox_start_signal": "2021-12-31",
+    "lockbox_start_execution": "2022-01-03",
+    "outcomes_from_lockbox_start_forbidden": true,
+    "automatic_champion": false,
+    "automatic_target_v2": false
+  }
+}

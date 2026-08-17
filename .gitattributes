@@ -1,1 +1,19 @@
 docs/20_experiments/G33_book_forecast_derisk/implementation_note.md text eol=lf whitespace=-blank-at-eol
+.gitattributes text eol=lf
+README.md text eol=lf
+docs/README.md text eol=lf
+docs/00_program/README.md text eol=lf
+docs/20_experiments/README.md text eol=lf
+config/data/round4/R4A_FACTOR_DATA.toml text eol=lf
+config/experiments/round4/*.csv text eol=lf
+config/experiments/round4/*.json text eol=lf
+config/experiments/round4/*.toml text eol=lf
+docs/20_experiments/R4A_factor_data/*.md text eol=lf
+docs/20_experiments/R4B_t2_single_factor/*.md text eol=lf
+docs/20_experiments/R4C_target_sanity/*.md text eol=lf
+docs/20_experiments/R4D_spy_drawdown_atlas/*.md text eol=lf
+docs/26_round4_defense_factor_audit_program_v1.md text eol=lf
+docs/27_round4_factor_audit_decision_memo.md text eol=lf
+experiments/round4_*.csv text eol=lf
+results/published/round4/** text eol=lf
+tests/test_round4_plan.py text eol=lf
