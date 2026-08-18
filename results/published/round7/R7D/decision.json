@@ -1,0 +1,11 @@
+{
+  "attack_ax02_qualified": false,
+  "lockbox_read": false,
+  "program_id": "dual_head_model_round7_v1",
+  "risk_qualified_canonical_processes": 0,
+  "risk_qualified_processes": 0,
+  "round8_authorized": false,
+  "state_machine_run": false,
+  "status": "completed_pending_user_round8_freeze_decision",
+  "strategy_nav_run": false
+}

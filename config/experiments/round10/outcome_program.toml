@@ -1,0 +1,77 @@
+schema_version = 1
+program_id = "p00_mom255_mechanical_lockbox_round10_v1"
+status = "outcome_reveal_authorized_after_target_lock"
+formal_eligible = false
+run_id = "r10c-outcome-reveal-20260818-v1"
+
+[sealed]
+phase1_prereg_lock_sha256 = "373964c08a6b027abd6fba33395c8ee871bbaa7afdb786c7096eef0f03fc328e"
+r10b_run_id = "r10b-sealed-targets-20260818-v1"
+r10b_manifest_sha256 = "3c2cfdb6f35e8918cad5acca11dfe1c1a7b07055bd6c0ae038190c88a6034827"
+states_sha256 = "ba62cf82f06723b83464df70ec699621d48ac0550e725462e70ed8aa07b2a27e"
+targets_sha256 = "ef1e21215bc0921b37db180c1b717788e2d336eda0d80c3bc20832ff8c09bf02"
+event_audit_sha256 = "5a602c0c7ce405f8ef2f4f1d3a5cf2288c27fcd4bf374c02cc76c98ba52deaba"
+signal_identity_sha256 = "59206af134d7a6f230bcaab899eb592fff61758dd4b2e33e8b4e191d6b4be540"
+
+[parents]
+g00_run_id = "g00-frozen-v3-v1"
+g00_manifest_sha256 = "8b875d4bcbb7b178b309c7b1edaa7dce9bbb15090e68b619fb045cec35411c66"
+g00_holdings_sha256 = "a1b32d09783eded05bed53b949421359e5bb0b1978ea3379edfc42b2333e7e33"
+g00_nav_sha256 = "b9d803c82587d61d0f2911d77e44c929365f053d5a4c003d694bcf2ccf00d199"
+dataset_version = "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate"
+prices_sha256 = "4a881854d2c278378955529c638193706ddfafb503e7a8a9c752cc7791ba2670"
+corporate_actions_sha256 = "1e90c67e030a2efaa1a43badcf4b22751e6e6a76242ffe4179d9f242733f0c1d"
+risk_free_sha256 = "fcdedda1132947ba9da575d4ae7b66835bcd6eb72e36f1cc17b26b7be21b1975"
+calendar_sha256 = "28275dc373f76a15c0c202c0c438fdce2e8f547e8930faf38519a97f81865565"
+round9_static_allocations_path = "results/published/round9/R9A/static_allocations.csv"
+round9_static_allocations_sha256 = "833f07d6780067fd296c763ea6179179c91580b2b36657a2147acd8c24b43ad0"
+round9_union_runner_sha256 = "2f22a802796b08bb36631475a3f6931ad6873d6f2fda10cbc80158bc592d9e20"
+transfer_registry = "config/experiments/round10/transfer_registry.csv"
+
+[sample]
+first_execution = "2022-01-03"
+last_nav_date = "2026-06-30"
+
+[economics]
+paths = ["naked", "p00_overlay", "matched_static"]
+cost_bps = [0, 5, 10, 20]
+primary_cost_bps = 10
+primary_transfer_id = "R10__MOM255__TOP20__MONTHLY"
+cash_earns_daily_rf = true
+single_actual_stock_l1_charge = true
+
+[inference]
+block_weeks = 13
+bootstrap_repetitions = 5000
+seed = 20260818
+one_sided_alpha = 0.05
+leave_one_calendar_year_out = true
+
+[gates]
+primary_overlay_to_naked_terminal_ratio_gt = 1.0
+primary_timing_value_gt = 0.0
+primary_delta_sharpe_gt = 0.0
+primary_delta_mdd_gt = 0.0
+primary_block_lower_gt = 0.0
+primary_p_le = 0.05
+primary_minimum_leave_year_timing_gt = 0.0
+family_minimum_passed = 4
+family_minimum_weekly_passed = 2
+family_minimum_monthly_passed = 2
+family_all_metric_medians_gt = 0.0
+cost20_all_timing_positive = true
+
+[authorization]
+outcome_reveal_phase = true
+strategy_nav = true
+performance_assessment = true
+model_or_policy_revision = false
+target_revision = false
+threshold_revision = false
+position_revision = false
+candidate_substitution = false
+
+[hard_stop]
+after_batch = "R10C_OUTCOME_REVEAL"
+status = "completed_mechanical_lockbox"
+automatic_revision = false

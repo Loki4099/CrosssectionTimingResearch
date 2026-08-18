@@ -1,0 +1,92 @@
+{
+  "authorization": {
+    "attack_isotonic": true,
+    "bagging": false,
+    "factor_additions": false,
+    "final_state_machine": false,
+    "fold_materialization": true,
+    "head_qualification": true,
+    "lockbox": false,
+    "mom255_transfer": false,
+    "position_search": false,
+    "risk_models": true,
+    "stacking": false,
+    "strategy_nav": false,
+    "window_search": false
+  },
+  "counts": {
+    "attack_processes": 3,
+    "feature_bundles": 9,
+    "formal_attack_hypotheses": 1,
+    "major_events": 6,
+    "outer_folds": 8,
+    "outer_test_weeks": 404,
+    "recipe_ids": 12,
+    "registered_batches": 4,
+    "risk_processes": 27,
+    "risk_trial_arms": 108
+  },
+  "dependency": {
+    "deterministic_prediction_sha256": "360846b4293e02044ffdc4c363a4fb0edf040ba74dc89b4de5797afe28140526",
+    "dll_sha256": "d2a41567e16b127b2486b417cc25813588fe015a0481e06fe8ce662ebed1ec61",
+    "lightgbm": "4.6.0",
+    "metadata_sha256": "6cae173638e3581cfa60cd0e07660b0a72efe67ca3db4d3d3cfaa7d31d03b65d",
+    "objective": "regression"
+  },
+  "files": {
+    "config/experiments/round7/PARENT_ACCEPTANCE.json": "e68f8ba0c7989f677fb9546e9a20f30812b7135268382dc0798c209b0da9325c",
+    "config/experiments/round7/attack_registry.csv": "8937b3d5d5c51d9736d68aa1e9d2060d906310b61c18cdff473c94062a4bab94",
+    "config/experiments/round7/event_registry.csv": "711ab39beac47d2fd3ae7282224f314984f28c3fa699dfc59e3e23135da8ca1d",
+    "config/experiments/round7/feature_bundles.csv": "134b5ac919fc7d5f41a60742ff2b8a9af01d6d3b74785cf620e9d5aff8fef5bc",
+    "config/experiments/round7/folds.json": "8cd162e45ccc4600764c9b9340cd1ab444389d2a28e044d4769f75c109015021",
+    "config/experiments/round7/model_recipes.csv": "222484887db2701bef95674d4a5e6798ab7287b6fc224cd0f596a5cfe55e09a6",
+    "config/experiments/round7/process_registry.csv": "b4a7ea2b29601f9809586a34e2e1a394329b55c2a363bf9c845420136b03b22a",
+    "config/experiments/round7/program.toml": "403dfd2209d5f506709e9d419b3e406c3b4c7cfa78ea3059fa36d1edce9083d5",
+    "docs/20_experiments/R7A_dual_target_folds/design.md": "cf5c33cf7a242cc717535c7084b91384b8163727f58c7e079f4c9da90a528ee6",
+    "docs/20_experiments/R7B_risk_model_tournament/design.md": "50e2eefebb2040e481482bdb6955829ef08ecd3c31d839a1f366ed145903f327",
+    "docs/20_experiments/R7C_rsp_attack_comparator/design.md": "5e1269b77627ddbb750e8d80e5f52081069d443665073ded7987086be85eb4b4",
+    "docs/20_experiments/R7D_head_qualification/design.md": "5dbd6cf957a2b863d70b3b97ce336b8390675ad3f2b4f064b64daa879b4abd72",
+    "docs/33_round7_dual_head_model_program_draft_v1.md": "5558697ccf4b49651ea18b74a665bc778e3609d2766e7bc15fa40f23dbb28d1a",
+    "experiments/round7_groups.csv": "f8d8775fbe8015d66ff48d3fc2cdd70b39225930e3f2170d4a8475cb824e532d",
+    "experiments/round7_registry.csv": "e358e4002a5975bcad147d53dd5d2300d4163ee8dc47af167d0dc9f70b3c1879",
+    "pyproject.toml": "8e02d2fefccb5028fd56d0992939f7fbb804d030bf3230bfc2b6536fdf79d814",
+    "scripts/build_round7_folds.py": "f7e670aa7364a517d79da97c63f48598f4cc3662aa44d0788e3a1caaaf72c7e5",
+    "scripts/build_round7_prereg_lock.py": "ef9757d1ad40a7add7a7b8e3fc9210eac92e206e591a4716fbe8b721ad97dcf3"
+  },
+  "firewall": {
+    "lockbox_outcomes_forbidden": true,
+    "maximum_attack_target_signal": "2021-11-26",
+    "maximum_risk_target_signal": "2021-09-24",
+    "nav_outputs_forbidden": true,
+    "strategy_outputs_forbidden": true
+  },
+  "folds": {
+    "embargo_scheduled_weeks": 1,
+    "final_outer_last_signal": "2021-09-24",
+    "outer_years": [
+      2014,
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021
+    ],
+    "purge_scheduled_weeks": 13,
+    "sha256": "8cd162e45ccc4600764c9b9340cd1ab444389d2a28e044d4769f75c109015021"
+  },
+  "frozen_at_local_date": "2026-08-18",
+  "hard_stop": {
+    "after_batch": "R7D_HEAD_QUALIFICATION",
+    "automatic_lockbox": false,
+    "automatic_mom255_transfer": false,
+    "automatic_round8": false,
+    "automatic_state_machine": false,
+    "status": "completed_pending_user_round8_freeze_decision"
+  },
+  "lock_type": "development_batches_r7a_r7b_r7c_r7d",
+  "parent_r6_prereg_lock_sha256": "af00cccc159c3763671fded835a28eb3afffb3f0eac00a291ac7415a672d9a23",
+  "program_id": "dual_head_model_round7_v1",
+  "schema_version": 1
+}

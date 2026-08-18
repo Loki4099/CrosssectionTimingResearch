@@ -21,4 +21,10 @@
 
 第五轮入口：[连续MAE13单因子复审计划 v1](./28_round5_mae13_single_factor_program_v1.md)及[决策备忘录](./29_round5_mae13_single_factor_decision_memo.md)。RSP/SPY63 participation proxy 是17条冻结因子中唯一robust阳性；10bp统一代理几乎保留同期always-SPY CAGR并把MDD从-33.70%降至-22.94%。该结果仍仅为2009–2021开发证据，2022–2026锁箱、模型和动量迁移均未开放。
 
+路线起点：[防守—进攻双头条件路线 v1](./30_defense_attack_dual_head_route_v1.md)、[第六轮 A4 单因子审计计划 v1](./31_round6_attack4_single_factor_program_v1.md)与[Round 6 决策备忘录](./32_round6_attack4_single_factor_decision_memo.md)。Round 6 已完成：RSP/SPY63 level有正向开发期信息，但20项BH与经济门未过；最终direct/economic/conditional三路线均为0。Round 7并非自动晋级，而是经用户重新授权并另行预注册后启动。
+
+Round 7 已按[冻结双head模型计划](./33_round7_dual_head_model_program_draft_v1.md)完成，并形成[决策备忘录](./36_round7_dual_head_model_decision_memo.md)：27个risk processes与正式A4 head均为0条合格。随后[Round 8 RSP-only状态机](./34_round8_risk_veto_state_machine_program_draft_v1.md)完成，并形成[决策备忘录](./37_round8_rsp_state_machine_decision_memo.md)：P00 raw RSP风险解除即恢复是唯一development-eligible程序。[Round 9 P00 × mom_255_0 long-only迁移](./38_round9_p00_mom255_transfer_program_v1.md)在开发期六格全部通过；但后续[Round 10机械锁箱](./40_round10_p00_mom255_mechanical_lockbox_plan_v1.md)（[决策备忘录](./41_round10_p00_mom255_mechanical_lockbox_decision_memo.md)）未通过：2022–2026六格0/6通过联合门，primary虽有正timing value和Sharpe增量，却落后裸策略终值且MDD恶化。
+
+当前完整结论见[Round 6–10跨轮实验总结](./42_round6_round10_experiment_synthesis.md)。
+
 免费研究数据集 `sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate` 已通过门禁并冻结。[G00](./20_experiments/G00_baseline/report.md)、[G11](./20_experiments/G11_spy_continuous_scale/report.md)、[G12](./20_experiments/G12_book_hist_continuous_scale/report.md)、[G13](./20_experiments/G13_book_forecast_continuous_scale/report.md)、[G21](./20_experiments/G21_spy_reversal/report.md)、[G22](./20_experiments/G22_book_hist_reversal/report.md)、[G23](./20_experiments/G23_book_forecast_reversal/report.md)、[G31](./20_experiments/G31_spy_derisk/report.md)、[G32](./20_experiments/G32_book_hist_derisk/report.md)与 [G33](./20_experiments/G33_book_forecast_derisk/report.md)已完成，九宫格主网格闭合。G23 的 LO 0/36 失败；LS 以 33/36、月 15/18、周 18/18 通过平台门槛，但仍成本/借券敏感且绝对表现弱。所有结果仍为 `formal_run_eligible=false` 的免费研究证据；XS01 为另行预注册的补充实验。

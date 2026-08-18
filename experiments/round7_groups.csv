@@ -1,0 +1,5 @@
+batch_id,status,authorization,objective,depends_on
+R7A_DUAL_TARGET_FOLDS,plan_locked_authorized_not_run,fold_materialization,Validate parents and materialize absolute nested folds,NONE
+R7B_RISK_MODEL_TOURNAMENT,plan_locked_authorized_not_run,risk_models,Generate 27 strictly nested risk process predictions,R7A_DUAL_TARGET_FOLDS
+R7C_RSP_ATTACK_COMPARATOR,plan_locked_authorized_not_run,attack_isotonic,Compare raw RSP and one A4 monotone head,R7A_DUAL_TARGET_FOLDS
+R7D_HEAD_QUALIFICATION,plan_locked_authorized_not_run,head_qualification,Apply frozen role gates and hard stop,R7B_RISK_MODEL_TOURNAMENT|R7C_RSP_ATTACK_COMPARATOR

@@ -1,0 +1,56 @@
+{
+  "assessment": "completed_no_attack_role_candidate",
+  "batch_id": "R6D_ATTACK4_ROBUSTNESS",
+  "counts": {
+    "conditional_role_pass": 0,
+    "economic_reference": 0,
+    "major_events": 6,
+    "model_input_eligible": 0,
+    "registered_arms": 20,
+    "robust_direct_attack": 0
+  },
+  "factor_additions_run": false,
+  "files": [
+    {
+      "path": "cost_robustness.csv",
+      "sha256": "6531ae65a46e62f9751d545be353e4d312b30a8da0443403ea2209eea67f8dc8",
+      "size_bytes": 4796
+    },
+    {
+      "path": "final_assessment.csv",
+      "sha256": "55292ecf3ac2193fb07cd5913f50aaf5b7d659251d43fc2c6d9cf4847b80a680",
+      "size_bytes": 20437
+    },
+    {
+      "path": "leave_one_event_out.csv",
+      "sha256": "6ecbd23f3eba11573dfe34b65e7ac47498967564c55f84bdf5b5a17f8d4a2ffe",
+      "size_bytes": 6103
+    },
+    {
+      "path": "qualification_ledger.csv",
+      "sha256": "31306b4ab06427f4f4b420ab245c7cebf82a00a124a048abfe78abcca0daa754",
+      "size_bytes": 1634
+    }
+  ],
+  "final_state_machine_run": false,
+  "formal_eligible": false,
+  "lockbox_predictions_generated": false,
+  "lockbox_read": false,
+  "maximum_nav_date": "2021-12-31",
+  "maximum_proxy_signal": "2021-12-23",
+  "maximum_target_signal": "2021-11-26",
+  "models_run": false,
+  "mom255_transfer_run": false,
+  "parent_manifests": {
+    "r6a": "eca0f0901ea3ac7174fddafb82cc73c73ee811fa4ca1ff66f65a7af6266e0fd6",
+    "r6b": "07e89b83711e1760a79c3e8b9a6b7483b35e042fa584212f1d2a26296de38647",
+    "r6c": "83342e1c96b3e971b08d2d36655f78f673a45f8a7dc8834bef6b414f88caa084"
+  },
+  "position_search_run": false,
+  "prereg_lock_sha256": "af00cccc159c3763671fded835a28eb3afffb3f0eac00a291ac7415a672d9a23",
+  "program_id": "attack4_single_factor_round6_v1",
+  "run_id": "r6d-attack4-robustness-20260818-v1",
+  "schema_version": 1,
+  "status": "completed_development",
+  "window_search_run": false
+}

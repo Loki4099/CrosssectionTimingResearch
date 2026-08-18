@@ -1,0 +1,13 @@
+{
+  "cost20_direction_gate": true,
+  "development_transfer_eligible": true,
+  "family_gate": true,
+  "leaveout_gate": true,
+  "monthly_passed": 3,
+  "passed_cells": 6,
+  "primary_block13_95_lower": 0.00017843830250973075,
+  "primary_four_metric_gate": true,
+  "primary_one_sided_p": 0.0198,
+  "primary_transfer_id": "R9__MOM255__TOP20__MONTHLY",
+  "weekly_passed": 3
+}

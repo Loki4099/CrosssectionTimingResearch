@@ -1,0 +1,4 @@
+batch_id,status,authorization,objective,depends_on
+R9A_MOM255_UNION_LEDGER,plan_locked_authorized_not_run,union_event_ledger,Build six P00 overlay ledgers and prove naked G00 identity,NONE
+R9B_MOM255_TRANSFER_ECONOMICS,plan_locked_authorized_not_run,development_mom255_nav,Measure overlay naked and matched-static economics across six cells,R9A_MOM255_UNION_LEDGER
+R9C_MOM255_TRANSFER_ASSESSMENT,plan_locked_authorized_not_run,transfer_assessment,Apply primary family robustness and block-inference gates,R9B_MOM255_TRANSFER_ECONOMICS

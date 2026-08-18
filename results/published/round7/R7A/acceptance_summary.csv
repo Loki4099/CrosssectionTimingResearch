@@ -1,0 +1,2 @@
+common_weeks,first_signal,last_signal,outer_folds,outer_oos_weeks,mean_y5,mean_a4,rsp_y5_spearman,rsp_a4_spearman,lightgbm_version,lightgbm_repeat_deterministic
+948,2003-08-01,2021-09-24,8,404,0.019715542082479352,0.0069337890731258406,0.22557172160319103,0.11674747252147631,4.6.0,True

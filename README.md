@@ -38,6 +38,18 @@ The full nine-cell action × risk-source main grid is complete. G22 v1 remains u
 
 [Round-five continuous-MAE13 single-factor review](docs/28_round5_mae13_single_factor_program_v1.md) is complete; see its [decision memo](docs/29_round5_mae13_single_factor_decision_memo.md). RSP/SPY63 is the sole robust development-positive factor under the 5% dead-zone target and fixed 100/50 SPY-cash proxy. The lockbox, models, and momentum transfer remain closed.
 
+The [defense/attack dual-head route](docs/30_defense_attack_dual_head_route_v1.md) has now completed through Round 10. Round 7 produced no qualified multivariate head; Round 8 selected the raw RSP P00 risk-veto policy; and the frozen [Round-nine P00 × mom_255_0 long-only transfer](docs/38_round9_p00_mom255_transfer_program_v1.md) passed its development gates. The subsequent [Round 10 mechanical lockbox](docs/40_round10_p00_mom255_mechanical_lockbox_plan_v1.md) failed: the 2022–2026 primary retained positive timing value versus matched static but trailed naked terminal wealth and worsened MDD; all six cells failed the joint gate ([decision memo](docs/41_round10_p00_mom255_mechanical_lockbox_decision_memo.md)).
+
+| Round | Question | Frozen result |
+|---|---|---|
+| 6 | Which single factors identify four-week attack/re-entry opportunity? | RSP/SPY63 retained positive directional information, but no direct, economic, or conditional route qualified after the registered gates. |
+| 7 | Do multivariate risk/attack models beat the frozen simple references? | Zero of 27 risk processes qualified; the formal A4 head also failed. No multivariate head advanced. |
+| 8 | Can raw RSP signals form a risk-priority state policy? | P00 (`raw RSP risk high → 50%`, otherwise 100%) was the sole development-eligible policy. |
+| 9 | Does P00 transfer to long-only `mom_255_0`? | Development period passed the Top20-monthly primary and all six TopK × frequency cells. |
+| 10 | Does the frozen Round 9 candidate survive the 2022–2026 mechanical firewall? | No. Timing versus matched static and Sharpe stayed positive, but terminal wealth and MDD failed; joint family gate 0/6. |
+
+The compact cross-round synthesis is in [docs/42_round6_round10_experiment_synthesis.md](docs/42_round6_round10_experiment_synthesis.md). Round 10 is a completed mechanical research reveal with `formal_eligible=false`, not a clean commercial-data external confirmation.
+
 Compact machine-readable results are committed under [`results/published/`](results/published/). Daily NAV, trades, holdings, provider payloads, and price Parquet files are intentionally excluded from Git.
 
 ## Local runtime storage

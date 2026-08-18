@@ -6,6 +6,8 @@
 
 > 2026-08-16 Round 2 治理修订：仅对 `defense_timing_round2_v1`，保留 expanding walk-forward，同时前瞻增加按完整执行年度冻结的 mechanical lockbox。该修订不使用随机切分；由于 2018–2026 已被研究过程观察，锁箱只约束模型选择，不能称为纯净外部确认，也不改写第一轮的历史章程。
 
+> 2026-08-18 后续路线状态：Round 6 A4单因子审计以0个自动候选硬停；RSP/SPY63随后由用户按跨标签机制证据显式指定为比较基准，而非改写R6机器结论。Round 7模型、Round 8状态机、[Round 9正式迁移](./38_round9_p00_mom255_transfer_program_v1.md)及[Round 10机械锁箱](./40_round10_p00_mom255_mechanical_lockbox_plan_v1.md)均已在各自独立机器锁下完成。Round 9开发门通过，但Round 10锁箱联合门0/6、`mechanical_lockbox_passed=false`；详见[跨轮总结](./42_round6_round10_experiment_synthesis.md)与[Round 10决策备忘录](./41_round10_p00_mom255_mechanical_lockbox_decision_memo.md)。
+
 > 状态：研究章程 v1；免费研究 v3 上 G00 与九宫格 G11–G13、G21–G23、G31–G33 已完成
 > 适用项目：`momentum_reversal`  
 > 配套文档：[第一轮基线规格](./01_round1_baseline_spec.md) · [数据契约与 QA](./02_data_contract_and_qa.md) · [实验台账规范](./03_experiment_ledger.md) · [系统化九宫格](./21_systematic_experiment_program_v2.md)

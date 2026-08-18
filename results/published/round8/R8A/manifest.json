@@ -1,0 +1,37 @@
+{
+  "assessment": "completed_development",
+  "batch_id": "R8A_RSP_POLICY_SIGNALS",
+  "counts": {
+    "policies": 3,
+    "state_rows": 1212,
+    "weeks_per_policy": 404
+  },
+  "files": [
+    {
+      "path": "policy_states_weekly.parquet",
+      "sha256": "ccee1ef2e29f418a6d8f7bbbf30e1a94389d1d63a29a8e50f39b34076d038bcf",
+      "size_bytes": 34997
+    },
+    {
+      "path": "state_summary.csv",
+      "sha256": "c16ec450052941e814c5e364ba46ae0f12bb82d6aa44ea23dd4d64ed9cf9cbe5",
+      "size_bytes": 329
+    }
+  ],
+  "formal_eligible": false,
+  "lockbox_predictions_generated": false,
+  "lockbox_read": false,
+  "models_run": false,
+  "mom255_transfer_run": false,
+  "parent_manifests": {
+    "r7b": "6c8fb116397c29b682f7cb138740487ee67d256e737f099ebc7c75ac0c3c94ca",
+    "r7c": "867a8f0dce1aae1afd5ee9b0696b343bab2955eb9fd7f94e76c9fde7354a0685"
+  },
+  "prereg_lock_sha256": "81e526fd6cc939fd42a6cfd7c1fda3a2303a2a2e33d09be9cb7b5e4e6d12446f",
+  "program_id": "rsp_only_state_machine_round8_v1",
+  "run_id": "r8a-rsp-policy-signals-20260818-v1",
+  "schema_version": 1,
+  "state_machine_run": true,
+  "status": "completed_development",
+  "strategy_nav_run": false
+}

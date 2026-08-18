@@ -1,0 +1,41 @@
+{
+  "assessment": "completed_development",
+  "batch_id": "R9B_MOM255_TRANSFER_ECONOMICS",
+  "counts": {
+    "comparisons": 24,
+    "path_metrics": 72,
+    "year_rows": 96
+  },
+  "files": [
+    {
+      "path": "path_metrics.csv",
+      "sha256": "6beef5acc781032741ea1daab8c8817e44f130665f403dba3ba0bda7c6960282",
+      "size_bytes": 11654
+    },
+    {
+      "path": "transfer_comparisons.csv",
+      "sha256": "9ad5f8990f72d904c99b1e40eb5be3e8aba7f80a1a431c5bb895c9f9e85ea4b7",
+      "size_bytes": 9095
+    },
+    {
+      "path": "yearly_timing.csv",
+      "sha256": "86b70c9a3e8ae4a28d65da76478da6f4e03a92b27756b3c1fd8308693921673a",
+      "size_bytes": 5984
+    }
+  ],
+  "formal_eligible": false,
+  "lockbox_predictions_generated": false,
+  "lockbox_read": false,
+  "models_run": false,
+  "mom255_transfer_run": true,
+  "parent_manifests": {
+    "r9a": "6e3ce6c38d27d174b951f382a04ecd28342a1930ac95da4256489e662ed49eac"
+  },
+  "prereg_lock_sha256": "b6def7259bab9a1b8c412827a458694699f46eeccca83de56e545dd09a6e611a",
+  "program_id": "p00_mom255_long_only_transfer_round9_v1",
+  "run_id": "r9b-transfer-economics-20260818-v1",
+  "schema_version": 1,
+  "state_machine_run": false,
+  "status": "completed_development",
+  "strategy_nav_run": true
+}

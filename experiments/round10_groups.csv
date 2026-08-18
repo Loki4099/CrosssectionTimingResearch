@@ -1,0 +1,4 @@
+batch_id,status,authorization,objective,depends_on
+R10A_RSP_LOCKBOX_FEATURE,completed_candidate,rsp_data_acquisition,Extend and identity-check Tiingo RSP without outcomes,NONE
+R10B_SEALED_TARGETS,plan_locked_authorized_not_run,prediction_target_phase,Freeze P00 states and six-cell next-open targets without performance,R10A_RSP_LOCKBOX_FEATURE
+R10C_OUTCOME_REVEAL,not_authorized,outcome_reveal_phase,Reveal frozen target economics only after a second lock,R10B_SEALED_TARGETS

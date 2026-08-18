@@ -1,0 +1,62 @@
+{
+  "assessment": "completed_development",
+  "batch_id": "R7B_RISK_MODEL_TOURNAMENT",
+  "counts": {
+    "inner_selections": 216,
+    "inner_trials": 864,
+    "outer_predictions": 10908,
+    "raw_rsp_predictions": 404,
+    "risk_processes": 27
+  },
+  "factor_additions_run": false,
+  "files": [
+    {
+      "path": "inner_selection.csv",
+      "sha256": "db8d33e902b4b70486ea38b5b80057250515c8dd67f2536fce651042aa39aee0",
+      "size_bytes": 18879
+    },
+    {
+      "path": "inner_trial_summary.csv",
+      "sha256": "0c89054691907b70077e4fe2a1352ae44c18b64c17ec64d2a9b253ef19f82ac6",
+      "size_bytes": 80021
+    },
+    {
+      "path": "outer_predictions.parquet",
+      "sha256": "b2f1176e4d80247ab36507e2f38435d205722fea8a97c780d86a6f89a4ffb630",
+      "size_bytes": 109263
+    },
+    {
+      "path": "raw_rsp_sentinel.parquet",
+      "sha256": "b641659806f5e85095615536bcaecaa419e7426fe8a11ea791550aece3f979d8",
+      "size_bytes": 24592
+    },
+    {
+      "path": "risk_summary.csv",
+      "sha256": "8233188e00fddcf4bf4d83b2014ece38aa4510dde593506dc9d22b11fe4d664b",
+      "size_bytes": 8431
+    },
+    {
+      "path": "risk_yearly.csv",
+      "sha256": "a9931e220be39253611c77dc951f280f6159475d56abf1787fd169c8ae354d08",
+      "size_bytes": 9024
+    }
+  ],
+  "final_state_machine_run": false,
+  "formal_eligible": false,
+  "lockbox_predictions_generated": false,
+  "lockbox_read": false,
+  "maximum_target_signal": "2021-09-24",
+  "models_run": true,
+  "mom255_transfer_run": false,
+  "parent_manifests": {
+    "r7a": "c22ed0d85940d188cb87505a4257ccec9673331f9bab78bbb3f6ada7fa34eab8"
+  },
+  "position_search_run": false,
+  "prereg_lock_sha256": "794760ae76a2bd07f79bdf5fe7a532c33255bcf743e9576b52a4e8ba6f37e4ae",
+  "program_id": "dual_head_model_round7_v1",
+  "run_id": "r7b-risk-model-tournament-20260818-v1",
+  "schema_version": 1,
+  "status": "completed_development",
+  "strategy_nav_run": false,
+  "window_search_run": false
+}

@@ -1,0 +1,45 @@
+{
+  "assessment": "completed_development",
+  "batch_id": "R7C_RSP_ATTACK_COMPARATOR",
+  "counts": {
+    "attack_processes_run": 2,
+    "outer_oos_weeks_per_process": 404,
+    "outer_predictions": 808
+  },
+  "factor_additions_run": false,
+  "files": [
+    {
+      "path": "attack_summary.csv",
+      "sha256": "4d41aadd91151fe9061d4bb4497ee91e2b3d431c795e6e917019f9557ad7b004",
+      "size_bytes": 1004
+    },
+    {
+      "path": "attack_yearly.csv",
+      "sha256": "a4cb1c5aa3c3228b42ea0d992b481b547521f0bc9d86ba9d170990e417228198",
+      "size_bytes": 1184
+    },
+    {
+      "path": "outer_predictions.parquet",
+      "sha256": "c1596d1bda5fc280d88f1a9a1b3dff95af93e06680a5bf316b345bd7dbe406ed",
+      "size_bytes": 33444
+    }
+  ],
+  "final_state_machine_run": false,
+  "formal_eligible": false,
+  "lockbox_predictions_generated": false,
+  "lockbox_read": false,
+  "maximum_target_signal": "2021-09-24",
+  "models_run": true,
+  "mom255_transfer_run": false,
+  "parent_manifests": {
+    "r7a": "c22ed0d85940d188cb87505a4257ccec9673331f9bab78bbb3f6ada7fa34eab8"
+  },
+  "position_search_run": false,
+  "prereg_lock_sha256": "794760ae76a2bd07f79bdf5fe7a532c33255bcf743e9576b52a4e8ba6f37e4ae",
+  "program_id": "dual_head_model_round7_v1",
+  "run_id": "r7c-rsp-attack-comparator-20260818-v1",
+  "schema_version": 1,
+  "status": "completed_development",
+  "strategy_nav_run": false,
+  "window_search_run": false
+}

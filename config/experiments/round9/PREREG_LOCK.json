@@ -1,0 +1,51 @@
+{
+  "authorization": {
+    "development_mom255_nav": true,
+    "factor_search": false,
+    "lockbox": false,
+    "model_search": false,
+    "policy_search": false,
+    "position_search": false,
+    "short_books": false,
+    "threshold_search": false,
+    "transfer_assessment": true,
+    "union_event_ledger": true,
+    "wml": false
+  },
+  "counts": {
+    "batches": 3,
+    "cost_scenarios": 4,
+    "primary_cells": 1,
+    "transfer_cells": 6
+  },
+  "files": {
+    "config/experiments/round9/PARENT_ACCEPTANCE.json": "0fca34e942167b008126fc4b9e1de3aa83d59617988af97a415b92bb79a35b16",
+    "config/experiments/round9/program.toml": "d37c713b91c7020b14401556cf2f4d1b774107c3d811db6bb906d4f18e81b1f7",
+    "config/experiments/round9/transfer_registry.csv": "d126e8500f6d0bea7393b498f0656e81df2a02233414c8de6648ea8c8ce28489",
+    "docs/20_experiments/R9A_mom255_union_ledger/design.md": "aeef90f7a704c9c13f1abd96b28a9e2faa160af82a48f8e5f6f86a502defa0ba",
+    "docs/20_experiments/R9B_mom255_transfer_economics/design.md": "c2c77aa15811366b861f89d04c8430258ee9b7c3d366530b96a3b6158879e970",
+    "docs/20_experiments/R9C_mom255_transfer_assessment/design.md": "bd088570c81658e6d9aee234dfeba1daa8671b105256f4bfda7b8804c45519b2",
+    "docs/38_round9_p00_mom255_transfer_program_v1.md": "439e7c2824ab0716b4ddd369688e092cb2f6fb88f77e36ac14422bed47069e95",
+    "experiments/round9_groups.csv": "251eb86950c6a3804fd8dbb51f0eaa85ee447d8a10878d60b25f9ddb9faf4ca0",
+    "experiments/round9_registry.csv": "2294b0eef11717435eeb6054777dae99cb32e12310e2e9962fdb50d2bb187f49",
+    "scripts/build_round9_prereg_lock.py": "4eb5b2bb9644a59c6d71e9dea15255b9b3ab9f5dba01b64ae31c99b7f45d9567"
+  },
+  "firewall": {
+    "lockbox_outcomes_forbidden": true,
+    "maximum_market_state_signal": "2021-09-24",
+    "maximum_strategy_nav_date": "2021-12-31",
+    "prices_after_maximum_nav_forbidden": true
+  },
+  "frozen_at_local_date": "2026-08-18",
+  "hard_stop": {
+    "after_batch": "R9C_MOM255_TRANSFER_ASSESSMENT",
+    "automatic_lockbox": false,
+    "automatic_model_or_policy_revision": false,
+    "status": "completed_pending_user_lockbox_decision"
+  },
+  "lock_type": "development_batches_r9a_r9b_r9c",
+  "parent_g00_manifest_sha256": "8b875d4bcbb7b178b309c7b1edaa7dce9bbb15090e68b619fb045cec35411c66",
+  "parent_round8_prereg_lock_sha256": "81e526fd6cc939fd42a6cfd7c1fda3a2303a2a2e33d09be9cb7b5e4e6d12446f",
+  "program_id": "p00_mom255_long_only_transfer_round9_v1",
+  "schema_version": 1
+}

@@ -30,3 +30,55 @@ results/published/round5/** text eol=lf
 scripts/*round5*.py text eol=lf
 src/momentum_reversal/pipelines/round5_*.py text eol=lf
 tests/test_round5_*.py text eol=lf
+
+# Round 6-10 preregistration hashes are raw-byte hashes.  Keep every locked
+# text member on LF across Windows and Unix checkouts.
+config/experiments/round6/** text eol=lf
+config/experiments/round7/** text eol=lf
+config/experiments/round8/** text eol=lf
+config/experiments/round9/** text eol=lf
+config/experiments/round10/** text eol=lf
+docs/20_experiments/R6*/** text eol=lf
+docs/20_experiments/R7*/** text eol=lf
+docs/20_experiments/R8*/** text eol=lf
+docs/20_experiments/R9*/** text eol=lf
+docs/20_experiments/R10*/** text eol=lf
+docs/3[0-9]_*.md text eol=lf
+docs/4[0-2]_*.md text eol=lf
+experiments/round6_*.csv text eol=lf
+experiments/round7_*.csv text eol=lf
+experiments/round8_*.csv text eol=lf
+experiments/round9_*.csv text eol=lf
+experiments/round10_*.csv text eol=lf
+results/published/round6/**/*.csv text eol=lf
+results/published/round6/**/*.json text eol=lf
+results/published/round6/**/*.md text eol=lf
+results/published/round7/**/*.csv text eol=lf
+results/published/round7/**/*.json text eol=lf
+results/published/round7/**/*.md text eol=lf
+results/published/round8/**/*.csv text eol=lf
+results/published/round8/**/*.json text eol=lf
+results/published/round8/**/*.md text eol=lf
+results/published/round9/**/*.csv text eol=lf
+results/published/round9/**/*.json text eol=lf
+results/published/round9/**/*.md text eol=lf
+results/published/round10/**/*.csv text eol=lf
+results/published/round10/**/*.json text eol=lf
+results/published/round10/**/*.md text eol=lf
+scripts/*round6*.py text eol=lf
+scripts/*round7*.py text eol=lf
+scripts/*round8*.py text eol=lf
+scripts/*round9*.py text eol=lf
+scripts/*round10*.py text eol=lf
+scripts/publish_compact.py text eol=lf
+src/momentum_reversal/pipelines/round6_*.py text eol=lf
+src/momentum_reversal/pipelines/round7_*.py text eol=lf
+src/momentum_reversal/pipelines/round8_*.py text eol=lf
+src/momentum_reversal/pipelines/round9_*.py text eol=lf
+src/momentum_reversal/pipelines/round10_*.py text eol=lf
+tests/test_round6_*.py text eol=lf
+tests/test_round7_*.py text eol=lf
+tests/test_round8_*.py text eol=lf
+tests/test_round9_*.py text eol=lf
+*.png binary
+*.parquet binary

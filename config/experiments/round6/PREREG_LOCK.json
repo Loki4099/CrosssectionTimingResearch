@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "program_id": "attack4_single_factor_round6_v1",
+  "lock_type": "development_batches_r6a_r6b_r6c_r6d",
+  "frozen_at_local_date": "2026-08-18",
+  "parent_r5_prereg_lock_sha256": "cc85d9a99b08bc8773096ec8c36b41cbd2e67c2ac844dae20fbce8a23bd9522d",
+  "files": {
+    "config/experiments/round6/PARENT_ACCEPTANCE.json": "60694283b5e13c6944d61d076b530644bb46a01de990dab7166fd79a7b60e40e",
+    "config/experiments/round6/factor_registry.csv": "97bc9b3b7f1045c8ff7d8a1344caf2a949e503c1c0268bc92652e89d1a980abe",
+    "config/experiments/round6/program.toml": "62d6ac1355fb024f78a303d188de6812463fcd36103a2e08fc91b5713dd9d8b7",
+    "config/experiments/round6/target_registry.csv": "577c47ecfa3affa7388a0d0597fb59c38f56f933f1076c8eee7228fd36f7abf9",
+    "docs/20_experiments/R6A_attack4_target/design.md": "4a59ff36057c4cd332b58ba6eefa947cb4b5758a6bea05656a014bc39ef0e654",
+    "docs/20_experiments/R6B_attack4_single_factor/design.md": "16709b5bc401c0636fb42e9526d839394a3c3c891c040b3e857ade23e856134f",
+    "docs/20_experiments/R6C_attack4_role_proxy/design.md": "68821ccde8526cfc0df81805ae0f451dd529090eb43eb90c1bf79b5267860ea6",
+    "docs/20_experiments/R6D_attack4_robustness/design.md": "4ce8b5eec51c3ad3b9ec8eea99efbb595ba36b2c8675d94fe60144dd2588aaaf",
+    "docs/30_defense_attack_dual_head_route_v1.md": "bbc032c6ba9273ee59ce8c549613c4f9a91db693b98f0e1128739530e6a3ac9e",
+    "docs/31_round6_attack4_single_factor_program_v1.md": "ec9d3ee459459990da7d33505365229382a0bcc568bc61e9a24f79b9ce485322",
+    "experiments/round6_groups.csv": "72e36aff9d1b074ad210b35f6877268966b1ad0d83eb3cb0657983f4669e02c0",
+    "experiments/round6_registry.csv": "3008875cc723118763a93e00de5fb5c8eb29602ab0ccb0f6065aa2c31d054bd4",
+    "scripts/build_round6_prereg_lock.py": "1dbeb87c3e2c54672f13c4ce0d915efe8b3d9eb9723ec5677a1f36b815879748"
+  },
+  "parent": {
+    "acceptance_path": "config/experiments/round6/PARENT_ACCEPTANCE.json",
+    "acceptance_sha256": "60694283b5e13c6944d61d076b530644bb46a01de990dab7166fd79a7b60e40e",
+    "runtime_recorded_r5_prereg_lock_sha256": "0d007b6c093f86a8eb93448531e1145c42d275d02b86116c984494d7485b607f"
+  },
+  "counts": {
+    "registered_factor_arms": 20,
+    "level_arms": 17,
+    "delta4_arms": 3,
+    "registered_targets": 3,
+    "registered_batches": 4,
+    "direct_eligible_arms": 12,
+    "conditional_eligible_arms": 6,
+    "context_only_arms": 2
+  },
+  "target": {
+    "primary_name": "fwd_excess_logret_4w",
+    "binary_name": "sustainable_attack_4w",
+    "binary_diagnostic_only": true,
+    "worst_path_name": "fwd_worst_excess_4w",
+    "worst_path_guardrail_only": true,
+    "alternative_target_selection": false
+  },
+  "authorization": {
+    "target_identity_and_materialization": true,
+    "signal_evaluation": true,
+    "fixed_economic_proxy": true,
+    "conditional_role_audit": true,
+    "robustness_audit": true,
+    "models": false,
+    "model_selection": false,
+    "bagging": false,
+    "stacking": false,
+    "final_state_machine": false,
+    "state_machine_search": false,
+    "lockbox": false,
+    "mom255_transfer": false,
+    "alternative_target": false,
+    "unregistered_factor_additions": false,
+    "window_search": false,
+    "position_search": false
+  },
+  "firewall": {
+    "lockbox_outcomes_forbidden": true,
+    "lockbox_predictions_forbidden": true,
+    "lockbox_states_forbidden": true,
+    "lockbox_nav_forbidden": true,
+    "maximum_target_signal": "2021-11-26",
+    "maximum_proxy_signal": "2021-12-23",
+    "maximum_nav_date": "2021-12-31"
+  },
+  "hard_stop": {
+    "after_batch": "R6D_ATTACK4_ROBUSTNESS",
+    "status": "completed_pending_user_multifactor_model_design",
+    "automatic_champion": false,
+    "automatic_model_stage": false,
+    "automatic_state_machine": false,
+    "automatic_lockbox": false,
+    "automatic_mom255_transfer": false
+  }
+}

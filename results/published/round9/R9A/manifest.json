@@ -1,0 +1,64 @@
+{
+  "assessment": "completed_development",
+  "batch_id": "R9A_MOM255_UNION_LEDGER",
+  "counts": {
+    "cost_scenarios": 4,
+    "identity_checks": 24,
+    "nav_rows": 72576,
+    "paths": 3,
+    "transfer_cells": 6
+  },
+  "files": [
+    {
+      "path": "corporate_action_audit.parquet",
+      "sha256": "e7bd2687d0c8f22dbbe554b1cff049c7aec99cee6fd249bea7377e148f576d59",
+      "size_bytes": 41595
+    },
+    {
+      "path": "event_ledger.parquet",
+      "sha256": "983b20436404374b6da4785a55c9a0bf56dedd9da513bd4c7492096acacb416c",
+      "size_bytes": 330853
+    },
+    {
+      "path": "g00_identity_audit.csv",
+      "sha256": "e7657bbe74ac3593d55f924263912197144a1b06b32a4719d3dc2255a25d7437",
+      "size_bytes": 2167
+    },
+    {
+      "path": "nav_daily.parquet",
+      "sha256": "5681c4dc312bb2f8cbd311a9e5abd442aefab5c40d35111dd9b6935ce1a0bc18",
+      "size_bytes": 2606663
+    },
+    {
+      "path": "static_allocations.csv",
+      "sha256": "833f07d6780067fd296c763ea6179179c91580b2b36657a2147acd8c24b43ad0",
+      "size_bytes": 760
+    },
+    {
+      "path": "target_ledger.parquet",
+      "sha256": "e58a8e8657c6318262a61d41b6a3a3862a05e80e4ad1fd98cbf353eb98c408b1",
+      "size_bytes": 978203
+    },
+    {
+      "path": "trade_ledger.parquet",
+      "sha256": "ebcc4f72750a0c6bc6e0e3b44891f523665bc55db5bdb3bbb816bb99d0074e21",
+      "size_bytes": 5837247
+    }
+  ],
+  "formal_eligible": false,
+  "lockbox_predictions_generated": false,
+  "lockbox_read": false,
+  "models_run": false,
+  "mom255_transfer_run": true,
+  "parent_manifests": {
+    "g00": "8b875d4bcbb7b178b309c7b1edaa7dce9bbb15090e68b619fb045cec35411c66",
+    "r8a": "006c743c62fc07db91f1e4b4be8fffdd61f32a3479a3bde5337de9c8c89753aa"
+  },
+  "prereg_lock_sha256": "b6def7259bab9a1b8c412827a458694699f46eeccca83de56e545dd09a6e611a",
+  "program_id": "p00_mom255_long_only_transfer_round9_v1",
+  "run_id": "r9a-union-ledger-20260818-v1",
+  "schema_version": 1,
+  "state_machine_run": false,
+  "status": "completed_development",
+  "strategy_nav_run": true
+}

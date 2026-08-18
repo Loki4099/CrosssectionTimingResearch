@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "program_id": "attack4_single_factor_round6_v1",
+  "accepted_at_local_date": "2026-08-18",
+  "accepted_for_round6_development": true,
+  "formal_eligible": false,
+  "round5_attestation": {
+    "classification": "non_result_markdown_whitespace_attestation_difference",
+    "runtime_recorded_prereg_lock_sha256": "0d007b6c093f86a8eb93448531e1145c42d275d02b86116c984494d7485b607f",
+    "runtime_lock_recovered_git_blob": "3afaffbabcbba7d8c24a87d084e5f774d21183d0",
+    "current_repository_prereg_lock_sha256": "cc85d9a99b08bc8773096ec8c36b41cbd2e67c2ac844dae20fbce8a23bd9522d",
+    "only_changed_member": "docs/28_round5_mae13_single_factor_program_v1.md",
+    "runtime_member_sha256": "791472be1248ccbecd50bb194acf51878f2cb1ba1645a56493094202da492dfd",
+    "current_member_sha256": "1f0aed05e08b4c79577074b7d9c011891d12718c38001d04c84d41e78f7829cc",
+    "change": "two Markdown hard-break trailing-space pairs were removed from the status and program-id lines after runtime execution",
+    "experimental_semantics_changed": false,
+    "data_or_result_bytes_changed": false,
+    "round5_rewrite_authorized": false,
+    "round6_anchor_rule": "anchor_current_repository_lock_and_record_runtime_lock_separately"
+  },
+  "round5_audit": {
+    "command": ".venv/Scripts/python.exe scripts/audit_round5.py --runtime-root C:/Users/17866/QuantWork/MomentumRversionMethod-runtime",
+    "status": "passed",
+    "unique_robust_arm": "R4B__RSP_SPY63",
+    "all_lockbox_read_false": true,
+    "all_formal_eligible_false": true,
+    "batches": [
+      {
+        "batch_id": "R5A_MAE13_TARGET",
+        "run_id": "r5a-mae13-target-20260817-v1",
+        "manifest_sha256": "1475104c9e7c6eb415500bb29f65ac27cc78736828022058760a526702ef233a",
+        "tree_sha256": "962550e6539f4fde31628a191994e7d99a9e8b4a47ffab548ae02a8a3a1226fa"
+      },
+      {
+        "batch_id": "R5B_MAE13_SINGLE_FACTOR",
+        "run_id": "r5b-mae13-single-factor-20260817-v1",
+        "manifest_sha256": "cad91aec0bbd78f7944bc536cfd515709fdc94ef2bfb06b00124fa6818d75499",
+        "tree_sha256": "9007ce22b27c134281caa5e08ed54b37a9bab9e64f4add5cb9baeada2625e9b5"
+      },
+      {
+        "batch_id": "R5C_SPY_CASH_PROXY",
+        "run_id": "r5c-spy-cash-proxy-20260817-v1",
+        "manifest_sha256": "ce005043aa78a08d6312d7dff5d7841e055005be0c13c9f9adaeb3d3e287945c",
+        "tree_sha256": "cd3b6a590359db8818aeeda75c4eeef2079bd4a83d3e052d23e35b07ec51b22d"
+      },
+      {
+        "batch_id": "R5D_MAE13_ROBUSTNESS",
+        "run_id": "r5d-mae13-robustness-20260817-v1",
+        "manifest_sha256": "29bc9ef9a872260596027bd2f38e01a92c4a1e6da50507641b30aeacc285abbc",
+        "tree_sha256": "e5abebca413810496ef85a397a5f047a6cfc41de55cdaca48cc90131bebb0a62"
+      }
+    ]
+  },
+  "attack_target_parent": {
+    "r3b_run_id": "r3b-recovery-persistence-development-v1",
+    "manifest_sha256": "156911900de6f488965d4abd090250b9d1efcbf1463c167063f6228703bc7882",
+    "targets_weekly_sha256": "9295168ba695bc05bce35a7850a260247f0965d873190ee5ad042b9d368a0a67",
+    "primary_identity": "fwd_excess_logret_4w",
+    "binary_identity": "sustainable_attack_4w",
+    "lockbox_values_materialized": false
+  },
+  "worst_path_parent": {
+    "r2b_run_id": "r2b-free-core-v1",
+    "manifest_sha256": "831cf4c4c373a762d7726833fcaebf80db0214c091a640d94955afa283058559",
+    "registered_tree_sha256": "3afe3a9a2ebea6ec852eec791e95420fde8ce0c91c1278f004275e9afffafed6",
+    "targets_weekly_sha256": "5056c6ebef6140bbd5f08f487584016ea1e5abc32462bde41caa230e2514e3e8",
+    "guardrail_identity": "fwd_worst_excess_4w",
+    "lockbox_values_materialized": false
+  },
+  "factor_parent": {
+    "r4a_run_id": "r4a-free-factor-data-20260817-v1",
+    "manifest_sha256": "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f",
+    "tree_sha256": "12ad10c68ae2d708ce6999cf599d5155429532efc947da84ed99f08afb5cd096",
+    "feature_inputs_canonical_sha256": "f598299c1768c3cedc7eec956c028b9a4d17973754c79d9d2e784c756bf6a87f",
+    "eligible_level_arms": 17
+  },
+  "firewall": {
+    "lockbox_start_signal": "2021-12-31",
+    "lockbox_start_execution": "2022-01-03",
+    "round6_lockbox_read_authorized": false,
+    "round6_model_training_authorized": false,
+    "round6_final_state_machine_authorized": false,
+    "round6_mom255_transfer_authorized": false
+  }
+}

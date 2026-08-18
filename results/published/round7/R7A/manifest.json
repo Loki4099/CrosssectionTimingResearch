@@ -1,0 +1,47 @@
+{
+  "assessment": "completed_development",
+  "batch_id": "R7A_DUAL_TARGET_FOLDS",
+  "counts": {
+    "common_weeks": 948,
+    "outer_folds": 8,
+    "outer_oos_weeks": 404
+  },
+  "factor_additions_run": false,
+  "files": [
+    {
+      "path": "acceptance_summary.csv",
+      "sha256": "d0960a08a682835383941d76bbad6bc1d0e30dc557517e878a2d7490072a9dcc",
+      "size_bytes": 287
+    },
+    {
+      "path": "common_weekly.parquet",
+      "sha256": "1fa18cba11b4b801e999403825ccfeb4060bc9796ec67dce813e56be72d5cea1",
+      "size_bytes": 126069
+    },
+    {
+      "path": "fold_ledger.csv",
+      "sha256": "6e86d762a221989f21adf5ea71eccb563a0ae3e6c7f9c550ed71b26a8276aec1",
+      "size_bytes": 3203
+    }
+  ],
+  "final_state_machine_run": false,
+  "formal_eligible": false,
+  "lockbox_predictions_generated": false,
+  "lockbox_read": false,
+  "maximum_target_signal": "2021-09-24",
+  "models_run": false,
+  "mom255_transfer_run": false,
+  "parent_manifests": {
+    "r4a": "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f",
+    "r5a": "1475104c9e7c6eb415500bb29f65ac27cc78736828022058760a526702ef233a",
+    "r6a": "eca0f0901ea3ac7174fddafb82cc73c73ee811fa4ca1ff66f65a7af6266e0fd6"
+  },
+  "position_search_run": false,
+  "prereg_lock_sha256": "794760ae76a2bd07f79bdf5fe7a532c33255bcf743e9576b52a4e8ba6f37e4ae",
+  "program_id": "dual_head_model_round7_v1",
+  "run_id": "r7a-dual-target-folds-20260818-v1",
+  "schema_version": 1,
+  "status": "completed_development",
+  "strategy_nav_run": false,
+  "window_search_run": false
+}

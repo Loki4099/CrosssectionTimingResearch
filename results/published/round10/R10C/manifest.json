@@ -1,0 +1,61 @@
+{
+  "batch_id": "R10C_OUTCOME_REVEAL",
+  "counts": {
+    "nav_rows": 81072,
+    "passed_cells": 0,
+    "scenarios": 72
+  },
+  "files": [
+    {
+      "path": "assessment.json",
+      "sha256": "f97bf5139bd047ab336a666ccf86bbfd633e397500ffbc87f1a3aca95210ed4f",
+      "size_bytes": 668
+    },
+    {
+      "path": "decision.json",
+      "sha256": "9605d5141b89417192978543dec0a51c3ff5c563957e02abbd632f944c5ffe71",
+      "size_bytes": 343
+    },
+    {
+      "path": "event_ledger.parquet",
+      "sha256": "83efdf4e8ea69aaedec4f99e252abaea83f075137ff40992e929f9f57583c8ec",
+      "size_bytes": 368796
+    },
+    {
+      "path": "g00_identity_audit.csv",
+      "sha256": "ea7fc385f5adb2fac3d2775c81eb930d60fc31701938780bb2a183c0f58bdc2d",
+      "size_bytes": 2064
+    },
+    {
+      "path": "leave_one_year_out.csv",
+      "sha256": "6b7526efd9ee6029ce699b35109798eda23bebfddc97b916d7b957edce236888",
+      "size_bytes": 199
+    },
+    {
+      "path": "nav_daily.parquet",
+      "sha256": "685094fa1caafdc446717075c86d5bd0f0a60d121c4a5dc84de74550245fa0a0",
+      "size_bytes": 3054873
+    },
+    {
+      "path": "path_metrics.csv",
+      "sha256": "2a3d4fe82ac231be113bb9cf480f1b30f26db74356ac140a377fb5a110cb0a1c",
+      "size_bytes": 11332
+    },
+    {
+      "path": "transfer_comparisons.csv",
+      "sha256": "8fe3eb6ac725eed2cc165667233d5d47bc679087e4b54132b8ef7543ba6b3755",
+      "size_bytes": 9474
+    }
+  ],
+  "formal_eligible": false,
+  "outcome_reveal_lock_sha256": "42c6199e968fc75daa275e2f36e0ddedf62550cc6c1399bfe5f5181d28b6a3a7",
+  "outcome_reveal_run": true,
+  "program_id": "p00_mom255_mechanical_lockbox_round10_v1",
+  "repair_acceptance_sha256": "70b6bc901887fd1319ae1e6929e76e1a8941fde79b11c19403dace1991be9d20",
+  "run_id": "r10c-outcome-reveal-20260818-v1",
+  "schema_version": 1,
+  "sealed_target_sha256": "ef1e21215bc0921b37db180c1b717788e2d336eda0d80c3bc20832ff8c09bf02",
+  "status": "completed_mechanical_lockbox",
+  "strategy_nav_run": true,
+  "summary_repair_applied": true
+}

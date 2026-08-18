@@ -1,0 +1,477 @@
+{
+  "calendar": "R4A complete scheduled weekly decision calendar intersect frozen mature R5A/R6A targets",
+  "common_end_signal": "2021-09-24",
+  "common_start_signal": "2003-08-01",
+  "common_weeks": 948,
+  "embargo_scheduled_weeks": 1,
+  "feature_ids": [
+    "R4B__RSP_SPY63",
+    "R4B__RET126",
+    "R4B__SMA_GAP",
+    "R4B__RV126",
+    "R4B__VIX_LEVEL"
+  ],
+  "inner_validation_weeks": 52,
+  "minimum_inner_train_weeks": 260,
+  "minimum_outer_train_weeks": 520,
+  "outer_folds": [
+    {
+      "inner_folds": [
+        {
+          "inner_fold": 1,
+          "train_end_signal": "2009-07-02",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 310,
+          "validation_end_signal": "2010-10-01",
+          "validation_start_signal": "2009-10-09",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 2,
+          "train_end_signal": "2010-07-02",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 362,
+          "validation_end_signal": "2011-09-30",
+          "validation_start_signal": "2010-10-08",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 3,
+          "train_end_signal": "2011-07-01",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 414,
+          "validation_end_signal": "2012-09-28",
+          "validation_start_signal": "2011-10-07",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 4,
+          "train_end_signal": "2012-06-29",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 466,
+          "validation_end_signal": "2013-09-27",
+          "validation_start_signal": "2012-10-05",
+          "validation_weeks": 52
+        }
+      ],
+      "maturity_truncated": false,
+      "outer_year": 2014,
+      "test_end_signal": "2014-12-26",
+      "test_start_signal": "2014-01-03",
+      "test_weeks": 52,
+      "train_end_signal": "2013-09-27",
+      "train_start_signal": "2003-08-01",
+      "train_weeks": 531
+    },
+    {
+      "inner_folds": [
+        {
+          "inner_fold": 1,
+          "train_end_signal": "2009-07-02",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 310,
+          "validation_end_signal": "2010-10-01",
+          "validation_start_signal": "2009-10-09",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 2,
+          "train_end_signal": "2010-07-02",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 362,
+          "validation_end_signal": "2011-09-30",
+          "validation_start_signal": "2010-10-08",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 3,
+          "train_end_signal": "2011-07-01",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 414,
+          "validation_end_signal": "2012-09-28",
+          "validation_start_signal": "2011-10-07",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 4,
+          "train_end_signal": "2012-06-29",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 466,
+          "validation_end_signal": "2013-09-27",
+          "validation_start_signal": "2012-10-05",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 5,
+          "train_end_signal": "2013-06-28",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 518,
+          "validation_end_signal": "2014-09-26",
+          "validation_start_signal": "2013-10-04",
+          "validation_weeks": 52
+        }
+      ],
+      "maturity_truncated": false,
+      "outer_year": 2015,
+      "test_end_signal": "2015-12-24",
+      "test_start_signal": "2015-01-02",
+      "test_weeks": 52,
+      "train_end_signal": "2014-09-26",
+      "train_start_signal": "2003-08-01",
+      "train_weeks": 583
+    },
+    {
+      "inner_folds": [
+        {
+          "inner_fold": 1,
+          "train_end_signal": "2010-07-02",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 362,
+          "validation_end_signal": "2011-09-30",
+          "validation_start_signal": "2010-10-08",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 2,
+          "train_end_signal": "2011-07-01",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 414,
+          "validation_end_signal": "2012-09-28",
+          "validation_start_signal": "2011-10-07",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 3,
+          "train_end_signal": "2012-06-29",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 466,
+          "validation_end_signal": "2013-09-27",
+          "validation_start_signal": "2012-10-05",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 4,
+          "train_end_signal": "2013-06-28",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 518,
+          "validation_end_signal": "2014-09-26",
+          "validation_start_signal": "2013-10-04",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 5,
+          "train_end_signal": "2014-06-27",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 570,
+          "validation_end_signal": "2015-09-25",
+          "validation_start_signal": "2014-10-03",
+          "validation_weeks": 52
+        }
+      ],
+      "maturity_truncated": false,
+      "outer_year": 2016,
+      "test_end_signal": "2016-12-23",
+      "test_start_signal": "2015-12-31",
+      "test_weeks": 52,
+      "train_end_signal": "2015-09-25",
+      "train_start_signal": "2003-08-01",
+      "train_weeks": 635
+    },
+    {
+      "inner_folds": [
+        {
+          "inner_fold": 1,
+          "train_end_signal": "2011-07-01",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 414,
+          "validation_end_signal": "2012-09-28",
+          "validation_start_signal": "2011-10-07",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 2,
+          "train_end_signal": "2012-06-29",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 466,
+          "validation_end_signal": "2013-09-27",
+          "validation_start_signal": "2012-10-05",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 3,
+          "train_end_signal": "2013-06-28",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 518,
+          "validation_end_signal": "2014-09-26",
+          "validation_start_signal": "2013-10-04",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 4,
+          "train_end_signal": "2014-06-27",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 570,
+          "validation_end_signal": "2015-09-25",
+          "validation_start_signal": "2014-10-03",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 5,
+          "train_end_signal": "2015-06-26",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 622,
+          "validation_end_signal": "2016-09-23",
+          "validation_start_signal": "2015-10-02",
+          "validation_weeks": 52
+        }
+      ],
+      "maturity_truncated": false,
+      "outer_year": 2017,
+      "test_end_signal": "2017-12-22",
+      "test_start_signal": "2016-12-30",
+      "test_weeks": 52,
+      "train_end_signal": "2016-09-23",
+      "train_start_signal": "2003-08-01",
+      "train_weeks": 687
+    },
+    {
+      "inner_folds": [
+        {
+          "inner_fold": 1,
+          "train_end_signal": "2012-06-29",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 466,
+          "validation_end_signal": "2013-09-27",
+          "validation_start_signal": "2012-10-05",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 2,
+          "train_end_signal": "2013-06-28",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 518,
+          "validation_end_signal": "2014-09-26",
+          "validation_start_signal": "2013-10-04",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 3,
+          "train_end_signal": "2014-06-27",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 570,
+          "validation_end_signal": "2015-09-25",
+          "validation_start_signal": "2014-10-03",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 4,
+          "train_end_signal": "2015-06-26",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 622,
+          "validation_end_signal": "2016-09-23",
+          "validation_start_signal": "2015-10-02",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 5,
+          "train_end_signal": "2016-06-24",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 674,
+          "validation_end_signal": "2017-09-22",
+          "validation_start_signal": "2016-09-30",
+          "validation_weeks": 52
+        }
+      ],
+      "maturity_truncated": false,
+      "outer_year": 2018,
+      "test_end_signal": "2018-12-28",
+      "test_start_signal": "2017-12-29",
+      "test_weeks": 53,
+      "train_end_signal": "2017-09-22",
+      "train_start_signal": "2003-08-01",
+      "train_weeks": 739
+    },
+    {
+      "inner_folds": [
+        {
+          "inner_fold": 1,
+          "train_end_signal": "2013-07-05",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 519,
+          "validation_end_signal": "2014-10-03",
+          "validation_start_signal": "2013-10-11",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 2,
+          "train_end_signal": "2014-07-03",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 571,
+          "validation_end_signal": "2015-10-02",
+          "validation_start_signal": "2014-10-10",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 3,
+          "train_end_signal": "2015-07-02",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 623,
+          "validation_end_signal": "2016-09-30",
+          "validation_start_signal": "2015-10-09",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 4,
+          "train_end_signal": "2016-07-01",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 675,
+          "validation_end_signal": "2017-09-29",
+          "validation_start_signal": "2016-10-07",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 5,
+          "train_end_signal": "2017-06-30",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 727,
+          "validation_end_signal": "2018-09-28",
+          "validation_start_signal": "2017-10-06",
+          "validation_weeks": 52
+        }
+      ],
+      "maturity_truncated": false,
+      "outer_year": 2019,
+      "test_end_signal": "2019-12-27",
+      "test_start_signal": "2019-01-04",
+      "test_weeks": 52,
+      "train_end_signal": "2018-09-28",
+      "train_start_signal": "2003-08-01",
+      "train_weeks": 792
+    },
+    {
+      "inner_folds": [
+        {
+          "inner_fold": 1,
+          "train_end_signal": "2014-07-03",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 571,
+          "validation_end_signal": "2015-10-02",
+          "validation_start_signal": "2014-10-10",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 2,
+          "train_end_signal": "2015-07-02",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 623,
+          "validation_end_signal": "2016-09-30",
+          "validation_start_signal": "2015-10-09",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 3,
+          "train_end_signal": "2016-07-01",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 675,
+          "validation_end_signal": "2017-09-29",
+          "validation_start_signal": "2016-10-07",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 4,
+          "train_end_signal": "2017-06-30",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 727,
+          "validation_end_signal": "2018-09-28",
+          "validation_start_signal": "2017-10-06",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 5,
+          "train_end_signal": "2018-06-29",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 779,
+          "validation_end_signal": "2019-09-27",
+          "validation_start_signal": "2018-10-05",
+          "validation_weeks": 52
+        }
+      ],
+      "maturity_truncated": false,
+      "outer_year": 2020,
+      "test_end_signal": "2020-12-24",
+      "test_start_signal": "2020-01-03",
+      "test_weeks": 52,
+      "train_end_signal": "2019-09-27",
+      "train_start_signal": "2003-08-01",
+      "train_weeks": 844
+    },
+    {
+      "inner_folds": [
+        {
+          "inner_fold": 1,
+          "train_end_signal": "2015-07-02",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 623,
+          "validation_end_signal": "2016-09-30",
+          "validation_start_signal": "2015-10-09",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 2,
+          "train_end_signal": "2016-07-01",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 675,
+          "validation_end_signal": "2017-09-29",
+          "validation_start_signal": "2016-10-07",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 3,
+          "train_end_signal": "2017-06-30",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 727,
+          "validation_end_signal": "2018-09-28",
+          "validation_start_signal": "2017-10-06",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 4,
+          "train_end_signal": "2018-06-29",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 779,
+          "validation_end_signal": "2019-09-27",
+          "validation_start_signal": "2018-10-05",
+          "validation_weeks": 52
+        },
+        {
+          "inner_fold": 5,
+          "train_end_signal": "2019-06-28",
+          "train_start_signal": "2003-08-01",
+          "train_weeks": 831,
+          "validation_end_signal": "2020-09-25",
+          "validation_start_signal": "2019-10-04",
+          "validation_weeks": 52
+        }
+      ],
+      "maturity_truncated": true,
+      "outer_year": 2021,
+      "test_end_signal": "2021-09-24",
+      "test_start_signal": "2020-12-31",
+      "test_weeks": 39,
+      "train_end_signal": "2020-09-25",
+      "train_start_signal": "2003-08-01",
+      "train_weeks": 896
+    }
+  ],
+  "parent_hashes": {
+    "feature_inputs_weekly.parquet__1": "f598299c1768c3cedc7eec956c028b9a4d17973754c79d9d2e784c756bf6a87f",
+    "manifest.json__0": "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f",
+    "manifest.json__2": "1475104c9e7c6eb415500bb29f65ac27cc78736828022058760a526702ef233a",
+    "manifest.json__4": "eca0f0901ea3ac7174fddafb82cc73c73ee811fa4ca1ff66f65a7af6266e0fd6",
+    "targets_weekly.parquet__3": "fe4e69db8edbc00d27350fd0d46553579e37c5a9f91202e92e56730a67bf21b7",
+    "targets_weekly.parquet__5": "6c4c1cf9e6f3f872537fd62f96a5a79c1658a8a3b787d4a6f731783a201050c8"
+  },
+  "program_id": "dual_head_model_round7_v1",
+  "purge_scheduled_weeks": 13,
+  "schema_version": 1
+}

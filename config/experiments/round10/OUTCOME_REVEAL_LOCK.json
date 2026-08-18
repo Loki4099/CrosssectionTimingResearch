@@ -1,0 +1,48 @@
+{
+  "authorization": {
+    "candidate_substitution": false,
+    "model_or_policy_revision": false,
+    "outcome_reveal_phase": true,
+    "performance_assessment": true,
+    "position_revision": false,
+    "strategy_nav": true,
+    "target_revision": false,
+    "threshold_revision": false
+  },
+  "files": {
+    "config/experiments/round10/R10B_TARGET_ACCEPTANCE.json": "b99e5d42b04a7b50ec6b2a66cc9f1b4f25b997d162215bfec4fd11bc57f96d91",
+    "config/experiments/round10/outcome_program.toml": "f55c65515d4568b0d330fd7a1288c61cb9c34b5384fb5a4f72603dd73e0219b2",
+    "config/experiments/round10/transfer_registry.csv": "803158b1f113de4ccdeb75c526302659c95b27b65f7559df601d840b2586d5e4",
+    "docs/20_experiments/R10C_outcome_reveal/design.md": "5140e977999539694d21ad27fb2cf7d601d8aad5f7315bc861892ba46a075626",
+    "scripts/build_round10_outcome_lock.py": "2f10f619dd47ddc8b34af6602c47861403d6ad24d3881efdc4d755fdb7fbb71f",
+    "scripts/run_round10_reveal.py": "c0c99783ac297cf9117258efb119689b71a536cbc906d898071eca5b0f675232",
+    "src/momentum_reversal/pipelines/round10_experiments.py": "90a000a82c46d363cfdca5b55bb36f1d5a4fbf251fed5aae87f7bb81d7a6974f",
+    "src/momentum_reversal/pipelines/round10_reveal.py": "c106760f281f9d2b14ec8f74c52d7397f8e79849a41079297289a674aa1621ac",
+    "src/momentum_reversal/pipelines/round9_experiments.py": "2f22a802796b08bb36631475a3f6931ad6873d6f2fda10cbc80158bc592d9e20"
+  },
+  "frozen_at_local_date": "2026-08-18",
+  "gates": {
+    "cost20_all_timing_positive": true,
+    "family_all_metric_medians_gt": 0.0,
+    "family_minimum_monthly_passed": 2,
+    "family_minimum_passed": 4,
+    "family_minimum_weekly_passed": 2,
+    "primary_block_lower_gt": 0.0,
+    "primary_delta_mdd_gt": 0.0,
+    "primary_delta_sharpe_gt": 0.0,
+    "primary_minimum_leave_year_timing_gt": 0.0,
+    "primary_overlay_to_naked_terminal_ratio_gt": 1.0,
+    "primary_p_le": 0.05,
+    "primary_timing_value_gt": 0.0
+  },
+  "hard_stop": {
+    "after_batch": "R10C_OUTCOME_REVEAL",
+    "automatic_revision": false,
+    "status": "completed_mechanical_lockbox"
+  },
+  "lock_type": "sealed_outcome_reveal",
+  "program_id": "p00_mom255_mechanical_lockbox_round10_v1",
+  "schema_version": 1,
+  "sealed_state_sha256": "ba62cf82f06723b83464df70ec699621d48ac0550e725462e70ed8aa07b2a27e",
+  "sealed_target_sha256": "ef1e21215bc0921b37db180c1b717788e2d336eda0d80c3bc20832ff8c09bf02"
+}

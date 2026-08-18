@@ -1,0 +1,114 @@
+schema_version = 1
+program_id = "p00_mom255_long_only_transfer_round9_v1"
+status = "preregistered_development_authorized_after_lock"
+formal_eligible = false
+run_ids = ["r9a-union-ledger-20260818-v1", "r9b-transfer-economics-20260818-v1", "r9c-transfer-assessment-20260818-v1"]
+
+[parent]
+round8_prereg_lock_sha256 = "81e526fd6cc939fd42a6cfd7c1fda3a2303a2a2e33d09be9cb7b5e4e6d12446f"
+r8a_run_id = "r8a-rsp-policy-signals-20260818-v1"
+r8a_manifest_sha256 = "006c743c62fc07db91f1e4b4be8fffdd61f32a3479a3bde5337de9c8c89753aa"
+r8a_states_sha256 = "ccee1ef2e29f418a6d8f7bbbf30e1a94389d1d63a29a8e50f39b34076d038bcf"
+r8c_run_id = "r8c-rsp-policy-assessment-20260818-v1"
+r8c_manifest_sha256 = "05332ac9c75e8ff6ba74ac1edb4c6925142074ebb1a45fadee7ce55e531c8584"
+r8c_decision_sha256 = "9d2bcbc522221d5e291359b442fc4378dca2e79266d523a6c2187b15d06e5c47"
+g00_run_id = "g00-frozen-v3-v1"
+g00_manifest_sha256 = "8b875d4bcbb7b178b309c7b1edaa7dce9bbb15090e68b619fb045cec35411c66"
+g00_holdings_sha256 = "a1b32d09783eded05bed53b949421359e5bb0b1978ea3379edfc42b2333e7e33"
+g00_nav_sha256 = "b9d803c82587d61d0f2911d77e44c929365f053d5a4c003d694bcf2ccf00d199"
+dataset_version = "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate"
+dataset_freeze_sha256 = "a3ef9ee72cd3d535c2e5bf06b3d1f520c54667a8552891543ee0f9ca50488296"
+dataset_manifest_sha256 = "65b628d604f7e2f456e8d1d43a3c3e88b6bd3e86cc1c9455cdcfe28b856a3ec7"
+prices_sha256 = "4a881854d2c278378955529c638193706ddfafb503e7a8a9c752cc7791ba2670"
+corporate_actions_sha256 = "1e90c67e030a2efaa1a43badcf4b22751e6e6a76242ffe4179d9f242733f0c1d"
+risk_free_sha256 = "fcdedda1132947ba9da575d4ae7b66835bcd6eb72e36f1cc17b26b7be21b1975"
+calendar_sha256 = "28275dc373f76a15c0c202c0c438fdce2e8f547e8930faf38519a97f81865565"
+parent_acceptance_path = "config/experiments/round9/PARENT_ACCEPTANCE.json"
+
+[sample]
+first_execution = "2018-01-02"
+last_execution = "2021-12-31"
+maximum_p00_signal = "2021-09-24"
+maximum_p00_execution = "2021-09-27"
+carry_last_p00_state_to_sample_end = true
+evaluation_is_development = true
+
+[transfer]
+registry = "config/experiments/round9/transfer_registry.csv"
+overlay_policy_id = "P00_RSP_Y5_CLEAR"
+registered_cells = 6
+primary_transfer_id = "R9__MOM255__TOP20__MONTHLY"
+target_weights = [1.0, 0.5]
+cost_bps = [0, 5, 10, 20]
+primary_cost_bps = 10
+base_signal = "mom_255_0"
+portfolio_mode = "long_only"
+weighting = "equal_weight"
+base_signal_close_execution_next_xnys_open = true
+overlay_frequency = "weekly"
+base_rerank_only_on_registered_base_schedule = true
+single_net_stock_target_per_open = true
+cash_excluded_from_l1 = true
+
+[static_control]
+definition = "constant_target_allocation_matching_dynamic_mean_daily_actual_long_exposure_at_zero_cost"
+solver = "deterministic_bisection"
+lower = 0.0
+upper = 1.0
+iterations = 48
+tolerance = 1e-10
+same_scalar_reused_across_costs = true
+
+[identity]
+naked_replay_must_match_g00 = true
+nav_tolerance = 1e-11
+daily_return_tolerance = 1e-11
+target_identity_required = true
+
+[inference]
+primary_metric = "top20_monthly_10bp_active_log_return_vs_matched_static"
+block_weeks = 13
+bootstrap_repetitions = 5000
+seed = 20260818
+one_sided_alpha = 0.05
+major_event_ids = ["E014", "E017", "E022", "E024", "E025", "E028"]
+event_registry = "config/experiments/round7/event_registry.csv"
+
+[gates]
+primary_overlay_to_naked_terminal_ratio_gt = 1.0
+primary_timing_value_gt = 0.0
+primary_delta_sharpe_gt = 0.0
+primary_delta_mdd_gt = 0.0
+family_minimum_passed = 4
+family_minimum_weekly_passed = 2
+family_minimum_monthly_passed = 2
+family_all_metric_medians_gt = 0.0
+cost20_no_negative_timing = true
+primary_block_lower_gt = 0.0
+primary_p_le = 0.05
+minimum_leaveout_timing_gt = 0.0
+
+[authorization]
+union_event_ledger = true
+development_mom255_nav = true
+transfer_assessment = true
+lockbox = false
+model_search = false
+factor_search = false
+policy_search = false
+threshold_search = false
+position_search = false
+short_books = false
+wml = false
+
+[firewall]
+lockbox_outcomes_forbidden = true
+maximum_market_state_signal = "2021-09-24"
+maximum_strategy_nav_date = "2021-12-31"
+prices_after_maximum_nav_forbidden = true
+
+[hard_stop]
+after_batch = "R9C_MOM255_TRANSFER_ASSESSMENT"
+status = "completed_pending_user_lockbox_decision"
+automatic_lockbox = false
+automatic_model_or_policy_revision = false

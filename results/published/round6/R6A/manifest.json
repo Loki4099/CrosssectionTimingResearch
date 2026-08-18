@@ -1,0 +1,46 @@
+{
+  "assessment": "completed_development",
+  "batch_id": "R6A_ATTACK4_TARGET",
+  "counts": {
+    "development_targets": 883,
+    "target_rows": 1744
+  },
+  "factor_additions_run": false,
+  "files": [
+    {
+      "path": "target_summary.csv",
+      "sha256": "0b75fe23772eee58726a2786e9f0a4c8f8c6eda812d3ced323d9ba97bf4e0670",
+      "size_bytes": 274
+    },
+    {
+      "path": "target_yearly.csv",
+      "sha256": "dd2d37b23e0a287cfef7a678473107911a75c6911c4185b5ad03c4aee2ef02f8",
+      "size_bytes": 1875
+    },
+    {
+      "path": "targets_weekly.parquet",
+      "sha256": "6c4c1cf9e6f3f872537fd62f96a5a79c1658a8a3b787d4a6f731783a201050c8",
+      "size_bytes": 93288
+    }
+  ],
+  "final_state_machine_run": false,
+  "formal_eligible": false,
+  "lockbox_predictions_generated": false,
+  "lockbox_read": false,
+  "maximum_nav_date": "2021-12-31",
+  "maximum_proxy_signal": "2021-12-23",
+  "maximum_target_signal": "2021-11-26",
+  "models_run": false,
+  "mom255_transfer_run": false,
+  "parent_manifests": {
+    "r2b": "831cf4c4c373a762d7726833fcaebf80db0214c091a640d94955afa283058559",
+    "r3b": "156911900de6f488965d4abd090250b9d1efcbf1463c167063f6228703bc7882"
+  },
+  "position_search_run": false,
+  "prereg_lock_sha256": "af00cccc159c3763671fded835a28eb3afffb3f0eac00a291ac7415a672d9a23",
+  "program_id": "attack4_single_factor_round6_v1",
+  "run_id": "r6a-attack4-target-identity-20260818-v1",
+  "schema_version": 1,
+  "status": "completed_development",
+  "window_search_run": false
+}

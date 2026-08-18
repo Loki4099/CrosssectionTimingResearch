@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "parent_program": "dual_head_model_round7_v1",
+  "accepted_facts": {
+    "risk_qualified_processes": 0,
+    "attack_ax02_qualified": false,
+    "raw_rsp_is_mandatory_control": true,
+    "ax00_ax01_are_mandatory_controls": true,
+    "ax02_retained_as_exploratory_only": true,
+    "lockbox_read": false,
+    "state_machine_run": false
+  },
+  "user_resolution": "run three bounded RSP-only risk-priority policy comparisons without claiming AX02 qualification"
+}
