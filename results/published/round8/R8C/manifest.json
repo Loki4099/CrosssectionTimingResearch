@@ -1,0 +1,48 @@
+{
+  "assessment": "completed_pending_user_round9_freeze_decision",
+  "batch_id": "R8C_RSP_POLICY_ASSESSMENT",
+  "counts": {
+    "eligible": 1,
+    "events": 6,
+    "incremental_hypotheses": 2,
+    "policies": 3
+  },
+  "files": [
+    {
+      "path": "decision.json",
+      "sha256": "9d2bcbc522221d5e291359b442fc4378dca2e79266d523a6c2187b15d06e5c47",
+      "size_bytes": 321
+    },
+    {
+      "path": "final_assessment.csv",
+      "sha256": "7f04efe41517f49029331f980b88dc9d0ed49c70b28e7b3060b6ecc4c21ec97a",
+      "size_bytes": 1318
+    },
+    {
+      "path": "incremental_comparisons.csv",
+      "sha256": "58d207f01009cbccf9dbdb9c7917c3aab3d8fbbb695a42555c3d898ca6f6faef",
+      "size_bytes": 556
+    },
+    {
+      "path": "leave_one_event_out.csv",
+      "sha256": "fd8136297da134612dfabddd858a54e5a3d5e4557d1c5743b94dcfec9e0f6c0d",
+      "size_bytes": 918
+    }
+  ],
+  "formal_eligible": false,
+  "lockbox_predictions_generated": false,
+  "lockbox_read": false,
+  "models_run": false,
+  "mom255_transfer_run": false,
+  "parent_manifests": {
+    "r8a": "006c743c62fc07db91f1e4b4be8fffdd61f32a3479a3bde5337de9c8c89753aa",
+    "r8b": "bba42586c4512a33095c14286828d62e6abba889009e91dd256aca94439f001b"
+  },
+  "prereg_lock_sha256": "81e526fd6cc939fd42a6cfd7c1fda3a2303a2a2e33d09be9cb7b5e4e6d12446f",
+  "program_id": "rsp_only_state_machine_round8_v1",
+  "run_id": "r8c-rsp-policy-assessment-20260818-v1",
+  "schema_version": 1,
+  "state_machine_run": true,
+  "status": "completed_development",
+  "strategy_nav_run": false
+}

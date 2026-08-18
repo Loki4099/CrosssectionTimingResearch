@@ -1,0 +1,42 @@
+{
+  "assessment": "completed_development",
+  "batch_id": "R8B_RSP_SPYCASH_REPLAY",
+  "counts": {
+    "nav_paths": 24,
+    "nav_rows": 48312,
+    "policies": 3
+  },
+  "files": [
+    {
+      "path": "economic_summary.csv",
+      "sha256": "d6360d3a6af7f828589c1484e2ddc2a82a12b9031bd03273a23b8f6b79a5af6b",
+      "size_bytes": 2997
+    },
+    {
+      "path": "nav_daily.parquet",
+      "sha256": "38aea9c2901f9f0500ae7107a6614d1bc71c4e066d4feb6c42ccbb8748abe08e",
+      "size_bytes": 954497
+    },
+    {
+      "path": "yearly_active.csv",
+      "sha256": "9305abd6eb21d56e321c80123b887cac5d0064630f82aefbe6c2ea1a555a1d9c",
+      "size_bytes": 1264
+    }
+  ],
+  "formal_eligible": false,
+  "lockbox_predictions_generated": false,
+  "lockbox_read": false,
+  "models_run": false,
+  "mom255_transfer_run": false,
+  "parent_manifests": {
+    "r2a": "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c",
+    "r8a": "006c743c62fc07db91f1e4b4be8fffdd61f32a3479a3bde5337de9c8c89753aa"
+  },
+  "prereg_lock_sha256": "81e526fd6cc939fd42a6cfd7c1fda3a2303a2a2e33d09be9cb7b5e4e6d12446f",
+  "program_id": "rsp_only_state_machine_round8_v1",
+  "run_id": "r8b-rsp-spycash-replay-20260818-v1",
+  "schema_version": 1,
+  "state_machine_run": true,
+  "status": "completed_development",
+  "strategy_nav_run": true
+}

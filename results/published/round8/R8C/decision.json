@@ -1,0 +1,11 @@
+{
+  "development_policy_eligible": [
+    "P00_RSP_Y5_CLEAR"
+  ],
+  "exploratory_dual_label_positive": false,
+  "lockbox_read": false,
+  "mom255_transfer_run": false,
+  "program_id": "rsp_only_state_machine_round8_v1",
+  "round9_authorized": false,
+  "status": "completed_pending_user_round9_freeze_decision"
+}

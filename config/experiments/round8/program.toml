@@ -1,0 +1,72 @@
+schema_version = 1
+program_id = "rsp_only_state_machine_round8_v1"
+status = "preregistered_development_authorized_after_lock"
+formal_eligible = false
+run_ids = ["r8a-rsp-policy-signals-20260818-v1", "r8b-rsp-spycash-replay-20260818-v1", "r8c-rsp-policy-assessment-20260818-v1"]
+
+[parent]
+r7_prereg_lock_sha256 = "794760ae76a2bd07f79bdf5fe7a532c33255bcf743e9576b52a4e8ba6f37e4ae"
+r7a_run_id = "r7a-dual-target-folds-20260818-v1"
+r7a_manifest_sha256 = "c22ed0d85940d188cb87505a4257ccec9673331f9bab78bbb3f6ada7fa34eab8"
+r7b_run_id = "r7b-risk-model-tournament-20260818-v1"
+r7b_manifest_sha256 = "6c8fb116397c29b682f7cb138740487ee67d256e737f099ebc7c75ac0c3c94ca"
+r7c_run_id = "r7c-rsp-attack-comparator-20260818-v1"
+r7c_manifest_sha256 = "867a8f0dce1aae1afd5ee9b0696b343bab2955eb9fd7f94e76c9fde7354a0685"
+r7d_run_id = "r7d-head-qualification-20260818-v1"
+r7d_manifest_sha256 = "9f661854ca045c21a09c985e78565c792419c8c77ea0782a1b00a641e7685422"
+r2a_run_id = "r2a-long-free-20260816-v1"
+r2a_manifest_sha256 = "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c"
+r2a_market_sha256 = "b42df63e2521dfc248c76cff084d3e6dc436cdb90c9552048e316a1123383fd9"
+r2a_rf_sha256 = "acc47ee3f6842434c7922ff2e590e002a5cbafcc80c89ee85c0ac7d4d0a60e71"
+parent_acceptance_path = "config/experiments/round8/PARENT_ACCEPTANCE.json"
+
+[sample]
+first_signal = "2014-01-03"
+last_signal = "2021-09-24"
+first_execution = "2014-01-06"
+nav_end = "2021-12-31"
+outer_oos_weeks = 404
+carry_across_outer_years = true
+
+[policies]
+registry = "config/experiments/round8/policy_registry.csv"
+registered = 3
+risk_priority = true
+weights = [1.0, 0.5]
+minimum_defense_scheduled_weeks = 1
+cost_bps = [0, 5, 10, 20]
+primary_cost_bps = 10
+
+[inference]
+incremental_controls = ["P01_RSP_RAW_RECOVERY:P00_RSP_Y5_CLEAR", "P02_RSP_A4_ISOTONIC:P00_RSP_Y5_CLEAR"]
+block_weeks = 13
+bootstrap_repetitions = 5000
+seed = 20260818
+multiple_testing = "holm_fwer"
+familywise_alpha = 0.05
+major_event_ids = ["E014", "E017", "E022", "E024", "E025", "E028"]
+event_registry = "config/experiments/round7/event_registry.csv"
+
+[authorization]
+state_signal_materialization = true
+spy_cash_development_nav = true
+policy_assessment = true
+head_refit = false
+model_search = false
+bagging = false
+stacking = false
+lockbox = false
+mom255_transfer = false
+position_search = false
+threshold_search = false
+
+[firewall]
+lockbox_outcomes_forbidden = true
+maximum_signal = "2021-09-24"
+maximum_nav_date = "2021-12-31"
+
+[hard_stop]
+after_batch = "R8C_RSP_POLICY_ASSESSMENT"
+status = "completed_pending_user_round9_freeze_decision"
+automatic_round9 = false
+automatic_lockbox = false

@@ -1,0 +1,68 @@
+{
+  "assessment": "completed_development",
+  "batch_id": "R6C_ATTACK4_ROLE_PROXY",
+  "counts": {
+    "conditional_arms": 6,
+    "nav_rows": 785280,
+    "registered_arms": 20,
+    "state_rows": 17740
+  },
+  "factor_additions_run": false,
+  "files": [
+    {
+      "path": "conditional_cells.csv",
+      "sha256": "77422dd3cc94c18bad7cef05bfdb90fd2f18b0f84c4e73bdd0389fcec2a1dafd",
+      "size_bytes": 6148
+    },
+    {
+      "path": "conditional_summary.csv",
+      "sha256": "9c0277ccf96d29eb5a3dffce063dbb758b70e6bf95817d8ecd3b06a5fa28bcb7",
+      "size_bytes": 2216
+    },
+    {
+      "path": "economic_summary.csv",
+      "sha256": "3f0abb087775bfdf8fa9fa17f3e1d6cf4cffa66b0d5bd507dbfdb6fde5cb167c",
+      "size_bytes": 19659
+    },
+    {
+      "path": "mechanism_attribution.csv",
+      "sha256": "3353fb3088faccd1bdf660b806b1408cee068e7b4a81dc1434cb15919fe36871",
+      "size_bytes": 1616
+    },
+    {
+      "path": "nav_daily.parquet",
+      "sha256": "f86b9c2e5d96c361c68c79c4c0261af3cdc119d306572b8037a076f2f69f3f74",
+      "size_bytes": 14303108
+    },
+    {
+      "path": "states_weekly.parquet",
+      "sha256": "ad95a7ca49e4061c91b7fe8dd0961546c0928f46882ee475dba7a8cae1a3edd5",
+      "size_bytes": 193207
+    },
+    {
+      "path": "yearly_active.csv",
+      "sha256": "baefb63b0ed528adad7d776cd4f43fe6d96a50cd0bcdae56d0a21b98d78997d2",
+      "size_bytes": 12809
+    }
+  ],
+  "final_state_machine_run": false,
+  "formal_eligible": false,
+  "lockbox_predictions_generated": false,
+  "lockbox_read": false,
+  "maximum_nav_date": "2021-12-31",
+  "maximum_proxy_signal": "2021-12-23",
+  "maximum_target_signal": "2021-11-26",
+  "models_run": false,
+  "mom255_transfer_run": false,
+  "parent_manifests": {
+    "r6a": "eca0f0901ea3ac7174fddafb82cc73c73ee811fa4ca1ff66f65a7af6266e0fd6",
+    "r6b": "07e89b83711e1760a79c3e8b9a6b7483b35e042fa584212f1d2a26296de38647"
+  },
+  "position_search_run": false,
+  "prereg_lock_sha256": "af00cccc159c3763671fded835a28eb3afffb3f0eac00a291ac7415a672d9a23",
+  "program_id": "attack4_single_factor_round6_v1",
+  "run_id": "r6c-attack4-role-proxy-20260818-v1",
+  "schema_version": 1,
+  "status": "completed_development",
+  "window_search_run": false
+}

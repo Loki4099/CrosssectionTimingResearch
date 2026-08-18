@@ -1,0 +1,10 @@
+{
+  "automatic_revision": false,
+  "candidate": "P00_RSP_Y5_CLEAR__MOM255_TOP20_MONTHLY_LONG_ONLY",
+  "formal_eligible": false,
+  "mechanical_lockbox_passed": false,
+  "program_id": "p00_mom255_mechanical_lockbox_round10_v1",
+  "status": "completed_mechanical_lockbox",
+  "summary_repair_applied": true,
+  "target_revision": false
+}

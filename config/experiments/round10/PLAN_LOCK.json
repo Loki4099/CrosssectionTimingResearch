@@ -1,0 +1,33 @@
+{
+  "authorization": {
+    "lockbox_assessment": false,
+    "model_or_policy_revision": false,
+    "outcome_reveal_phase": false,
+    "overlap_identity_audit": true,
+    "prediction_target_phase": false,
+    "rsp_data_acquisition": true,
+    "rsp_normalization": true,
+    "strategy_nav": false
+  },
+  "files": {
+    "config/experiments/round10/plan.toml": "c2feee3c7cc2bd9c660d4e62d071eb49d2771ee9eaf50ddeecf655de89f93c9d",
+    "docs/20_experiments/R10A_rsp_lockbox_feature/design.md": "8529e33d9b2c0fe2f524474317a4dc1af84d6fccbe8f69e079d9e82534bac1fc",
+    "docs/40_round10_p00_mom255_mechanical_lockbox_plan_v1.md": "791cbd28356b881ed5491c8a84f30d9345c9b272dba920ac7188040052f3d65a",
+    "scripts/build_round10_plan_lock.py": "7812d31838b4ba80382e0a19bc84ecc42d3adbd85321e82e9796bffe1c33f067"
+  },
+  "firewall": {
+    "forward_returns_forbidden": true,
+    "g00_outcome_files_forbidden": true,
+    "maximum_acquired_date": "2026-06-30",
+    "performance_summary_forbidden": true,
+    "strategy_nav_forbidden": true
+  },
+  "frozen_at_local_date": "2026-08-18",
+  "hard_stop": {
+    "after_batch": "R10A_RSP_LOCKBOX_FEATURE",
+    "status": "completed_pending_rsp_extension_acceptance"
+  },
+  "lock_type": "r10a_data_acquisition_only",
+  "program_id": "p00_mom255_mechanical_lockbox_round10_v1",
+  "schema_version": 1
+}

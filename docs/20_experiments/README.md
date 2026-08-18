@@ -39,3 +39,23 @@
 ## Round 5（已完成并按计划停止）
 
 [连续MAE13单因子复审计划](../28_round5_mae13_single_factor_program_v1.md)已完成，并形成[决策备忘录](../29_round5_mae13_single_factor_decision_memo.md)。[R5A](./R5A_mae13_target/report.md)冻结了 `max(MAE13-5%,0)`；[R5B](./R5B_mae13_single_factor/report.md)发现RSP/SPY63是唯一FDR后阳性；[R5C](./R5C_spy_cash_proxy/report.md)确认其相对同暴露静态控制有正timing value；[R5D](./R5D_mae13_robustness/report.md)确认逐一剔除主要回撤后仍不翻转。最终1条robust、1条普通reference，程序停止等待用户决定是否做低维组合或直接冻结单因子候选。锁箱、模型与动量迁移仍关闭。
+
+## Round 6（已完成并按计划停止）
+
+[防守—进攻双头条件路线](../30_defense_attack_dual_head_route_v1.md)与[第六轮 A4 单因子审计计划](../31_round6_attack4_single_factor_program_v1.md)已执行完毕，并形成[决策备忘录](../32_round6_attack4_single_factor_decision_memo.md)。[R6A](./R6A_attack4_target/report.md)确认883个成熟A4周；[R6B](./R6B_attack4_single_factor/report.md)发现RSP/SPY63 level有正向排序但20项BH未过；[R6C](./R6C_attack4_role_proxy/report.md)没有经济或条件角色通过；[R6D](./R6D_attack4_robustness/report.md)最终三路线均为0并硬停。截至Round 6硬停时，模型、最终状态机、2022–2026锁箱和 `mom_255_0` 迁移均未授权。
+
+## Round 7（已完成并按计划停止）
+
+[Round 7冻结计划](../33_round7_dual_head_model_program_draft_v1.md)已执行，并形成[决策备忘录](../36_round7_dual_head_model_decision_memo.md)。[R7A](./R7A_dual_target_folds/report.md)闭合948个共同周与404个outer-OOS周；[R7B](./R7B_risk_model_tournament/report.md)完成27个risk processes但0条合格；[R7C](./R7C_rsp_attack_comparator/report.md)确认A4单调head有排序信息但MAE skill未过；[R7D](./R7D_head_qualification/report.md)最终risk/A4正式head均为0并硬停。截至Round 7硬停时，状态机、策略NAV、锁箱和mom255迁移均未授权。
+
+## Round 8（已完成并按计划停止）
+
+[Round 8冻结计划](../34_round8_risk_veto_state_machine_program_draft_v1.md)已执行，并形成[决策备忘录](../37_round8_rsp_state_machine_decision_memo.md)。[R8A](./R8A_rsp_policy_signals/report.md)生成三条RSP-only风险优先状态；[R8B](./R8B_rsp_spycash_replay/report.md)完成24条SPY/cash成本路径；[R8C](./R8C_rsp_policy_assessment/report.md)确认P00为唯一development-eligible路径，P01无增量、P02与P00状态完全一致。截至Round 8硬停时，锁箱与mom255仍未运行。
+
+## Round 9（已完成并按计划停止）
+
+[Round 9冻结计划](../38_round9_p00_mom255_transfer_program_v1.md)已执行，并形成[决策备忘录](../39_round9_p00_mom255_transfer_decision_memo.md)。[R9A](./R9A_mom255_union_ledger/report.md)完成联合事件账簿并通过24项G00身份检查；[R9B](./R9B_mom255_transfer_economics/report.md)确认六格在10bp下全部同时改善终值、timing、Sharpe与MDD；[R9C](./R9C_mom255_transfer_assessment/report.md)通过primary、family、20bp、block与事件留一门。P00 × `mom_255_0` Top20 monthly long-only 获得 `development_transfer_eligible`；截至Round 9硬停时，锁箱仍未读取。
+
+## Round 10（机械锁箱已完成并失败）
+
+[Round 10冻结计划](../40_round10_p00_mom255_mechanical_lockbox_plan_v1.md)及[决策备忘录](../41_round10_p00_mom255_mechanical_lockbox_decision_memo.md)记录了完整机械揭示。[R10A](./R10A_rsp_lockbox_feature/report.md)完成无结果RSP数据扩展；[R10B](./R10B_sealed_targets/report.md)先冻结P00状态与六格目标；[R10C](./R10C_outcome_reveal/report.md)随后揭示2022–2026结果。Primary相对matched-static timing为+13.50%、Sharpe提高0.085，但相对裸策略终值少14.67%、MDD恶化3.41个百分点；六格联合门0/6，block与逐年留一门也失败，`mechanical_lockbox_passed=false`。

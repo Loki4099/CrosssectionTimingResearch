@@ -1,0 +1,4 @@
+attack_process_id,input_arm_id,input_transform,target,model,formal_hypothesis,round8_control,eligible,replacement_allowed
+AX00_Y5_CLEAR_ONLY,R4B__RSP_SPY63,none,Y5,none,false,true,true,false
+AX01_RAW_RSP_RECOVERY,R4B__RSP_SPY63,negative_defense_score,NONE,none,false,true,true,false
+AX02_RSP_A4_MONOTONE,R4B__RSP_SPY63,negative_defense_score,A4,isotonic_increasing,true,false,true,false

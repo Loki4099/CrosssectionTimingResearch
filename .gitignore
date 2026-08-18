@@ -26,3 +26,14 @@ results/*
 
 logs/
 cache/
+outputs/
+
+# Published folders keep compact review artifacts; full runtime ledgers and
+# provider payloads remain local and are anchored by manifest hashes.
+results/published/round8/R8B/nav_daily.parquet
+results/published/round9/R9A/*.parquet
+results/published/round10/R10A/rsp_daily.parquet
+results/published/round10/R10A/tiingo_rsp_2003_2026.json
+results/published/round10/R10B/sealed_target_ledger.parquet
+results/published/round10/R10C/event_ledger.parquet
+results/published/round10/R10C/nav_daily.parquet

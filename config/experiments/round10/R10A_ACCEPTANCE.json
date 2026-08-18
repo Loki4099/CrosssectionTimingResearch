@@ -1,0 +1,13 @@
+{
+  "accepted_at_local_date": "2026-08-18",
+  "decision": "accept_rsp_extension_for_sealed_prediction_target_phase",
+  "formal_eligible": false,
+  "g00_outcomes_read": false,
+  "maximum_overlap_error": 0.0,
+  "overlap_rows": 4703,
+  "plan_lock_sha256": "5f6183f302988d5e945a3174d7df3174605467c39d3cb40476210408179ae567",
+  "r10a_manifest_sha256": "c672ff39501b322bc8bcf14ad3880b3f131df0ee1b068d4fc2ebc72c283551a4",
+  "rsp_daily_sha256": "a968e85475849e059e272b7748f25e0326a8214783d1d64d9a9fd7f05c2cff8c",
+  "run_id": "r10a-rsp-lockbox-feature-20260818-v1",
+  "strategy_nav_run": false
+}

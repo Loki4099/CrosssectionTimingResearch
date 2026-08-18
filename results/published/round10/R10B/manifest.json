@@ -1,0 +1,51 @@
+{
+  "assessment": "completed_pending_outcome_reveal_lock",
+  "batch_id": "R10B_SEALED_TARGETS",
+  "cost_scenarios_run": false,
+  "counts": {
+    "lockbox_state_rows": 235,
+    "state_rows": 248,
+    "target_events": 1500,
+    "target_rows": 39991,
+    "transfer_cells": 6
+  },
+  "files": [
+    {
+      "path": "annual_thresholds.csv",
+      "sha256": "14ed346adfb20c96605f01d5c98f5c775d5202460872f7363ad16d49fb44127b",
+      "size_bytes": 185
+    },
+    {
+      "path": "p00_states_weekly.parquet",
+      "sha256": "ba62cf82f06723b83464df70ec699621d48ac0550e725462e70ed8aa07b2a27e",
+      "size_bytes": 15280
+    },
+    {
+      "path": "sealed_target_ledger.parquet",
+      "sha256": "ef1e21215bc0921b37db180c1b717788e2d336eda0d80c3bc20832ff8c09bf02",
+      "size_bytes": 200531
+    },
+    {
+      "path": "signal_identity.csv",
+      "sha256": "59206af134d7a6f230bcaab899eb592fff61758dd4b2e33e8b4e191d6b4be540",
+      "size_bytes": 70
+    },
+    {
+      "path": "target_event_audit.csv",
+      "sha256": "5a602c0c7ce405f8ef2f4f1d3a5cf2288c27fcd4bf374c02cc76c98ba52deaba",
+      "size_bytes": 117693
+    }
+  ],
+  "formal_eligible": false,
+  "forward_returns_run": false,
+  "g00_nav_read": false,
+  "lockbox_target_generation": true,
+  "outcome_reveal_run": false,
+  "performance_metrics_run": false,
+  "prereg_lock_sha256": "373964c08a6b027abd6fba33395c8ee871bbaa7afdb786c7096eef0f03fc328e",
+  "program_id": "p00_mom255_mechanical_lockbox_round10_v1",
+  "run_id": "r10b-sealed-targets-20260818-v1",
+  "schema_version": 1,
+  "status": "completed_sealed_targets",
+  "strategy_nav_run": false
+}

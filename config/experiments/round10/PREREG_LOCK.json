@@ -1,0 +1,44 @@
+{
+  "authorization": {
+    "lockbox_target_generation": true,
+    "model_or_policy_revision": false,
+    "outcome_reveal_phase": false,
+    "performance_assessment": false,
+    "position_search": false,
+    "prediction_target_phase": true,
+    "strategy_nav": false,
+    "threshold_search": false
+  },
+  "counts": {
+    "primary_cells": 1,
+    "transfer_cells": 6
+  },
+  "files": {
+    "config/experiments/round10/R10A_ACCEPTANCE.json": "8fc5c598e06ba1d27c31d5b17d9fc186e2fa83a1ee411de55a707500ea70e20b",
+    "config/experiments/round10/program.toml": "1ec3e208a5d2747e172a0457dd2a190fa27c161f553e68316c5f78d1eeec6ca6",
+    "config/experiments/round10/transfer_registry.csv": "803158b1f113de4ccdeb75c526302659c95b27b65f7559df601d840b2586d5e4",
+    "docs/20_experiments/R10B_sealed_targets/design.md": "348c780b0d586971866b3ba66be173bf6c8aca44666eb67f1a7e5c535a9a5a5f",
+    "docs/40_round10_p00_mom255_mechanical_lockbox_plan_v1.md": "791cbd28356b881ed5491c8a84f30d9345c9b272dba920ac7188040052f3d65a",
+    "experiments/round10_groups.csv": "afce8eaa7c027e12963d9651c79e52fd04a2f98038bd74111816474914285419",
+    "experiments/round10_registry.csv": "994ccd75a9b11402277c7c10e30555a9ddcdbc43650877bc7a825b20b3c66c44",
+    "scripts/build_round10_prereg_lock.py": "c97d95b0c0011801421956d659d63cfb9e8c6127d171b6245f6474f01ad6372f",
+    "scripts/run_round10_phase1.py": "25229b4543d52df7c4ca7dae64f294b80503bd5506220d928febeb6ab6956ce3",
+    "src/momentum_reversal/pipelines/round10_experiments.py": "90a000a82c46d363cfdca5b55bb36f1d5a4fbf251fed5aae87f7bb81d7a6974f"
+  },
+  "firewall": {
+    "outcome_reveal_requires_target_acceptance": true,
+    "phase1_g00_nav_forbidden": true,
+    "phase1_nav_forbidden": true,
+    "phase1_performance_forbidden": true
+  },
+  "frozen_at_local_date": "2026-08-18",
+  "hard_stop": {
+    "after_batch": "R10B_SEALED_TARGETS",
+    "automatic_outcome_reveal": false,
+    "status": "completed_pending_outcome_reveal_lock"
+  },
+  "lock_type": "sealed_prediction_target_phase",
+  "parent_plan_lock_sha256": "5f6183f302988d5e945a3174d7df3174605467c39d3cb40476210408179ae567",
+  "program_id": "p00_mom255_mechanical_lockbox_round10_v1",
+  "schema_version": 1
+}

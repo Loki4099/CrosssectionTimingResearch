@@ -1,0 +1,20 @@
+{
+  "cost20_direction_gate": true,
+  "family_gate": false,
+  "family_medians": {
+    "delta_mdd_vs_naked": -0.0061075916135978,
+    "delta_sharpe_vs_naked": 0.0562509594580833,
+    "overlay_to_naked_terminal_increment": -0.1389344721982938,
+    "timing_value_vs_static": 0.10861480974688806
+  },
+  "leave_one_year_gate": false,
+  "mechanical_lockbox_passed": false,
+  "monthly_passed": 0,
+  "passed_cells": 0,
+  "primary_block13_95_lower": -0.00025908686141626244,
+  "primary_four_metric_gate": false,
+  "primary_one_sided_p": 0.1176,
+  "primary_transfer_id": "R10__MOM255__TOP20__MONTHLY",
+  "summary_repair_applied": true,
+  "weekly_passed": 0
+}

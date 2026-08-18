@@ -1,0 +1,3 @@
+policy_id,control_policy_id,weekly_observations,mean_weekly_increment,block13_95_lower,one_sided_p,mdd_not_worse,premature_reentry,control_premature_reentry,premature_not_increased,mae10_mean_exposure,control_mae10_mean_exposure,mae10_exposure_not_increased,holm_p_value,incremental_gate
+P01_RSP_RAW_RECOVERY,P00_RSP_Y5_CLEAR,417,-0.00027660584100153683,-0.0005986515288247405,0.9098,True,0,3,True,0.5,0.5581395348837209,True,1.0,False
+P02_RSP_A4_ISOTONIC,P00_RSP_Y5_CLEAR,417,0.0,0.0,1.0,True,3,3,True,0.5581395348837209,0.5581395348837209,True,1.0,False

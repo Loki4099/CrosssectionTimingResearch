@@ -1,0 +1,13 @@
+recipe_id,family,alpha,n_knots,spline_degree,max_depth,num_leaves,n_estimators,learning_rate,min_child_samples,objective,positive_coefficients,monotone_constraints,capacity_rank
+RIDGE_A01,positive_ridge,0.1,,,,,,,,regression,true,all_plus_one,1
+RIDGE_A1,positive_ridge,1.0,,,,,,,,regression,true,all_plus_one,2
+RIDGE_A10,positive_ridge,10.0,,,,,,,,regression,true,all_plus_one,3
+RIDGE_A100,positive_ridge,100.0,,,,,,,,regression,true,all_plus_one,4
+GAM_K3_A1,additive_spline_ridge,1.0,3,2,,,,,,regression,false,none,5
+GAM_K3_A10,additive_spline_ridge,10.0,3,2,,,,,,regression,false,none,6
+GAM_K5_A1,additive_spline_ridge,1.0,5,2,,,,,,regression,false,none,7
+GAM_K5_A10,additive_spline_ridge,10.0,5,2,,,,,,regression,false,none,8
+LGBM_D1_N50,monotone_lightgbm,,,,1,2,50,0.05,52,regression,false,all_plus_one,9
+LGBM_D1_N100,monotone_lightgbm,,,,1,2,100,0.05,52,regression,false,all_plus_one,10
+LGBM_D2_N50,monotone_lightgbm,,,,2,4,50,0.05,52,regression,false,all_plus_one,11
+LGBM_D2_N100,monotone_lightgbm,,,,2,4,100,0.05,52,regression,false,all_plus_one,12

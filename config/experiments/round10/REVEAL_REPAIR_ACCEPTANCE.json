@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "program_id": "p00_mom255_mechanical_lockbox_round10_v1",
+  "run_id": "r10c-outcome-reveal-20260818-v1",
+  "status": "deterministic_summary_repair_authorized",
+  "outcome_reveal_lock_sha256": "42c6199e968fc75daa275e2f36e0ddedf62550cc6c1399bfe5f5181d28b6a3a7",
+  "frozen_reveal_code_sha256": "c106760f281f9d2b14ec8f74c52d7397f8e79849a41079297289a674aa1621ac",
+  "failure": {
+    "stage": "leave_one_calendar_year_out_summary",
+    "exception": "AttributeError: 'Index' object has no attribute 'ne'",
+    "cause": "pandas Index API incompatibility in a boolean comparison",
+    "occurred_after_nav_and_comparison_outputs_were_written": true
+  },
+  "authorized_scope": {
+    "read_existing_partial_outputs_only": true,
+    "recompute_nav": false,
+    "recompute_targets": false,
+    "revise_policy_or_thresholds": false,
+    "write_leave_one_year_assessment_decision_manifest_only": true
+  },
+  "partial_outputs": {
+    "event_ledger.parquet": "83efdf4e8ea69aaedec4f99e252abaea83f075137ff40992e929f9f57583c8ec",
+    "g00_identity_audit.csv": "ea7fc385f5adb2fac3d2775c81eb930d60fc31701938780bb2a183c0f58bdc2d",
+    "nav_daily.parquet": "685094fa1caafdc446717075c86d5bd0f0a60d121c4a5dc84de74550245fa0a0",
+    "path_metrics.csv": "2a3d4fe82ac231be113bb9cf480f1b30f26db74356ac140a377fb5a110cb0a1c",
+    "transfer_comparisons.csv": "8fe3eb6ac725eed2cc165667233d5d47bc679087e4b54132b8ef7543ba6b3755"
+  }
+}

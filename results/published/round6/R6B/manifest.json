@@ -1,0 +1,52 @@
+{
+  "assessment": "completed_development",
+  "batch_id": "R6B_ATTACK4_SINGLE_FACTOR",
+  "counts": {
+    "common_weeks": 883,
+    "registered_arms": 20,
+    "score_rows": 30180
+  },
+  "factor_additions_run": false,
+  "files": [
+    {
+      "path": "quintiles.csv",
+      "sha256": "084afeff20cb6ae9709e302434c541664c9381b59035a6523aa40670ff9bc682",
+      "size_bytes": 12495
+    },
+    {
+      "path": "scores_weekly.parquet",
+      "sha256": "042d2c493ace3b6ffef2dd4a8a1149bdc1d7a68f494aca80877e7ad9e1a81fa4",
+      "size_bytes": 588944
+    },
+    {
+      "path": "signal_summary.csv",
+      "sha256": "0fef97151f27aee5f403ecc008eeec800718d3c48ad95e55078bd5623da39a9f",
+      "size_bytes": 9896
+    },
+    {
+      "path": "yearly_signal.csv",
+      "sha256": "442fd83ccd18c607394ea72d28f7c23a0440b74c517bd51f0ad530998e462fdf",
+      "size_bytes": 22726
+    }
+  ],
+  "final_state_machine_run": false,
+  "formal_eligible": false,
+  "lockbox_predictions_generated": false,
+  "lockbox_read": false,
+  "maximum_nav_date": "2021-12-31",
+  "maximum_proxy_signal": "2021-12-23",
+  "maximum_target_signal": "2021-11-26",
+  "models_run": false,
+  "mom255_transfer_run": false,
+  "parent_manifests": {
+    "r4a": "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f",
+    "r6a": "eca0f0901ea3ac7174fddafb82cc73c73ee811fa4ca1ff66f65a7af6266e0fd6"
+  },
+  "position_search_run": false,
+  "prereg_lock_sha256": "af00cccc159c3763671fded835a28eb3afffb3f0eac00a291ac7415a672d9a23",
+  "program_id": "attack4_single_factor_round6_v1",
+  "run_id": "r6b-attack4-single-factor-20260818-v1",
+  "schema_version": 1,
+  "status": "completed_development",
+  "window_search_run": false
+}

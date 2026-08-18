@@ -1,0 +1,40 @@
+{
+  "assessment": "completed_pending_rsp_extension_acceptance",
+  "batch_id": "R10A_RSP_LOCKBOX_FEATURE",
+  "counts": {
+    "daily_rows": 5829,
+    "overlap_rows": 4703
+  },
+  "date_range": {
+    "first": "2003-04-30",
+    "last": "2026-06-30"
+  },
+  "files": [
+    {
+      "path": "overlap_audit.csv",
+      "sha256": "12489aa4b8fa13ccfcc4db3357edf4513e2e284b32b0f51a096a1bda20faaa8b",
+      "size_bytes": 123
+    },
+    {
+      "path": "rsp_daily.parquet",
+      "sha256": "a968e85475849e059e272b7748f25e0326a8214783d1d64d9a9fd7f05c2cff8c",
+      "size_bytes": 98938
+    },
+    {
+      "path": "tiingo_rsp_2003_2026.json",
+      "sha256": "9b332dc8ccfa0dc7896496c17886e2da7f53a307adc07d16935476439fd402cb",
+      "size_bytes": 1481910
+    }
+  ],
+  "formal_eligible": false,
+  "forward_returns_run": false,
+  "g00_outcomes_read": false,
+  "maximum_overlap_error": 0.0,
+  "performance_summary_run": false,
+  "plan_lock_sha256": "5f6183f302988d5e945a3174d7df3174605467c39d3cb40476210408179ae567",
+  "program_id": "p00_mom255_mechanical_lockbox_round10_v1",
+  "run_id": "r10a-rsp-lockbox-feature-20260818-v1",
+  "schema_version": 1,
+  "status": "completed_candidate",
+  "strategy_nav_run": false
+}

@@ -1,0 +1,4 @@
+batch_id,status,authorization,objective,depends_on
+R8A_RSP_POLICY_SIGNALS,plan_locked_authorized_not_run,state_signal_materialization,Materialize three frozen RSP-only policy states,NONE
+R8B_RSP_SPYCASH_REPLAY,plan_locked_authorized_not_run,spy_cash_development_nav,Replay dynamic and matched-static SPY cash paths,R8A_RSP_POLICY_SIGNALS
+R8C_RSP_POLICY_ASSESSMENT,plan_locked_authorized_not_run,policy_assessment,Apply economic incremental and robustness gates,R8B_RSP_SPYCASH_REPLAY

@@ -1,0 +1,227 @@
+schema_version = 1
+program_id = "attack4_single_factor_round6_v1"
+status = "preregistered_development_authorized"
+formal_eligible = false
+run_ids = [
+  "r6a-attack4-target-identity-20260818-v1",
+  "r6b-attack4-single-factor-20260818-v1",
+  "r6c-attack4-role-proxy-20260818-v1",
+  "r6d-attack4-robustness-20260818-v1",
+]
+
+[parent]
+r2b_run_id = "r2b-free-core-v1"
+r2b_manifest_sha256 = "831cf4c4c373a762d7726833fcaebf80db0214c091a640d94955afa283058559"
+r2b_tree_sha256 = "3afe3a9a2ebea6ec852eec791e95420fde8ce0c91c1278f004275e9afffafed6"
+r2b_targets_weekly_sha256 = "5056c6ebef6140bbd5f08f487584016ea1e5abc32462bde41caa230e2514e3e8"
+r3b_run_id = "r3b-recovery-persistence-development-v1"
+r3b_manifest_sha256 = "156911900de6f488965d4abd090250b9d1efcbf1463c167063f6228703bc7882"
+r3b_tree_sha256_at_round6_freeze = "a40a2d56889d83b762920ebd334a9b69c7657dce3acf36f4fdee793cfd30be1f"
+r3b_targets_weekly_sha256 = "9295168ba695bc05bce35a7850a260247f0965d873190ee5ad042b9d368a0a67"
+r3b_prereg_lock_sha256 = "77e227c461a1ac247f7444641ece157cfc647f2dbcd14d44c816020d1d642eeb"
+r4a_run_id = "r4a-free-factor-data-20260817-v1"
+r4a_manifest_sha256 = "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f"
+r4a_tree_sha256 = "12ad10c68ae2d708ce6999cf599d5155429532efc947da84ed99f08afb5cd096"
+r4a_feature_inputs_canonical_sha256 = "f598299c1768c3cedc7eec956c028b9a4d17973754c79d9d2e784c756bf6a87f"
+r5d_run_id = "r5d-mae13-robustness-20260817-v1"
+r5d_manifest_sha256 = "29bc9ef9a872260596027bd2f38e01a92c4a1e6da50507641b30aeacc285abbc"
+r5d_tree_sha256 = "e5abebca413810496ef85a397a5f047a6cfc41de55cdaca48cc90131bebb0a62"
+r5d_final_assessment_sha256 = "3c6ba0e633f8ab5c36784f979e60f254718900357415ac150c96a41d8002660d"
+r5_current_prereg_lock_sha256 = "cc85d9a99b08bc8773096ec8c36b41cbd2e67c2ac844dae20fbce8a23bd9522d"
+r5_runtime_recorded_prereg_lock_sha256 = "0d007b6c093f86a8eb93448531e1145c42d275d02b86116c984494d7485b607f"
+r5_results_registry_sha256 = "ac9d2de7a171942be1a471924a3db084ed6b275c27f7831c159d040beb115ba2"
+parent_acceptance_path = "config/experiments/round6/PARENT_ACCEPTANCE.json"
+
+[development]
+first_execution_year = 2005
+last_execution_year = 2021
+maximum_target_signal = "2021-11-26"
+maximum_target_available_at = "2021-12-27"
+maximum_proxy_signal = "2021-12-23"
+nav_end = "2021-12-31"
+lockbox_start_signal = "2021-12-31"
+lockbox_start_execution = "2022-01-03"
+minimum_threshold_history_weeks = 260
+common_sample_required = true
+
+[target]
+registry_path = "config/experiments/round6/target_registry.csv"
+primary_name = "fwd_excess_logret_4w"
+primary_role = "continuous_signed_attack_return"
+horizon_scheduled_weeks = 4
+start = "next_xnys_execution_open"
+end = "fourth_subsequent_scheduled_execution_open"
+spy_leg = "log_spy_total_return_open_ratio"
+cash_leg = "sum_daily_rf_log_on_half_open_execution_interval"
+formula = "log(SPY_TR_open_terminal/SPY_TR_open_execution)-sum(rf_log[execution,terminal))"
+costs_in_target = false
+available_at = "terminal_execution_open"
+binary_name = "sustainable_attack_4w"
+binary_formula = "strictly_greater_than_zero(primary)"
+binary_diagnostic_only = true
+binary_can_promote = false
+worst_path_name = "fwd_worst_excess_4w"
+worst_path_guardrail_only = true
+worst_path_can_promote = false
+alternative_target_selection = false
+
+[factors]
+registry_path = "config/experiments/round6/factor_registry.csv"
+source_table = "R4A_FREE_FACTOR_DATA/feature_inputs_weekly.parquet"
+source_column = "defense_score"
+registered_arms = 20
+level_arms = 17
+delta4_arms = 3
+level_attack_transform = "negative_frozen_defense_score"
+delta4_attack_transform = "defense_score_at_t_minus_4_scheduled_weeks_minus_defense_score_at_t"
+delta4_calendar = "complete_frozen_decision_calendar_before_missing_filter"
+delta4_missing_rule = "either_endpoint_missing_means_missing_no_backfill"
+high_means_attack = true
+replacement_allowed = false
+unregistered_factor_additions = false
+direction_search = false
+window_search = false
+
+[signal_proxy]
+purpose = "single_factor_economic_measurement_only_not_final_state_machine"
+quantile = 0.75
+quantile_method = "linear"
+comparison = "strictly_greater_than"
+threshold_history = "prior_execution_years_only"
+attack_high_spy_weight = 1.0
+attack_low_spy_weight = 0.5
+cash_weight = "one_minus_spy_weight"
+missing_week = "carry_prior_target_no_overlay_trade"
+first_valid_week = "set_target_from_current_signal"
+rebalance = "weekly_next_execution_open"
+matched_static_control = true
+
+[conditional_role]
+risk_anchor_arm_id = "A4__RSP_SPY63_LVL"
+risk_anchor_source_arm_id = "R4B__RSP_SPY63"
+risk_score = "frozen_defense_score"
+risk_threshold_quantile = 0.75
+risk_threshold_history = "prior_execution_years_only_minimum_260_weeks"
+risk_high_comparison = "strictly_greater_than"
+attack_threshold_quantile = 0.75
+attack_threshold_history = "prior_execution_years_only_minimum_260_weeks"
+primary_cell = "risk_low"
+primary_contrast = "mean_A4_risk_low_and_attack_high_minus_mean_A4_risk_low_and_attack_not_high"
+minimum_cell_fraction = 0.05
+minimum_cell_weeks = 44
+block_weeks = 4
+fdr_method = "benjamini_hochberg"
+fdr_level = 0.10
+
+[costs]
+main_bps = 10
+stress_bps = [0, 5, 20]
+charge_on = "absolute_change_in_spy_weight_at_execution_open"
+
+[inference]
+primary_metric = "one_sided_spearman_attack_score_vs_fwd_excess_logret_4w"
+block_weeks = 4
+veto_sensitivity_block_weeks = 8
+bootstrap_repetitions = 2000
+seed = 20260818
+fdr_method = "benjamini_hochberg"
+fdr_level = 0.10
+primary_hypothesis_family = "all_20_registered_arms_together"
+alert_budget = 0.25
+positive_year_fraction_minimum = 0.60
+major_event_leave_one_out = true
+
+[events]
+source = "Round5 machine drawdown episode registry restricted to development overlap"
+major_event_ids = ["E014", "E017", "E022", "E024", "E025", "E028"]
+replacement_allowed = false
+
+[qualification.reference_attack_positive]
+spearman_strictly_positive = true
+positive_upside_capture_strictly_above = 0.25
+top_mean_a4_above_rest = true
+binary_lift_strictly_above = 1.0
+positive_year_fraction_minimum = 0.60
+can_enter_round7_by_itself = false
+
+[qualification.robust_direct_attack]
+requires_reference_attack_positive = true
+registry_direct_permission_required = true
+block95_lower_strictly_positive = true
+bh_q_maximum = 0.10
+positive_upside_capture_minimum = 0.35
+top_mean_a4_strictly_positive = true
+binary_lift_minimum = 1.10
+minimum_leave_one_event_spearman_strictly_positive = true
+eight_week_block_spearman_nonnegative = true
+worst_path_harm_veto = true
+
+[qualification.economic_reference]
+context_only_excluded = true
+active_terminal_vs_matched_static_10bps_strictly_positive = true
+active_terminal_vs_matched_static_20bps_strictly_positive = true
+positive_active_year_fraction_minimum = 0.60
+dynamic_mdd_not_worse_than_matched_static = true
+worst_path_harm_veto = true
+
+[qualification.conditional_eligible]
+registry_permission_required = true
+minimum_cell_fraction = 0.05
+minimum_cell_weeks = 44
+primary_contrast_block95_lower_strictly_positive = true
+conditional_bh_q_maximum = 0.10
+worst_path_harm_veto = true
+role_only_not_direct_champion = true
+
+[qualification.model_input]
+formula = "robust_direct_attack OR economic_reference OR conditional_eligible"
+no_top_k = true
+all_qualified_continue = true
+context_only_never_promotes = true
+failed_arm_replacement = false
+
+[authorization]
+target_identity_and_materialization = true
+signal_evaluation = true
+fixed_economic_proxy = true
+conditional_role_audit = true
+robustness_audit = true
+models = false
+model_selection = false
+bagging = false
+stacking = false
+final_state_machine = false
+state_machine_search = false
+lockbox = false
+mom255_transfer = false
+alternative_target = false
+unregistered_factor_additions = false
+window_search = false
+position_search = false
+
+[firewall]
+lockbox_outcomes_forbidden = true
+lockbox_predictions_forbidden = true
+lockbox_states_forbidden = true
+lockbox_nav_forbidden = true
+maximum_target_signal = "2021-11-26"
+maximum_proxy_signal = "2021-12-23"
+maximum_nav_date = "2021-12-31"
+
+[roadmap]
+document = "docs/30_defense_attack_dual_head_route_v1.md"
+round7_requires_new_prereg_lock = true
+round8_requires_new_prereg_lock = true
+round9_requires_new_prereg_lock = true
+automatic_round7 = false
+automatic_round8 = false
+automatic_round9 = false
+
+[hard_stop]
+after_batch = "R6D_ATTACK4_ROBUSTNESS"
+status = "completed_pending_user_multifactor_model_design"
+automatic_champion = false
+automatic_model_stage = false
+automatic_state_machine = false
+automatic_lockbox = false
+automatic_mom255_transfer = false

@@ -1,0 +1,70 @@
+{
+  "assessment": "completed_pending_user_round8_freeze_decision",
+  "batch_id": "R7D_HEAD_QUALIFICATION",
+  "counts": {
+    "attack_processes_assessed": 2,
+    "attack_qualified": 0,
+    "major_events": 6,
+    "risk_canonical_qualified": 0,
+    "risk_processes": 27,
+    "risk_qualified": 0
+  },
+  "factor_additions_run": false,
+  "files": [
+    {
+      "path": "attack_final_assessment.csv",
+      "sha256": "54aa2cff6580bbabf02bf647909d407e8e2292f1b3c5bbb17038442197bc9883",
+      "size_bytes": 1063
+    },
+    {
+      "path": "attack_leave_one_event_out.csv",
+      "sha256": "2b1146cfd82b237572051fa1cb9951a23ee5808e95cb19935296f1f111a9267a",
+      "size_bytes": 719
+    },
+    {
+      "path": "decision.json",
+      "sha256": "3f4fe8d1df308a8d32597fabc92e5481e9b103d5b9094bc73619185a7ef5a661",
+      "size_bytes": 344
+    },
+    {
+      "path": "head_role_ledger.csv",
+      "sha256": "58c95312706269668193daa56511ba10dc83d186c0ef6284b4706db1d6a8a215",
+      "size_bytes": 1464
+    },
+    {
+      "path": "risk_equivalence_clusters.csv",
+      "sha256": "b935cafb0d9824f9828df9f966af02b578b00d2a5443275729a204ac75a03f1e",
+      "size_bytes": 825
+    },
+    {
+      "path": "risk_final_assessment.csv",
+      "sha256": "93ff33683fe362426924faa7d3cc7bf72eb4d3d10102beadc049bfe6f42aa431",
+      "size_bytes": 9237
+    },
+    {
+      "path": "risk_leave_one_event_out.csv",
+      "sha256": "3e01782b021b7a8068270e80fb3706b71ba10ff2250285b26014766d4cf2daee",
+      "size_bytes": 7782
+    }
+  ],
+  "final_state_machine_run": false,
+  "formal_eligible": false,
+  "lockbox_predictions_generated": false,
+  "lockbox_read": false,
+  "maximum_target_signal": "2021-09-24",
+  "models_run": false,
+  "mom255_transfer_run": false,
+  "parent_manifests": {
+    "r7a": "c22ed0d85940d188cb87505a4257ccec9673331f9bab78bbb3f6ada7fa34eab8",
+    "r7b": "6c8fb116397c29b682f7cb138740487ee67d256e737f099ebc7c75ac0c3c94ca",
+    "r7c": "867a8f0dce1aae1afd5ee9b0696b343bab2955eb9fd7f94e76c9fde7354a0685"
+  },
+  "position_search_run": false,
+  "prereg_lock_sha256": "794760ae76a2bd07f79bdf5fe7a532c33255bcf743e9576b52a4e8ba6f37e4ae",
+  "program_id": "dual_head_model_round7_v1",
+  "run_id": "r7d-head-qualification-20260818-v1",
+  "schema_version": 1,
+  "status": "completed_development",
+  "strategy_nav_run": false,
+  "window_search_run": false
+}

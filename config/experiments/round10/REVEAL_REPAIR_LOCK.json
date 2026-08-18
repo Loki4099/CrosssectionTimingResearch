@@ -1,0 +1,10 @@
+{
+  "files": {
+    "config/experiments/round10/REVEAL_REPAIR_ACCEPTANCE.json": "70b6bc901887fd1319ae1e6929e76e1a8941fde79b11c19403dace1991be9d20",
+    "scripts/repair_round10_reveal_summary.py": "d5363266e4e17aabb7e41ceaa55d59dc1cbc02f39efb2970bd0990344edbbef6"
+  },
+  "outcome_reveal_lock_sha256": "42c6199e968fc75daa275e2f36e0ddedf62550cc6c1399bfe5f5181d28b6a3a7",
+  "program_id": "p00_mom255_mechanical_lockbox_round10_v1",
+  "schema_version": 1,
+  "status": "frozen_deterministic_summary_repair"
+}

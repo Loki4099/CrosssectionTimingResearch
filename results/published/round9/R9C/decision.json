@@ -1,0 +1,10 @@
+{
+  "automatic_revision": false,
+  "development_transfer_eligible": true,
+  "eligible_policy_id": "P00_RSP_Y5_CLEAR",
+  "lockbox_authorized": false,
+  "lockbox_read": false,
+  "primary_transfer_id": "R9__MOM255__TOP20__MONTHLY",
+  "program_id": "p00_mom255_long_only_transfer_round9_v1",
+  "status": "completed_pending_user_lockbox_decision"
+}

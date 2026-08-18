@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "program_id": "dual_head_model_round7_v1",
+  "accepted_at_local_date": "2026-08-18",
+  "formal_eligible": false,
+  "round6_machine_result": {
+    "assessment": "completed_no_attack_role_candidate",
+    "model_input_eligible": 0,
+    "result_rewritten": false,
+    "user_override_identity": "RSP_SPY63_cross_target_mechanism_candidate",
+    "override_scope": "Round7 comparator and mandatory risk anchor only"
+  },
+  "parents": {
+    "r4a_manifest_sha256": "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f",
+    "r4a_features_sha256": "f598299c1768c3cedc7eec956c028b9a4d17973754c79d9d2e784c756bf6a87f",
+    "r5a_manifest_sha256": "1475104c9e7c6eb415500bb29f65ac27cc78736828022058760a526702ef233a",
+    "r5a_targets_sha256": "fe4e69db8edbc00d27350fd0d46553579e37c5a9f91202e92e56730a67bf21b7",
+    "r5d_manifest_sha256": "29bc9ef9a872260596027bd2f38e01a92c4a1e6da50507641b30aeacc285abbc",
+    "r5d_final_sha256": "3c6ba0e633f8ab5c36784f979e60f254718900357415ac150c96a41d8002660d",
+    "r6a_manifest_sha256": "eca0f0901ea3ac7174fddafb82cc73c73ee811fa4ca1ff66f65a7af6266e0fd6",
+    "r6a_targets_sha256": "6c4c1cf9e6f3f872537fd62f96a5a79c1658a8a3b787d4a6f731783a201050c8",
+    "r6d_manifest_sha256": "d40d46cea4bc3dd2100ce3f9dad047c9832e6bf1043c3a93b3f6fca6975fab2f",
+    "r6d_final_sha256": "55292ecf3ac2193fb07cd5913f50aaf5b7d659251d43fc2c6d9cf4847b80a680",
+    "r6_prereg_lock_sha256": "af00cccc159c3763671fded835a28eb3afffb3f0eac00a291ac7415a672d9a23"
+  },
+  "dependency": {
+    "lightgbm_version": "4.6.0",
+    "metadata_sha256": "6cae173638e3581cfa60cd0e07660b0a72efe67ca3db4d3d3cfaa7d31d03b65d",
+    "dll_sha256": "d2a41567e16b127b2486b417cc25813588fe015a0481e06fe8ce662ebed1ec61",
+    "deterministic_prediction_sha256": "360846b4293e02044ffdc4c363a4fb0edf040ba74dc89b4de5797afe28140526",
+    "objective": "regression",
+    "regression_l1_with_monotone_forbidden": true
+  },
+  "firewall": {
+    "lockbox_read_authorized": false,
+    "state_machine_authorized": false,
+    "strategy_nav_authorized": false,
+    "mom255_transfer_authorized": false
+  }
+}

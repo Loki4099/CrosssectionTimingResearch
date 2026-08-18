@@ -1,0 +1,21 @@
+{
+  "accepted_at_local_date": "2026-08-18",
+  "decision": "accept_unique_round8_p00_policy_for_round9_development_transfer",
+  "formal_eligible": false,
+  "g00": {
+    "manifest_sha256": "8b875d4bcbb7b178b309c7b1edaa7dce9bbb15090e68b619fb045cec35411c66",
+    "run_id": "g00-frozen-v3-v1",
+    "six_long_only_mom255_cells_required": true
+  },
+  "lockbox_read": false,
+  "round8": {
+    "decision_sha256": "9d2bcbc522221d5e291359b442fc4378dca2e79266d523a6c2187b15d06e5c47",
+    "eligible_policy_ids": [
+      "P00_RSP_Y5_CLEAR"
+    ],
+    "manifest_sha256": "05332ac9c75e8ff6ba74ac1edb4c6925142074ebb1a45fadee7ce55e531c8584",
+    "prereg_lock_sha256": "81e526fd6cc939fd42a6cfd7c1fda3a2303a2a2e33d09be9cb7b5e4e6d12446f"
+  },
+  "scope": "development_only_2018_through_2021",
+  "user_authorized_round9": true
+}

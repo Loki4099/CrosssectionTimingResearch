@@ -1,0 +1,5 @@
+batch_id,status,authorization,objective,depends_on
+R6A_ATTACK4_TARGET,plan_locked_authorized_not_run,target_identity,Verify and republish the frozen continuous A4 primary plus binary and worst-path guardrails without lockbox outcomes,ROUND6_PREREG_LOCK
+R6B_ATTACK4_SINGLE_FACTOR,plan_locked_authorized_not_run,signal_only,Audit all seventeen reversed level scores and three registered Delta4 repair scores against continuous A4,R6A_ATTACK4_TARGET
+R6C_ATTACK4_ROLE_PROXY,plan_locked_authorized_not_run,fixed_role_proxy,Apply the frozen attack timing measurement wrapper and RSP-low conditional role audit without models or final state selection,R6B_ATTACK4_SINGLE_FACTOR
+R6D_ATTACK4_ROBUSTNESS,plan_locked_authorized_not_run,robustness_only,Apply common-sample block-FDR event cost and role qualification gates then hard stop,R6B_ATTACK4_SINGLE_FACTOR+R6C_ATTACK4_ROLE_PROXY

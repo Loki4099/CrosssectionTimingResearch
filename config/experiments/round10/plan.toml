@@ -1,0 +1,58 @@
+schema_version = 1
+program_id = "p00_mom255_mechanical_lockbox_round10_v1"
+status = "plan_locked_r10a_rsp_extension_only"
+formal_eligible = false
+frozen_local_date = "2026-08-18"
+
+[parent]
+round9_prereg_lock_sha256 = "b6def7259bab9a1b8c412827a458694699f46eeccca83de56e545dd09a6e611a"
+r9c_manifest_sha256 = "5ff9f3f4520b9ffcf57319f028b226f953a3d6b2f02b66ed025a41d62c5fb9a3"
+r9c_decision_sha256 = "f3b6b63cb7eba662e5f31ad5b5feddc4480863b1fc315dbb0ac148b2d7ac8c67"
+r2a_run_id = "r2a-long-free-20260816-v1"
+r2a_manifest_sha256 = "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c"
+r2a_market_sha256 = "b42df63e2521dfc248c76cff084d3e6dc436cdb90c9552048e316a1123383fd9"
+r2a_calendar_sha256 = "7af772e769040d87c491cca09af977ce6e21bed351ff818f584508cc55341a98"
+r4a_run_id = "r4a-free-factor-data-20260817-v1"
+r4a_manifest_sha256 = "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f"
+r4a_rsp_raw_sha256 = "26e8a3bfa091fcf05fdec3fa66b101d5139e077b8d315aa812bd3216593aac4c"
+
+[acquisition]
+provider = "Tiingo"
+dataset = "EOD"
+symbol = "RSP"
+start = "2003-04-30"
+end = "2026-06-30"
+token_env_var = "TIINGO_API_TOKEN"
+raw_filename = "tiingo_rsp_2003_2026.json"
+normalized_filename = "rsp_daily.parquet"
+overlap_end = "2021-12-31"
+required_overlap_rows = 4703
+overlap_tr_close_absolute_tolerance = 1e-10
+ordinary_actions_from_adjusted_prices = true
+
+[firewall]
+strategy_nav_forbidden = true
+forward_returns_forbidden = true
+performance_summary_forbidden = true
+g00_outcome_files_forbidden = true
+maximum_acquired_date = "2026-06-30"
+
+[authorization]
+rsp_data_acquisition = true
+rsp_normalization = true
+overlap_identity_audit = true
+prediction_target_phase = false
+outcome_reveal_phase = false
+strategy_nav = false
+lockbox_assessment = false
+model_or_policy_revision = false
+
+[next_lock]
+required_acceptance = "config/experiments/round10/R10A_ACCEPTANCE.json"
+required_prereg = "config/experiments/round10/PREREG_LOCK.json"
+automatic_phase1 = false
+automatic_outcome_reveal = false
+
+[hard_stop]
+after_batch = "R10A_RSP_LOCKBOX_FEATURE"
+status = "completed_pending_rsp_extension_acceptance"

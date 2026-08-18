@@ -1,0 +1,49 @@
+{
+  "authorization": {
+    "bagging": false,
+    "head_refit": false,
+    "lockbox": false,
+    "model_search": false,
+    "mom255_transfer": false,
+    "policy_assessment": true,
+    "position_search": false,
+    "spy_cash_development_nav": true,
+    "stacking": false,
+    "state_signal_materialization": true,
+    "threshold_search": false
+  },
+  "counts": {
+    "batches": 3,
+    "formal_incremental_hypotheses": 2,
+    "outer_oos_weeks": 404,
+    "policies": 3
+  },
+  "files": {
+    "config/experiments/round8/PARENT_ACCEPTANCE.json": "a11f56ab4b0e900d122ca9114c06679b9946e10ce0efaff160cb9a8b07b4ae5a",
+    "config/experiments/round8/policy_registry.csv": "6970b53251d0fb6bae4131e4c4f78af2298994c06849e7db2ac0a193d8fa028f",
+    "config/experiments/round8/program.toml": "d2ca3a25c36074b149ba73ef90d4eb31f7aa1ca2fcd7088029ead744b683280e",
+    "docs/20_experiments/R8A_rsp_policy_signals/design.md": "b8ef149cc874a6734dadc6e0ea774214d01e2449c5ce3a36dd494f158feb4a06",
+    "docs/20_experiments/R8B_rsp_spycash_replay/design.md": "a94c7948b2625cbbafc5c5c7540951aacb0df32b98ca6f20ef02c058bb2cbe0e",
+    "docs/20_experiments/R8C_rsp_policy_assessment/design.md": "001b90e335bd98862ced78979a66f29613e9431c1791ad5af16911b3d5a6e97e",
+    "docs/34_round8_risk_veto_state_machine_program_draft_v1.md": "722548717de49c144efb2d7f9791470c4ec0a23286c516cb04483f5be0f02a90",
+    "experiments/round8_groups.csv": "ee2a2aef475ef2bfb94eabcb8bf4da470c4eb781726be0ad9815432cf21253e9",
+    "experiments/round8_registry.csv": "b2d5eb2ca841135555cb66ec0d095b11cc6a76ba225427f4e1d4f17ee8c19263",
+    "scripts/build_round8_prereg_lock.py": "7d2c517217d0fa88bd0d2925999f50344d54395bcd99f06735e85cb4ad8b2ff0"
+  },
+  "firewall": {
+    "lockbox_outcomes_forbidden": true,
+    "maximum_nav_date": "2021-12-31",
+    "maximum_signal": "2021-09-24"
+  },
+  "frozen_at_local_date": "2026-08-18",
+  "hard_stop": {
+    "after_batch": "R8C_RSP_POLICY_ASSESSMENT",
+    "automatic_lockbox": false,
+    "automatic_round9": false,
+    "status": "completed_pending_user_round9_freeze_decision"
+  },
+  "lock_type": "development_batches_r8a_r8b_r8c",
+  "parent_r7_prereg_lock_sha256": "794760ae76a2bd07f79bdf5fe7a532c33255bcf743e9576b52a4e8ba6f37e4ae",
+  "program_id": "rsp_only_state_machine_round8_v1",
+  "schema_version": 1
+}

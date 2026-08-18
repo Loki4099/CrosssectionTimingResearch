@@ -1,0 +1,14 @@
+{
+  "accepted_at_local_date": "2026-08-18",
+  "decision": "accept_sealed_p00_states_and_six_cell_targets_for_outcome_reveal",
+  "g00_nav_read": false,
+  "performance_metrics_run": false,
+  "prereg_lock_sha256": "373964c08a6b027abd6fba33395c8ee871bbaa7afdb786c7096eef0f03fc328e",
+  "r10b_manifest_sha256": "3c2cfdb6f35e8918cad5acca11dfe1c1a7b07055bd6c0ae038190c88a6034827",
+  "sealed_states_sha256": "ba62cf82f06723b83464df70ec699621d48ac0550e725462e70ed8aa07b2a27e",
+  "sealed_target_ledger_sha256": "ef1e21215bc0921b37db180c1b717788e2d336eda0d80c3bc20832ff8c09bf02",
+  "state_rows": 248,
+  "strategy_nav_run": false,
+  "target_events": 1500,
+  "target_rows": 39991
+}

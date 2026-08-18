@@ -1,0 +1,97 @@
+schema_version = 1
+program_id = "p00_mom255_mechanical_lockbox_round10_v1"
+status = "preregistered_sealed_prediction_target_authorized"
+formal_eligible = false
+run_ids = ["r10b-sealed-targets-20260818-v1", "r10c-outcome-reveal-20260818-v1"]
+
+[parent]
+plan_lock_sha256 = "5f6183f302988d5e945a3174d7df3174605467c39d3cb40476210408179ae567"
+r10a_run_id = "r10a-rsp-lockbox-feature-20260818-v1"
+r10a_manifest_sha256 = "c672ff39501b322bc8bcf14ad3880b3f131df0ee1b068d4fc2ebc72c283551a4"
+r10a_rsp_daily_sha256 = "a968e85475849e059e272b7748f25e0326a8214783d1d64d9a9fd7f05c2cff8c"
+r2a_run_id = "r2a-long-free-20260816-v1"
+r2a_manifest_sha256 = "071055016268d83f60a03b70be498d85da07897d290b049e4ed7524d1b9e674c"
+r2a_market_sha256 = "b42df63e2521dfc248c76cff084d3e6dc436cdb90c9552048e316a1123383fd9"
+r2a_calendar_sha256 = "7af772e769040d87c491cca09af977ce6e21bed351ff818f584508cc55341a98"
+r4a_run_id = "r4a-free-factor-data-20260817-v1"
+r4a_features_sha256 = "f598299c1768c3cedc7eec956c028b9a4d17973754c79d9d2e784c756bf6a87f"
+r7b_run_id = "r7b-risk-model-tournament-20260818-v1"
+r7b_manifest_sha256 = "6c8fb116397c29b682f7cb138740487ee67d256e737f099ebc7c75ac0c3c94ca"
+r7b_raw_rsp_sha256 = "b641659806f5e85095615536bcaecaa419e7426fe8a11ea791550aece3f979d8"
+r8a_run_id = "r8a-rsp-policy-signals-20260818-v1"
+r8a_manifest_sha256 = "006c743c62fc07db91f1e4b4be8fffdd61f32a3479a3bde5337de9c8c89753aa"
+r8a_states_sha256 = "ccee1ef2e29f418a6d8f7bbbf30e1a94389d1d63a29a8e50f39b34076d038bcf"
+g00_run_id = "g00-frozen-v3-v1"
+g00_manifest_sha256 = "8b875d4bcbb7b178b309c7b1edaa7dce9bbb15090e68b619fb045cec35411c66"
+g00_holdings_sha256 = "a1b32d09783eded05bed53b949421359e5bb0b1978ea3379edfc42b2333e7e33"
+dataset_version = "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate"
+prices_sha256 = "4a881854d2c278378955529c638193706ddfafb503e7a8a9c752cc7791ba2670"
+corporate_actions_sha256 = "1e90c67e030a2efaa1a43badcf4b22751e6e6a76242ffe4179d9f242733f0c1d"
+calendar_sha256 = "28275dc373f76a15c0c202c0c438fdce2e8f547e8930faf38519a97f81865565"
+
+[sample]
+bridge_first_signal = "2021-10-01"
+lockbox_first_signal = "2021-12-31"
+lockbox_first_execution = "2022-01-03"
+lockbox_last_signal = "2026-06-26"
+lockbox_last_execution = "2026-06-29"
+lockbox_nav_end = "2026-06-30"
+
+[policy]
+policy_id = "P00_RSP_Y5_CLEAR"
+score = "negative_63_session_log_relative_return_rsp_vs_spy"
+high_means_risk = true
+threshold = "annual_expanding_linear_q75"
+purge_scheduled_weeks = 13
+alert_rule = "score_greater_than_or_equal_threshold"
+weights = [1.0, 0.5]
+minimum_defense_scheduled_weeks = 1
+risk_priority = true
+risk_clear_exit = "immediate_after_minimum_week"
+carry_state_from_round8 = true
+
+[transfer]
+registry = "config/experiments/round10/transfer_registry.csv"
+registered_cells = 6
+primary_transfer_id = "R10__MOM255__TOP20__MONTHLY"
+cost_bps = [0, 5, 10, 20]
+primary_cost_bps = 10
+single_net_stock_target_per_open = true
+base_rerank_only_on_registered_schedule = true
+
+[phase1]
+chronological_asof_processing = true
+outputs = ["p00_states_weekly.parquet", "annual_thresholds.csv", "sealed_target_ledger.parquet", "signal_identity.csv"]
+portfolio_nav_forbidden = true
+forward_returns_forbidden = true
+performance_metrics_forbidden = true
+cost_scenarios_forbidden = true
+
+[phase2]
+authorization_file = "config/experiments/round10/OUTCOME_REVEAL_LOCK.json"
+matched_static_definition = "same_round9_static_allocation_frozen_before_reveal"
+round9_static_allocations_path = "results/published/round9/R9A/static_allocations.csv"
+block_weeks = 13
+bootstrap_repetitions = 5000
+seed = 20260818
+
+[authorization]
+prediction_target_phase = true
+outcome_reveal_phase = false
+strategy_nav = false
+performance_assessment = false
+model_or_policy_revision = false
+threshold_search = false
+position_search = false
+lockbox_target_generation = true
+
+[firewall]
+phase1_nav_forbidden = true
+phase1_performance_forbidden = true
+phase1_g00_nav_forbidden = true
+outcome_reveal_requires_target_acceptance = true
+
+[hard_stop]
+after_batch = "R10B_SEALED_TARGETS"
+status = "completed_pending_outcome_reveal_lock"
+automatic_outcome_reveal = false

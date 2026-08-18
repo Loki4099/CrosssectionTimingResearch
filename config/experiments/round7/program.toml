@@ -1,0 +1,129 @@
+schema_version = 1
+program_id = "dual_head_model_round7_v1"
+status = "preregistered_development_authorized_after_lock"
+formal_eligible = false
+run_ids = [
+  "r7a-dual-target-folds-20260818-v1",
+  "r7b-risk-model-tournament-20260818-v1",
+  "r7c-rsp-attack-comparator-20260818-v1",
+  "r7d-head-qualification-20260818-v1",
+]
+
+[parent]
+r4a_run_id = "r4a-free-factor-data-20260817-v1"
+r4a_manifest_sha256 = "1b0b27f689bb3966a34ca94076467be7dad209afa8910a516827b0419514dd7f"
+r4a_features_sha256 = "f598299c1768c3cedc7eec956c028b9a4d17973754c79d9d2e784c756bf6a87f"
+r5a_run_id = "r5a-mae13-target-20260817-v1"
+r5a_manifest_sha256 = "1475104c9e7c6eb415500bb29f65ac27cc78736828022058760a526702ef233a"
+r5a_targets_sha256 = "fe4e69db8edbc00d27350fd0d46553579e37c5a9f91202e92e56730a67bf21b7"
+r5d_run_id = "r5d-mae13-robustness-20260817-v1"
+r5d_manifest_sha256 = "29bc9ef9a872260596027bd2f38e01a92c4a1e6da50507641b30aeacc285abbc"
+r5d_final_sha256 = "3c6ba0e633f8ab5c36784f979e60f254718900357415ac150c96a41d8002660d"
+r6a_run_id = "r6a-attack4-target-identity-20260818-v1"
+r6a_manifest_sha256 = "eca0f0901ea3ac7174fddafb82cc73c73ee811fa4ca1ff66f65a7af6266e0fd6"
+r6a_targets_sha256 = "6c4c1cf9e6f3f872537fd62f96a5a79c1658a8a3b787d4a6f731783a201050c8"
+r6d_run_id = "r6d-attack4-robustness-20260818-v1"
+r6d_manifest_sha256 = "d40d46cea4bc3dd2100ce3f9dad047c9832e6bf1043c3a93b3f6fca6975fab2f"
+r6d_final_sha256 = "55292ecf3ac2193fb07cd5913f50aaf5b7d659251d43fc2c6d9cf4847b80a680"
+r6_prereg_lock_sha256 = "af00cccc159c3763671fded835a28eb3afffb3f0eac00a291ac7415a672d9a23"
+parent_acceptance_path = "config/experiments/round7/PARENT_ACCEPTANCE.json"
+
+[development]
+outer_years = [2014, 2015, 2016, 2017, 2018, 2019, 2020, 2021]
+final_outer_fold_maturity_truncated = true
+final_outer_last_signal = "2021-09-24"
+minimum_outer_train_weeks = 520
+minimum_inner_train_weeks = 260
+inner_validation_weeks = 52
+maximum_inner_folds = 5
+minimum_inner_folds = 3
+purge_scheduled_weeks = 13
+embargo_scheduled_weeks = 1
+folds_path = "config/experiments/round7/folds.json"
+common_sample_required = true
+
+[targets]
+risk_primary = "excess_mae13_deadzone5"
+risk_horizon_scheduled_weeks = 13
+risk_guardrails = ["raw_mae13_ge_5", "raw_mae13_ge_10"]
+attack_primary = "fwd_excess_logret_4w"
+attack_horizon_scheduled_weeks = 4
+attack_guardrails = ["sustainable_attack_4w", "fwd_worst_excess_4w"]
+target_selection = false
+
+[features]
+bundle_registry = "config/experiments/round7/feature_bundles.csv"
+registered_bundles = 9
+anchor = "R4B__RSP_SPY63"
+source_column = "defense_score"
+high_means_risk = true
+unregistered_additions = false
+window_search = false
+
+[models]
+recipe_registry = "config/experiments/round7/model_recipes.csv"
+process_registry = "config/experiments/round7/process_registry.csv"
+attack_registry = "config/experiments/round7/attack_registry.csv"
+risk_processes = 27
+risk_recipe_ids = 12
+risk_trial_arms = 108
+attack_formal_processes = 1
+seed = 20260818
+inner_selection_metric = "mean_absolute_error"
+inner_selection = "13_week_moving_block_one_se"
+preprocess = "train_only_winsor_1_99_median_impute_standardize"
+
+[dependencies]
+python = "3.12.13"
+numpy = "2.3.5"
+pandas = "3.0.1"
+scipy = "1.18.0"
+scikit_learn = "1.9.0"
+lightgbm = "4.6.0"
+lightgbm_metadata_sha256 = "6cae173638e3581cfa60cd0e07660b0a72efe67ca3db4d3d3cfaa7d31d03b65d"
+lightgbm_dll_sha256 = "d2a41567e16b127b2486b417cc25813588fe015a0481e06fe8ce662ebed1ec61"
+lightgbm_deterministic_prediction_sha256 = "360846b4293e02044ffdc4c363a4fb0edf040ba74dc89b4de5797afe28140526"
+
+[inference]
+risk_primary_metric = "spearman_predicted_risk_vs_y5"
+risk_block_weeks = 13
+risk_bootstrap_repetitions = 2000
+risk_fdr_method = "benjamini_hochberg"
+risk_fdr_level = 0.10
+risk_family = "all_27_selected_outer_processes"
+attack_primary_metric = "spearman_predicted_a4_vs_a4"
+attack_block_weeks = 4
+attack_bootstrap_repetitions = 2000
+seed = 20260818
+major_event_ids = ["E014", "E017", "E022", "E024", "E025", "E028"]
+event_registry = "config/experiments/round7/event_registry.csv"
+
+[authorization]
+fold_materialization = true
+risk_models = true
+attack_isotonic = true
+head_qualification = true
+strategy_nav = false
+final_state_machine = false
+bagging = false
+stacking = false
+lockbox = false
+mom255_transfer = false
+factor_additions = false
+window_search = false
+position_search = false
+
+[firewall]
+lockbox_outcomes_forbidden = true
+maximum_risk_target_signal = "2021-09-24"
+maximum_attack_target_signal = "2021-11-26"
+strategy_outputs_forbidden = true
+nav_outputs_forbidden = true
+
+[hard_stop]
+after_batch = "R7D_HEAD_QUALIFICATION"
+status = "completed_pending_user_round8_freeze_decision"
+automatic_round8 = false
+automatic_state_machine = false
+automatic_lockbox = false
+automatic_mom255_transfer = false

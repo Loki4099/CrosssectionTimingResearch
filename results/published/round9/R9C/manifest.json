@@ -1,0 +1,53 @@
+{
+  "assessment": "completed_pending_user_lockbox_decision",
+  "batch_id": "R9C_MOM255_TRANSFER_ASSESSMENT",
+  "counts": {
+    "cells": 6,
+    "eligible": 1,
+    "events": 6,
+    "passed_cells": 6
+  },
+  "files": [
+    {
+      "path": "cell_assessment.csv",
+      "sha256": "84a7d2211919a00befd4548078e523915a04fb9837e2aa55e5ba5c622fb2af3b",
+      "size_bytes": 2742
+    },
+    {
+      "path": "decision.json",
+      "sha256": "f3b6b63cb7eba662e5f31ad5b5feddc4480863b1fc315dbb0ac148b2d7ac8c67",
+      "size_bytes": 354
+    },
+    {
+      "path": "family_assessment.json",
+      "sha256": "57bf0b2629a09091858ae9b56176354025bfe31649aafa22e28724e8e03ac44b",
+      "size_bytes": 382
+    },
+    {
+      "path": "family_medians.csv",
+      "sha256": "b215696dc2e564f0891d78d5270fd17c0dae80a98d7bfc5c53b81c1822b08748",
+      "size_bytes": 193
+    },
+    {
+      "path": "leave_one_event_out.csv",
+      "sha256": "e12e7f6286faf1af62bfe48a53431cff9d5eeda90f904c482b62cedfa88adce3",
+      "size_bytes": 216
+    }
+  ],
+  "formal_eligible": false,
+  "lockbox_predictions_generated": false,
+  "lockbox_read": false,
+  "models_run": false,
+  "mom255_transfer_run": true,
+  "parent_manifests": {
+    "r9a": "6e3ce6c38d27d174b951f382a04ecd28342a1930ac95da4256489e662ed49eac",
+    "r9b": "80a0d1e8441e2a50aa1121cd4c73b77f17068fb13916c4a8afcb18fa2332bb91"
+  },
+  "prereg_lock_sha256": "b6def7259bab9a1b8c412827a458694699f46eeccca83de56e545dd09a6e611a",
+  "program_id": "p00_mom255_long_only_transfer_round9_v1",
+  "run_id": "r9c-transfer-assessment-20260818-v1",
+  "schema_version": 1,
+  "state_machine_run": false,
+  "status": "completed_development",
+  "strategy_nav_run": false
+}
