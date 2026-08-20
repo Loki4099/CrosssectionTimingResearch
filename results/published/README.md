@@ -2,6 +2,13 @@
 
 This directory contains the compact, reviewable outputs committed to Git. Full daily NAV, holdings, trades, rebalances, frozen market data, and provider payloads remain local because of size and data-license constraints.
 
+## Start by research track
+
+- **Cross-sectional Alpha:** [`G00/`](./G00/) is the only fully closed naked stock-selection baseline. The new market-plus-fundamental factor program has literature registries but no experiment outputs yet.
+- **Defensive timing and overlays:** [`G11/`](./G11/)–[`G33/`](./G33/) contain the original overlay grid; [`round3/`](./round3/)–[`round10/`](./round10/) contain the later signal, model, policy, transfer, and mechanical-reveal evidence. Round 9 passed development, while Round 10 failed the frozen joint gate.
+
+Human-readable navigation is organized by [cross-sectional Alpha](../../docs/research_tracks/cross_sectional_alpha.md) and [defensive timing](../../docs/research_tracks/defensive_timing.md). Machine manifests and decisions are authoritative for executed bundle status; preregistration registries remain historical plan snapshots.
+
 - `G00/`: naked momentum control, frozen v3 dataset.
 - `G11/`: SPY RV21 continuous unlevered 15% target-scaling experiment, frozen v3 dataset; long-only H1 failed at 0/18 with CAGR and Sharpe down but drawdown improved in all 18 main scenarios, while long-short CAGR, Sharpe, and drawdown improved in all 216 registered cost/borrow scenarios but absolute performance remained weak. The run remains `formal_run_eligible=false`.
 - `G12/`: naked-book RV126 continuous unlevered 15% target-scaling experiment, frozen v3 dataset; long-only H1 failed at 0/18 with CAGR and Sharpe down in all 18 main scenarios and drawdown improved in 16/18, while long-short jointly improved Sharpe and drawdown in 17/18 main and 204/216 stress scenarios but absolute performance remained weak. The run remains `formal_run_eligible=false`.

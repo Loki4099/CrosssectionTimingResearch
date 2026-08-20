@@ -1,5 +1,7 @@
 # 风控九宫格：当前覆盖与下一阶段
 
+> **历史快照：** 本文记录2026-08-16九宫格闭合时的“下一阶段”判断，后续Round 2–10已经完成。当前状态请从[防御择时主页](./research_tracks/defensive_timing.md)进入；本文不再作为未来计划或授权来源。
+
 最后更新：2026-08-16
 
 有效数据：`sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate`

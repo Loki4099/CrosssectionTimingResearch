@@ -1,5 +1,7 @@
 # 动量—反转研究总计划
 
+> **文档定位（2026-08-20）：** 本文件保留项目早期的总章程与历史状态注记。当前研究已经分成[系统性long-only横截面Alpha](./research_tracks/cross_sectional_alpha.md)和[防御择时与仓位控制](./research_tracks/defensive_timing.md)两条主线；新访问者应从两条主线主页进入。本文件不授权新的横截面实验，也不应将某一历史轮次结束时的“未开放/待决定”理解为今天的全局状态。
+
 > 2026-08-16 更新：免费研究数据 v3 已冻结，旧 Round 1 与 V1–V4 结果因数据不合格退出当前证据集。当前实验边界以 [系统化实验计划 v2](./21_systematic_experiment_program_v2.md) 和 [冻结数据报告](./10_data/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate_implementation_report.md) 为准；G00 与 G11–G13、G21–G23、G31–G33 九宫格主网格均已完成。最后一格 [G23](./20_experiments/G23_book_forecast_reversal/report.md) 的 LO 以 0/36 失败，LS 以 33/36、月频 15/18、周频 18/18 通过预注册平台门槛，但仍成本/借券敏感且绝对表现弱。全部结果继续保留 `formal_run_eligible=false`；XS01 是九宫格外补充研究。
 
 > 2026-08-16 后续决策：第二轮将先扩长数据并独立筛选“何时防御”，不再把防御信号、动作与 `mom_255_0` 同时做笛卡尔积。第一版见[第二轮防御时点信号筛选与模型比较计划 v1](./23_round2_defense_timing_signal_program_v1.md)；其 planning 状态不授权正式运行，也不追溯修改第一轮冻结计划。

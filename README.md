@@ -1,74 +1,43 @@
-# CrosssectionTimingResearch
+# Systematic S&P 500 Alpha Research
 
-An auditable research framework for S&P 500 point-in-time cross-sectional momentum, reversal, and volatility-based timing. The project keeps long-only portfolios and dollar-neutral WML as separate research arms so market beta and winner-minus-loser mechanisms are not conflated.
+一个可审计、可复现的美国股票研究框架，围绕两类不同问题展开：**横截面选股**决定持有哪些股票，**防御择时**决定市场总仓位是多少。历史代码包名 `momentum_reversal` 为兼容保留，不再代表项目只研究动量与反转。
 
-## Current evidence
+## 从这里开始
 
-All accepted results use one frozen free-research dataset and the common evaluation window from 2018-01-02 open through 2026-06-30 close.
-
-- [G00 naked momentum](docs/20_experiments/G00_baseline/report.md): valid common control. Long-only momentum earns attractive returns but retains large drawdowns; WML has weak absolute performance.
-- [G11 SPY-volatility continuous scaling](docs/20_experiments/G11_spy_continuous_scale/report.md) ([design](docs/20_experiments/G11_spy_continuous_scale/design.md)): failed long-only H1 at 0/18; CAGR and Sharpe fell while maximum drawdown improved in all 18 main scenarios. Long-short CAGR, Sharpe, and drawdown improved in all 18 main scenarios and all 216 registered cost/borrow scenarios, but absolute performance remained weak.
-- [G12 naked-book historical-volatility continuous scaling](docs/20_experiments/G12_book_hist_continuous_scale/report.md) ([design](docs/20_experiments/G12_book_hist_continuous_scale/design.md)): failed long-only H1 at 0/18; CAGR and Sharpe fell in all 18 main scenarios, drawdown improved in 16/18, and the continuous rule over-insured the long-only book. Long-short jointly improved Sharpe and drawdown in 17/18 main and 204/216 stress scenarios, but absolute performance remained weak.
-- [G13 naked-book forecast-volatility continuous scaling](docs/20_experiments/G13_book_forecast_continuous_scale/report.md) ([design](docs/20_experiments/G13_book_forecast_continuous_scale/design.md)): failed long-only H1 at 0/18; drawdown improved in all 18 main scenarios, but CAGR and Sharpe fell in all 18 as the continuous rule over-insured the book. Long-short jointly improved Sharpe and drawdown in 12/18 main and 132/216 stress scenarios, with cost/borrow sensitivity and weak absolute performance.
-- [G21 SPY high-volatility reversal](docs/20_experiments/G21_spy_reversal/report.md): failed long-only negative control, but a stable left-tail improvement for weekly WML.
-- [G22 naked-book historical-volatility reversal](docs/20_experiments/G22_book_hist_reversal/report.md) ([design](docs/20_experiments/G22_book_hist_reversal/design.md)): failed both preregistered platform hypotheses. Long-only jointly improved CAGR, Sharpe, and drawdown in only 4/36 main paths; long-short reached 23/36 but missed the 24/36 total and 10/18 monthly thresholds. Weekly WML retained a partial, cost-sensitive mechanism with weak absolute performance.
-- [G23 naked-book forecast-volatility reversal](docs/20_experiments/G23_book_forecast_reversal/report.md) ([design](docs/20_experiments/G23_book_forecast_reversal/design.md)): completed the final main-grid cell. Long-only failed at 0/36 and worsened Sharpe and drawdown throughout; long-short passed the preregistered platform threshold at 33/36, including 15/18 monthly and 18/18 weekly paths, but remained cost/borrow-sensitive and weak in absolute performance.
-- [G31 SPY high-volatility derisking](docs/20_experiments/G31_spy_derisk/report.md) ([design](docs/20_experiments/G31_spy_derisk/design.md)): improved maximum drawdown in all 18 long-only main scenarios but failed H1; the long-short mechanism was positive, with weak absolute performance.
-- [G32 naked-book historical-volatility derisking](docs/20_experiments/G32_book_hist_derisk/report.md) ([design](docs/20_experiments/G32_book_hist_derisk/design.md)): failed long-only H1; CAGR and Sharpe fell in all 18 main scenarios and drawdown results were mixed. The long-short mechanism improved Sharpe and drawdown in 17/18 scenarios and survived the registered cost/borrow stresses, but absolute performance remained weak.
-- [G33 naked-book forecast-volatility derisking](docs/20_experiments/G33_book_forecast_derisk/report.md) ([design](docs/20_experiments/G33_book_forecast_derisk/design.md)): failed long-only H1 at 0/18; CAGR and Sharpe fell while maximum drawdown improved in all 18 main scenarios. Long-short drawdown improvement was robust, but only 10/18 main scenarios jointly improved Sharpe and drawdown; Sharpe gains were cost/borrow-sensitive and absolute performance remained weak.
-- [Systematic experiment program](docs/21_systematic_experiment_program_v2.md): the action × risk-source grid and frozen stage boundaries.
-- [Round-one main-grid synthesis](docs/22_round1_main_grid_synthesis.md): consolidated economic conclusions, paper-alignment limits, and implications after completing all nine cells.
-- [Round-two R2B signal diagnostics](docs/20_experiments/R2B_signal_diagnostics/report.md) and [R2C simple-stage report](docs/20_experiments/R2C_spy_tbill_timing/report.md): the free 1993–2026 core line was built and the 2005–2021 pre-lockbox walk-forward completed. Volatility/trend variables retained four-week path-risk information, but no sentinel, Ridge, or additive GAM process passed both the probability-signal and exposure-matched economic gates. Complex models, the 2022–2026 mechanical lockbox, and `mom_255_0` transfer were therefore not opened.
-
-The full nine-cell action × risk-source main grid is complete. G22 v1 remains unpublished invalid audit evidence; its valid rerun is `g22-frozen-v3-v2`. G23 provides the first preregistered platform-level long-short result, without rescuing long-only or satisfying deployment criteria. All runs remain free-research evidence with `formal_run_eligible=false`; XS01 is a separate supplemental experiment, not an automatic continuation.
-
-## Round-two status
-
-[Round-two defense-timing plan v1](docs/23_round2_defense_timing_signal_program_v1.md) remains the frozen historical plan. Execution stopped at its preregistered simple-stage gate with no candidate; any further defense-timing work requires a new preregistration rather than reopening the sealed lockbox or promoting a runner-up.
-
-## Round-three development plan
-
-[Round-three asymmetric defense/re-entry plan v1](docs/24_round3_asymmetric_defense_reentry_program_v1.md) has completed its single development candidate ([R3A report](docs/20_experiments/R3A_asymmetric_reentry/report.md)). The faster SMA21 recovery exit reduced missed upside but destroyed more defense benefit, failed all four preregistered gates, and did not open the sealed 2022–2026 outcomes or momentum transfer.
-
-[R3B recovery-persistence plan v1](docs/25_round3b_recovery_persistence_program_v1.md) has also completed ([report](docs/20_experiments/R3B_recovery_persistence/report.md)). Its fixed four-feature Ridge had negative Brier skill, AUC below 0.5, and negative return rank correlation; the confirmed strategy lagged both symmetric RV21 and R3A. All development gates failed, so the sealed outcomes and momentum transfer remain closed.
-
-## Round-four frozen plan
-
-[Round-four defense-factor audit v1](docs/26_round4_defense_factor_audit_program_v1.md) is complete; see the [decision memo](docs/27_round4_factor_audit_decision_memo.md). Seventeen of twenty registered factors passed the free-data gate, only RSP/SPY63 received a non-robust positive reference label, and no factor passed the robust gate. The target audit found that magnitude loss and horizon mismatch matter more than a small change to the zero threshold. The program stopped as preregistered; models, `mom_255_0`, position optimization, and the 2022–2026 lockbox remain closed.
-
-[Round-five continuous-MAE13 single-factor review](docs/28_round5_mae13_single_factor_program_v1.md) is complete; see its [decision memo](docs/29_round5_mae13_single_factor_decision_memo.md). RSP/SPY63 is the sole robust development-positive factor under the 5% dead-zone target and fixed 100/50 SPY-cash proxy. The lockbox, models, and momentum transfer remain closed.
-
-The [defense/attack dual-head route](docs/30_defense_attack_dual_head_route_v1.md) has now completed through Round 10. Round 7 produced no qualified multivariate head; Round 8 selected the raw RSP P00 risk-veto policy; and the frozen [Round-nine P00 × mom_255_0 long-only transfer](docs/38_round9_p00_mom255_transfer_program_v1.md) passed its development gates. The subsequent [Round 10 mechanical lockbox](docs/40_round10_p00_mom255_mechanical_lockbox_plan_v1.md) failed: the 2022–2026 primary retained positive timing value versus matched static but trailed naked terminal wealth and worsened MDD; all six cells failed the joint gate ([decision memo](docs/41_round10_p00_mom255_mechanical_lockbox_decision_memo.md)).
-
-| Round | Question | Frozen result |
+| 研究主线 | 当前状态 | 入口 |
 |---|---|---|
-| 6 | Which single factors identify four-week attack/re-entry opportunity? | RSP/SPY63 retained positive directional information, but no direct, economic, or conditional route qualified after the registered gates. |
-| 7 | Do multivariate risk/attack models beat the frozen simple references? | Zero of 27 risk processes qualified; the formal A4 head also failed. No multivariate head advanced. |
-| 8 | Can raw RSP signals form a risk-priority state policy? | P00 (`raw RSP risk high → 50%`, otherwise 100%) was the sole development-eligible policy. |
-| 9 | Does P00 transfer to long-only `mom_255_0`? | Development period passed the Top20-monthly primary and all six TopK × frequency cells. |
-| 10 | Does the frozen Round 9 candidate survive the 2022–2026 mechanical firewall? | No. Timing versus matched static and Sharpe stayed positive, but terminal wealth and MDD failed; joint family gate 0/6. |
+| 系统性 long-only 横截面 Alpha | **当前主线**。市场数据已冻结，论文与候选定义登记已完成；下一步建设SEC基本面PIT层并制定首轮单因子实验 | [主线主页](docs/research_tracks/cross_sectional_alpha.md) |
+| 防御择时与仓位控制 | **已完成研究档案**。Round 1–10闭合；RSP/SPY63有风险信息，但P00在2022–2026机械揭示中未通过联合门 | [主线主页](docs/research_tracks/defensive_timing.md) |
 
-The compact cross-round synthesis is in [docs/42_round6_round10_experiment_synthesis.md](docs/42_round6_round10_experiment_synthesis.md). Round 10 is a completed mechanical research reveal with `formal_eligible=false`, not a clean commercial-data external confirmation.
+项目总导航见[研究文档中心](docs/README.md)。实验设计与报告、机器结果和图表分别从[实验档案](docs/20_experiments/README.md)、[发布结果](results/published/README.md)和[图表索引](docs/figures/README.md)进入。
 
-Compact machine-readable results are committed under [`results/published/`](results/published/). Daily NAV, trades, holdings, provider payloads, and price Parquet files are intentionally excluded from Git.
+## 当前研究边界
 
-## Local runtime storage
+- 股票池：历史时点（PIT）S&P 500成分股；long-only为主。
+- 市场数据：2013年开始暖机，统一评价期为2018-01-02开盘至2026-06-30收盘。
+- 数据状态：冻结免费研究数据通过内部门禁，但仍为 `formal_eligible=false`；完整行情和大体积运行产物保留在本地runtime。
+- 横截面下一阶段：市场数据与SEC基本面；新闻和文本由独立任务研究。
+- 实验方法：所有交易时点只能使用当时已知数据；失败、停止、无效和被替代路径均保留。
+- 证据语言：完整历史walk-forward解决基本前视问题，但不自动消除研究者择优偏差；历史结果称研究证据，不冒充未来确认。
 
-The repository may live in OneDrive, but large and frequently changing artifacts should not. Copy `config/runtime.example.toml` to the Git-ignored `config/runtime.local.toml` and point it at a fast local runtime root. The CLI will then default to `<runtime>/data`, `<runtime>/results`, `<runtime>/cache`, and `<runtime>/logs`; explicit CLI paths still take precedence.
+详细数据版本和PIT约束见[数据入口](docs/10_data/README.md)。
 
-```powershell
-python -m momentum_reversal runtime-status --create
-```
+## 研究资产在哪里
 
-Frozen datasets and complete experiment bundles remain immutable in the local runtime. Git stores only code, hashes, quality summaries, and compact accepted results. See the [runtime storage policy](docs/10_data/runtime_storage_policy.md).
+| 内容 | 位置 |
+|---|---|
+| 两条主线与研究路线 | [`docs/research_tracks/`](docs/research_tracks/README.md) |
+| 治理、数据、实验、参考资料 | [`docs/`](docs/README.md) |
+| 论文和因子定义机器登记 | [`config/research/cross_sectional_alpha/`](config/research/cross_sectional_alpha/README.md) |
+| 冻结实验配置与锁 | [`config/experiments/`](config/experiments/) |
+| 因子、数据、回测与实验代码 | [`src/momentum_reversal/`](src/momentum_reversal/) |
+| 运行、审计、发布和制图脚本 | [`scripts/`](scripts/) |
+| 计划快照与执行台账 | [`experiments/`](experiments/README.md) |
+| 紧凑机器结果 | [`results/published/`](results/published/README.md) |
+| 图表 | [`docs/figures/`](docs/figures/README.md) |
+| 冻结数据哈希和质量门 | [`metadata/frozen_dataset/`](metadata/frozen_dataset/) |
 
-## Data status
-
-Dataset version: `sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate`.
-
-It is frozen for free research, with point-in-time membership reconstruction, canonical security identities, total-return-adjusted OHLC, tradability overrides, and audited terminal events. It remains `review`, uses SPY as a total-return proxy for the S&P 500, and is `formal_eligible=false`. See [`metadata/frozen_dataset/`](metadata/frozen_dataset/) and the [data report](docs/10_data/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate_implementation_report.md).
-
-## Install and test
+## 安装与离线测试
 
 ```powershell
 python -m pip install -e ".[data]"
@@ -76,36 +45,20 @@ $env:PYTHONPATH = "src"
 python -m unittest discover -s tests -v
 ```
 
-Tests are offline. API credentials belong only in `.env`, which is ignored by Git.
+测试离线运行。API凭证只能放在被Git忽略的 `.env` 中。
 
-## Experiment CLI
+## 本地runtime
 
-Validate a registered experiment without writing results:
+大体积数据与完整实验bundle不应写入同步仓库。复制 `config/runtime.example.toml` 为Git忽略的 `config/runtime.local.toml`，并检查运行目录：
 
 ```powershell
-python -m momentum_reversal run-experiment `
-  --spec config/experiments/G21.toml `
-  --dataset-version sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate `
-  --run-id g21-dry-run `
-  --allow-review-dataset `
-  --dry-run
+python -m momentum_reversal runtime-status --create
 ```
 
-The CLI resolves G00/G31 references from the configured local runtime by default;
-only pass explicit reference paths when intentionally overriding that runtime.
+运行区政策见[本地实验运行区规范](docs/10_data/runtime_storage_policy.md)。Git只保存代码、配置、哈希、质量摘要、紧凑结果和图表；daily NAV、持仓、交易、provider payload及完整价格文件保留在runtime。
 
-Real G21 execution supports `--workers N`; the frozen run used four worker processes. Scenario costs are replayed exactly from shared event paths, reducing 576 reported scenarios to 144 full event-loop simulations.
+## 审计约定
 
-## Repository layout
+`experiments/*_registry.csv`通常是运行前预注册快照，不是实时状态页。已经执行的机器事实优先读取 `round*_results.csv`、published manifest/decision和对应报告；详见[实验台账说明](experiments/README.md)。冻结设计、锁、报告和历史结果不因文档整理而移动或改写。
 
-- `src/momentum_reversal/`: data contracts, factors, portfolio accounting, backtest engine, analytics, and experiment runners.
-- `config/experiments/`: frozen program and group specifications.
-- `docs/`: research governance, data contract, experiment designs/reports, and paper references.
-- `experiments/`: machine-readable group and run registry.
-- `input/data_repair_v3/`: small audited identity, action, tradability, and terminal-event ledgers.
-- `metadata/frozen_dataset/`: hashes and quality gates, without market data.
-- `results/published/`: compact accepted summaries and manifests.
-- `config/runtime.example.toml`: portable template for keeping large runtime artifacts outside the synced repository.
-- `tests/`: deterministic offline unit and pipeline tests.
-
-This repository is a research record, not investment advice or a claim of production-grade data quality.
+本仓库是研究记录，不构成投资建议，也不声称免费研究数据具备生产级质量。
