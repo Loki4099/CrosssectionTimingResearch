@@ -1,0 +1,11 @@
+{
+  "complete_direct_context_count": 8570,
+  "context_count": 29146,
+  "direct_failure_count": 0,
+  "direct_pass_count": 8570,
+  "identity_gate_passed": true,
+  "insufficient_direct_metric_count": 18213,
+  "relative_tolerance": 0.01,
+  "schema_version": "cross_sectional_alpha.accounting_identity_summary.v1",
+  "synthetic_identity_count": 2363
+}

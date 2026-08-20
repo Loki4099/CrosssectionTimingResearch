@@ -1,0 +1,18 @@
+factor_id,display_name,data_family,experiment_role,definition_version,high_score_means,correlation_cluster,data_gate,first_round_eligible,source_definition_id
+XS001_MOM_255_0,255-session momentum,market,control_anchor,v1,stronger long momentum,MOMENTUM_LONG,market_price_history_255,true,XS001_MOM_255_0
+XS002_MOM_12_1,12-1 momentum,market,control_anchor,v1,stronger long momentum,MOMENTUM_LONG,market_price_history_252,true,XS002_MOM_12_1
+XS003_MOM_12_7,12-7 intermediate momentum,market,new_atomic,v1,stronger intermediate momentum,MOMENTUM_INTERMEDIATE,market_price_history_252,true,XS003_MOM_12_7
+XS004_HIGH_52W,52-week high proximity,market,new_atomic,v1,closer to split-adjusted 52-week high,PRICE_ANCHOR,split_adjusted_price_history_252,true,XS004_HIGH_52W
+XS007_ST_REV_21,21-session reversal,market,new_atomic,v1,weaker prior-month return,SHORT_REVERSAL,market_price_history_21,true,XS007_ST_REV_21
+XS008_SAME_MONTH_5Y,Same-month seasonality,market,new_atomic,project_v1,stronger historical same-month relative return,CALENDAR_SEASONALITY,at_least_3_same_month_observations,true,XS008_SAME_MONTH_5Y
+XS013_LOW_BETA_FP,Frazzini-Pedersen low beta,market,new_atomic,v1,lower shrunk market beta,LOW_RISK,minimum_beta_history,true,XS013_LOW_BETA_FP
+XS015_MAX_21,Low maximum daily return,market,new_atomic,v1,smaller prior-month maximum daily return,LOTTERY_TAIL,market_price_history_21,true,XS015_MAX_21
+XS019_PRICE_DELAY_52W,Price delay,market,new_atomic,v1,larger delayed market response,PRICE_DELAY,minimum_40_week_observations,true,XS019_PRICE_DELAY_52W
+XS018_AMIHUD_252,Amihud illiquidity,market,new_atomic,project_v1,larger price impact per dollar volume,LIQUIDITY,volume_quality_pass,true,XS018_AMIHUD_252
+XS020_VOLUME_SHOCK_50D,Abnormal volume,market,new_atomic,project_v1,larger abnormal recent volume,ATTENTION_VOLUME,volume_quality_pass,true,XS020_VOLUME_SHOCK_50D
+XS032_GROSS_PROFIT_AT,Gross profitability to assets,sec_fundamental,new_atomic,v1,higher gross profitability,PROFITABILITY,annual_sec_fields_identity_pass_pit_sector_unverified,true,XS032_GROSS_PROFIT_AT
+XS041_ASSET_GROWTH,Conservative asset growth,sec_fundamental,new_atomic,v1,lower prior-year asset growth,INVESTMENT,successive_annual_assets,true,XS041_ASSET_GROWTH
+XS039_ACCRUALS_V2,Strict Sloan accrual quality,sec_fundamental,new_atomic,corrected_v2,lower balance-sheet accruals,ACCRUAL_QUALITY,complete_sloan_fields_sign_pass_pit_sector_unverified,true,XS039_ACCRUALS_V2
+XS056_CFO_ACCRUALS_PT,CFO accrual quality,sec_fundamental,coverage_alternative,project_v1,lower net-income-minus-CFO accruals,ACCRUAL_QUALITY,annual_ni_cfo_assets_sign_pass_pit_sector_unverified,false,XS056_CFO_ACCRUALS_PT
+XS026_VALUE_BM,Book-to-market,sec_fundamental,conditional_atomic,v1,higher common book equity to issuer market equity,VALUE,issuer_all_share_class_market_equity_pass,true,XS026_VALUE_BM
+XS030_NET_PAYOUT_YIELD,Net payout yield,sec_fundamental,conditional_atomic,v1,higher common payout net of issuance,PAYOUT,common_only_cashflows_and_issuer_me_pass,true,XS030_NET_PAYOUT_YIELD

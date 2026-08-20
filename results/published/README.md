@@ -1,10 +1,10 @@
-# Published experiment summaries
+# Published experiment and data-quality summaries
 
 This directory contains the compact, reviewable outputs committed to Git. Full daily NAV, holdings, trades, rebalances, frozen market data, and provider payloads remain local because of size and data-license constraints.
 
 ## Start by research track
 
-- **Cross-sectional Alpha:** [`G00/`](./G00/) is the only fully closed naked stock-selection baseline. The new market-plus-fundamental factor program has literature registries but no experiment outputs yet.
+- **Cross-sectional Alpha:** [`G00/`](./G00/) is the only fully closed naked stock-selection baseline. [`cross_sectional_data/`](./cross_sectional_data/) contains compact source-data certification evidence; no new factor experiment output exists yet.
 - **Defensive timing and overlays:** [`G11/`](./G11/)–[`G33/`](./G33/) contain the original overlay grid; [`round3/`](./round3/)–[`round10/`](./round10/) contain the later signal, model, policy, transfer, and mechanical-reveal evidence. Round 9 passed development, while Round 10 failed the frozen joint gate.
 
 Human-readable navigation is organized by [cross-sectional Alpha](../../docs/research_tracks/cross_sectional_alpha.md) and [defensive timing](../../docs/research_tracks/defensive_timing.md). Machine manifests and decisions are authoritative for executed bundle status; preregistration registries remain historical plan snapshots.
@@ -28,6 +28,7 @@ Human-readable navigation is organized by [cross-sectional Alpha](../../docs/res
 - `round8/`: compact RSP-only risk-priority policy evidence. P00 was the sole development-eligible state policy; lockbox outcomes were not read in this round.
 - `round9/`: compact long-only `mom_255_0` transfer evidence. The Top20-monthly primary and all six TopK × frequency development cells passed.
 - `round10/`: compact 2022–2026 mechanical reveal evidence. The frozen P00 transfer failed the primary/family/leave-year gates (`mechanical_lockbox_passed=false`, six-cell gate 0/6).
+- `cross_sectional_data/xs-market-sec-source-data-20260820-v1/`: source-only certification for the frozen market parent, 745-SID effective-date CIK bridge and 753-CIK SEC PIT fundamental source layer. It contains no raw payloads, Parquet, DuckDB, factor values or strategy results.
 
 Folder schemas vary by round. Manifests preserve hashes for complete immutable runtime bundles, while Git keeps reviewable summaries, decisions, compact prediction/state artifacts, and figures. Full daily NAV, holdings, trades, rebalance ledgers, frozen prices, and provider payloads remain local. Economic interpretation lives in `docs/20_experiments/`; the committed CSV/JSON files and manifest hashes are the machine-readable audit record.
 

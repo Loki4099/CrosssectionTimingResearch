@@ -10,7 +10,7 @@
 |---|---|---|---|---|
 | G00 裸动量基准 | 已完成 | [design](./G00_baseline/design.md) · [config](../../config/experiments/G00.toml) | [factor](../../src/momentum_reversal/factors/momentum.py) · [runner](../../src/momentum_reversal/pipelines/g00.py) | [report](./G00_baseline/report.md) · [published](../../results/published/G00/) · [Round 1图集](../figures/round1/README.md) |
 | XS01 个股波动率参与排序 | 仅历史登记，未执行 | [config](../../config/experiments/XS01.toml) | catalog helper存在，但无可执行runner | 无design、report、published result或figure |
-| 市场+基本面新因子 | 尚未设计或授权 | [论文/因子登记](../43_cross_sectional_alpha_literature_and_factor_registry_v1.md) | 尚未实现SEC基本面PIT和首轮runner | 无结果 |
+| 市场+基本面新因子 | 尚未设计或授权 | [论文/因子登记](../43_cross_sectional_alpha_literature_and_factor_registry_v1.md) · [已认证源数据](../../results/published/cross_sectional_data/xs-market-sec-source-data-20260820-v1/) | 源数据层已完成；因子面板与首轮runner尚未实施 | 无结果 |
 
 新的横截面研究不自动续编号为防御Round 11。命名空间、标签、Top-K、调仓频率和通过门将在后续计划中确定。
 

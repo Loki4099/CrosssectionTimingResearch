@@ -90,5 +90,27 @@ tests/test_round6_*.py text eol=lf
 tests/test_round7_*.py text eol=lf
 tests/test_round8_*.py text eol=lf
 tests/test_round9_*.py text eol=lf
+
+# Cross-sectional source-data v1 uses raw-byte build and publication hashes.
+docs/10_data/cross_sectional_market_fundamental_database_v1.md text eol=lf
+results/published/cross_sectional_data/** text eol=lf
+scripts/*cross_sectional_database.py text eol=lf
+scripts/certify_cross_sectional_source_data.py text eol=lf
+src/momentum_reversal/data/entity_bridge.py text eol=lf
+src/momentum_reversal/data/entity_temporal_audit.py text eol=lf whitespace=-blank-at-eof
+src/momentum_reversal/data/factor_database.py text eol=lf
+src/momentum_reversal/data/fundamental_store.py text eol=lf
+src/momentum_reversal/data/research_catalog.py text eol=lf
+src/momentum_reversal/data/sec_edgar.py text eol=lf
+src/momentum_reversal/data/sec_fundamental_pipeline.py text eol=lf
+src/momentum_reversal/factors/cross_sectional_*.py text eol=lf
+src/momentum_reversal/pipelines/cross_sectional_database.py text eol=lf
+tests/test_cross_sectional_*.py text eol=lf
+tests/test_entity_*.py text eol=lf
+tests/test_factor_database.py text eol=lf
+tests/test_fundamental_store.py text eol=lf
+tests/test_research_catalog.py text eol=lf whitespace=-blank-at-eof
+tests/test_sec_edgar.py text eol=lf
+tests/test_sec_fundamental_pipeline.py text eol=lf
 *.png binary
 *.parquet binary

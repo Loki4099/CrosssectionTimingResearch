@@ -1,0 +1,108 @@
+{
+  "experiment_authorized": false,
+  "factor_stage_required": false,
+  "formal_eligible": false,
+  "fundamental": {
+    "aggregate_fetch_failure_rows": 0,
+    "build_summary_sha256": "ed43b73fe875e933323b2111726833403ef49b1a64a1b429e4f76aa48a731498",
+    "canonical_fact_rows": 358303,
+    "completed_cik_count": 753,
+    "content_sha256": "6ca6ae94bfcf38e171edd026f3dc4397518add0909343c30b692b07c23ea8c7f",
+    "failed_cik_count": 0,
+    "filing_rows": 2386818,
+    "freeze_sha256": "2ef190c73297c76876fd661b37766bbdac6488a237459c00f131a4c8f0220b2a",
+    "fundamental_build_signature": "01b5f4231e861d1d3b190dc564d30929b9c44e6b8050d455fc463c969d93c553",
+    "fundamental_version": "xs-sec-fundamentals-20260820-v1",
+    "manifest_member_count": 13,
+    "manifest_sha256": "dcd24fd07e178d3dbd0afb483b7702a98a4404267c544755d895b0ab100442a2",
+    "per_cik_manifest_count": 753,
+    "registered_fact_rows": 1679666,
+    "requested_cik_count": 753
+  },
+  "identifier": {
+    "content_sha256": "60d2b5f7db2ee394faf17a23212f4614876a3f9f375ac9aa89b8c0d776e627e9",
+    "coverage_gate_passed": true,
+    "entity_cik_interval_count": 772,
+    "manifest_member_count": 10,
+    "manifest_sha256": "249fa9070891c65960b6e41270d78e5eb8b3ea627f69e7a4c4556f0bb077ad10",
+    "mapped_security_count": 745,
+    "member_session_coverage": {
+      "coverage": 1.0,
+      "mapped_member_sessions": 1701149,
+      "member_sessions": 1701149,
+      "unmapped_member_sessions": 0
+    },
+    "security_count": 745
+  },
+  "market_parent": {
+    "all_parent_quality_gates_passed": true,
+    "curated_member_count": 10,
+    "curated_member_hashes_verified": true,
+    "dataset_version": "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate",
+    "freeze_sha256": "a3ef9ee72cd3d535c2e5bf06b3d1f520c54667a8552891543ee0f9ca50488296",
+    "manifest_file_record_count": 62,
+    "manifest_sha256": "65b628d604f7e2f456e8d1d43a3c3e88b6bd3e86cc1c9455cdcfe28b856a3ec7",
+    "quality_anchor_hashes": {
+      "build_provenance_path": "8aac742afb699c68c08db2da8efbb91b9330f1611e8683ba27518b2c3d28cd78",
+      "gate_results_path": "c85c1b8623c6f928f04b6bb55b2550f159d3c2f5ab20c9659b83075ce10105a3",
+      "test_results_path": "125eda9153d38f80b22f660e8d14aa0c763466d61a9774aad1ba011c4fdf5283"
+    }
+  },
+  "program": {
+    "entity_bridge_version": "xs-sec-entity-bridge-20260820-v1",
+    "fundamental_version": "xs-sec-fundamentals-20260820-v1",
+    "market_dataset": "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate",
+    "program_id": "xs_market_sec_database_v1",
+    "program_sha256": "091a70b0758f03b260ae533ce396059357eca04c5c89ed89176eba2ba33f6141"
+  },
+  "quality_gates": {
+    "accounting_identity": {
+      "context_count": 29146,
+      "direct_failure_count": 0,
+      "identity_gate_passed": true,
+      "recomputed_value_equal": true
+    },
+    "aggregate_fetch_failure_rows": 0,
+    "entity_temporal_support": {
+      "failed_interval_count": 0,
+      "interval_count": 766,
+      "long_interval_count": 733,
+      "recomputed_value_equal": true,
+      "temporal_support_gate_passed": true
+    },
+    "fundamental_freeze_manifest_summary_exactly_anchored": true,
+    "fundamental_manifest_members_verified": true,
+    "identifier_manifest_members_verified": true,
+    "identifier_member_session_coverage_recomputed": true,
+    "market_frozen_parent_anchor_verified": true,
+    "per_cik_manifests_and_raw_record_anchors_verified": true,
+    "source_applicability": {
+      "cik_count": 753,
+      "gate_passed": true,
+      "imputed_fact_rows": 0,
+      "raw_record_anchors_verified": true,
+      "resolved_not_applicable_ciks": [
+        "0001132979",
+        "0001288784"
+      ],
+      "status_counts": {
+        "available": 751,
+        "resolved_not_applicable": 2
+      }
+    },
+    "source_data_certification_passed": true
+  },
+  "read_only_source_validation": true,
+  "schema_version": "cross_sectional_alpha.source_data_certification.v1",
+  "sec_raw": {
+    "all_ledger_objects_size_and_sha256_verified": true,
+    "content_index_sha256": "5b5614edfb305614ea0b94030609a36f079c924c7820044b9e779368bc6bfaa4",
+    "failed_http_record_count": 8,
+    "ledger_sha256": "432d8c0337ee27ea34cf0dbb49dcdb3e2bd98c714c55506ef0d5993074f665e0",
+    "object_store_exactly_indexed": true,
+    "record_count": 2885,
+    "unique_object_count": 2770,
+    "verified_byte_count": 252770109
+  },
+  "status": "source_data_certified"
+}

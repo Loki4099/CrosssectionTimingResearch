@@ -1,0 +1,26 @@
+{
+  "built_at_utc": "2026-08-20T09:33:50.131659+00:00",
+  "coverage_gate_passed": true,
+  "current_ticker_rows": 10387,
+  "entity_bridge_version": "xs-sec-entity-bridge-20260820-v1",
+  "entity_cik_interval_count": 772,
+  "historical_browse_failures": 116,
+  "historical_browse_rows": 58,
+  "mapped_security_count": 745,
+  "market_dataset": "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate",
+  "member_session_coverage": {
+    "coverage": 1.0,
+    "mapped_member_sessions": 1701149,
+    "member_sessions": 1701149,
+    "unmapped_member_sessions": 0
+  },
+  "minimum_member_session_coverage": 0.98,
+  "multi_cik_security_count": 26,
+  "raw_fetch_record_count": 2745,
+  "schema_version": "cross_sectional_alpha.identifier_qa.v1",
+  "sec_name_candidate_rows": 35,
+  "sec_name_temporal_evidence_rows": 48,
+  "security_count": 745,
+  "tiingo_name_rows": 35,
+  "unmapped_security_count": 0
+}

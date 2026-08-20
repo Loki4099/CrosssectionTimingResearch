@@ -13,6 +13,10 @@ Files:
 - `factor_definition_registry.csv` records one canonical candidate definition per
   row, including direction, original parameters, PIT availability, data tier,
   expected correlation cluster, and adaptation status.
+- `active_factor_registry.csv` is the compact implementation view for the current
+  data program. Every `factor_id` and `source_definition_id` in this file must be
+  identical and resolve to exactly one row in `factor_definition_registry.csv`.
+  It is not an experiment authorization.
 
 Registry rules:
 
@@ -41,6 +45,45 @@ Registry rules:
 6. Long-short evidence in a paper does not imply that the long leg works in this
    project's Top-K long-only portfolio.  The `long_only_evidence` field makes that
    boundary explicit.
+7. Registry defects are corrected append-only. `XS039_ACCRUALS` is retained as a
+   historical record of the original row, whose formula omitted depreciation; it
+   must not be executed as a Sloan replication. `XS039_ACCRUALS_V2` is the strict
+   executable successor. `XS056_CFO_ACCRUALS_PT` is a separately identified
+   project translation, not a fallback that may inherit the Sloan claim.
+
+## Deferred candidate factor roster
+
+The source-data program is complete, but the factor stage is deferred. No
+`factor_id` is currently claimed to be calculated, ready, coverage-qualified, or
+authorized for a numbered experiment. `first_round_eligible=true` is design
+metadata that still requires a future factor build and its stated `data_gate`; it
+is not a current machine status.
+
+The certified source-v1 certificate anchors the complete `data_program.toml`.
+Future factor work must create a new program/version that references this source
+layer instead of editing the certified v1 configuration in place.
+
+| Role | Factor IDs |
+|---|---|
+| Market controls | `XS001_MOM_255_0`, `XS002_MOM_12_1` |
+| New market atoms | `XS003_MOM_12_7`, `XS004_HIGH_52W`, `XS007_ST_REV_21`, `XS008_SAME_MONTH_5Y`, `XS013_LOW_BETA_FP`, `XS015_MAX_21`, `XS018_AMIHUD_252`, `XS019_PRICE_DELAY_52W`, `XS020_VOLUME_SHOCK_50D` |
+| SEC atoms | `XS032_GROSS_PROFIT_AT`, `XS041_ASSET_GROWTH`, `XS039_ACCRUALS_V2` |
+| Conditional SEC atoms | `XS026_VALUE_BM`, `XS030_NET_PAYOUT_YIELD` |
+
+The conditional SEC atoms remain missing unless issuer-level market equity has
+passed the all-common-share-class audit. Book-to-market requires current issuer
+market equity; net payout yield requires common-only dividends, repurchases and
+issuance plus audited fiscal-year-end issuer market equity. Missing components
+are never treated as zero or approximated from one listed share class.
+
+`XS018_AMIHUD_252` and `XS020_VOLUME_SHOCK_50D` remain candidate definitions. The
+frozen market source passed the pre-return volume gate:
+all 1,701,149 expected member-session keys exist, price-conditional volume
+coverage is 100%, positive dollar-volume coverage is 99.997%, negative volume
+rows are zero, and 191 split events have no missing volume. This is source-data
+evidence, not factor readiness or return-based selection. `XS056_CFO_ACCRUALS_PT` remains a
+mechanical coverage alternative for strict Sloan accruals and has
+`first_round_eligible=false` in its own right.
 
 The human-readable rationale and family map are in
 [the literature and factor registry note](../../../docs/43_cross_sectional_alpha_literature_and_factor_registry_v1.md).

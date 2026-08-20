@@ -1,0 +1,18 @@
+metric_id,taxonomy,tag_priority,period_type,unit_family,required_for,selection_notes
+total_assets,us-gaap,Assets,instant,USD,XS032|XS039|XS041|XS056,consolidated annual instant
+current_assets,us-gaap,AssetsCurrent,instant,USD,XS039,consolidated annual instant
+cash_and_cash_equivalents,us-gaap,CashAndCashEquivalentsAtCarryingValue|CashCashEquivalentsRestrictedCashAndRestrictedCashEquivalents,instant,USD,XS039|XS030,first available priority tag
+current_liabilities,us-gaap,LiabilitiesCurrent,instant,USD,XS039,consolidated annual instant
+short_term_debt,us-gaap,ShortTermBorrowings|ShortTermDebtCurrent|LongTermDebtCurrent,instant,USD,XS039,first available priority tag
+taxes_payable,us-gaap,IncomeTaxesPayable|IncomeTaxesPayableCurrent|AccruedIncomeTaxesPayable|TaxesPayableCurrent|TaxesPayableCurrentAndNoncurrent|TaxesPayable,instant,USD,XS039,income-tax-specific tags preferred; broader current and unclassified tax fallbacks remain explicit provenance; missing is not zero
+revenue,us-gaap,RevenueFromContractWithCustomerExcludingAssessedTax|SalesRevenueNet|Revenues,duration_fy,USD,XS032,annual duration 300 to 430 days
+cost_of_goods_sold,us-gaap,CostOfRevenue|CostOfGoodsAndServicesSold,duration_fy,USD,XS032,annual duration 300 to 430 days
+gross_profit,us-gaap,GrossProfit,duration_fy,USD,XS032,direct fallback after reconciliation
+depreciation_and_amortization,us-gaap,DepreciationDepletionAndAmortization|DepreciationDepletionAndAmortizationPropertyPlantAndEquipment|Depreciation,duration_fy,USD,XS039,annual duration 300 to 430 days
+net_income,us-gaap,NetIncomeLoss|ProfitLoss,duration_fy,USD,XS056|XS030,annual duration 300 to 430 days
+cash_flow_from_operations,us-gaap,NetCashProvidedByUsedInOperatingActivities,duration_fy,USD,XS056,annual duration 300 to 430 days
+common_book_equity,us-gaap,CommonStockholdersEquity|StockholdersEquity|StockholdersEquityIncludingPortionAttributableToNoncontrollingInterest,instant,USD,XS026,direct common equity preferred; fallback requires reconciliation
+shares_outstanding,dei,EntityCommonStockSharesOutstanding,instant,shares,XS026|XS030,share-class and issuer aggregation audit required
+common_dividends,us-gaap,PaymentsOfDividendsCommonStock|PaymentsOfDividends,duration_fy,USD,XS030,common-only preferred tag
+common_share_repurchases,us-gaap,PaymentsForRepurchaseOfCommonStock,duration_fy,USD,XS030,annual positive cash outflow
+common_share_issuance,us-gaap,ProceedsFromIssuanceOfCommonStock,duration_fy,USD,XS030,annual positive proceeds

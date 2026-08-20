@@ -1,0 +1,97 @@
+schema_version = "cross_sectional_alpha.data_program.v1"
+program_id = "xs_market_sec_database_v1"
+status = "implementation_authorized"
+formal_eligible = false
+
+[versions]
+market_dataset = "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate"
+entity_bridge = "xs-sec-entity-bridge-20260820-v1"
+fundamentals = "xs-sec-fundamentals-20260820-v1"
+factor_build = "xs-market-sec-factors-20260820-v1"
+data_bundle = "xs-market-sec-bundle-20260820-v1"
+
+[sample]
+history_start = "2013-01-02"
+evaluation_start = "2018-01-02"
+evaluation_end = "2026-06-30"
+signal_frequency = "month_end"
+execution_rule = "signal_close_next_xnys_open"
+universe_rule = "membership_effective_at_signal"
+
+[sec]
+user_agent_env = "SEC_USER_AGENT"
+max_requests_per_second = 2.0
+timeout_seconds = 45
+cooldown_seconds_403_429 = 600
+availability_buffer_minutes = 10
+company_tickers_url = "https://www.sec.gov/files/company_tickers.json"
+browse_company_url = "https://www.sec.gov/cgi-bin/browse-edgar"
+submissions_url_template = "https://data.sec.gov/submissions/CIK{cik10}.json"
+companyfacts_url_template = "https://data.sec.gov/api/xbrl/companyfacts/CIK{cik10}.json"
+cik_lookup_url = "https://www.sec.gov/Archives/edgar/cik-lookup-data.txt"
+allowed_forms = ["10-K", "10-K/A"]
+raw_snapshot_policy = "immutable_content_addressed"
+
+[identifier_resolution]
+use_provider_lineage_aliases = true
+use_sec_current_ticker = true
+use_sec_browse_ticker = true
+use_tiingo_name_fallback = true
+tiingo_token_env = "TIINGO_API_TOKEN"
+manual_overrides_path = "config/research/cross_sectional_alpha/sec_cik_overrides.csv"
+minimum_member_session_coverage = 0.98
+unresolved_rows_forbidden_to_disappear = true
+issuer_temporal_support_required = true
+minimum_temporal_support_interval_days = 365
+
+[fundamentals]
+annual_only = true
+minimum_duration_days = 300
+maximum_duration_days = 430
+amendments_are_new_vintages = true
+missing_values_are_never_zero = true
+later_comparatives_available_only_after_new_filing = true
+metric_registry = "config/research/cross_sectional_alpha/sec_metric_registry.csv"
+companyfacts_exceptions = "config/research/cross_sectional_alpha/sec_companyfacts_exceptions.csv"
+zero_fetch_failures_required = true
+filing_ledger_form_is_authoritative = true
+future_measurement_periods_forbidden = true
+current_sic_not_valid_for_historical_applicability = true
+
+[market_quality]
+minimum_price_conditional_volume_coverage = 0.999
+negative_volume_rows_allowed = 0
+split_event_missing_volume_rows_allowed = 0
+
+[factors]
+registry = "config/research/cross_sectional_alpha/active_factor_registry.csv"
+materialize_raw_and_directional_score = true
+materialize_cross_sectional_rank = true
+top_k_values = [5, 10, 20, 50]
+top_k_does_not_recompute_factors = true
+
+[storage]
+parquet_is_evidence = true
+duckdb_is_rebuildable_catalog = true
+catalog_relative_path = "cache/catalog/cross_sectional_alpha.duckdb"
+raw_relative_path = "data/raw/cross_sectional_alpha"
+curated_relative_path = "data/curated/cross_sectional_alpha"
+derived_relative_path = "data/derived/cross_sectional_alpha"
+
+[quality]
+primary_key_duplicates_allowed = false
+future_input_invariance_required = true
+raw_snapshot_hashes_required = true
+factor_missing_reason_required = true
+coverage_report_by_year_required = true
+coverage_report_by_factor_required = true
+accounting_identity_report_required = true
+gross_profit_identity_relative_tolerance = 0.01
+deterministic_rebuild_required = true
+
+[factor_readiness]
+evaluation_member_coverage_minimum = 0.50
+minimum_covered_signal_months = 24
+minimum_eligible_names_per_covered_month = 100
+coverage_alternative = { XS039_ACCRUALS_V2 = "XS056_CFO_ACCRUALS_PT" }
+performance_results_must_not_affect_readiness = true

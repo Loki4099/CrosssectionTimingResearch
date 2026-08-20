@@ -1,0 +1,3 @@
+cik10,ticker,resolution,required_http_status,required_error_code,periodic_form_bases,include_amendments,required_periodic_form_count,review_status,reviewed_date,notes
+0001132979,FRC,resolved_not_applicable,404,NoSuchKey,10-K|10-Q|20-F|40-F,true,0,approved,2026-08-20,"SEC Company Facts returns a cached NoSuchKey response and the matching submissions ledger contains no periodic reports."
+0001288784,SBNY,resolved_not_applicable,404,NoSuchKey,10-K|10-Q|20-F|40-F,true,0,approved,2026-08-20,"SEC Company Facts returns a cached NoSuchKey response and the matching submissions ledger contains no periodic reports."

@@ -4,7 +4,7 @@
 
 ## 当前主线
 
-- [系统性 long-only 横截面 Alpha](../research_tracks/cross_sectional_alpha.md)：当前研究主线；论文和候选定义已登记，基本面PIT层与首轮单因子计划待建。
+- [系统性 long-only 横截面 Alpha](../research_tracks/cross_sectional_alpha.md)：当前研究主线；市场与SEC基本面源层已认证，因子层与首轮单因子计划待建。
 - [防御择时与仓位控制](../research_tracks/defensive_timing.md)：Round 1–10历史档案；当前结论以主线主页和[跨轮总结](../42_round6_round10_experiment_synthesis.md)为准。
 
 ## 共同治理文档

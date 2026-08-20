@@ -8,8 +8,9 @@
 |---|---|---|---|
 | PIT成分、证券身份与市场价格 | **已冻结可用** | 2013-01-02开始暖机；2018-01-02 open至2026-06-30 close统一评价 | 保持版本不变 |
 | 公司行动与终止事件 | **已审计可用** | 与冻结市场数据一致 | 新数据版本继续做身份和未来扰动测试 |
-| SID↔issuer/CIK/股类有效期 | **缺失** | 当前security master没有可用于基本面的历史CIK层 | 基本面接入第一道门 |
-| SEC基本面PIT | **数据源已选、尚未实施** | 计划从2009年EDGAR/XBRL开始，按各因子历史需求形成不同合法起点 | 建立filing vintage与as-of特征面板 |
+| SID↔issuer/CIK有效期 | **已认证可用** | 745/745 SID；772个有效期CIK区间；1,701,149/1,701,149成员交易日已映射 | 后续新证券版本继续做时序支持审计 |
+| SEC基本面PIT源层 | **已冻结并认证** | 753/753研究期CIK完成；2,386,818条filing、1,679,666条注册事实、358,303条规范年度事实 | 因子层按定义生成合法起点与覆盖率 |
+| 市场与基本面因子面板 | **延期** | 候选登记和实现脚手架不构成已计算或合格状态 | 后续轮次单独构建、QA和授权 |
 | 新闻与媒体文本 | **本主线不实施** | 由独立任务研究 | 不进入首轮市场+基本面实验 |
 
 当前冻结版本为 `sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate`。它是 `review / free_research_candidate`，17项门禁和100项数据修复验收测试通过，允许研究回测，但 `formal_eligible=false`，运行时必须显式允许review数据。
@@ -20,20 +21,24 @@
 - [公司行动会计](../07_corporate_action_accounting.md)
 - [最终候选实施与门禁报告](./sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate_implementation_report.md)
 - [冻结数据元信息](../../metadata/frozen_dataset/)
+- [横截面市场与SEC基本面源数据库 v1](./cross_sectional_market_fundamental_database_v1.md)
+- [紧凑源数据认证证据](../../results/published/cross_sectional_data/xs-market-sec-source-data-20260820-v1/)
 - [本地实验运行区规范](./runtime_storage_policy.md)
 
-## 基本面PIT原则
+## 基本面PIT源层
 
-免费主源采用[SEC EDGAR API](https://www.sec.gov/search-filings/edgar-application-programming-interfaces)及其[2009年以来的as-filed财务报表数据集](https://www.sec.gov/data-research/sec-markets-data/financial-statement-data-sets)。数据下载和因子计算尚未开始；后续实现至少必须满足：
+免费主源采用[SEC EDGAR API](https://www.sec.gov/search-filings/edgar-application-programming-interfaces)。不可变原始响应、SID–CIK桥、申报事件、注册事实和年度PIT规范事实已经完成，并由[source-only认证包](../../results/published/cross_sectional_data/xs-market-sec-source-data-20260820-v1/)锚定。该认证不读取因子面板，也不评价任何交易结果。实现遵循：
 
 1. 用带有效期的issuer/CIK/股类映射连接项目SID，禁止用今天的ticker回填历史；
 2. 保留accession、form、period、accepted timestamp、amendment、taxonomy、unit和dimension；
 3. 每个信号时点只能选择当时已经被SEC接受的filing vintage；后续修订从新接受时点起生效，不能覆盖过去；
 4. 区分10-Q累计值、单季值、10-K比较期间和TTM构造；
-5. 按因子所需历史决定首个合法日期，不为统一样本而使用未来数据补齐；
-6. 对未来filing做扰动时，历史特征必须逐值不变；缺失和不适用不能静默填0。
+5. 后续按因子所需历史决定首个合法日期，不为统一样本而使用未来数据补齐；
+6. 会计恒等式和历史实体支持从权威表独立重算；缺失和不适用不能静默填0。
 
-初期优先支持主表能够稳定构造的价值、盈利质量、应计、投资和发行类信号。复杂注释、分析师预期、期权和媒体数据不属于这一基本面MVP。
+源层认证结果为：753/753 CIK完成、聚合失败0；751个CIK为可用，FRC与SBNY两项经严格SEC证据审阅标为`resolved_not_applicable`且没有插补；29,146个会计恒等式上下文直接重算失败0；766个历史实体区间时序失败0。数据仍为研究级 `formal_eligible=false`。
+
+因子公式、因子覆盖率、统一因子面板和实验资格均延期。复杂注释、分析师预期、期权和媒体数据不属于这一源数据库版本。
 
 ## 存储边界
 

@@ -1,6 +1,6 @@
 # 系统性 long-only 横截面 Alpha
 
-> 状态：**当前研究主线，尚未创建或授权首轮新因子实验。**
+> 状态：**当前研究主线；市场与SEC源数据层已认证，因子库和首轮新因子实验尚未创建或授权。**
 > 股票池：历史时点 S&P 500 成分股。
 > 当前执行范围：市场数据与 SEC 基本面；新闻与文本研究由独立任务处理。
 
@@ -24,8 +24,9 @@
 | 层级 | 当前状态 | 事实来源 |
 |---|---|---|
 | 市场与成分数据 | 冻结免费研究数据可用；2013年暖机，2018-01-02至2026-06-30统一评价 | [数据入口](../10_data/README.md) |
-| 文献与候选定义 | 55篇论文/方法记录和55条跨机制候选已登记 | [登记说明](../43_cross_sectional_alpha_literature_and_factor_registry_v1.md) |
-| 基本面数据 | 已选 SEC EDGAR/XBRL 为免费主源；CIK映射、filing vintage与as-of面板尚未实施 | [数据入口](../10_data/README.md) |
+| 文献与候选定义 | 55篇论文/方法记录、55个原始候选概念；append-only定义表共57行，含1个修正版与1个项目翻译 | [登记说明](../43_cross_sectional_alpha_literature_and_factor_registry_v1.md) |
+| 基本面源数据 | SEC EDGAR不可变响应、有效期CIK桥、filing vintage与年度PIT规范事实已冻结认证；`formal_eligible=false` | [数据合同](../10_data/cross_sectional_market_fundamental_database_v1.md) · [认证证据](../../results/published/cross_sectional_data/xs-market-sec-source-data-20260820-v1/) |
+| 因子库与因子面板 | 候选登记和代码仅为延期脚手架；没有因子被声明为已计算、覆盖合格或获得实验资格 | [登记规则](../../config/research/cross_sectional_alpha/README.md) |
 | 裸策略基准 | G00 已完成；`mom_255_0 / Top20 / monthly` 是后续比较锚，不代表未来冠军 | [G00报告](../20_experiments/G00_baseline/report.md) |
 | XS01 | 仅有历史配置与catalog登记；没有runner、报告、发布结果或图表 | [XS01配置](../../config/experiments/XS01.toml) |
 | 新单因子实验 | 尚未设计、命名或授权 | 本页 |
@@ -38,7 +39,7 @@
 - 因子机器表：[factor_definition_registry.csv](../../config/research/cross_sectional_alpha/factor_definition_registry.csv)
 - 登记规则：[config/research/cross_sectional_alpha/README.md](../../config/research/cross_sectional_alpha/README.md)
 
-登记表是宽候选知识库，不等于下一轮执行清单。当前活跃范围只包含已经具备或计划建设的市场与基本面数据；新闻、文本、期权、分析师和供应链候选可以继续留在知识库，但没有自动运行资格。
+登记表是宽候选知识库，不等于下一轮执行清单。市场与SEC源层通过只说明输入证据可用；新闻、文本、期权、分析师和供应链候选可以继续留在知识库，但任何候选都没有自动运行资格。
 
 ## 4. 已有横截面基准
 

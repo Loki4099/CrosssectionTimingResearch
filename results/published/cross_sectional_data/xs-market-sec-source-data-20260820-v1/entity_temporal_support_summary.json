@@ -1,0 +1,12 @@
+{
+  "evaluation_end": "2026-06-30",
+  "failed_interval_count": 0,
+  "failed_sids": [],
+  "history_start": "2013-01-02",
+  "interval_count": 766,
+  "long_interval_count": 733,
+  "minimum_long_interval_days": 365,
+  "resolved_not_applicable_interval_count": 2,
+  "schema_version": "cross_sectional_alpha.entity_temporal_support.v1",
+  "temporal_support_gate_passed": true
+}

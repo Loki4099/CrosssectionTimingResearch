@@ -1,0 +1,46 @@
+{
+  "dataset_version": "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate",
+  "decision": "accepted_with_documented_limitations",
+  "evaluation": {
+    "benchmark": "SPY total-return proxy",
+    "end_close": "2026-06-30",
+    "minimum_eligible_next_open_coverage": 0.9979757085020243,
+    "minimum_factor_endpoint_coverage": 0.9800796812749004,
+    "minimum_signal_close_coverage": 0.9801587301587301,
+    "start_open": "2018-01-02"
+  },
+  "execution": {
+    "requires_allow_review_dataset": true,
+    "terminal_last_close_max_sessions": 5
+  },
+  "formal_blockers": [
+    "free public PIT membership",
+    "free Yahoo/Tiingo coverage with documented unavailable securities",
+    "SPY total-return proxy instead of official S&P 500 Total Return index"
+  ],
+  "formal_eligible": false,
+  "freeze_status": "frozen_for_free_research",
+  "frozen_at_utc": "2026-08-14T08:14:06.7781059Z",
+  "immutability": {
+    "marker_not_in_manifest": "The freeze marker locks the pre-existing manifest hash and is intentionally not included in that manifest.",
+    "policy": "Any data, manifest, ledger, or price change requires a new dataset_version and a new freeze record."
+  },
+  "manifest": {
+    "file_records": 62,
+    "path": "data/manifests/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate.json",
+    "sha256": "65b628d604f7e2f456e8d1d43a3c3e88b6bd3e86cc1c9455cdcfe28b856a3ec7",
+    "source_status": "review"
+  },
+  "quality": {
+    "all_gates_passed": true,
+    "build_provenance_path": "data/quality/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate/build_provenance.json",
+    "build_provenance_sha256": "8aac742afb699c68c08db2da8efbb91b9330f1611e8683ba27518b2c3d28cd78",
+    "gate_results_path": "data/quality/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate/gate_results.json",
+    "gate_results_sha256": "c85c1b8623c6f928f04b6bb55b2550f159d3c2f5ab20c9659b83075ce10105a3",
+    "test_results_path": "data/quality/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate/test_results.json",
+    "test_results_sha256": "125eda9153d38f80b22f660e8d14aa0c763466d61a9774aad1ba011c4fdf5283",
+    "tests_passed": 100
+  },
+  "research_tier": "free_research_candidate",
+  "schema_version": "momentum_reversal.dataset_freeze.v1"
+}

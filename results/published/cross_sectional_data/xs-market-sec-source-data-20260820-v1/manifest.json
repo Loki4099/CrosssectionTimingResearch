@@ -1,0 +1,76 @@
+{
+  "experiment_authorized": false,
+  "factor_stage_included": false,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "d07b0c346898ce7d59c45f24645f67a664054c812b9144212e69dcce4befac7a",
+      "size_bytes": 856
+    },
+    {
+      "path": "accounting_identity_qa.csv",
+      "row_count": 29146,
+      "sha256": "7c4f869079adb147cfeb9c56f890a4e0ce0569316e48975b61fcca9e07519538",
+      "size_bytes": 3457038
+    },
+    {
+      "path": "accounting_identity_summary.json",
+      "sha256": "0c46a8f3c9159246b0faa61b58eedd6cc8ef6107c4c6e487b8bee5ec268464a6",
+      "size_bytes": 347
+    },
+    {
+      "path": "entity_temporal_support_qa.csv",
+      "row_count": 766,
+      "sha256": "c907e2bf0e0ded3d1be886b70d34b2c81cd926468b2d4fb343077e36cf97a342",
+      "size_bytes": 100817
+    },
+    {
+      "path": "entity_temporal_support_summary.json",
+      "sha256": "a2a6dd7002f878bafe18f166c8418a0c13bb2577190c9879518e4af5c3d50770",
+      "size_bytes": 372
+    },
+    {
+      "path": "fetch_failures.csv",
+      "row_count": 0,
+      "sha256": "3cbce88e1bb7b2da5cc4dce57a892717f2332c82917e1cfe7a30f9e76665a863",
+      "size_bytes": 35
+    },
+    {
+      "path": "fundamental_freeze.json",
+      "sha256": "2ef190c73297c76876fd661b37766bbdac6488a237459c00f131a4c8f0220b2a",
+      "size_bytes": 2338
+    },
+    {
+      "path": "fundamental_summary.json",
+      "sha256": "ed43b73fe875e933323b2111726833403ef49b1a64a1b429e4f76aa48a731498",
+      "size_bytes": 1751
+    },
+    {
+      "path": "identifier_qa.json",
+      "sha256": "ccee41f8c46a207c5e9c2f11fee4b51e21df5c256b49a45b9e5b3998b8917a10",
+      "size_bytes": 904
+    },
+    {
+      "path": "market_freeze.json",
+      "sha256": "3847b616be49add41286c7ae25f0c0dfc08556b5c1378522d50b681a52489545",
+      "size_bytes": 2299
+    },
+    {
+      "path": "source_applicability.csv",
+      "row_count": 753,
+      "sha256": "5a21d917c0d35f64681f9e48946593c3541d22c60c6d69706db91f4a2eea69fc",
+      "size_bytes": 258120
+    },
+    {
+      "path": "source_data_certification.json",
+      "sha256": "4442bedeb11ab2e31901a817c808c1cbeee52f45f50e835c206108932a7e3e20",
+      "size_bytes": 4427
+    }
+  ],
+  "formal_eligible": false,
+  "fundamental_manifest_sha256": "dcd24fd07e178d3dbd0afb483b7702a98a4404267c544755d895b0ab100442a2",
+  "schema_version": "cross_sectional_alpha.source_data_compact_publish.v1",
+  "sec_raw_content_index_sha256": "5b5614edfb305614ea0b94030609a36f079c924c7820044b9e779368bc6bfaa4",
+  "source_data_certification_sha256": "4442bedeb11ab2e31901a817c808c1cbeee52f45f50e835c206108932a7e3e20",
+  "status": "source_data_certified"
+}
