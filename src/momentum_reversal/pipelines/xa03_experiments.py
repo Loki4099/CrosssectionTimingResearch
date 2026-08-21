@@ -1293,7 +1293,14 @@ def _common_ew_period_ledger(group: pd.DataFrame) -> tuple[pd.DataFrame, pd.Data
         gross = sum(target[sid] * realized[sid] for sid in target)
         denom = 1.0 + gross
         pretrade = {sid: target[sid] * (1.0 + realized[sid]) / denom for sid in target} if denom > 0 else {}
-        rows.append({"signal_date": date, "gross_return": gross, "l1_turnover": turnover})
+        rows.append({
+            "signal_date": date,
+            "execution_date": one["execution_date"].iloc[0],
+            "label_end_execution_date": one["label_end_execution_date"].iloc[0],
+            "gross_return": gross,
+            "l1_turnover": turnover,
+            "selected_count": n,
+        })
     return pd.DataFrame(rows), pd.DataFrame(held_rows)
 
 

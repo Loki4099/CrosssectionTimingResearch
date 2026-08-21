@@ -10,6 +10,7 @@ from momentum_reversal.pipelines.xa03_experiments import (
     _bh,
     _derived_seed,
     _engine_period_frame,
+    _common_ew_period_ledger,
     _noncircular_mbb_se,
     centered_cross_sectional_rank,
 )
@@ -69,6 +70,20 @@ class XA03ExperimentTests(unittest.TestCase):
             float(frame.iloc[1]["net_return"]), (1.0 - 0.5 * 10 / 10_000) * 1.20 - 1.0
         )
         self.assertEqual(frame["selected_count"].tolist(), [2, 2])
+
+    def test_common_control_keeps_execution_interval_metadata(self) -> None:
+        target = pd.DataFrame({
+            "signal_date": pd.to_datetime(["2020-01-03", "2020-01-03"]),
+            "execution_date": pd.to_datetime(["2020-01-06", "2020-01-06"]),
+            "label_end_execution_date": pd.to_datetime(["2020-01-13", "2020-01-13"]),
+            "sid": ["A", "B"],
+            "forward_total_return": [0.10, -0.02],
+            "target_valid": [True, True],
+        })
+        frame, _ = _common_ew_period_ledger(target)
+        self.assertEqual(frame.loc[0, "execution_date"], pd.Timestamp("2020-01-06"))
+        self.assertEqual(frame.loc[0, "label_end_execution_date"], pd.Timestamp("2020-01-13"))
+        self.assertEqual(int(frame.loc[0, "selected_count"]), 2)
 
 
 if __name__ == "__main__":
