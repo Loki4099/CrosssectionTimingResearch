@@ -1,0 +1,93 @@
+{
+  "files": {
+    "README.md": {
+      "sha256": "da2ea518bf7523fc9443b38dbac83c7f95e09d78668e95e63319e7c651b74e0a",
+      "size_bytes": 292
+    },
+    "XA04A/complete_case_coverage.csv": {
+      "sha256": "ddcd9c3a6da76a1767bf587b1f5260e802415e4d8dbe5a09634db482eeafffba",
+      "size_bytes": 35013
+    },
+    "XA04A/factor_coverage_gate.csv": {
+      "sha256": "10b6ef0417ed000b72d576d39362ec9ed8c4423503da4df2a51d6da0d1d183ea",
+      "size_bytes": 586
+    },
+    "XA04A/manifest.json": {
+      "sha256": "d84be6a9e87bdca6e2bebbfb8fa3f78b96080ca4c83c2b7e94976733e99c722a",
+      "size_bytes": 1540
+    },
+    "XA04A/panel_audit.json": {
+      "sha256": "4cc7965e19d06ef37aff196645bd64a306da6f841478c3ad7d007201b8c60bc3",
+      "size_bytes": 172
+    },
+    "XA04A/summary.json": {
+      "sha256": "817705ede90eff21baedac252a86478c8d2834abd4ea8c6f319b8889e8213455",
+      "size_bytes": 171
+    },
+    "XA04B/invalid_process_ledger.csv": {
+      "sha256": "cd6eda3fed04d2bc15e8919cd208030d48277e00b9fca123562fddb65a55b91d",
+      "size_bytes": 869
+    },
+    "XA04B/manifest.json": {
+      "sha256": "63a5432c1c7add838ef00541557c6569be5a7f95cf4202ca46068a7485861f5a",
+      "size_bytes": 1358
+    },
+    "XA04B/summary.json": {
+      "sha256": "45318632f2c628bd1293791c23095a568bc65e4233b5fac7e02f3489912852ea",
+      "size_bytes": 147
+    },
+    "XA04C/absolute_assessment.csv": {
+      "sha256": "d79db2460de3d1cc1740b336aeec4d4bc8ec915bac8fef95fe87a31b91e26556",
+      "size_bytes": 8849
+    },
+    "XA04C/manifest.json": {
+      "sha256": "4732087b22cff044267172e9264f171e90726e2644cf5aa71a0d7a7288730789",
+      "size_bytes": 2361
+    },
+    "XA04C/parent_increment_assessment.csv": {
+      "sha256": "23ef47b30d140defffb78d0ff4402c4485fa180cb8e1b8f9598a0b42dfb9bdce",
+      "size_bytes": 6910
+    },
+    "XA04C/portfolio_accounting_identity.csv": {
+      "sha256": "ddf44f945827a06ea3f2520f0a947df3bcfca5c7fb418d842f519949d8bf1954",
+      "size_bytes": 21368
+    },
+    "XA04C/qualification_role_ledger.csv": {
+      "sha256": "e5ae8c90b516e4c59d9f8bdcd9069a7b95990b5d5c7e4eb7fcee8050da75be88",
+      "size_bytes": 4179
+    },
+    "XA04C/raw_xs003_assessment.csv": {
+      "sha256": "7c51093bca11758ddba1335ec6e56961dc46fc46d3c8c5168e52dc034f0e134c",
+      "size_bytes": 5390
+    },
+    "XA04C/rsp_ablation_assessment.csv": {
+      "sha256": "dcbd790c5bfa284194dd1480c1cdcc73e2f15463959dbea7b864b7fe49474ac4",
+      "size_bytes": 2836
+    },
+    "XA04C/summary.json": {
+      "sha256": "d13e986cf7e37b4ee2094f63a57afc6262caaee8986cf78e4253c096ddd2cbaa",
+      "size_bytes": 171
+    },
+    "XA04D/decision.json": {
+      "sha256": "7bbc556c51e283ab7fc071b921a04d379d64efd2cedf6000e5fbc696f59186d2",
+      "size_bytes": 251
+    },
+    "XA04D/manifest.json": {
+      "sha256": "baf78f522f2d1a2bc71252872fbf43924f18192e3bd465a7f6bca4f6d74c8cb5",
+      "size_bytes": 1034
+    },
+    "XA04D/qualified_tree_candidate_ledger.csv": {
+      "sha256": "97be35e4eaacd48a4599d44cd9f0f0e62361ffb6b12671284057815425c8c3d4",
+      "size_bytes": 36
+    },
+    "XA04D/summary.json": {
+      "sha256": "92c0fcbe4dcc9b52b600d8c6cabf5329dd8c5bb936637d446ca1dc937d2e4a2e",
+      "size_bytes": 546
+    }
+  },
+  "formal_eligible": false,
+  "qualified_tree_cells": 0,
+  "runtime_only_large_artifacts_excluded": true,
+  "schema_version": "xa04.publication.v1",
+  "status": "completed_hard_stop"
+}

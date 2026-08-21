@@ -1,0 +1,38 @@
+{
+  "batch": "XA04B",
+  "dependencies": {
+    "XA04A": "d84be6a9e87bdca6e2bebbfb8fa3f78b96080ca4c83c2b7e94976733e99c722a"
+  },
+  "files": {
+    "coefficient_and_importance_ledger.parquet": {
+      "sha256": "d267d1cfbe4f71783c3c0eb4eb4edea4f3e791c119ede42b85cc415bb6ad1cbe",
+      "size_bytes": 1565553
+    },
+    "invalid_process_ledger.csv": {
+      "sha256": "cd6eda3fed04d2bc15e8919cd208030d48277e00b9fca123562fddb65a55b91d",
+      "size_bytes": 869
+    },
+    "leaf_support_audit.parquet": {
+      "sha256": "6afa88b9aa43aefa86bba31ea0e07cba4799c62c235322882e24f0b19093fe51",
+      "size_bytes": 2303443
+    },
+    "model_refit_ledger.parquet": {
+      "sha256": "3da72fe2781becaef9212704ad67f12f054d962aaf988c2981f690288ba5c784",
+      "size_bytes": 8179
+    },
+    "prediction_ledger.parquet": {
+      "sha256": "407581d6962b8fba79edc020298c3465922e591b948c2743bf3260b5e377953a",
+      "size_bytes": 62653037
+    },
+    "summary.json": {
+      "sha256": "45318632f2c628bd1293791c23095a568bc65e4233b5fac7e02f3489912852ea",
+      "size_bytes": 147
+    }
+  },
+  "git_commit": "dd49c7b96acf55bd54e93ade6a00b2fa77912067",
+  "git_dirty": false,
+  "prereg_lock_sha256": "204dc95032fa261f43bd065b53e8a377cb44e8108f38b073158c170e85fbcd9f",
+  "python": "3.12.13",
+  "run_id": "xa04b-unified-models-20260821-v1",
+  "schema_version": "xa04.runtime_manifest.v1"
+}

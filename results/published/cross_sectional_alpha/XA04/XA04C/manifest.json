@@ -1,0 +1,63 @@
+{
+  "batch": "XA04C",
+  "dependencies": {
+    "XA04A": "d84be6a9e87bdca6e2bebbfb8fa3f78b96080ca4c83c2b7e94976733e99c722a",
+    "XA04B": "63a5432c1c7add838ef00541557c6569be5a7f95cf4202ca46068a7485861f5a"
+  },
+  "files": {
+    "absolute_assessment.csv": {
+      "sha256": "d79db2460de3d1cc1740b336aeec4d4bc8ec915bac8fef95fe87a31b91e26556",
+      "size_bytes": 8849
+    },
+    "daily_nav_paths.parquet": {
+      "sha256": "d88d0cc7230d40622c93007f8342effe6a6c1408b97da5c225573be2c560b90e",
+      "size_bytes": 33941287
+    },
+    "label_based_portfolio_proxy.parquet": {
+      "sha256": "4968c39f042b46a5566ae5095d0fb185536417b2f8da178b366d7eaaedd3f9d2",
+      "size_bytes": 1204890
+    },
+    "parent_increment_assessment.csv": {
+      "sha256": "23ef47b30d140defffb78d0ff4402c4485fa180cb8e1b8f9598a0b42dfb9bdce",
+      "size_bytes": 6910
+    },
+    "period_return_ledger.parquet": {
+      "sha256": "e1b187e8264052eeafa8b6081cb04a840287ebfed797ef3f374af7c85a14f10f",
+      "size_bytes": 9118145
+    },
+    "portfolio_accounting_identity.csv": {
+      "sha256": "ddf44f945827a06ea3f2520f0a947df3bcfca5c7fb418d842f519949d8bf1954",
+      "size_bytes": 21368
+    },
+    "qualification_role_ledger.csv": {
+      "sha256": "e5ae8c90b516e4c59d9f8bdcd9069a7b95990b5d5c7e4eb7fcee8050da75be88",
+      "size_bytes": 4179
+    },
+    "rank_ic_ledger.parquet": {
+      "sha256": "7f6368e33c48004a8897777c4c4d12cd2ff7eb777b802a9597b8bc7c6448c286",
+      "size_bytes": 172005
+    },
+    "raw_xs003_assessment.csv": {
+      "sha256": "7c51093bca11758ddba1335ec6e56961dc46fc46d3c8c5168e52dc034f0e134c",
+      "size_bytes": 5390
+    },
+    "rsp_ablation_assessment.csv": {
+      "sha256": "dcbd790c5bfa284194dd1480c1cdcc73e2f15463959dbea7b864b7fe49474ac4",
+      "size_bytes": 2836
+    },
+    "summary.json": {
+      "sha256": "d13e986cf7e37b4ee2094f63a57afc6262caaee8986cf78e4253c096ddd2cbaa",
+      "size_bytes": 171
+    },
+    "topk_holdings.parquet": {
+      "sha256": "e64916077830d18fb08e4a0c698f98135448fe75099ff79134ffcce4dfd49da9",
+      "size_bytes": 11146878
+    }
+  },
+  "git_commit": "dd49c7b96acf55bd54e93ade6a00b2fa77912067",
+  "git_dirty": false,
+  "prereg_lock_sha256": "204dc95032fa261f43bd065b53e8a377cb44e8108f38b073158c170e85fbcd9f",
+  "python": "3.12.13",
+  "run_id": "xa04c-portfolios-inference-20260821-v1",
+  "schema_version": "xa04.runtime_manifest.v1"
+}

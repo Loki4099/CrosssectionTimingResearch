@@ -1,0 +1,10 @@
+{
+  "best_loser_substitution": false,
+  "formal_eligible": false,
+  "next_branch": "RAW_XS003_ONLY",
+  "p00_run": false,
+  "qualified_tree_cells": 0,
+  "schema_version": "xa04.decision.v1",
+  "status": "completed_hard_stop",
+  "xa05_started": false
+}

@@ -1,0 +1,28 @@
+{
+  "batch": "XA04D",
+  "dependencies": {
+    "XA04A": "d84be6a9e87bdca6e2bebbfb8fa3f78b96080ca4c83c2b7e94976733e99c722a",
+    "XA04B": "63a5432c1c7add838ef00541557c6569be5a7f95cf4202ca46068a7485861f5a",
+    "XA04C": "4732087b22cff044267172e9264f171e90726e2644cf5aa71a0d7a7288730789"
+  },
+  "files": {
+    "decision.json": {
+      "sha256": "7bbc556c51e283ab7fc071b921a04d379d64efd2cedf6000e5fbc696f59186d2",
+      "size_bytes": 251
+    },
+    "qualified_tree_candidate_ledger.csv": {
+      "sha256": "97be35e4eaacd48a4599d44cd9f0f0e62361ffb6b12671284057815425c8c3d4",
+      "size_bytes": 36
+    },
+    "summary.json": {
+      "sha256": "92c0fcbe4dcc9b52b600d8c6cabf5329dd8c5bb936637d446ca1dc937d2e4a2e",
+      "size_bytes": 546
+    }
+  },
+  "git_commit": "dd49c7b96acf55bd54e93ade6a00b2fa77912067",
+  "git_dirty": false,
+  "prereg_lock_sha256": "204dc95032fa261f43bd065b53e8a377cb44e8108f38b073158c170e85fbcd9f",
+  "python": "3.12.13",
+  "run_id": "xa04d-audit-decision-20260821-v1",
+  "schema_version": "xa04.runtime_manifest.v1"
+}

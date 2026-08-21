@@ -1,0 +1,44 @@
+{
+  "batch": "XA04A",
+  "dependencies": {},
+  "files": {
+    "complete_case_coverage.csv": {
+      "sha256": "ddcd9c3a6da76a1767bf587b1f5260e802415e4d8dbe5a09634db482eeafffba",
+      "size_bytes": 35013
+    },
+    "factor_coverage_gate.csv": {
+      "sha256": "10b6ef0417ed000b72d576d39362ec9ed8c4423503da4df2a51d6da0d1d183ea",
+      "size_bytes": 586
+    },
+    "model_feature_panel.parquet": {
+      "sha256": "db6b1c5cb694071e0c2da046f00dd0bdba97b7602120ff824f73cda8aa16da59",
+      "size_bytes": 8603670
+    },
+    "panel_audit.json": {
+      "sha256": "4cc7965e19d06ef37aff196645bd64a306da6f841478c3ad7d007201b8c60bc3",
+      "size_bytes": 172
+    },
+    "refit_ledger.parquet": {
+      "sha256": "2f889ad764da7e5a0b94b860257c11ebe50acdf3a7b7354676dc730ed3277c29",
+      "size_bytes": 10483
+    },
+    "state_feature_panel.parquet": {
+      "sha256": "be6b8b2fe5910cb0795738c242cb7f316228441f14c6689396f693afe863704d",
+      "size_bytes": 52512
+    },
+    "summary.json": {
+      "sha256": "817705ede90eff21baedac252a86478c8d2834abd4ea8c6f319b8889e8213455",
+      "size_bytes": 171
+    },
+    "target_ledger.parquet": {
+      "sha256": "a4f85e4fd7e38878a79d5132ee1085d0296642e048514d74af51b5872bf4b28a",
+      "size_bytes": 7558336
+    }
+  },
+  "git_commit": "dd49c7b96acf55bd54e93ade6a00b2fa77912067",
+  "git_dirty": false,
+  "prereg_lock_sha256": "204dc95032fa261f43bd065b53e8a377cb44e8108f38b073158c170e85fbcd9f",
+  "python": "3.12.13",
+  "run_id": "xa04a-core10-panel-20260821-v1",
+  "schema_version": "xa04.runtime_manifest.v1"
+}

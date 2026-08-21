@@ -1,0 +1,16 @@
+{
+  "batch": "XA04D",
+  "best_loser_substitution": false,
+  "dependency_manifests": {
+    "XA04A": "d84be6a9e87bdca6e2bebbfb8fa3f78b96080ca4c83c2b7e94976733e99c722a",
+    "XA04B": "63a5432c1c7add838ef00541557c6569be5a7f95cf4202ca46068a7485861f5a",
+    "XA04C": "4732087b22cff044267172e9264f171e90726e2644cf5aa71a0d7a7288730789"
+  },
+  "formal_eligible": false,
+  "next_branch": "RAW_XS003_ONLY",
+  "p00_run": false,
+  "qualified_tree_cells": 0,
+  "schema_version": "xa04.decision.v1",
+  "status": "completed_hard_stop",
+  "xa05_started": false
+}

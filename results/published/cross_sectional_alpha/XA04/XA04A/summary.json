@@ -1,0 +1,8 @@
+{
+  "batch": "XA04A",
+  "minimum_oos_coverage": 0.9619238476953907,
+  "minimum_oos_names": 476,
+  "panel_rows": 372378,
+  "status": "completed",
+  "target_rows": 372378
+}

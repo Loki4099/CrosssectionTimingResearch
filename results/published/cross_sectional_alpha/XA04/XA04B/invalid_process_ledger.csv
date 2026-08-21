@@ -1,0 +1,7 @@
+process_id,frequency,reason
+FS_LGBM_D2_N50_S2,weekly,"registered LightGBM leaf support gate failed: tree=6,leaf=0,dates=35,neff=34.999694601,year_mass=0.800323358991"
+FS_LGBM_D2_N100_S2,weekly,"registered LightGBM leaf support gate failed: tree=6,leaf=0,dates=35,neff=34.999694601,year_mass=0.800323358991"
+FS_LGBM_D2_N50_S1,weekly,"registered LightGBM leaf support gate failed: tree=6,leaf=0,dates=35,neff=34.999694601,year_mass=0.800323358991"
+FS_LGBM_D2_N100_S1,weekly,"registered LightGBM leaf support gate failed: tree=52,leaf=0,dates=30,neff=29.999797784,year_mass=0.866032462443"
+FS_LGBM_D2_N100_S6,weekly,"registered LightGBM leaf support gate failed: tree=68,leaf=0,dates=42,neff=41.991417231,year_mass=0.835219435915"
+FS_LGBM_D2_N100_S5,weekly,"registered LightGBM leaf support gate failed: tree=71,leaf=0,dates=42,neff=41.991417231,year_mass=0.835219435915"

@@ -6,7 +6,7 @@
 
 | 主线 | 定位 | 当前状态 | 一站式入口 |
 |---|---|---|---|
-| 系统性 long-only 横截面 Alpha | 研究在历史时点S&P 500中持有哪些股票 | **当前主线**；XA01–XA03已完成，XA04统一CORE10模型比较已冻结 | [横截面Alpha主页](./research_tracks/cross_sectional_alpha.md) |
+| 系统性 long-only 横截面 Alpha | 研究在历史时点S&P 500中持有哪些股票 | **当前主线**；XA01–XA04已完成，统一模型比较无模型晋级 | [横截面Alpha主页](./research_tracks/cross_sectional_alpha.md) |
 | 防御择时与仓位控制 | 研究何时降低市场总风险暴露 | **历史研究档案**；Round 1–10完成，P00机械揭示未通过 | [防御择时主页](./research_tracks/defensive_timing.md) |
 
 ## 共享文档层

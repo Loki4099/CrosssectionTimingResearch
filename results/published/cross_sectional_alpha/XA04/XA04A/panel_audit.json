@@ -1,0 +1,7 @@
+{
+  "all_missing_forbidden": true,
+  "factor_count": 10,
+  "oos_minimum_coverage": 0.9619238476953907,
+  "oos_minimum_names": 476,
+  "same_keyspace_for_all_models": true
+}
