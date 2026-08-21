@@ -4,7 +4,7 @@
 
 ## 当前主线
 
-- [系统性 long-only 横截面 Alpha](../research_tracks/cross_sectional_alpha.md)：当前研究主线；XA01单因子与XA02状态图谱已完成，XA03滚动聚合模型计划已冻结并授权、尚未执行。
+- [系统性 long-only 横截面 Alpha](../research_tracks/cross_sectional_alpha.md)：XA01–XA05研究链已完成；MOM12-7、统一模型比较与冻结P00最终迁移均已有报告和机器结果。
 - [防御择时与仓位控制](../research_tracks/defensive_timing.md)：Round 1–10历史档案；当前结论以主线主页和[跨轮总结](../42_round6_round10_experiment_synthesis.md)为准。
 
 ## 共同治理文档

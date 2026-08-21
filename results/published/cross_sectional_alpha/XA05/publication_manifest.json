@@ -1,0 +1,120 @@
+{
+  "automatic_deployment": false,
+  "family_gate_passed": false,
+  "files": {
+    "README.md": {
+      "sha256": "d0930c115615bd8b8c4aa612d14a44a40f9987482d585d7a05e68f1c21aff73e",
+      "size_bytes": 442
+    },
+    "XA05A/TARGET_ACCEPTANCE.json": {
+      "sha256": "565fa76117221f0dd81e92ed92a6fabe488e13b8084827576ce3c93f34524612",
+      "size_bytes": 382
+    },
+    "XA05A/manifest.json": {
+      "sha256": "7ee3e49b29e8b89936cf87fc5eac13cb9ad333bd7c8f794e0dffe51053e3c68f",
+      "size_bytes": 1075
+    },
+    "XA05A/matched_static_allocations.csv": {
+      "sha256": "a1068d3ef09d10f15701cd1f757859c1706d50ab42fe45d8c9ed27c80d1039c1",
+      "size_bytes": 920
+    },
+    "XA05A/summary.json": {
+      "sha256": "84ebb7b48f5936af85525ba87cba8b02d3fd1a49bbb456dd7ff85285979a67d6",
+      "size_bytes": 573
+    },
+    "XA05B/annual_returns.csv": {
+      "sha256": "baec0d56d96228df6645a73f7b97c1764d483d7210a86c5cdc57058b4de37604",
+      "size_bytes": 55153
+    },
+    "XA05B/drawdown_episodes.csv": {
+      "sha256": "877943bef5a4c2557b8276147f8ec81c0581a88f0640095a326367609bf63bb1",
+      "size_bytes": 103019
+    },
+    "XA05B/manifest.json": {
+      "sha256": "1ad4bd326b81b7cab8c69e252933c9fec8fbd823979f96de7b0ba03f4c0f99a0",
+      "size_bytes": 1588
+    },
+    "XA05B/path_comparisons.csv": {
+      "sha256": "9576f22c16c31ff824f61ef3126f82ccac04ca366f06fae811a28d81b5d40aac",
+      "size_bytes": 6055
+    },
+    "XA05B/path_metrics.csv": {
+      "sha256": "fcbd1cd96ea61f012d5247d6c0bc8656fe5172ffff87b791f95b289fe315c13d",
+      "size_bytes": 48678
+    },
+    "XA05B/summary.json": {
+      "sha256": "7df0af252b2985729aaf974a7c84d6675d7a40c90b996521786322573dd61e0c",
+      "size_bytes": 182
+    },
+    "XA05C/all_cell_comparisons.csv": {
+      "sha256": "03a168a8ba0e8d21071f3588fc73131812e7d5a67d3c470ce3e0b7ad12713381",
+      "size_bytes": 5837
+    },
+    "XA05C/all_path_metrics.csv": {
+      "sha256": "861f2351d8cf0847e8ebbbf0ec7cc2e1e64dc0f130332f083935388bc544ce43",
+      "size_bytes": 47420
+    },
+    "XA05C/decision.json": {
+      "sha256": "5238db90c22ed747b15b44d81f2ba03bfa9ab8de2018fb1b2a0a46ec51b89d7b",
+      "size_bytes": 358
+    },
+    "XA05C/manifest.json": {
+      "sha256": "92ed1c26a5b2e14b6ff068260d2ac1038f21f099c7dec7b7082d9bdd146c014a",
+      "size_bytes": 1217
+    },
+    "XA05C/primary_comparison.csv": {
+      "sha256": "cc4d450af6ef92fdaaa0dab9810cc0532cee33e429992a26e1998af4cda762bf",
+      "size_bytes": 417
+    },
+    "XA05C/summary.json": {
+      "sha256": "d9910b450830fa2b84e18f901727313fdd16a4a48821fe4c0c38f6d3618e39ed",
+      "size_bytes": 395
+    },
+    "figures/cross_cell_robustness_heatmaps.png": {
+      "sha256": "7624a9f936032ebfa2613842386a28e6f429218ad9a873463a477cde05e34929",
+      "size_bytes": 82659
+    },
+    "figures/monthly_top20_annual_returns.png": {
+      "sha256": "48f49f489ba603cc3df45dc979c389d5bac90ede348bcfd329dfb1ad27f514a6",
+      "size_bytes": 44475
+    },
+    "figures/monthly_top20_drawdown_episodes.png": {
+      "sha256": "37d23071d582140884caee443e37c0af4e2604c7214e71e3c13a41b087c26529",
+      "size_bytes": 54632
+    },
+    "figures/monthly_top20_nav.png": {
+      "sha256": "e1c8f33e3f289bf5405a0e94d4919c62783abe2e60f639017d42adc3d99b203c",
+      "size_bytes": 141265
+    },
+    "figures/monthly_top20_p00_exposure_state.png": {
+      "sha256": "88b0af7c3f1b0a5fd5b6a59aa509879347eba823ec2cceea515dc2d566accc0c",
+      "size_bytes": 110244
+    },
+    "figures/monthly_top20_rolling_drawdown.png": {
+      "sha256": "5dcb915874bacfcae8fedb2afb9979c643cc8865ed71ae17924043bbed5cbc0c",
+      "size_bytes": 37072
+    },
+    "figures/monthly_top20_underwater.png": {
+      "sha256": "3afe10e76ae66b6f1f0c68e6971b9d0be2b76ac6de365c11e1f1f86a5499dd96",
+      "size_bytes": 201187
+    },
+    "figures/weekly_top20_nav.png": {
+      "sha256": "dd0471dbbc6a72f9b72d3fd427d12cf24e719d84dce6110232ea4e6d93bf9f9a",
+      "size_bytes": 138346
+    },
+    "figures/weekly_top20_rolling_drawdown.png": {
+      "sha256": "5dcb915874bacfcae8fedb2afb9979c643cc8865ed71ae17924043bbed5cbc0c",
+      "size_bytes": 37072
+    },
+    "figures/weekly_top20_underwater.png": {
+      "sha256": "e6f6ce901712356978bae45d12f22ea1c6edbdbd826b879ae128f9847326b6a1",
+      "size_bytes": 204642
+    }
+  },
+  "formal_eligible": false,
+  "primary_four_metric_gate_passed": false,
+  "registered_figures": 10,
+  "runtime_only_large_artifacts_excluded": true,
+  "schema_version": "xa05.publication.v1",
+  "status": "completed_hard_stop"
+}

@@ -1,0 +1,2 @@
+transfer_id,frequency,top_k,cost_bps,overlay_to_naked_terminal_ratio,timing_value_vs_static,delta_sharpe_vs_naked,delta_mdd_vs_naked,delta_ulcer_vs_naked,delta_pain_vs_naked,delta_cdar95_vs_naked,delta_max_duration_vs_naked,four_metric_gate
+MONTHLY_TOP20,monthly,20,5.0,0.8506944933039989,0.2467181753057699,0.1149293272161837,0.1218238999649912,-0.0164198455670001,-0.012824066609609,-0.0442179493252852,-33.0,False

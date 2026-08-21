@@ -1,0 +1,9 @@
+{
+  "batch": "XA05B",
+  "drawdown_episodes": 960,
+  "economic_paths": 96,
+  "event_rows": 38880,
+  "nav_rows": 204864,
+  "primary_four_metric_gate": false,
+  "status": "completed"
+}

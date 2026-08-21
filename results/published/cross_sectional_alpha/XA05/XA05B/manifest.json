@@ -1,0 +1,45 @@
+{
+  "batch": "XA05B",
+  "dependencies": {
+    "XA05A": "7ee3e49b29e8b89936cf87fc5eac13cb9ad333bd7c8f794e0dffe51053e3c68f"
+  },
+  "files": {
+    "annual_returns.csv": {
+      "sha256": "baec0d56d96228df6645a73f7b97c1764d483d7210a86c5cdc57058b4de37604",
+      "size_bytes": 55153
+    },
+    "drawdown_episodes.csv": {
+      "sha256": "877943bef5a4c2557b8276147f8ec81c0581a88f0640095a326367609bf63bb1",
+      "size_bytes": 103019
+    },
+    "event_ledger.parquet": {
+      "sha256": "a91ef49b0336a66fcb82fa047e5f5f1dc41fa829bc5378f04b4f2883a5909755",
+      "size_bytes": 1104255
+    },
+    "nav_daily.parquet": {
+      "sha256": "608a31d1a2e887414040ef98788343680e1553a6af4b2ab9683244f3f81f6671",
+      "size_bytes": 7980208
+    },
+    "path_comparisons.csv": {
+      "sha256": "9576f22c16c31ff824f61ef3126f82ccac04ca366f06fae811a28d81b5d40aac",
+      "size_bytes": 6055
+    },
+    "path_metrics.csv": {
+      "sha256": "fcbd1cd96ea61f012d5247d6c0bc8656fe5172ffff87b791f95b289fe315c13d",
+      "size_bytes": 48678
+    },
+    "rolling_drawdown.parquet": {
+      "sha256": "76a625033686f14937825db3a52cd94b5ea45f5557be8c81c43949d8e6d20640",
+      "size_bytes": 1825231
+    },
+    "summary.json": {
+      "sha256": "7df0af252b2985729aaf974a7c84d6675d7a40c90b996521786322573dd61e0c",
+      "size_bytes": 182
+    }
+  },
+  "git_commit": "15a2e16077ae0d82f1d2f2a641de9a052539f30b",
+  "prereg_lock_sha256": "02aead59b77b5342b2e5a04b82a43fbf81b192e971308c2a403595543a71d8e2",
+  "python": "3.12.13",
+  "run_id": "xa05b-union-event-replay-20260821-v1",
+  "schema_version": "xa05.runtime_manifest.v1"
+}

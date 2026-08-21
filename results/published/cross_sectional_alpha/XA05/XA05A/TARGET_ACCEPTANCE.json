@@ -1,0 +1,8 @@
+{
+  "base_target_sha256": "ed1f6c055d9a9d12d8587cac4d610ec1f91318e0d5c2d4d70ff4399819152cf3",
+  "outcomes_read": false,
+  "p00_state_sha256": "809a3f06eabcbe45e5a4fb2c7bde251adbc998f2c5e13d053aea2447198a54e4",
+  "schema_version": "xa05.target_acceptance.v1",
+  "static_allocations_sha256": "a1068d3ef09d10f15701cd1f757859c1706d50ab42fe45d8c9ed27c80d1039c1",
+  "transfer_cells": 8
+}

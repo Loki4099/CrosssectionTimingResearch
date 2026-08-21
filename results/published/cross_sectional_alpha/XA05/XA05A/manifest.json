@@ -1,0 +1,31 @@
+{
+  "batch": "XA05A",
+  "dependencies": {},
+  "files": {
+    "TARGET_ACCEPTANCE.json": {
+      "sha256": "565fa76117221f0dd81e92ed92a6fabe488e13b8084827576ce3c93f34524612",
+      "size_bytes": 382
+    },
+    "base_target_ledger.parquet": {
+      "sha256": "ed1f6c055d9a9d12d8587cac4d610ec1f91318e0d5c2d4d70ff4399819152cf3",
+      "size_bytes": 87650
+    },
+    "matched_static_allocations.csv": {
+      "sha256": "a1068d3ef09d10f15701cd1f757859c1706d50ab42fe45d8c9ed27c80d1039c1",
+      "size_bytes": 920
+    },
+    "p00_state_spine.parquet": {
+      "sha256": "809a3f06eabcbe45e5a4fb2c7bde251adbc998f2c5e13d053aea2447198a54e4",
+      "size_bytes": 20051
+    },
+    "summary.json": {
+      "sha256": "84ebb7b48f5936af85525ba87cba8b02d3fd1a49bbb456dd7ff85285979a67d6",
+      "size_bytes": 573
+    }
+  },
+  "git_commit": "15a2e16077ae0d82f1d2f2a641de9a052539f30b",
+  "prereg_lock_sha256": "02aead59b77b5342b2e5a04b82a43fbf81b192e971308c2a403595543a71d8e2",
+  "python": "3.12.13",
+  "run_id": "xa05a-frozen-targets-20260821-v1",
+  "schema_version": "xa05.runtime_manifest.v1"
+}

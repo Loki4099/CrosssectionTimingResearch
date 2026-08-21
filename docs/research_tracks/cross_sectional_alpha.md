@@ -1,6 +1,6 @@
 # 系统性 long-only 横截面 Alpha
 
-> 状态：**当前研究主线；市场与SEC数据已认证，XA01–XA03已完成；XA03未产生机械合格冠军。**
+> 状态：**市场与SEC数据已认证；XA01–XA05完整研究链已闭合。MOM12-7是最佳裸信号，P00提供显著风险改善但不全面支配裸策略。**
 > 股票池：历史时点 S&P 500 成分股。
 > 当前执行范围：市场数据与 SEC 基本面；新闻与文本研究由独立任务处理。
 
@@ -32,6 +32,8 @@
 | XA01原子因子实验 | 已完成；严格EQ为0，XS003在周/月频作为趋势维度代表；G00 Top50存在已记录身份例外 | [计划](../44_xa01_atomic_factor_walkforward_program_v1.md) · [报告](../20_experiments/XA01_atomic_factor_walkforward/report.md) · [结果](../../results/published/cross_sectional_alpha/XA01/) |
 | XA02因子路径与市场状态图谱 | 已完成并硬停；336个1D与168个2D检验完整，2个1D条件关系通过全部门，稳健2D关系为0；模型关闭 | [计划](../45_xa02_factor_market_state_atlas_program_v1.md) · [设计](../20_experiments/XA02_factor_market_state_atlas/design.md) · [报告](../20_experiments/XA02_factor_market_state_atlas/report.md) · [结果](../../results/published/cross_sectional_alpha/XA02/) |
 | XA03滚动聚合模型比较 | 已完成并硬停；0个过程×频率单元通过完整晋级门，原始XS003仍为最强周/月路径；月频ALL14 Ridge+状态仅在RSP消融中获得窄幅支持 | [计划](../46_xa03_cross_sectional_aggregation_program_v1.md) · [设计](../20_experiments/XA03_cross_sectional_aggregation/design.md) · [报告](../20_experiments/XA03_cross_sectional_aggregation/report.md) · [结果](../../results/published/cross_sectional_alpha/XA03/) |
+| XA04统一CORE10模型比较 | 已完成并硬停；同起点、同标签、同股票池下没有静态/Ridge/LightGBM模型通过增量门，原始MOM12-7显著领先 | [计划](../47_xa04_unified_core10_lightgbm_program_v1.md) · [报告](../20_experiments/XA04_unified_core10_lightgbm/report.md) · [结果](../../results/published/cross_sectional_alpha/XA04/) |
+| XA05 MOM12-7 × P00最终迁移 | 已完成并硬停；Top20的Sharpe、MDD及完整回撤族改善，但期末财富约落后裸策略15%；Top5周/月四项通过，整体family gate失败 | [计划](../48_xa05_mom12_7_p00_final_transfer_program_v1.md) · [报告](../20_experiments/XA05_mom12_7_p00_final_transfer/report.md) · [结果与图表](../../results/published/cross_sectional_alpha/XA05/) |
 
 ## 3. 论文与因子知识层
 
@@ -68,4 +70,4 @@ Round 9–10把P00叠加到 `mom_255_0`，属于两条主线的接口实验，�
 - `results/published/` 下紧凑机器证据；
 - `docs/figures/` 下对应图表。
 
-XA03A–E已完成训练标签补建、共同股票池、单因子模型、透明与拟合聚合、factor+state及RSP消融比较，并在XA03E后硬停；P00、bagging、stacking、锁箱与自动选冠军均未运行。后续需先审阅树模型容量失败与月频RSP交互证据，再决定是否授权新的模型设计或P00迁移。
+XA03A–E完成训练标签、共同股票池、单因子、透明与拟合聚合、factor+state及RSP消融比较。XA04随后在完全统一的CORE10 complete-case面板上补齐公平的Ridge与LightGBM比较，确认没有模型替代原始MOM12-7。XA05最终把唯一保留的裸信号与冻结P00结合，并提供完整回撤与图表证据。研究链到此硬停，不授权自动部署；后续真正新增证据来自2026-07之后的paper/live forward记录。

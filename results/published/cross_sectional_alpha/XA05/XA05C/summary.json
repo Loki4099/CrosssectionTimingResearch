@@ -1,0 +1,15 @@
+{
+  "automatic_deployment": false,
+  "batch": "XA05C",
+  "cost20_timing_gate": true,
+  "family_gate": false,
+  "family_passed_cells": 2,
+  "figures": 10,
+  "formal_eligible": false,
+  "monthly_passed_cells": 1,
+  "overall_historical_system_gate": false,
+  "primary_four_metric_gate": false,
+  "schema_version": "xa05.decision.v1",
+  "status": "completed_hard_stop",
+  "weekly_passed_cells": 1
+}

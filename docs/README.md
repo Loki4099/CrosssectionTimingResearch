@@ -6,7 +6,7 @@
 
 | 主线 | 定位 | 当前状态 | 一站式入口 |
 |---|---|---|---|
-| 系统性 long-only 横截面 Alpha | 研究在历史时点S&P 500中持有哪些股票 | **当前主线**；XA01–XA04已完成，统一模型比较无模型晋级 | [横截面Alpha主页](./research_tracks/cross_sectional_alpha.md) |
+| 系统性 long-only 横截面 Alpha | 研究在历史时点S&P 500中持有哪些股票 | **XA01–XA05研究链已闭合**；MOM12-7最佳，P00提供风险控制但不全面支配裸策略 | [横截面Alpha主页](./research_tracks/cross_sectional_alpha.md) |
 | 防御择时与仓位控制 | 研究何时降低市场总风险暴露 | **历史研究档案**；Round 1–10完成，P00机械揭示未通过 | [防御择时主页](./research_tracks/defensive_timing.md) |
 
 ## 共享文档层
@@ -31,7 +31,7 @@
 5. 建立因子路径与市场状态图谱（XA02已完成）；
 6. 比较单因子拟合、透明聚合、factor-only与factor+state滚动模型（XA03已完成）；
 7. 用统一CORE10完整样本补做固定Ridge/LightGBM及状态交互（XA04）；
-8. XA04硬停后，只让`XS003_MOM_12_7`与所有机械合格树进入冻结P00迁移设计。
+8. XA05以唯一保留的`XS003_MOM_12_7`完成冻结P00迁移、完整回撤审计与图表发布；研究链硬停。
 
 因子数据就绪只代表输入、公式和覆盖率通过审计，不等于收益有效或实验授权，也没有已经存在的“Round 11”结果。
 

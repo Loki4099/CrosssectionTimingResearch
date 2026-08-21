@@ -1,0 +1,34 @@
+{
+  "batch": "XA05C",
+  "dependencies": {
+    "XA05A": "7ee3e49b29e8b89936cf87fc5eac13cb9ad333bd7c8f794e0dffe51053e3c68f",
+    "XA05B": "1ad4bd326b81b7cab8c69e252933c9fec8fbd823979f96de7b0ba03f4c0f99a0"
+  },
+  "files": {
+    "all_cell_comparisons.csv": {
+      "sha256": "03a168a8ba0e8d21071f3588fc73131812e7d5a67d3c470ce3e0b7ad12713381",
+      "size_bytes": 5837
+    },
+    "all_path_metrics.csv": {
+      "sha256": "861f2351d8cf0847e8ebbbf0ec7cc2e1e64dc0f130332f083935388bc544ce43",
+      "size_bytes": 47420
+    },
+    "decision.json": {
+      "sha256": "5238db90c22ed747b15b44d81f2ba03bfa9ab8de2018fb1b2a0a46ec51b89d7b",
+      "size_bytes": 358
+    },
+    "primary_comparison.csv": {
+      "sha256": "cc4d450af6ef92fdaaa0dab9810cc0532cee33e429992a26e1998af4cda762bf",
+      "size_bytes": 417
+    },
+    "summary.json": {
+      "sha256": "d9910b450830fa2b84e18f901727313fdd16a4a48821fe4c0c38f6d3618e39ed",
+      "size_bytes": 395
+    }
+  },
+  "git_commit": "15a2e16077ae0d82f1d2f2a641de9a052539f30b",
+  "prereg_lock_sha256": "02aead59b77b5342b2e5a04b82a43fbf81b192e971308c2a403595543a71d8e2",
+  "python": "3.12.13",
+  "run_id": "xa05c-drawdown-report-20260821-v1",
+  "schema_version": "xa05.runtime_manifest.v1"
+}
