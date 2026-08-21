@@ -5,10 +5,12 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import os
 import platform
 import subprocess
 import sys
 import tomllib
+from concurrent.futures import ProcessPoolExecutor
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any, Iterable
@@ -17,7 +19,10 @@ import numpy as np
 import pandas as pd
 from lightgbm import LGBMRegressor
 
+from momentum_reversal.backtest.engine import BaselineBacktester, replay_linear_cost
 from momentum_reversal.backtest.calendar import rebalance_schedule
+from momentum_reversal.data.corporate_actions import CorporateActionLedger
+from momentum_reversal.data.membership import PITMembership
 from momentum_reversal.pipelines.cross_sectional_database import DatabaseLayout
 
 
@@ -31,6 +36,7 @@ RUN_IDS = {
     "XA03E": "xa03e-paired-portfolio-comparison-20260821-v1",
 }
 FREQUENCIES = ("weekly", "monthly")
+_PORTFOLIO_WORKER: dict[str, Any] = {}
 
 
 def run_xa03(project_root: str | Path, runtime_root: str | Path, batch: str) -> dict[str, Any]:
@@ -876,30 +882,23 @@ def _run_e(project: Path, runtime: Path, root: Path, program: dict[str, Any]) ->
 
     widths = [int(x) for x in program["paths"]["top_k"]]
     costs = [int(x) for x in program["paths"]["cost_scenarios_bps"]]
-    periods = []
+    proxy_periods = []
     holdings = []
     path_summaries = []
     for (process_id, frequency), group in scored.groupby(["process_id", "frequency"], sort=True):
         for top_k in widths:
             gross, held = _portfolio_period_ledger(group, top_k)
             holdings.append(held.assign(process_id=process_id, frequency=frequency, top_k=top_k))
-            for cost in costs:
-                one = gross.copy()
-                one["net_return"] = one["gross_return"] - one["l1_turnover"] * cost / 10000.0
-                one["process_id"] = process_id; one["frequency"] = frequency
-                one["top_k"] = top_k; one["cost_bps"] = cost
-                periods.append(one)
+            gross["process_id"] = process_id; gross["frequency"] = frequency
+            gross["top_k"] = top_k
+            proxy_periods.append(gross)
 
-    common_periods = []
-    for frequency, group in target.groupby("frequency", sort=True):
-        gross, _ = _common_ew_period_ledger(group)
-        for cost in costs:
-            one = gross.copy()
-            one["control_return"] = one["gross_return"] - one["l1_turnover"] * cost / 10000.0
-            one["frequency"] = frequency; one["cost_bps"] = cost
-            common_periods.append(one[["frequency", "signal_date", "cost_bps", "control_return"]])
-    common = pd.concat(common_periods, ignore_index=True)
-    period = pd.concat(periods, ignore_index=True)
+    holdings_frame = pd.concat(holdings, ignore_index=True)
+    proxy_frame = pd.concat(proxy_periods, ignore_index=True)
+    _write_parquet(root / "topk_holdings.parquet", holdings_frame)
+    period, common, daily_nav, accounting = _event_driven_portfolio_ledgers(
+        project, runtime, root, holdings_frame, proxy_frame, target, costs
+    )
     period = period.merge(common, on=["frequency", "signal_date", "cost_bps"], how="left", validate="many_to_one")
     period["active_return"] = period["net_return"] - period["control_return"]
     if (period[["net_return", "control_return"]] <= -1.0).any(axis=None):
@@ -910,12 +909,28 @@ def _run_e(project: Path, runtime: Path, root: Path, program: dict[str, Any]) ->
         + period["top_k"].astype(str) + "__" + period["cost_bps"].astype(str) + "bps"
     )
     _write_parquet(root / "period_return_ledger.parquet", period)
-    _write_parquet(root / "topk_holdings.parquet", pd.concat(holdings, ignore_index=True))
     _write_parquet(root / "common_ew_period_returns.parquet", common)
+    _write_parquet(root / "daily_nav_paths.parquet", daily_nav)
+    _write_csv(root / "portfolio_accounting_identity.csv", accounting)
 
     for key, group in period.groupby(["process_id", "frequency", "top_k", "cost_bps"], sort=True):
         path_summaries.append(_path_summary_record(group, *key))
     path_summary = pd.DataFrame(path_summaries)
+    daily_drawdown = (
+        daily_nav.loc[daily_nav["process_id"].ne("COMMON_EW")]
+        .groupby(["process_id", "frequency", "top_k", "cost_bps"], sort=True)["nav"]
+        .apply(lambda nav: float((nav / nav.cummax() - 1.0).min()))
+        .rename("daily_max_drawdown")
+        .reset_index()
+    )
+    path_summary = path_summary.merge(
+        daily_drawdown,
+        on=["process_id", "frequency", "top_k", "cost_bps"],
+        how="left", validate="one_to_one",
+    )
+    path_summary["period_endpoint_max_drawdown"] = path_summary["max_drawdown"]
+    path_summary["max_drawdown"] = path_summary["daily_max_drawdown"]
+    path_summary = path_summary.drop(columns="daily_max_drawdown")
     placeholder = []
     for item in invalid.itertuples(index=False):
         for top_k in widths:
@@ -928,6 +943,7 @@ def _run_e(project: Path, runtime: Path, root: Path, program: dict[str, Any]) ->
                     "max_drawdown": np.nan, "terminal_relative_wealth": np.nan,
                     "annualized_relative_log": np.nan, "active_ir": np.nan,
                     "mean_turnover": np.nan, "total_cost_return": np.nan,
+                    "period_endpoint_max_drawdown": np.nan,
                     "invalid": True, "invalid_reason": item.reason,
                 })
     if placeholder:
@@ -979,6 +995,8 @@ def _run_e(project: Path, runtime: Path, root: Path, program: dict[str, Any]) ->
     return {
         "batch": "XA03E", "status": "completed_hard_stop", "process_frequency_cells": 114,
         "topk_paths": 456, "cost_paths": 1824, "period_rows": len(period),
+        "daily_nav_rows": len(daily_nav),
+        "portfolio_accounting_identity_passed": bool(accounting["identity_passed"].all()),
         "absolute_rows": len(absolute), "paired_rows": len(paired), "rsp_rows": len(rsp),
         "qualified_cells": decision["qualified_process_frequency_cells"], "p00_run": False,
     }
@@ -996,6 +1014,245 @@ def _rank_ic_ledger(scored: pd.DataFrame) -> pd.DataFrame:
             "rank_ic_names": int(valid.sum()),
         })
     return pd.DataFrame(rows)
+
+
+def _event_driven_portfolio_ledgers(
+    project: Path,
+    runtime: Path,
+    root: Path,
+    holdings: pd.DataFrame,
+    proxy_periods: pd.DataFrame,
+    target: pd.DataFrame,
+    costs: list[int],
+) -> tuple[pd.DataFrame, pd.DataFrame, pd.DataFrame, pd.DataFrame]:
+    """Replay frozen XA03 holdings through the audited event-driven engine.
+
+    The label ledger is useful for prediction and for a transparent portfolio
+    proxy, but it is not a substitute for the project's execution, corporate
+    action, missing-price, and exact proportional-cost accounting.  This
+    replay is therefore the authoritative economic ledger.  The proxy is kept
+    only as a reconciliation diagnostic.
+    """
+
+    layout = DatabaseLayout.load(project_root=project, runtime_root=runtime)
+    holdings_path = root / "topk_holdings.parquet"
+    proxy_path = root / "label_based_portfolio_proxy.parquet"
+    target_path = _batch_root(runtime, "XA03A") / "extended_target_ledger.parquet"
+    _write_parquet(proxy_path, proxy_periods)
+    tasks = sorted(
+        map(tuple, holdings[["process_id", "frequency"]].drop_duplicates().to_numpy())
+    )
+    worker_count = min(max(int(os.environ.get("XA03_PORTFOLIO_WORKERS", "4")), 1), len(tasks))
+    init = (
+        str(layout.market_root), str(holdings_path), str(proxy_path), str(target_path),
+        tuple(int(x) for x in costs),
+    )
+    if worker_count == 1:
+        _init_portfolio_worker(*init)
+        results = [_portfolio_worker_task(task) for task in tasks]
+        common_results = [_portfolio_worker_task(("__COMMON_EW__", frequency)) for frequency in FREQUENCIES]
+    else:
+        with ProcessPoolExecutor(
+            max_workers=worker_count, initializer=_init_portfolio_worker, initargs=init
+        ) as executor:
+            results = list(executor.map(_portfolio_worker_task, tasks, chunksize=1))
+            common_results = list(
+                executor.map(
+                    _portfolio_worker_task,
+                    [("__COMMON_EW__", frequency) for frequency in FREQUENCIES],
+                    chunksize=1,
+                )
+            )
+    periods = pd.concat([item[0] for item in results], ignore_index=True)
+    daily = pd.concat(
+        [item[1] for item in results] + [item[1] for item in common_results],
+        ignore_index=True,
+    )
+    accounting = pd.DataFrame([row for item in results for row in item[2]])
+    common = pd.concat([item[0] for item in common_results], ignore_index=True)
+    if len(periods.groupby(["process_id", "frequency", "top_k", "cost_bps"])) != len(tasks) * 4 * len(costs):
+        raise ValueError("event-driven portfolio replay path count mismatch")
+    if not bool(accounting["identity_passed"].all()):
+        raise ValueError("event-driven portfolio replay is incomplete")
+    return periods, common, daily, accounting
+
+
+def _init_portfolio_worker(
+    market_root: str,
+    holdings_path: str,
+    proxy_path: str,
+    target_path: str,
+    costs: tuple[int, ...],
+) -> None:
+    market = Path(market_root)
+    prices = pd.read_parquet(market / "prices_daily.parquet")
+    membership = PITMembership.from_intervals(pd.read_parquet(market / "membership.parquet"))
+    actions = CorporateActionLedger(pd.read_parquet(market / "corporate_actions.parquet"))
+    sessions = pd.DatetimeIndex(pd.read_parquet(market / "calendar.parquet")["session_date"])
+    rf = pd.read_parquet(market / "risk_free_daily.parquet").set_index("date")["rf_return"].astype(float)
+    holdings = pd.read_parquet(holdings_path)
+    proxy = pd.read_parquet(proxy_path)
+    target = pd.read_parquet(target_path)
+    engines: dict[str, BaselineBacktester] = {}
+    date_bounds: dict[str, tuple[pd.Timestamp, pd.Timestamp]] = {}
+    for frequency in FREQUENCIES:
+        dates = pd.to_datetime(
+            holdings.loc[holdings["frequency"].eq(frequency), "signal_date"]
+        ).drop_duplicates().sort_values()
+        engines[frequency] = BaselineBacktester(
+            prices,
+            membership,
+            sessions=sessions,
+            signal_start=dates.iloc[0],
+            signal_end=dates.iloc[-1],
+            evaluation_start=pd.Timestamp("2018-01-02"),
+            corporate_actions=actions,
+            missing_valuation_policy="carry_last_close",
+            missing_execution_policy="leave_cash",
+        )
+        date_bounds[frequency] = (pd.Timestamp(dates.iloc[0]), pd.Timestamp(dates.iloc[-1]))
+    _PORTFOLIO_WORKER.clear()
+    _PORTFOLIO_WORKER.update(
+        engines=engines, holdings=holdings, proxy=proxy, target=target,
+        costs=list(costs), risk_free=rf, date_bounds=date_bounds,
+    )
+
+
+def _portfolio_worker_task(
+    task: tuple[str, str],
+) -> tuple[pd.DataFrame, pd.DataFrame, list[dict[str, Any]]]:
+    process_id, frequency = task
+    engine: BaselineBacktester = _PORTFOLIO_WORKER["engines"][frequency]
+    costs: list[int] = _PORTFOLIO_WORKER["costs"]
+    daily_parts: list[pd.DataFrame] = []
+    period_parts: list[pd.DataFrame] = []
+    audits: list[dict[str, Any]] = []
+    if process_id == "__COMMON_EW__":
+        one_target = _PORTFOLIO_WORKER["target"]
+        one_target = one_target.loc[one_target["frequency"].eq(frequency)].copy()
+        lower, upper = _PORTFOLIO_WORKER["date_bounds"][frequency]
+        one_target = one_target.loc[
+            pd.to_datetime(one_target["signal_date"]).between(lower, upper)
+        ].copy()
+        sizes = one_target.groupby("signal_date")["sid"].transform("size")
+        weights = pd.Series(
+            1.0 / sizes.to_numpy(dtype=float),
+            index=pd.MultiIndex.from_frame(one_target[["signal_date", "sid"]]),
+        )
+        weights.index.names = ["signal_date", "sid"]
+        proxy, _ = _common_ew_period_ledger(one_target)
+        zero = engine.run(
+            signal="mom_255_0", top_n=1, frequency=frequency, cost_bps=0.0,
+            target_weights=weights, risk_free_daily=_PORTFOLIO_WORKER["risk_free"],
+            full_audit=True,
+        )
+        for cost in costs:
+            result = replay_linear_cost(zero, cost_bps=cost)
+            periods = _engine_period_frame(result, proxy, cost)
+            periods["frequency"] = frequency; periods["cost_bps"] = cost
+            periods = periods.rename(columns={"net_return": "control_return"})
+            period_parts.append(periods[["frequency", "signal_date", "cost_bps", "control_return"]])
+            daily_parts.append(_engine_nav_frame(result, "COMMON_EW", frequency, 0, cost))
+        return pd.concat(period_parts, ignore_index=True), pd.concat(daily_parts, ignore_index=True), audits
+
+    held = _PORTFOLIO_WORKER["holdings"]
+    held = held.loc[
+        held["process_id"].eq(process_id) & held["frequency"].eq(frequency)
+    ]
+    proxy_all = _PORTFOLIO_WORKER["proxy"]
+    for top_k in sorted(held["top_k"].unique()):
+        selected = held.loc[held["top_k"].eq(top_k)].copy()
+        weights = selected.set_index(["signal_date", "sid"])["weight"].astype(float)
+        proxy = proxy_all.loc[
+            proxy_all["process_id"].eq(process_id)
+            & proxy_all["frequency"].eq(frequency)
+            & proxy_all["top_k"].eq(top_k)
+        ].copy()
+        zero = engine.run(
+            signal="mom_255_0", top_n=int(top_k), frequency=frequency, cost_bps=0.0,
+            target_weights=weights, risk_free_daily=_PORTFOLIO_WORKER["risk_free"],
+            full_audit=True,
+        )
+        zero_period = _engine_period_frame(zero, proxy, 0).rename(
+            columns={"net_return": "engine_gross_return"}
+        )
+        check = proxy[["signal_date", "gross_return"]].merge(
+            zero_period[["signal_date", "engine_gross_return"]],
+            on="signal_date", how="outer", validate="one_to_one",
+        )
+        difference = (check["gross_return"] - check["engine_gross_return"]).abs()
+        audits.append({
+            "process_id": process_id, "frequency": frequency, "top_k": int(top_k),
+            "expected_periods": len(proxy), "engine_periods": len(zero_period),
+            "maximum_abs_label_proxy_difference": float(difference.max()),
+            "mean_abs_label_proxy_difference": float(difference.mean()),
+            "identity_passed": bool(
+                len(proxy) == len(zero_period)
+                and check[["gross_return", "engine_gross_return"]].notna().all(axis=None)
+                and np.isfinite(check[["gross_return", "engine_gross_return"]].to_numpy()).all()
+            ),
+        })
+        gross = zero_period[["signal_date", "engine_gross_return"]]
+        for cost in costs:
+            result = replay_linear_cost(zero, cost_bps=cost)
+            periods = _engine_period_frame(result, proxy, cost).merge(
+                gross, on="signal_date", how="left", validate="one_to_one"
+            )
+            periods = periods.rename(columns={"engine_gross_return": "gross_return"})
+            periods["process_id"] = process_id; periods["frequency"] = frequency
+            periods["top_k"] = int(top_k); periods["cost_bps"] = cost
+            period_parts.append(periods)
+            daily_parts.append(_engine_nav_frame(result, process_id, frequency, int(top_k), cost))
+    return pd.concat(period_parts, ignore_index=True), pd.concat(daily_parts, ignore_index=True), audits
+
+
+def _engine_period_frame(
+    result: Any, proxy: pd.DataFrame, cost_bps: int
+) -> pd.DataFrame:
+    rebalances = result.rebalances.copy()
+    rebalances["signal_date"] = pd.to_datetime(rebalances["signal_date"]).dt.normalize()
+    rebalances["execution_date"] = pd.to_datetime(rebalances["execution_date"]).dt.normalize()
+    by_signal = rebalances.set_index("signal_date", drop=False)
+    by_execution = rebalances.set_index("execution_date", drop=False)
+    rows: list[dict[str, Any]] = []
+    for item in proxy.sort_values("signal_date").itertuples(index=False):
+        signal_date = pd.Timestamp(item.signal_date).normalize()
+        label_end = pd.Timestamp(item.label_end_execution_date).normalize()
+        current = by_signal.loc[signal_date]
+        if isinstance(current, pd.DataFrame):
+            raise ValueError("duplicate engine rebalance signal date")
+        if label_end in by_execution.index:
+            following = by_execution.loc[label_end]
+            if isinstance(following, pd.DataFrame):
+                raise ValueError("duplicate engine rebalance execution date")
+            net = float(following["pretrade_nav"] / current["pretrade_nav"] - 1.0)
+        else:
+            # The final matured label ends before the research price boundary,
+            # but there is intentionally no subsequent prediction/rebalance.
+            # Apply the current execution cost exactly to the frozen label-based
+            # holding-period return for this one terminal interval.
+            fraction = float(current["l1_turnover"]) * float(cost_bps) / 10000.0
+            net = (1.0 - fraction) * (1.0 + float(item.gross_return)) - 1.0
+        rows.append({
+            "signal_date": signal_date,
+            "execution_date": pd.Timestamp(item.execution_date).normalize(),
+            "label_end_execution_date": label_end,
+            "net_return": net,
+            "l1_turnover": float(current["l1_turnover"]),
+            "selected_count": int(current.get("filled_selected_count", getattr(item, "selected_count", 0))),
+            "invalid_selected_count": int(current.get("unfilled_selected_count", 0)),
+        })
+    return pd.DataFrame(rows)
+
+
+def _engine_nav_frame(
+    result: Any, process_id: str, frequency: str, top_k: int, cost_bps: int
+) -> pd.DataFrame:
+    frame = result.nav.reset_index().copy()
+    frame["process_id"] = process_id; frame["frequency"] = frequency
+    frame["top_k"] = top_k; frame["cost_bps"] = cost_bps
+    keep = ["process_id", "frequency", "top_k", "cost_bps", "date", "nav", "daily_return"]
+    return frame[keep]
 
 
 def _portfolio_period_ledger(group: pd.DataFrame, top_k: int) -> tuple[pd.DataFrame, pd.DataFrame]:
@@ -1302,6 +1559,13 @@ def audit_xa03(project_root: str | Path, runtime_root: str | Path) -> dict[str, 
     decision = json.loads((e / "decision.json").read_text(encoding="utf-8"))
     if summary["process_frequency_cells"] != 114 or summary["topk_paths"] != 456 or summary["cost_paths"] != 1824:
         raise ValueError("XA03 closure cardinality mismatch")
+    if int(summary.get("daily_nav_rows", 0)) <= 0:
+        raise ValueError("XA03 closure is missing required daily NAV evidence")
+    if not bool(summary.get("portfolio_accounting_identity_passed", False)):
+        raise ValueError("XA03 event-driven portfolio accounting audit failed")
+    for name in ("daily_nav_paths.parquet", "portfolio_accounting_identity.csv"):
+        if not (e / name).is_file():
+            raise ValueError(f"XA03 closure is missing required output: {name}")
     if any(decision[key] for key in ("p00_run", "bagging_run", "stacking_run", "automatic_champion_selected")):
         raise ValueError("unauthorized XA03 continuation detected")
     return {"status": "passed", "manifests": manifests, "decision": decision,
