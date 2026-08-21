@@ -1,0 +1,13 @@
+{
+  "built_at_utc": "2026-08-20T11:39:46.227067+00:00",
+  "eligible_row_count": 777148,
+  "factor_build_version": "xs-market-sec-factors-20260820-v1",
+  "factor_count": 11,
+  "first_signal_date": "2013-01-31",
+  "last_signal_date": "2026-06-30",
+  "market_dataset": "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate",
+  "row_count": 893552,
+  "schema_version": "cross_sectional_alpha.market_factor_summary.v1",
+  "signal_date_count": 162,
+  "volume_qa_passed": true
+}

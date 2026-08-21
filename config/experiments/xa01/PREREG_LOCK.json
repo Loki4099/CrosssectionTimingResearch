@@ -1,0 +1,29 @@
+{
+  "schema_version": "xa01.prereg_lock.v1",
+  "program_id": "xa01_atomic_factor_walkforward_v1",
+  "status": "locked_authorized",
+  "formal_eligible": false,
+  "lockbox_authorized": false,
+  "files": [
+    {
+      "path": "config/experiments/xa01/factor_registry.csv",
+      "sha256": "8480676445aa0903753f3b575caf23fa4fb781106c4391a3043d3ce3ae37d688",
+      "size_bytes": 1735
+    },
+    {
+      "path": "config/experiments/xa01/program.toml",
+      "sha256": "d789d9b06066cf0d97c0e62ea523ad9100c90f678b21541db4d1069145577f75",
+      "size_bytes": 3458
+    },
+    {
+      "path": "docs/20_experiments/XA01_atomic_factor_walkforward/design.md",
+      "sha256": "bebbf339bb1ecc04abad1003f68d1a04cdaaf0bb2dacafafbd28bccf0b6293e4",
+      "size_bytes": 2837
+    },
+    {
+      "path": "docs/44_xa01_atomic_factor_walkforward_program_v1.md",
+      "sha256": "30cf55d17df93f71fdb7e8f049e1826a8a4cb46336cff2c1d4dab8b80c75ae52",
+      "size_bytes": 903
+    }
+  ]
+}

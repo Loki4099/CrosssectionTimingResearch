@@ -1,0 +1,51 @@
+{
+  "accounting_identity": {
+    "complete_direct_context_count": 8570,
+    "context_count": 29146,
+    "direct_failure_count": 0,
+    "direct_pass_count": 8570,
+    "identity_gate_passed": true,
+    "insufficient_direct_metric_count": 18213,
+    "relative_tolerance": 0.01,
+    "schema_version": "cross_sectional_alpha.accounting_identity_summary.v1",
+    "synthetic_identity_count": 2363
+  },
+  "built_at_utc": "2026-08-20T10:58:13.995995+00:00",
+  "canonical_fact_rows": 358303,
+  "completed_cik_count": 753,
+  "entity_temporal_support": {
+    "evaluation_end": "2026-06-30",
+    "failed_interval_count": 0,
+    "failed_sids": [],
+    "history_start": "2013-01-02",
+    "interval_count": 766,
+    "long_interval_count": 733,
+    "minimum_long_interval_days": 365,
+    "resolved_not_applicable_interval_count": 2,
+    "schema_version": "cross_sectional_alpha.entity_temporal_support.v1",
+    "temporal_support_gate_passed": true
+  },
+  "failed_cik_count": 0,
+  "filing_rows": 2386818,
+  "fundamental_build_signature": "01b5f4231e861d1d3b190dc564d30929b9c44e6b8050d455fc463c969d93c553",
+  "fundamental_quality_gate_passed": true,
+  "fundamental_version": "xs-sec-fundamentals-20260820-v1",
+  "identifier_coverage_gate_passed": true,
+  "limited_smoke_build": false,
+  "metric_count": 17,
+  "not_applicable_imputed_fact_rows": 0,
+  "raw_fetch_record_count": 2885,
+  "registered_fact_rows": 1679666,
+  "requested_cik_count": 753,
+  "resolved_not_applicable_cik_count": 2,
+  "resolved_not_applicable_ciks": [
+    "0001132979",
+    "0001288784"
+  ],
+  "schema_version": "cross_sectional_alpha.fundamental_summary.v1",
+  "source_applicability_cik_count": 753,
+  "source_applicability_counts": {
+    "available": 751,
+    "resolved_not_applicable": 2
+  }
+}

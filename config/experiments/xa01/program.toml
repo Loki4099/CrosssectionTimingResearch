@@ -1,0 +1,101 @@
+schema_version = "xa01.atomic_factor_walkforward.v1"
+program_id = "xa01_atomic_factor_walkforward_v1"
+status = "preregistered_authorized"
+formal_eligible = false
+evidence_label = "full_history_causal_prequential_exploration"
+
+[parent]
+data_bundle_id = "xs-market-sec-bundle-20260820-v1"
+factor_build_id = "xs-market-sec-factors-20260820-v1"
+source_publication = "results/published/cross_sectional_data/xs-market-sec-bundle-20260820-v1"
+selected_factor_count = 14
+
+[sample]
+history_start = "2013-01-02"
+first_signal_close = "2017-12-29"
+evaluation_start_open = "2018-01-02"
+evaluation_end_close = "2026-06-30"
+universe = "sp500_pit_at_signal_close"
+execution = "signal_close_next_xnys_open"
+
+[paths]
+factor_registry = "config/experiments/xa01/factor_registry.csv"
+frequencies = ["weekly", "monthly"]
+top_k = [5, 10, 20, 50]
+portfolio = "equal_weight_long_only"
+signal_direction = "higher_score_is_long"
+tie_break = "sid_ascending"
+path_count = 112
+cost_scenarios_bps = [0, 5, 10, 20]
+monthly_primary_cost_bps = 5
+weekly_primary_cost_bps = 10
+primary_width = 20
+
+[targets]
+weekly_primary = "Y_XS_1W_EXCESS_CASH"
+monthly_primary = "Y_XS_1M_EXCESS_CASH"
+rank_suffix = "_RANK"
+active_suffix = "_ACTIVE_ELIG_EW"
+classification_suffix = "_TOP20"
+costs_in_target = false
+availability_rule = "label_end_execution_timestamp"
+terminal_incomplete_labels_forbidden = true
+
+[paper_horizon_diagnostics]
+six_month = ["XS002_MOM_12_1", "XS003_MOM_12_7", "XS004_HIGH_52W"]
+twelve_month = ["XS018_AMIHUD_252", "XS019_PRICE_DELAY_52W", "XS032_GROSS_PROFIT_AT", "XS041_ASSET_GROWTH", "XS056_CFO_ACCRUALS_PT"]
+twenty_sessions = ["XS020_VOLUME_SHOCK_50D"]
+diagnostics_cannot_replace_primary = true
+
+[benchmarks]
+primary = "factor_specific_eligible_universe_equal_weight"
+secondary = ["pit_sp500_equal_weight", "spy_total_return_proxy", "t_bill_cash", "g00_mom255"]
+
+[frequency_semantics]
+weekly = "last_xnys_session_of_week_close"
+monthly = "last_xnys_session_of_month_close"
+same_month_seasonality = "carry_target_month_score_within_target_month"
+fundamental_weekly = "latest_pit_filing_as_of_weekly_signal"
+biweekly_authorized = false
+
+[inference]
+primary_signal_metric = "monthly_or_weekly_spearman_rank_ic"
+primary_portfolio_endpoint = "top20_primary_cost_active_vs_eligible_ew"
+bh_fdr_level = 0.10
+bh_family = "14_factor_primary_rank_ic_within_frequency"
+top_k_robustness_required = true
+subperiods = ["2018-2021", "2022-2026H1"]
+
+[dimensions]
+trend_price_path = ["XS001_MOM_255_0", "XS002_MOM_12_1", "XS003_MOM_12_7", "XS004_HIGH_52W"]
+reversal_calendar = ["XS007_ST_REV_21", "XS008_SAME_MONTH_5Y"]
+low_risk_lottery = ["XS013_LOW_BETA_FP", "XS015_MAX_21"]
+liquidity_attention = ["XS018_AMIHUD_252", "XS019_PRICE_DELAY_52W", "XS020_VOLUME_SHOCK_50D"]
+operating_quality_cash = ["XS032_GROSS_PROFIT_AT", "XS056_CFO_ACCRUALS_PT"]
+investment_conservatism = ["XS041_ASSET_GROWTH"]
+
+[decision]
+qualified_count_cap = 0
+dimension_representative_is_not_standalone_winner = true
+dimension_may_remain_unrepresented = true
+correlation_spearman_review_threshold = 0.80
+top20_jaccard_review_threshold = 0.60
+
+[authorization]
+weekly_factor_derivation = true
+target_materialization = true
+signal_diagnostics = true
+single_factor_backtests = true
+robustness_and_decision = true
+models = false
+factor_aggregation = false
+p00_transfer = false
+lockbox = false
+biweekly = false
+parameter_search = false
+
+[hard_stop]
+after_batch = "XA01D"
+automatic_model_stage = false
+automatic_p00_stage = false
+

@@ -1,0 +1,42 @@
+{
+  "schema_version": "xa02.prereg_lock.v1",
+  "program_id": "xa02_factor_market_state_atlas_v1",
+  "status": "locked_authorized",
+  "formal_eligible": false,
+  "models_authorized": false,
+  "factor_aggregation_authorized": false,
+  "lockbox_authorized": false,
+  "hard_stop_after": "XA02D",
+  "files": [
+    {
+      "path": "config/experiments/xa02/factor_registry.csv",
+      "sha256": "75dba084d7dafe1144967820537fb8f4351b0ed8dcb9eafa062ae71e5f9f97f9",
+      "size_bytes": 1249
+    },
+    {
+      "path": "config/experiments/xa02/program.toml",
+      "sha256": "31524e2a019dc8532efc80037476456856b35c8087a7bbecb7389fb104af4193",
+      "size_bytes": 14059
+    },
+    {
+      "path": "config/experiments/xa02/state_registry.csv",
+      "sha256": "6f28594003a30bcd8c837b2698ea910d5d11997ee9d547d0c288760b79c8c47e",
+      "size_bytes": 2159
+    },
+    {
+      "path": "docs/20_experiments/XA02_factor_market_state_atlas/design.md",
+      "sha256": "d95412e704e4b35c88e4f648ae247168597b1ac822ea42802147a1910c8386ab",
+      "size_bytes": 17019
+    },
+    {
+      "path": "docs/45_xa02_factor_market_state_atlas_program_v1.md",
+      "sha256": "0201c2d0419d5bf6c27b349278193b0409cb7743dcb784510b9eac6e5cfc5441",
+      "size_bytes": 2063
+    },
+    {
+      "path": "scripts/build_xa02_prereg_lock.py",
+      "sha256": "a1d91a1ef58130cbd3129c6d7d3ad47ac61d69f3b6d233339a6e6dfdb9c33477",
+      "size_bytes": 13359
+    }
+  ]
+}

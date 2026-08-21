@@ -1,4 +1,4 @@
-"""Causal monthly materialisation of the registered market-data factors.
+"""Causal scheduled materialisation of the registered market-data factors.
 
 The public function in this module deliberately consumes the frozen daily
 tables rather than a provider-specific object.  Every lag is an exact position
@@ -64,8 +64,9 @@ def materialize_cross_sectional_market_factors(
     *,
     factor_ids: Sequence[str] | None = None,
     volume_qa_passed: bool = False,
+    allowed_signal_frequencies: Sequence[str] = ("monthly",),
 ) -> pd.DataFrame:
-    """Return a long point-in-time factor table for monthly signal dates.
+    """Return a long point-in-time factor table for registered signal dates.
 
     Parameters
     ----------
@@ -122,12 +123,20 @@ def materialize_cross_sectional_market_factors(
             "signal dates are not exchange sessions: "
             f"{missing_signals[:5].tolist()}"
         )
-    monthly = calendar_frame.set_index("session_date")["month_last_session"]
-    non_monthly = signals[~monthly.reindex(signals).to_numpy(dtype=bool)]
-    if len(non_monthly):
+    allowed = tuple(dict.fromkeys(str(value) for value in allowed_signal_frequencies))
+    if not allowed or any(value not in {"weekly", "monthly"} for value in allowed):
+        raise ValueError("allowed_signal_frequencies must contain weekly/monthly")
+    indexed_calendar = calendar_frame.set_index("session_date")
+    permitted = pd.Series(False, index=signals)
+    if "monthly" in allowed:
+        permitted |= indexed_calendar["month_last_session"].reindex(signals).astype(bool)
+    if "weekly" in allowed:
+        permitted |= indexed_calendar["week_last_session"].reindex(signals).astype(bool)
+    invalid_signals = signals[~permitted.to_numpy(dtype=bool)]
+    if len(invalid_signals):
         raise ValueError(
-            "signal_dates must be calendar month-last sessions: "
-            f"{non_monthly[:5].tolist()}"
+            "signal_dates are outside the authorized weekly/monthly schedule: "
+            f"{invalid_signals[:5].tolist()}"
         )
 
     universe = _normalise_membership(membership)
@@ -225,7 +234,41 @@ def materialize_cross_sectional_market_factors(
         count = sum(value.notna().astype(np.int8) for value in observations)
         total = sum(value.fillna(0.0) for value in observations)
         raw = total.div(count.where(count.gt(0))).where(count.ge(3))
-        selected = raw.reindex(signals)
+        if allowed == ("monthly",):
+            selected = raw.reindex(signals)
+        else:
+            # Same-month seasonality is a target-calendar-month characteristic,
+            # not a generic rolling weekly feature.  Every decision whose next
+            # execution occurs in target month M uses the score formed at the
+            # final exchange session of M-1.  This exactly preserves the legacy
+            # month-end values while carrying one target-month score across its
+            # weekly decisions.
+            next_session_by_date = pd.Series(
+                calendar_sessions[1:], index=calendar_sessions[:-1]
+            )
+            next_sessions = pd.to_datetime(
+                next_session_by_date.reindex(signals), errors="coerce"
+            ).dt.normalize()
+            month_end_by_period = pd.Series(
+                month_dates,
+                index=month_dates.to_period("M"),
+            )
+            target_periods = []
+            for signal, target in zip(signals, next_sessions, strict=True):
+                if pd.isna(target):
+                    if not bool(indexed_calendar.loc[signal, "month_last_session"]):
+                        raise ValueError("non-month-end signal date lacks a next exchange session")
+                    target_periods.append(signal.to_period("M") + 1)
+                else:
+                    target_periods.append(pd.Timestamp(target).to_period("M"))
+            formation_dates = pd.DatetimeIndex(
+                [
+                    month_end_by_period.get(target_period - 1, pd.NaT)
+                    for target_period in target_periods
+                ]
+            )
+            selected = raw.reindex(formation_dates)
+            selected.index = signals
         panels["XS008_SAME_MONTH_5Y"] = (selected, selected)
         del excess, observations, count, total, raw
 

@@ -1,6 +1,6 @@
 # Long-only 横截面 Alpha：论文与因子定义登记 v1
 
-> 状态：**知识与候选定义层已建立；尚未创建或授权 Round 11。**
+> 状态：**知识与候选定义层已建立；首批17因子数据库已冻结，尚未创建或授权单因子实验。**
 > 市场与组合方向：历史时点 S&P 500 成分股、long-only。
 > 当前执行范围：市场数据与 SEC 基本面；新闻和文本候选仅留在知识库，由独立任务研究。
 > 更新时间：2026-08-20。
@@ -88,14 +88,14 @@
 
 | 数据层 | 因子数 | 当前含义 |
 |---|---:|---|
-| `T0_PRICE_PIT` | 12 | 当前PIT成分和价格原则上足够；3条已有实现，7条需新增代码，1条需价格口径审计，1条需先补齐论文参数 |
-| `T1_VOLUME_QUALIFIED` | 2 | 当前虽有`volume`列，但尚未完成拆股、单位和Yahoo/Tiingo跨源一致性验收，因此禁止直接运行 |
+| `T0_PRICE_PIT` | 12 | 首批选定的9个价格类定义已物化；其余定义仍按各自参数/数据门等待后续批次 |
+| `T1_VOLUME_QUALIFIED` | 2 | `XS018`与`XS020`已完成成交量、拆股和覆盖门并物化 |
 | `T2_REFERENCE_CLASSIFICATION_PIT` | 6 | 需要历史行业、PIT股本/市值或FF因子 |
-| `T3_ACCOUNTING_PIT` | 17 | 已选SEC EDGAR/XBRL为免费主源；仍需建设CIK映射、filing vintage和as-of面板，完成前不可运行 |
+| `T3_ACCOUNTING_PIT` | 17 | SEC CIK、filing vintage与年度as-of源层已完成；首批6个定义已物化，其中3个通过/替代通过数据门、2个因市值门阻断 |
 | `T4_EVENT_EXPECTATION_PIT` | 9 | 需要公告、分析师、short interest、13F等带发布时间的结构化事件数据 |
 | `T5_DERIVATIVE_ALTERNATIVE` | 9 | 需要期权、新闻、搜索、专利或供应链等替代数据 |
 
-当前冻结v3中存在成交量字段，但它没有通过面向量价因子的统一质量门。因此 `XS018` 和 `XS020` 被明确标成 `blocked_volume_qa`，而不是“ready”。同样，今天的行业分类、最新重述财务报表或当前分析师共识不能回填历史。
+当前冻结v3的成交量质量门已通过，`XS018`和`XS020`进入数据合格清单。今天的行业分类、最新重述财务报表或当前分析师共识仍不能回填历史。
 
 ## 7. long-only证据边界
 
@@ -123,15 +123,13 @@
 
 ## 9. 当前与下一步边界
 
-历史有效的SID↔issuer/CIK映射与SEC年度PIT源层现已完成并通过[source-only认证](../results/published/cross_sectional_data/xs-market-sec-source-data-20260820-v1/)。这只证明输入证据可用，不代表任何因子已经计算或获得实验资格。
+历史有效的SID↔issuer/CIK映射与SEC年度PIT源层已通过[source-only认证](../results/published/cross_sectional_data/xs-market-sec-source-data-20260820-v1/)，17因子统一面板也已通过[数据审计](../results/published/cross_sectional_data/xs-market-sec-bundle-20260820-v1/)。14个因子通过纯数据门，但这不代表收益有效或获得实验授权。
 
 后续建议按以下顺序展开，但本文件不授权执行：
 
-1. 解决候选的精确公式、价格口径、测试接口和覆盖率QA，并另发因子program/version；
-2. 计算统一因子面板，确认实际可用的市场+基本面执行清单；
-3. 设计统一的单因子Top5/10/20/50 long-only walk-forward评价；
-4. 物化信号后完成真实相关性、Top-K重合和行业/个股集中审计；
-5. 在因子层结果稳定后，设计族均衡rank、正则线性、GAM/浅树/LightGBM等聚合路径；
-6. 最后才把合格裸策略统一接入冻结P00，比较 `naked / P00 / matched-static`。
+1. 设计统一的单因子Top5/10/20/50 long-only walk-forward评价；
+2. 物化策略路径后完成真实相关性、Top-K重合和行业/个股集中审计；
+3. 在单因子结果稳定后，设计族均衡rank、正则线性、GAM/浅树/LightGBM等聚合路径；
+4. 最后才把合格裸策略统一接入冻结P00，比较 `naked / P00 / matched-static`。
 
 新闻、文本、期权、分析师和供应链候选仍保留稳定ID，但不进入本次市场+基本面路线。新横截面实验的命名、标签、walk-forward日历、成本、模型超参数和晋级口径应在下一份独立计划中定义，不能从本登记表自动推导，也不应自动称为防御主线的Round 11。

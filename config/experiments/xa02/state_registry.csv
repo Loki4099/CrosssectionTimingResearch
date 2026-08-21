@@ -1,0 +1,10 @@
+state_id,display_name,family,role,high_value_interpretation,raw_formula,source_component,raw_min_history_sessions,causal_percentile_history_sessions,atlas_authority,model_status
+MKT_TREND126,SPY 126-session total return,trend,primary,stronger_market_trend,benchmark_tr_close_t/benchmark_tr_close_t_minus_126-1,xs_market_benchmark,127,756,formal_1d_and_fixed_2d,pending_xa02
+MKT_LOG_RV21,SPY log realized volatility 21,volatility,primary,higher_market_volatility,log(sqrt(252)*sample_std(daily_log_return_last_21)),xs_market_benchmark,22,756,formal_1d_and_fixed_2d,pending_xa02
+MKT_DD252_SEVERITY,SPY 252-session drawdown severity,path,primary,deeper_market_drawdown,-(benchmark_tr_close_t/max(benchmark_tr_close_last_252)-1),xs_market_benchmark,252,756,formal_1d,pending_xa02
+MKT_BREADTH_RSP63,RSP versus SPY 63-session breadth,breadth,primary,stronger_equal_weight_breadth,log(RSP_TR_t/SPY_TR_t)-log(RSP_TR_t_minus_63/SPY_TR_t_minus_63),round10_r10a_rsp_plus_xs_market_benchmark,64,756,formal_1d_and_fixed_2d,pending_xa02
+MKT_XS_DISP21,Cross-sectional 21-session return dispersion,dispersion,primary,higher_cross_sectional_dispersion,1.4826*MAD(member_total_return_21),xs_market_prices_and_membership,22,756,formal_1d_and_fixed_2d,pending_xa02
+MKT_AVG_CORR63,Average member return correlation 63,correlation,primary,stronger_common_stock_movement,mean_pairwise_pearson(daily_log_return_last_63),xs_market_prices_and_membership,64,756,formal_1d_and_fixed_2d,pending_xa02
+SHADOW_SMA50_200,SPY SMA50 versus SMA200 gap,trend,shadow,stronger_slow_market_trend,SMA50(benchmark_tr_close)/SMA200(benchmark_tr_close)-1,xs_market_benchmark,200,756,diagnostic_only,not_eligible_from_xa02
+SHADOW_LOG_RV_RATIO,SPY RV21 versus RV126 ratio,volatility,shadow,faster_volatility_expansion,log(RV21/RV126),xs_market_benchmark,127,756,diagnostic_only,not_eligible_from_xa02
+SHADOW_BREADTH_SMA200,Share of PIT members above SMA200,breadth,shadow,broader_member_uptrend,mean(Csa_t>SMA200(Csa)_t)_where_Csa_u=raw_close_u*product(explicit_positive_split_ratio_v_for_history_start<=v<=u),xs_market_raw_close_stock_splits_and_membership,200,756,diagnostic_only,not_eligible_from_xa02

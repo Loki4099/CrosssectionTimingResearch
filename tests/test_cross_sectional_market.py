@@ -21,6 +21,7 @@ def _calendar(sessions: pd.DatetimeIndex) -> pd.DataFrame:
             "session_date": sessions,
             "month_last_session": ~month.duplicated(keep="last"),
             "week_last_session": ~week.duplicated(keep="last"),
+            "next_session": pd.Series(sessions).shift(-1),
         }
     )
 
@@ -324,6 +325,61 @@ def _check_same_month_uses_the_coming_holding_month_without_lookahead() -> None:
     assert np.isclose(result["raw_value"], 0.30)
 
 
+def _check_same_month_weekly_carries_the_target_month_score() -> None:
+    prices, benchmark, calendar, membership, _ = _rich_fixture()
+    sessions = pd.DatetimeIndex(calendar["session_date"])
+    session_months = sessions.to_period("M")
+    next_session_by_date = calendar.set_index("session_date")["next_session"]
+    target_month = None
+    weekly_signals = pd.DatetimeIndex([])
+    for candidate in reversed(session_months.unique()[:-1]):
+        target_rows = calendar.loc[session_months == candidate]
+        candidate_signals = pd.DatetimeIndex(
+            target_rows.loc[target_rows["week_last_session"], "session_date"]
+        )
+        candidate_signals = candidate_signals[
+            pd.to_datetime(next_session_by_date.reindex(candidate_signals)).dt.to_period("M")
+            == candidate
+        ]
+        if len(candidate_signals) >= 2:
+            target_month = candidate
+            weekly_signals = candidate_signals
+            break
+    assert target_month is not None
+    formation = pd.Timestamp(
+        calendar.loc[
+            (pd.DatetimeIndex(calendar["session_date"]).to_period("M")
+             == target_month - 1)
+            & calendar["month_last_session"],
+            "session_date",
+        ].iloc[0]
+    )
+    monthly = materialize_cross_sectional_market_factors(
+        prices,
+        benchmark,
+        calendar,
+        membership,
+        [formation],
+        factor_ids=["XS008_SAME_MONTH_5Y"],
+    ).sort_values("sid")
+    weekly = materialize_cross_sectional_market_factors(
+        prices,
+        benchmark,
+        calendar,
+        membership,
+        weekly_signals,
+        factor_ids=["XS008_SAME_MONTH_5Y"],
+        allowed_signal_frequencies=("weekly", "monthly"),
+    )
+    expected = monthly.set_index("sid")["score"].sort_index()
+    for _, group in weekly.groupby("signal_date", sort=True):
+        pdt.assert_series_equal(
+            group.set_index("sid")["score"].sort_index(),
+            expected,
+            check_names=False,
+        )
+
+
 def _check_volume_factors_require_explicit_qa_and_never_fill_missing_with_zero() -> None:
     sessions = pd.bdate_range("2022-01-03", periods=60)
     x = np.arange(len(sessions), dtype=float)
@@ -418,6 +474,9 @@ class CrossSectionalMarketTests(unittest.TestCase):
 
     def test_same_month_targets_the_coming_holding_month(self) -> None:
         _check_same_month_uses_the_coming_holding_month_without_lookahead()
+
+    def test_same_month_weekly_carries_target_month_score(self) -> None:
+        _check_same_month_weekly_carries_the_target_month_score()
 
     def test_volume_factors_require_explicit_qa(self) -> None:
         _check_volume_factors_require_explicit_qa_and_never_fill_missing_with_zero()

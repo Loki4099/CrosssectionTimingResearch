@@ -4,7 +4,7 @@ This directory contains the compact, reviewable outputs committed to Git. Full d
 
 ## Start by research track
 
-- **Cross-sectional Alpha:** [`G00/`](./G00/) is the only fully closed naked stock-selection baseline. [`cross_sectional_data/`](./cross_sectional_data/) contains compact source-data certification evidence; no new factor experiment output exists yet.
+- **Cross-sectional Alpha:** [`G00/`](./G00/) is the original naked stock-selection baseline; [`cross_sectional_alpha/XA01/`](./cross_sectional_alpha/XA01/) contains the completed 14-factor weekly/monthly atomic experiment. [`cross_sectional_data/`](./cross_sectional_data/) contains compact source-data and factor-database certification evidence. XA02 is preregistered but has no result artifact yet.
 - **Defensive timing and overlays:** [`G11/`](./G11/)–[`G33/`](./G33/) contain the original overlay grid; [`round3/`](./round3/)–[`round10/`](./round10/) contain the later signal, model, policy, transfer, and mechanical-reveal evidence. Round 9 passed development, while Round 10 failed the frozen joint gate.
 
 Human-readable navigation is organized by [cross-sectional Alpha](../../docs/research_tracks/cross_sectional_alpha.md) and [defensive timing](../../docs/research_tracks/defensive_timing.md). Machine manifests and decisions are authoritative for executed bundle status; preregistration registries remain historical plan snapshots.

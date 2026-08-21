@@ -1,0 +1,22 @@
+{
+  "actual_future_input_invariance_passed": true,
+  "checkpoint_count": 2,
+  "checks": [
+    {
+      "compared_rows": 8585,
+      "cross_section_sha256": "0cf65c44f2722f879d0afe311368120f27d42e6122e11ce388caa98bfc56164c",
+      "cutoff_signal_date": "2018-01-31",
+      "exact_match": true,
+      "future_rows_physically_removed": true
+    },
+    {
+      "compared_rows": 8568,
+      "cross_section_sha256": "0aa17b545d3651d56c7b94536182da6837b11c2beee29194a4ae842c59e7f0bd",
+      "cutoff_signal_date": "2022-04-29",
+      "exact_match": true,
+      "future_rows_physically_removed": true
+    }
+  ],
+  "method": "physical_future_truncation_and_exact_cross_section_rebuild",
+  "schema_version": "cross_sectional_alpha.actual_causality_qa.v1"
+}

@@ -5,6 +5,7 @@
 | 主线/阶段 | 图表入口 | 代表图 | 生成脚本 | 说明 |
 |---|---|---|---|---|
 | 横截面G00与防御九宫格 | [Round 1图集](./round1/README.md) | [long-only净值总览](./round1/overview-nav-long-only.png) | [build_round1_figures.py](../../scripts/build_round1_figures.py) | G00作为共同裸控制；G11–G33为overlay实验 |
+| 横截面XA01 | [目录](./cross_sectional_alpha/XA01/) | [周/月RankIC](./cross_sectional_alpha/XA01/rankic_by_frequency.png) · [Top20主动表现](./cross_sectional_alpha/XA01/top20_active_by_frequency.png) | [publish_xa01.py](../../scripts/publish_xa01.py) | 14个原子因子的周/月首轮证据；XA02尚未执行 |
 | Round 4 | [目录](./round4/) | [单因子主动财富](./round4/r4b-active-wealth.png) · [target审计](./round4/r4c-target-sanity.png) | [build_round4_figures.py](../../scripts/build_round4_figures.py) | 另含17张事件图谱 |
 | Round 5 | [目录](./round5/) | [MAE13单因子排名](./round5/r5b-single-factor-ranking.png) | [build_round5_figures.py](../../scripts/build_round5_figures.py) | RSP/SPY63成为唯一robust阳性 |
 | Round 6 | [目录](./round6/) | [A4单因子RankIC](./round6/r6-single-factor-rankic.png) | [build_round6_figures.py](../../scripts/build_round6_figures.py) | 进攻标签单因子审计 |

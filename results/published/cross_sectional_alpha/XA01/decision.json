@@ -1,0 +1,23 @@
+{
+  "aggregation_run": false,
+  "dimension_representative_cells": 2,
+  "dimension_representatives": [
+    {
+      "factor_id": "XS003_MOM_12_7",
+      "frequency": "monthly"
+    },
+    {
+      "factor_id": "XS003_MOM_12_7",
+      "frequency": "weekly"
+    }
+  ],
+  "evidence_qualified_cells": 0,
+  "formal_eligible": false,
+  "g00_identity_passed": false,
+  "lockbox_read": false,
+  "models_run": false,
+  "p00_run": false,
+  "run_id": "xa01-atomic-factor-walkforward-20260820-v1",
+  "schema_version": "xa01.decision.v1",
+  "status": "completed_hard_stop_with_g00_top50_identity_exception"
+}

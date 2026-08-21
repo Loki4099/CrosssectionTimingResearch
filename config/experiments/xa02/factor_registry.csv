@@ -1,0 +1,15 @@
+factor_id,display_name,dimension,xa01_status,atlas_required,model_authorized
+XS001_MOM_255_0,255-session momentum,trend_price_path,not_advanced,true,false
+XS002_MOM_12_1,12-1 momentum,trend_price_path,not_advanced,true,false
+XS003_MOM_12_7,12-7 intermediate momentum,trend_price_path,dimension_representative,true,false
+XS004_HIGH_52W,52-week high proximity,trend_price_path,not_advanced,true,false
+XS007_ST_REV_21,21-session reversal,reversal_calendar,not_advanced,true,false
+XS008_SAME_MONTH_5Y,Same-month seasonality,reversal_calendar,not_advanced,true,false
+XS013_LOW_BETA_FP,Frazzini-Pedersen low beta,low_risk_lottery,not_advanced,true,false
+XS015_MAX_21,Low maximum daily return,low_risk_lottery,not_advanced,true,false
+XS018_AMIHUD_252,Amihud illiquidity,liquidity_attention,not_advanced,true,false
+XS019_PRICE_DELAY_52W,Price delay,liquidity_attention,not_advanced,true,false
+XS020_VOLUME_SHOCK_50D,Abnormal volume,liquidity_attention,not_advanced,true,false
+XS032_GROSS_PROFIT_AT,Gross profitability to assets,operating_quality_cash,not_advanced,true,false
+XS041_ASSET_GROWTH,Conservative asset growth,investment_conservatism,not_advanced,true,false
+XS056_CFO_ACCRUALS_PT,CFO accrual quality,operating_quality_cash,not_advanced,true,false

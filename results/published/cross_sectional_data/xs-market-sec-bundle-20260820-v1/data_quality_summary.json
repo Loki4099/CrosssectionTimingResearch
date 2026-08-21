@@ -1,0 +1,39 @@
+{
+  "actual_future_input_invariance_passed": true,
+  "blocked_first_round_factor_ids": [
+    "XS026_VALUE_BM",
+    "XS030_NET_PAYOUT_YIELD"
+  ],
+  "built_at_utc": "2026-08-20T12:02:23.141131+00:00",
+  "bundle_manifest_sha256": "4fb1751080613d610884b913f27d800084a054741b5cfdbf8bc8d09585a510ed",
+  "catalog_filename": "cross_sectional_alpha.duckdb",
+  "coverage_alternative_map": {
+    "XS039_ACCRUALS_V2": "XS056_CFO_ACCRUALS_PT"
+  },
+  "data_bundle_id": "xs-market-sec-bundle-20260820-v1",
+  "deterministic_rebuild_passed": true,
+  "eligible_rows": 974498,
+  "factor_build_version": "xs-market-sec-factors-20260820-v1",
+  "factor_count": 17,
+  "factor_database_rows": 1380944,
+  "formal_eligible": false,
+  "performance_used_for_readiness": false,
+  "ready_first_round_factor_ids": [
+    "XS001_MOM_255_0",
+    "XS002_MOM_12_1",
+    "XS003_MOM_12_7",
+    "XS004_HIGH_52W",
+    "XS007_ST_REV_21",
+    "XS008_SAME_MONTH_5Y",
+    "XS013_LOW_BETA_FP",
+    "XS015_MAX_21",
+    "XS018_AMIHUD_252",
+    "XS019_PRICE_DELAY_52W",
+    "XS020_VOLUME_SHOCK_50D",
+    "XS032_GROSS_PROFIT_AT",
+    "XS041_ASSET_GROWTH",
+    "XS056_CFO_ACCRUALS_PT"
+  ],
+  "schema_version": "cross_sectional_alpha.factor_database_summary.v1",
+  "signal_date_count": 162
+}

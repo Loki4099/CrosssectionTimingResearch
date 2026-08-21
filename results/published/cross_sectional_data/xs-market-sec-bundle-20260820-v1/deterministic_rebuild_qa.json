@@ -1,0 +1,8 @@
+{
+  "deterministic_rebuild_passed": true,
+  "expected_content_sha256": "5907b5191a134e91a95963d441d74ecc3e6318941fcbb3fd7f4a8966ed2b43a2",
+  "factor_computation_rebuilt_independently": true,
+  "input_row_count": 1380944,
+  "rebuilt_content_sha256": "5907b5191a134e91a95963d441d74ecc3e6318941fcbb3fd7f4a8966ed2b43a2",
+  "schema_version": "cross_sectional_alpha.deterministic_rebuild_qa.v1"
+}

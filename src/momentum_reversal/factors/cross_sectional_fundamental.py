@@ -207,6 +207,17 @@ def _prepare_fact_events(fact_events: pd.DataFrame) -> list[_Filing]:
         raise ValueError("fiscal_year must be numeric and non-missing")
     events["fiscal_year"] = events["fiscal_year"].astype(int)
     events["metric_id"] = events["metric_id"].astype("string").str.strip()
+    # The canonical SEC store also carries audit-only observations such as
+    # cover-page shares outstanding and reported gross profit.  Their
+    # measurement dates need not equal the fiscal year end.  Letting those
+    # rows create a ``_Filing`` can therefore make a later cover-page date
+    # supersede the actual annual statement with a one-metric pseudo filing.
+    # Only metrics consumed by the registered factor formulas may define the
+    # filing periods used by this layer.
+    factor_metric_ids = {metric.value for metric in FundamentalMetric}
+    events = events.loc[events["metric_id"].isin(factor_metric_ids)].copy()
+    if events.empty:
+        return []
     events["value"] = pd.to_numeric(events["value"], errors="coerce")
     events["unit"] = events["unit"].astype("string").str.strip().str.upper()
     events["sic"] = pd.to_numeric(events["sic"], errors="coerce")

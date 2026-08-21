@@ -1,0 +1,103 @@
+{
+  "bundle_manifest_sha256": "4fb1751080613d610884b913f27d800084a054741b5cfdbf8bc8d09585a510ed",
+  "data_bundle_id": "xs-market-sec-bundle-20260820-v1",
+  "experiment_authorized": false,
+  "files": [
+    {
+      "path": "README.md",
+      "sha256": "ad875b172a290ffa1eb48b0234b8a99faebd04b5ecddab37df665769f4d1c16d",
+      "size_bytes": 1804
+    },
+    {
+      "path": "accounting_identity_qa.csv",
+      "row_count": 29146,
+      "sha256": "271f625f919cbdc3324595f7ec0ecacadd98f80a97d406fd8c01855399915329",
+      "size_bytes": 3457038
+    },
+    {
+      "path": "audit_summary.json",
+      "sha256": "77ec981ec332809bdd14dee1981e807040c106b716a73a5c9d1c210432167fa0",
+      "size_bytes": 22693
+    },
+    {
+      "path": "causality_qa.json",
+      "sha256": "9cf8dc7b0675237e92b8385d140d1f6f043e100486f83b312aaf17a3b488aec5",
+      "size_bytes": 745
+    },
+    {
+      "path": "data_quality_summary.json",
+      "sha256": "3a9747eb04916dac2e8afa1cad39bb0c82e79c85841b8fb3d62189e0eda78e34",
+      "size_bytes": 1241
+    },
+    {
+      "path": "deterministic_rebuild_qa.json",
+      "sha256": "cfd76bbde4220f83b9530db789ed411f5da20cac5b3d277c7096bb905865f7e2",
+      "size_bytes": 391
+    },
+    {
+      "path": "entity_temporal_support_qa.csv",
+      "row_count": 766,
+      "sha256": "c907e2bf0e0ded3d1be886b70d34b2c81cd926468b2d4fb343077e36cf97a342",
+      "size_bytes": 100817
+    },
+    {
+      "path": "entity_temporal_support_summary.json",
+      "sha256": "a2a6dd7002f878bafe18f166c8418a0c13bb2577190c9879518e4af5c3d50770",
+      "size_bytes": 372
+    },
+    {
+      "path": "evidence_index.json",
+      "sha256": "e0cdc17d5f8dc2d089bb4623714df342682096798aabeb535727d2c7943d0a80",
+      "size_bytes": 18435
+    },
+    {
+      "path": "factor_coverage.csv",
+      "row_count": 17,
+      "sha256": "689e887107717e489a8554f39dcdd68a3461b97277740fff84db73635ae3ff43",
+      "size_bytes": 953
+    },
+    {
+      "path": "factor_readiness.csv",
+      "row_count": 17,
+      "sha256": "531687c60e86e9feb97eafc72923fe2847fc8d510741fff959c7965d779a613e",
+      "size_bytes": 3888
+    },
+    {
+      "path": "factor_year_coverage.csv",
+      "row_count": 238,
+      "sha256": "e9d25fa5a2d547f081f8147e44beaa1bdb872b8560c0f32e1182e77ef996f28a",
+      "size_bytes": 12757
+    },
+    {
+      "path": "fundamental_summary.json",
+      "sha256": "ed43b73fe875e933323b2111726833403ef49b1a64a1b429e4f76aa48a731498",
+      "size_bytes": 1751
+    },
+    {
+      "path": "identifier_qa.json",
+      "sha256": "ccee41f8c46a207c5e9c2f11fee4b51e21df5c256b49a45b9e5b3998b8917a10",
+      "size_bytes": 904
+    },
+    {
+      "path": "market_factor_summary.json",
+      "sha256": "56c69cd92d8e18d333d0b2732758e91cd5b6e495c8fee34662d1bdd2fe3bbde1",
+      "size_bytes": 487
+    },
+    {
+      "path": "market_volume_qa.json",
+      "sha256": "beae2922cc7008eec5307677bfa2c1b33ed0aaa10a6cc7451561ca34c9a438a6",
+      "size_bytes": 963
+    },
+    {
+      "path": "missing_reason_coverage.csv",
+      "row_count": 76,
+      "sha256": "690dc58ef70e2651625109e4c4b403b8df5833743ab804ae572419d7980ef275",
+      "size_bytes": 11266
+    }
+  ],
+  "formal_eligible": false,
+  "performance_results_included": false,
+  "raw_sec_content_index_sha256": "5b5614edfb305614ea0b94030609a36f079c924c7820044b9e779368bc6bfaa4",
+  "schema_version": "cross_sectional_alpha.compact_publish.v1",
+  "status": "data_ready_for_experiment_planning"
+}

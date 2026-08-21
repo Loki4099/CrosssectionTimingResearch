@@ -51,17 +51,17 @@ Registry rules:
    executable successor. `XS056_CFO_ACCRUALS_PT` is a separately identified
    project translation, not a fallback that may inherit the Sloan claim.
 
-## Deferred candidate factor roster
+## Materialized factor roster
 
-The source-data program is complete, but the factor stage is deferred. No
-`factor_id` is currently claimed to be calculated, ready, coverage-qualified, or
-authorized for a numbered experiment. `first_round_eligible=true` is design
-metadata that still requires a future factor build and its stated `data_gate`; it
-is not a current machine status.
+The source-data and factor-data stages are complete. The frozen factor database
+contains all 17 active IDs across 162 month-end signal dates. Data readiness is a
+coverage-only status: it does not authorize a numbered experiment or claim any
+return predictability. The machine ledger is published under
+`results/published/cross_sectional_data/xs-market-sec-bundle-20260820-v1/`.
 
 The certified source-v1 certificate anchors the complete `data_program.toml`.
-Future factor work must create a new program/version that references this source
-layer instead of editing the certified v1 configuration in place.
+Future formula or input changes must create a new factor version that references
+this source layer instead of overwriting the frozen factor database.
 
 | Role | Factor IDs |
 |---|---|
@@ -70,20 +70,20 @@ layer instead of editing the certified v1 configuration in place.
 | SEC atoms | `XS032_GROSS_PROFIT_AT`, `XS041_ASSET_GROWTH`, `XS039_ACCRUALS_V2` |
 | Conditional SEC atoms | `XS026_VALUE_BM`, `XS030_NET_PAYOUT_YIELD` |
 
-The conditional SEC atoms remain missing unless issuer-level market equity has
+The conditional SEC atoms remain blocked unless issuer-level market equity has
 passed the all-common-share-class audit. Book-to-market requires current issuer
 market equity; net payout yield requires common-only dividends, repurchases and
 issuance plus audited fiscal-year-end issuer market equity. Missing components
 are never treated as zero or approximated from one listed share class.
 
-`XS018_AMIHUD_252` and `XS020_VOLUME_SHOCK_50D` remain candidate definitions. The
-frozen market source passed the pre-return volume gate:
+`XS018_AMIHUD_252` and `XS020_VOLUME_SHOCK_50D` were calculated and passed the
+pre-return volume and coverage gates:
 all 1,701,149 expected member-session keys exist, price-conditional volume
 coverage is 100%, positive dollar-volume coverage is 99.997%, negative volume
-rows are zero, and 191 split events have no missing volume. This is source-data
-evidence, not factor readiness or return-based selection. `XS056_CFO_ACCRUALS_PT` remains a
-mechanical coverage alternative for strict Sloan accruals and has
-`first_round_eligible=false` in its own right.
+rows are zero, and 191 split events have no missing volume. Strict Sloan accruals
+did not meet coverage; `XS056_CFO_ACCRUALS_PT` passed its own coverage gates and
+was selected only through the frozen mechanical alternative rule. It remains a
+project translation rather than a Sloan replication.
 
 The human-readable rationale and family map are in
 [the literature and factor registry note](../../../docs/43_cross_sectional_alpha_literature_and_factor_registry_v1.md).

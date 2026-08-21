@@ -1,0 +1,12 @@
+{
+  "aggregation_run": false,
+  "batch": "XA01D",
+  "dimension_representative_cells": 2,
+  "evidence_qualified_cells": 0,
+  "g00_identity_passed": false,
+  "g00_identity_rows": 24,
+  "models_run": false,
+  "p00_run": false,
+  "paper_diagnostic_rows": 16,
+  "status": "completed_hard_stop"
+}

@@ -1,0 +1,307 @@
+schema_version = "xa02.factor_market_state_atlas.v1"
+program_id = "xa02_factor_market_state_atlas_v1"
+status = "preregistered_authorized"
+formal_eligible = false
+evidence_label = "post_xa01_full_history_causal_prequential_exploration"
+
+[run_ids]
+xa02a = "xa02a-factor-path-ledger-20260821-v1"
+xa02b = "xa02b-market-state-features-20260821-v1"
+xa02c = "xa02c-factor-state-atlas-20260821-v1"
+xa02d = "xa02d-atlas-closure-20260821-v1"
+
+[batches]
+order = ["XA02A", "XA02B", "XA02C", "XA02D"]
+xa02a_depends_on = []
+xa02b_depends_on = ["XA02A"]
+xa02c_depends_on = ["XA02A", "XA02B"]
+xa02d_depends_on = ["XA02A", "XA02B", "XA02C"]
+dependency_manifest_sha256_required = true
+
+[runtime]
+run_directory_template = "results/experiments/xa02/{batch_id}/runs/{run_id}"
+published_directory = "results/published/cross_sectional_alpha/XA02"
+
+[parent]
+xa01_run_id = "xa01-atomic-factor-walkforward-20260820-v1"
+xa01_prereg_lock_sha256 = "2051160be4674f0bde8192fc659e17d5ec1e728046468c91abe1e9c91705c20c"
+xa01_runtime_manifest_sha256 = "c7c09b471732b11991ef301b005edf3b450f5ab3134ab5d85364f415d334f067"
+xa01_publication_manifest_sha256 = "11ebd3093eb40a438f882f64a85fcb7dda219636b00696a7b18af745fb7de18f"
+xa01_factor_registry_sha256 = "8480676445aa0903753f3b575caf23fa4fb781106c4391a3043d3ce3ae37d688"
+xa01_factor_values_sha256 = "14d50a6a0c8415497ed093a65d21fe1268fb6cd261daff4a13c4adb1cf8a4148"
+xa01_target_ledger_sha256 = "1da386f28f0d85cee72869b1f2ef5fcc21319b3b187ba7d4bd500059858ba7ef"
+cross_sectional_bundle_id = "xs-market-sec-bundle-20260820-v1"
+cross_sectional_publication_manifest_sha256 = "e6bbaa067d1bd5f45d098c8080a02b98c80a819495ceb8b33db5ba1a7c42edda"
+cross_sectional_evidence_index_sha256 = "e0cdc17d5f8dc2d089bb4623714df342682096798aabeb535727d2c7943d0a80"
+cross_sectional_runtime_bundle_manifest_sha256 = "4fb1751080613d610884b913f27d800084a054741b5cfdbf8bc8d09585a510ed"
+market_prices_daily_sha256 = "4a881854d2c278378955529c638193706ddfafb503e7a8a9c752cc7791ba2670"
+market_calendar_sha256 = "28275dc373f76a15c0c202c0c438fdce2e8f547e8930faf38519a97f81865565"
+market_membership_sha256 = "d118195a9eb52a862620c75d8984e0250f912184d39ff051f9868ed353615939"
+market_benchmark_sha256 = "bbea6b654608d47a2da78e406b2bb8dfa06da5ad004f78f3a72f275434f70455"
+market_corporate_actions_sha256 = "1e90c67e030a2efaa1a43badcf4b22751e6e6a76242ffe4179d9f242733f0c1d"
+market_risk_free_sha256 = "fcdedda1132947ba9da575d4ae7b66835bcd6eb72e36f1cc17b26b7be21b1975"
+r10a_run_id = "r10a-rsp-lockbox-feature-20260818-v1"
+r10a_acceptance_sha256 = "8fc5c598e06ba1d27c31d5b17d9fc186e2fa83a1ee411de55a707500ea70e20b"
+r10a_runtime_manifest_sha256 = "c672ff39501b322bc8bcf14ad3880b3f131df0ee1b068d4fc2ebc72c283551a4"
+r10a_publication_manifest_sha256 = "052836c8acb7df650d295a17e3dbe35b8548df6cfea83b5d0eccd46e4da75e62"
+r10a_rsp_daily_sha256 = "a968e85475849e059e272b7748f25e0326a8214783d1d64d9a9fd7f05c2cff8c"
+
+[parent_anomalies]
+g00_top10_top20_identity_exact = true
+g00_top50_identity_exception_documented = true
+top50_may_not_be_primary_evidence = true
+xs056_twelve_month_diagnostic_missing_from_xa01 = true
+xs056_diagnostic_repair_must_be_additive = true
+historical_xa01_outputs_must_not_be_overwritten = true
+
+[sample]
+history_start = "2013-01-02"
+first_signal_close = "2017-12-29"
+evaluation_start_open = "2018-01-02"
+evaluation_end_close = "2026-06-30"
+universe = "sp500_pit_at_signal_close"
+execution = "signal_close_next_xnys_open"
+frequencies = ["weekly", "monthly"]
+
+[paths]
+factor_registry = "config/experiments/xa02/factor_registry.csv"
+factor_count = 14
+top_k = [5, 10, 20, 50]
+cost_scenarios_bps = [0, 5, 10, 20]
+signal_path_count = 112
+factor_cost_path_count = 448
+primary_width = 20
+weekly_primary_cost_bps = 10
+monthly_primary_cost_bps = 5
+primary_benchmark = "factor_specific_eligible_universe_equal_weight"
+top5_top10_top50_are_robustness = true
+
+[period_ledger]
+factor_return = "execution_open_to_next_scheduled_execution_open"
+benchmark_return = "same_calendar_factor_specific_eligible_ew"
+factor_and_benchmark_returns_are_net_of_same_cost_scenario = true
+active_return = "factor_return_minus_benchmark_return"
+relative_log_return = "log1p(factor_return)-log1p(benchmark_return)"
+rank_ic = "same_signal_factor_score_vs_next_period_cross_sectional_return"
+rank_ic_cost_free_target = true
+terminal_incomplete_period_forbidden = true
+daily_nav_runtime_only = true
+holdings_runtime_only = true
+
+[metrics]
+minimum_names_for_rank_ic = 100
+rank_ic = "spearman_average_ranks_on_common_finite_names"
+annualization_weekly = 52
+annualization_monthly = 12
+active_annualized_mean = "frequency_periods_per_year*mean(active_return)"
+active_ir = "sqrt(frequency_periods_per_year)*mean(active_return)/sample_std(active_return)"
+active_hit = "active_return>0"
+relative_wealth = "exp(cumulative_sum(relative_log_return))"
+state_relative_log_contribution = "sum(relative_log_return_in_state)"
+tail_quantile = 0.10
+tail_mean = "mean(active_return_at_or_below_full_path_empirical_p10)"
+standardized_range_denominator = "full_path_sample_std_of_same_outcome"
+
+[rolling]
+weekly_windows = [26, 52, 104]
+monthly_windows = [12, 24, 36]
+calendar_summaries = ["calendar_year", "calendar_quarter"]
+trailing_only = true
+partial_windows_forbidden = true
+
+[states]
+registry = "config/experiments/xa02/state_registry.csv"
+primary_count = 6
+shadow_count = 3
+minimum_cross_sectional_members = 200
+minimum_pairwise_common_sessions = 50
+minimum_valid_pairs = 10000
+causal_percentile_history_sessions = 756
+strictly_past_thresholds = true
+tercile_cutoffs = [0.3333333333333333, 0.6666666666666666]
+full_sample_thresholds_forbidden = true
+state_values_known_at_signal_close = true
+causal_reference_history = "all_finite_daily_values_strictly_before_signal_close_since_history_start"
+causal_percentile_method = "(count_less+0.5*count_equal)/finite_prior_count"
+low_bin_rule = "percentile<=1/3"
+mid_bin_rule = "1/3<percentile<=2/3"
+high_bin_rule = "percentile>2/3"
+missing_current_or_insufficient_history_yields_missing_bin = true
+
+[episodes]
+calendar = "frequency_specific_scheduled_signal_sequence"
+definition = "maximal_consecutive_scheduled_signals_with_same_bin"
+joint_definition = "maximal_consecutive_scheduled_signals_with_same_joint_cell"
+missing_or_mid_for_formal_2d_breaks_episode = true
+year_attribution = "signal_close_calendar_year"
+state_attaches_to = "signal_close_and_following_execution_open_to_next_scheduled_execution_open"
+
+[atlas_1d]
+required_for_all_factor_state_frequency_cells = true
+bin_labels = ["low", "mid", "high"]
+primary_outcomes = ["active_return", "rank_ic"]
+weekly_minimum_per_bin = 52
+monthly_minimum_per_bin = 18
+minimum_calendar_years_per_bin = 4
+minimum_episodes_per_bin = 3
+
+[atlas_2d]
+pair_ids = ["trend_x_volatility", "breadth_x_volatility", "dispersion_x_correlation"]
+trend_x_volatility = ["MKT_TREND126", "MKT_LOG_RV21"]
+breadth_x_volatility = ["MKT_BREADTH_RSP63", "MKT_LOG_RV21"]
+dispersion_x_correlation = ["MKT_XS_DISP21", "MKT_AVG_CORR63"]
+descriptive_grid = "3x3_causal_terciles"
+formal_test_grid = "2x2_low_high_extreme_terciles_mid_excluded"
+formal_test = "difference_in_differences_interaction_coefficient_equals_zero"
+formal_test_regression = "y~1+A_high+B_high+A_high_x_B_high_on_full_calendar_zero_weight_mid"
+formal_test_two_sided = true
+minimum_supported_cells = 7
+weekly_minimum_corner_cell = 24
+monthly_minimum_corner_cell = 8
+weekly_minimum_total_extreme_observations = 120
+monthly_minimum_total_extreme_observations = 36
+minimum_calendar_years_per_corner = 3
+minimum_episodes_per_corner = 3
+maximum_single_year_corner_fraction = 0.50
+descriptive_weekly_minimum_per_cell = 20
+descriptive_monthly_minimum_per_cell = 6
+active_interaction_annualized_absolute_minimum = 0.03
+rank_ic_interaction_absolute_minimum = 0.02
+interaction_standardized_absolute_minimum = 0.25
+minimum_estimable_leave_one_year_out_runs = 4
+leave_one_year_out_weekly_minimum_per_corner = 12
+leave_one_year_out_monthly_minimum_per_corner = 4
+leave_one_year_out_weekly_minimum_total = 60
+leave_one_year_out_monthly_minimum_total = 18
+single_year_interaction_contribution = "sum_HH_y/n_HH_full-sum_HL_y/n_HL_full-sum_LH_y/n_LH_full+sum_LL_y/n_LL_full"
+replication_requires_same_pair_outcome_route_and_interaction_sign = true
+descriptive_cell_selection_forbidden = true
+
+[inference]
+primary_test = "low_mid_high_joint_wald_with_mid_reference"
+statistical_unit = "one_scheduled_date_per_factor_frequency"
+stock_rows_may_not_be_treated_as_independent_state_samples = true
+one_dimensional_regression_preserves_complete_signal_calendar = true
+hac_covariance = "newey_west_bartlett_no_finite_sample_correction"
+hac_linear_algebra = "numpy_lstsq_and_pinv"
+rank_deficient_design_is_insufficient_sample = true
+wald_reference_distribution = "chi_square"
+weekly_hac_lag = 4
+monthly_hac_lag = 2
+bootstrap_method = "moving_block"
+bootstrap_draws = 5000
+bootstrap_seed = 20260821
+bootstrap_rng = "numpy_default_rng_pcg64"
+bootstrap_interval = "percentile_2.5_97.5"
+weekly_block_periods = 13
+monthly_block_periods = 3
+bootstrap_resamples_complete_calendar_before_extreme_filter = true
+bh_fdr_level = 0.10
+strong_evidence_q = 0.05
+bh_families = "separate_by_frequency_outcome_and_1d_or_2d"
+one_dimensional_tests_per_frequency_outcome = 84
+two_dimensional_tests_per_frequency_outcome = 42
+insufficient_sample_p_for_fixed_bh_family = 1.0
+shadow_states_do_not_generate_qualification_pvalues = true
+topk_and_cost_robustness_do_not_generate_qualification_pvalues = true
+
+[stability]
+subperiods = ["2018-2021", "2022-2026H1"]
+leave_one_year_out_direction_fraction = 0.75
+maximum_single_year_absolute_contribution_fraction = 0.50
+required_topk_widths_with_same_direction = 2
+topk_stability_widths = [10, 20, 50]
+top20_must_be_one_required_width = true
+primary_and_20bps_direction_must_match = true
+
+[roles]
+labels = ["broad_static", "conditional_sign_switch", "conditional_strength", "exploratory_state_candidate", "time_break_unexplained", "no_state_evidence"]
+assessment_unit = "factor_id_x_frequency"
+conditional_active_annualized_spread_minimum = 0.03
+conditional_rank_ic_spread_minimum = 0.02
+conditional_standardized_range_minimum = 0.25
+conditional_discovery_q_maximum = 0.10
+exploratory_raw_p_maximum = 0.05
+broad_static_minimum_positive_topk_widths = 3
+broad_static_all_cost_scenarios_must_be_positive = true
+broad_static_primary_relative_log_wealth_must_be_positive = true
+broad_static_primary_active_ir_must_be_positive = true
+broad_static_both_subperiod_relative_log_wealth_must_be_positive = true
+broad_static_maximum_single_year_absolute_relative_log_fraction = 0.50
+conditional_sign_switch_requires_positive_and_negative_state_means = true
+conditional_strength_requires_same_sign_state_means = true
+conditional_strength_requires_at_least_one_positive_state_mean = true
+conditional_routes = ["active_return_route", "rank_ic_route"]
+active_return_route = "active_q<=0.10_and_active_annualized_spread>=0.03_and_standardized_range>=0.25"
+rank_ic_route = "rank_ic_q<=0.10_and_rank_ic_spread>=0.02_and_standardized_range>=0.25"
+cross_outcome_consistency = "best_state_minus_worst_state_for_qualifying_outcome_must_be_nonnegative_in_other_outcome"
+primary_active_return_must_not_contradict_rank_ic_role = true
+time_break_requires_subperiod_sign_change_and_no_qualifying_state = true
+two_dimensional_context_labels = ["robust_2d_context", "exploratory_2d_context"]
+robust_2d_requires_cross_frequency_or_two_nonredundant_factor_clusters = true
+role_tags_are_nonexclusive = true
+primary_role_priority = ["conditional_sign_switch", "conditional_strength", "broad_static", "time_break_unexplained", "exploratory_state_candidate", "no_state_evidence"]
+role_is_advisory_not_model_authorization = true
+automatic_xa03_input_selection = false
+
+[role_contrasts]
+bin_tie_break_order = ["low", "mid", "high"]
+best_bin = "maximum_full_sample_conditional_mean_with_tie_break_order"
+worst_bin = "minimum_full_sample_conditional_mean_with_tie_break_order"
+exact_tie_tolerance = 1e-12
+best_and_worst_bins_are_fixed_for_all_stability_checks = true
+leave_one_year_out_may_not_reselect_bins = true
+weekly_minimum_per_fixed_bin_after_leave_one_year_out = 26
+monthly_minimum_per_fixed_bin_after_leave_one_year_out = 9
+direction = "mean_fixed_best_minus_mean_fixed_worst"
+active_spread = "annualization*(mean_fixed_best_active_return-mean_fixed_worst_active_return)"
+rank_ic_spread = "mean_fixed_best_rank_ic-mean_fixed_worst_rank_ic"
+single_year_contribution = "sum_y_in_best/n_best_full-sum_y_in_worst/n_worst_full"
+single_year_fraction = "abs(year_contribution)/sum_abs_all_year_contributions"
+stable_sign_switch_veto_for_broad_static = "any_1d_conditional_sign_switch_passing_all_gates"
+time_break_outcomes = ["active_annualized_mean", "mean_rank_ic"]
+time_break_rule = "fixed_subperiod_means_have_strict_opposite_sign_for_either_outcome_and_no_qualifying_primary_state"
+
+[redundancy]
+score_spearman_threshold = 0.80
+top20_jaccard_threshold = 0.60
+active_return_correlation_threshold = 0.70
+minimum_thresholds_for_empirical_cluster = 2
+mechanism_dimension_is_preserved = true
+automatic_factor_deletion = false
+
+[authorization]
+parent_identity_audit = true
+single_factor_path_replay = true
+state_feature_materialization = true
+rolling_diagnostics = true
+one_dimensional_atlas = true
+fixed_two_dimensional_atlas = true
+advisory_role_ledger = true
+models = false
+factor_aggregation = false
+strategy_selection = false
+market_state_classifier = false
+target_revision = false
+p00_transfer = false
+lockbox = false
+external_data_acquisition = false
+state_window_search = false
+state_threshold_search = false
+
+[execution_provenance]
+prereg_lock_byte_check_required = true
+git_clean_commit_required = true
+manifest_git_commit_and_dirty_status_required = true
+manifest_code_and_input_sha256_required = true
+runtime_run_directory_must_not_exist = true
+published_destination_must_not_exist = true
+large_parquet_runtime_only = true
+unregistered_dependency_installation_authorized = false
+
+[hard_stop]
+after_batch = "XA02D"
+automatic_xa03 = false
+automatic_model_design = false
+automatic_model_run = false
+user_review_required = true

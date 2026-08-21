@@ -1,0 +1,9 @@
+{
+  "batch": "XA01A",
+  "factor_count": 14,
+  "factor_rows": 5566344,
+  "monthly_parent_identity": true,
+  "signal_dates": 793,
+  "status": "completed",
+  "target_rows": 274187
+}

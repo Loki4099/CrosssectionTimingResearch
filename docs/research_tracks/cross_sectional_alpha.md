@@ -1,6 +1,6 @@
 # 系统性 long-only 横截面 Alpha
 
-> 状态：**当前研究主线；市场与SEC源数据层已认证，因子库和首轮新因子实验尚未创建或授权。**
+> 状态：**当前研究主线；市场与SEC数据已认证，XA01首轮单因子实验已完成；XA02因子路径与市场状态图谱已预注册，等待执行。**
 > 股票池：历史时点 S&P 500 成分股。
 > 当前执行范围：市场数据与 SEC 基本面；新闻与文本研究由独立任务处理。
 
@@ -26,11 +26,12 @@
 | 市场与成分数据 | 冻结免费研究数据可用；2013年暖机，2018-01-02至2026-06-30统一评价 | [数据入口](../10_data/README.md) |
 | 文献与候选定义 | 55篇论文/方法记录、55个原始候选概念；append-only定义表共57行，含1个修正版与1个项目翻译 | [登记说明](../43_cross_sectional_alpha_literature_and_factor_registry_v1.md) |
 | 基本面源数据 | SEC EDGAR不可变响应、有效期CIK桥、filing vintage与年度PIT规范事实已冻结认证；`formal_eligible=false` | [数据合同](../10_data/cross_sectional_market_fundamental_database_v1.md) · [认证证据](../../results/published/cross_sectional_data/xs-market-sec-source-data-20260820-v1/) |
-| 因子库与因子面板 | 候选登记和代码仅为延期脚手架；没有因子被声明为已计算、覆盖合格或获得实验资格 | [登记规则](../../config/research/cross_sectional_alpha/README.md) |
+| 因子库与因子面板 | 17个登记因子、162个月末、1,380,944行已冻结审计；14个因子通过纯数据门，BM与净派现收益率阻断 | [登记规则](../../config/research/cross_sectional_alpha/README.md) · [认证证据](../../results/published/cross_sectional_data/xs-market-sec-bundle-20260820-v1/) |
 | 裸策略基准 | G00 已完成；`mom_255_0 / Top20 / monthly` 是后续比较锚，不代表未来冠军 | [G00报告](../20_experiments/G00_baseline/report.md) |
 | XS01 | 仅有历史配置与catalog登记；没有runner、报告、发布结果或图表 | [XS01配置](../../config/experiments/XS01.toml) |
-| 新单因子实验 | 尚未设计、命名或授权 | 本页 |
-| 聚合与模型 | 等待单因子和相关性结果 | 本页 |
+| XA01原子因子实验 | 已完成；严格EQ为0，XS003在周/月频作为趋势维度代表；G00 Top50存在已记录身份例外 | [计划](../44_xa01_atomic_factor_walkforward_program_v1.md) · [报告](../20_experiments/XA01_atomic_factor_walkforward/report.md) · [结果](../../results/published/cross_sectional_alpha/XA01/) |
+| XA02因子路径与市场状态图谱 | 已预注册、未执行；只做完整路径、因果状态图谱、稳定性与冗余审计，模型关闭 | [计划](../45_xa02_factor_market_state_atlas_program_v1.md) · [设计](../20_experiments/XA02_factor_market_state_atlas/design.md) · [锁](../../config/experiments/xa02/PREREG_LOCK.json) |
+| 聚合与模型 | 等待XA02结果；之后另行设计factor-only与factor+state滚动模型 | 本页 |
 
 ## 3. 论文与因子知识层
 
@@ -39,7 +40,7 @@
 - 因子机器表：[factor_definition_registry.csv](../../config/research/cross_sectional_alpha/factor_definition_registry.csv)
 - 登记规则：[config/research/cross_sectional_alpha/README.md](../../config/research/cross_sectional_alpha/README.md)
 
-登记表是宽候选知识库，不等于下一轮执行清单。市场与SEC源层通过只说明输入证据可用；新闻、文本、期权、分析师和供应链候选可以继续留在知识库，但任何候选都没有自动运行资格。
+登记表是宽候选知识库，不等于下一轮执行清单。因子数据库的数据资格只说明公式、PIT输入和覆盖率可用；新闻、文本、期权、分析师和供应链候选可以继续留在知识库，14个数据合格因子也没有自动获得回测实验资格。
 
 ## 4. 已有横截面基准
 
@@ -67,4 +68,4 @@ Round 9–10把P00叠加到 `mom_255_0`，属于两条主线的接口实验，�
 - `results/published/` 下紧凑机器证据；
 - `docs/figures/` 下对应图表。
 
-在这些文件真正创建前，本页只记录研究方向，不将知识登记误写成已运行实验。
+XA01之后先执行XA02，获取完整因子表现与市场状态图谱并硬停。用户审阅后再冻结XA03的factor-only与factor+state滚动模型；其Target、训练记忆、refit节奏、模型容量和输入集合都不由XA02自动决定。后续仍按“相关性与机制去冗余→透明聚合/低容量模型→组合构建→冻结P00迁移”的顺序推进；任何聚合、模型或P00实验都需要新计划授权。

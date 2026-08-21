@@ -6,7 +6,7 @@
 
 | 研究主线 | 当前状态 | 入口 |
 |---|---|---|
-| 系统性 long-only 横截面 Alpha | **当前主线**。PIT市场层与SEC基本面源数据层已完成获取、处理和研究级认证；因子库、因子面板与首轮新实验移至后续轮次 | [主线主页](docs/research_tracks/cross_sectional_alpha.md) |
+| 系统性 long-only 横截面 Alpha | **当前主线**。PIT市场与SEC源层已认证，17因子统一面板已冻结审计；14个因子通过数据门，首轮单因子实验待设计 | [主线主页](docs/research_tracks/cross_sectional_alpha.md) |
 | 防御择时与仓位控制 | **已完成研究档案**。Round 1–10闭合；RSP/SPY63有风险信息，但P00在2022–2026机械揭示中未通过联合门 | [主线主页](docs/research_tracks/defensive_timing.md) |
 
 项目总导航见[研究文档中心](docs/README.md)。实验设计与报告、机器结果和图表分别从[实验档案](docs/20_experiments/README.md)、[发布结果](results/published/README.md)和[图表索引](docs/figures/README.md)进入。
@@ -16,7 +16,7 @@
 - 股票池：历史时点（PIT）S&P 500成分股；long-only为主。
 - 市场数据：2013年开始暖机，统一评价期为2018-01-02开盘至2026-06-30收盘。
 - 数据状态：冻结免费研究数据通过内部门禁，但仍为 `formal_eligible=false`；完整行情和大体积运行产物保留在本地runtime。
-- 横截面下一阶段：完善因子定义、计算统一因子面板并做覆盖率QA；新闻和文本由独立任务研究。
+- 横截面下一阶段：为14个数据合格因子设计统一的Top5/10/20/50单因子实验；新闻和文本由独立任务研究。
 - 实验方法：所有交易时点只能使用当时已知数据；失败、停止、无效和被替代路径均保留。
 - 证据语言：完整历史walk-forward解决基本前视问题，但不自动消除研究者择优偏差；历史结果称研究证据，不冒充未来确认。
 

@@ -1,6 +1,6 @@
 # 横截面市场与SEC基本面源数据库 v1
 
-状态：**源数据获取、PIT处理与研究级认证完成；`formal_eligible=false`。** 本文不是因子库、因子实验计划或实验结果。
+状态：**源数据获取、PIT处理与研究级认证完成；`formal_eligible=false`。** 本文记录源层；后续派生因子数据库已另行冻结，不改变本源层证书。
 
 ## 范围
 
@@ -10,7 +10,7 @@
 2. 保存SEC原始响应、下载账本、申报事件和数值事实的不可变快照；
 3. 严格按SEC接受时间构建point-in-time年度规范事实；
 4. 独立重算身份覆盖、会计恒等式、来源适用性和历史实体支持；
-5. 为后续因子计算提供统一输入，但本轮不计算或认证任何因子。
+5. 为后续因子计算提供统一输入；因子派生层采用独立manifest与冻结工件。
 
 正式配置见[`data_program.toml`](../../config/research/cross_sectional_alpha/data_program.toml)，紧凑认证证据见[`results/published/cross_sectional_data/xs-market-sec-source-data-20260820-v1`](../../results/published/cross_sectional_data/xs-market-sec-source-data-20260820-v1/)。
 
@@ -63,16 +63,22 @@
 | `entity_temporal_support_qa.parquet` | 每个历史实体区间的申报支持审计 |
 | `manifest.json` / `FROZEN.json` | 内容哈希、构建签名和冻结状态 |
 
-## 本轮未完成、不得误读的范围
+## 源数据认证轮未包含的范围
 
-`factor_definition_registry.csv`、`active_factor_registry.csv`及相关因子代码只是后续工作的候选设计或实现脚手架。本轮不对任何`factor_id`宣称：
+源数据证书本身不对任何`factor_id`宣称：
 
 - 已计算或已写入统一因子面板；
 - 覆盖率、相关性或经济表现合格；
 - 可进入“第一轮”实验；
 - 已获得模型、回测、P00协同或任何交易实验授权。
 
-BM、净派现收益率、严格Sloan应计等定义仍需在因子阶段分别通过股份类别市值、字段覆盖和适用性门；不能因为源数据认证通过而自动晋级。新闻、分析师、期权、供应链和其他替代数据不属于本数据库版本。
+新闻、分析师、期权、供应链和其他替代数据不属于本数据库版本。
+
+## 后续派生因子状态
+
+因子数据库`xs-market-sec-bundle-20260820-v1`已在本源层上完成，紧凑证据见[发布目录](../../results/published/cross_sectional_data/xs-market-sec-bundle-20260820-v1/)。它包含17个登记因子、162个月末和1,380,944行完整键空间；确定性复建、真实未来输入截断、主键、排名、manifest与DuckDB视图审计全部通过。
+
+纯数据门选出14个第一轮候选：11个市场因子、毛利率/资产、资产增长，以及作为严格Sloan覆盖替代的CFO应计。严格Sloan自身覆盖不足；BM与净派现收益率因缺少经审计的发行人全股类历史市值而阻断。该状态不含收益标签，不是实验结果或回测授权。
 
 ## 复核入口
 

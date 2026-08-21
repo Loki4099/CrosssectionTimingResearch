@@ -1,0 +1,388 @@
+{
+  "bundle_manifest_sha256": "4fb1751080613d610884b913f27d800084a054741b5cfdbf8bc8d09585a510ed",
+  "components": [
+    {
+      "component_id": "active_factor_registry",
+      "component_kind": "csv",
+      "logical_path": "project/config/research/cross_sectional_alpha/active_factor_registry.csv",
+      "row_count": null,
+      "sha256": "3dca65f77c77569d76afc25ecf3cef521e6ec6acf93e7c7a580c409a5feb0b1b",
+      "source_version": "xs-market-sec-factors-20260820-v1"
+    },
+    {
+      "component_id": "causality_qa",
+      "component_kind": "json",
+      "logical_path": "runtime/data/derived/cross_sectional_alpha/xs-market-sec-factors-20260820-v1/causality_qa.json",
+      "row_count": null,
+      "sha256": "9cf8dc7b0675237e92b8385d140d1f6f043e100486f83b312aaf17a3b488aec5",
+      "source_version": "xs-market-sec-factors-20260820-v1"
+    },
+    {
+      "component_id": "code_database_pipeline",
+      "component_kind": "python",
+      "logical_path": "project/src/momentum_reversal/pipelines/cross_sectional_database.py",
+      "row_count": null,
+      "sha256": "d4431714d61b322c24302fdb1c4058f1e6013dfafb6866dd8454052910833f3d",
+      "source_version": "xs-market-sec-factors-20260820-v1"
+    },
+    {
+      "component_id": "code_entity_bridge",
+      "component_kind": "python",
+      "logical_path": "project/src/momentum_reversal/data/entity_bridge.py",
+      "row_count": null,
+      "sha256": "5683404770f0be5fdaa990c739d0cb560fbd67293b7acd42841d5881213f1a67",
+      "source_version": "xs-sec-entity-bridge-20260820-v1"
+    },
+    {
+      "component_id": "code_entity_temporal_audit",
+      "component_kind": "python",
+      "logical_path": "project/src/momentum_reversal/data/entity_temporal_audit.py",
+      "row_count": null,
+      "sha256": "3301f32db84ada6dc89dc9bc4890840c56af41f2e0c43039a6b47063bd4ddf76",
+      "source_version": "xs-sec-entity-bridge-20260820-v1"
+    },
+    {
+      "component_id": "code_factor_database",
+      "component_kind": "python",
+      "logical_path": "project/src/momentum_reversal/data/factor_database.py",
+      "row_count": null,
+      "sha256": "7f2eead472b818969da404fcd63a17efb9fe1de3e45f52eb3314342a53918ed3",
+      "source_version": "xs-market-sec-factors-20260820-v1"
+    },
+    {
+      "component_id": "code_fundamental_factor",
+      "component_kind": "python",
+      "logical_path": "project/src/momentum_reversal/factors/cross_sectional_fundamental.py",
+      "row_count": null,
+      "sha256": "489a4bc6ea3272446e04179c31bd6581049894c699024cdcd731edc54b97417d",
+      "source_version": "xs-market-sec-factors-20260820-v1"
+    },
+    {
+      "component_id": "code_fundamental_store",
+      "component_kind": "python",
+      "logical_path": "project/src/momentum_reversal/data/fundamental_store.py",
+      "row_count": null,
+      "sha256": "520c46e436c0c1535e279d9d9230c2abd6c0e64aad4050298883e921270f34cb",
+      "source_version": "xs-sec-fundamentals-20260820-v1"
+    },
+    {
+      "component_id": "code_market_factor",
+      "component_kind": "python",
+      "logical_path": "project/src/momentum_reversal/factors/cross_sectional_market.py",
+      "row_count": null,
+      "sha256": "5f481282c95ea2e17a4d81ae551ffc63664bbed2ffa66301f2df5dc12b6e01c6",
+      "source_version": "xs-market-sec-factors-20260820-v1"
+    },
+    {
+      "component_id": "code_sec_edgar",
+      "component_kind": "python",
+      "logical_path": "project/src/momentum_reversal/data/sec_edgar.py",
+      "row_count": null,
+      "sha256": "8525d40884b5b3f080b6ae207fed3133ad3616443ffd2c51364708dc39553ade",
+      "source_version": "xs-sec-fundamentals-20260820-v1"
+    },
+    {
+      "component_id": "code_sec_fundamental",
+      "component_kind": "python",
+      "logical_path": "project/src/momentum_reversal/data/sec_fundamental_pipeline.py",
+      "row_count": null,
+      "sha256": "179c5878e4fec3c73fd529272d19b95ba33774f8f802e3f756b916cfa018a9ab",
+      "source_version": "xs-sec-fundamentals-20260820-v1"
+    },
+    {
+      "component_id": "data_program",
+      "component_kind": "toml",
+      "logical_path": "project/config/research/cross_sectional_alpha/data_program.toml",
+      "row_count": null,
+      "sha256": "091a70b0758f03b260ae533ce396059357eca04c5c89ed89176eba2ba33f6141",
+      "source_version": "xs_market_sec_database_v1"
+    },
+    {
+      "component_id": "deterministic_rebuild_qa",
+      "component_kind": "json",
+      "logical_path": "runtime/data/derived/cross_sectional_alpha/xs-market-sec-factors-20260820-v1/deterministic_rebuild_qa.json",
+      "row_count": null,
+      "sha256": "cfd76bbde4220f83b9530db789ed411f5da20cac5b3d277c7096bb905865f7e2",
+      "source_version": "xs-market-sec-factors-20260820-v1"
+    },
+    {
+      "component_id": "entity_cik_intervals",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/curated/cross_sectional_alpha/xs-sec-fundamentals-20260820-v1/entity_cik_intervals.parquet",
+      "row_count": 772,
+      "sha256": "055430b9c7a180fe6415d7879f51e3c82bb5e16b63c6ca848283f03b4687ab77",
+      "source_version": "xs-sec-entity-bridge-20260820-v1",
+      "view_name": "v_entity_cik_intervals"
+    },
+    {
+      "component_id": "entity_temporal_support",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/curated/cross_sectional_alpha/xs-sec-fundamentals-20260820-v1/entity_temporal_support_qa.parquet",
+      "row_count": 766,
+      "sha256": "43fef89a6828c475c6fbcf596d6de505118e051a65dc1f56be693ef586ee5d16",
+      "source_version": "xs-sec-fundamentals-20260820-v1",
+      "view_name": "v_entity_temporal_support"
+    },
+    {
+      "component_id": "entity_temporal_support_summary",
+      "component_kind": "json",
+      "logical_path": "runtime/data/curated/cross_sectional_alpha/xs-sec-fundamentals-20260820-v1/entity_temporal_support_summary.json",
+      "row_count": null,
+      "sha256": "a2a6dd7002f878bafe18f166c8418a0c13bb2577190c9879518e4af5c3d50770",
+      "source_version": "xs-sec-fundamentals-20260820-v1"
+    },
+    {
+      "component_id": "factor_content_manifest",
+      "component_kind": "manifest",
+      "logical_path": "runtime/data/derived/cross_sectional_alpha/xs-market-sec-factors-20260820-v1/factor_database/factor_content_manifest.json",
+      "row_count": null,
+      "sha256": "09c8492123fbf55cb6f489db65bc015d3001e7bbe95188bf79ea0d0ec67ca71c",
+      "source_version": "xs-market-sec-factors-20260820-v1"
+    },
+    {
+      "component_id": "factor_coverage",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/derived/cross_sectional_alpha/xs-market-sec-factors-20260820-v1/factor_database/factor_coverage.parquet",
+      "row_count": 17,
+      "sha256": "b3f5ccce3cefcc220586b0603b74ac587272105b5100e5c99a7a85f593d8f8c0",
+      "source_version": "xs-market-sec-factors-20260820-v1",
+      "view_name": "v_factor_coverage"
+    },
+    {
+      "component_id": "factor_date_coverage",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/derived/cross_sectional_alpha/xs-market-sec-factors-20260820-v1/factor_database/date_coverage.parquet",
+      "row_count": 2754,
+      "sha256": "921e429aebe510160dc669d2eaefe5a74e5dd22d3438807022c8e79b11b5fc72",
+      "source_version": "xs-market-sec-factors-20260820-v1",
+      "view_name": "v_factor_date_coverage"
+    },
+    {
+      "component_id": "factor_definition_registry",
+      "component_kind": "csv",
+      "logical_path": "project/config/research/cross_sectional_alpha/factor_definition_registry.csv",
+      "row_count": null,
+      "sha256": "9421c3e623003c4f03f26e16dc6b6a5c2a2925aa79a325c7e07fb6e66db93649",
+      "source_version": "xs-market-sec-factors-20260820-v1"
+    },
+    {
+      "component_id": "factor_missing_reason_coverage",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/derived/cross_sectional_alpha/xs-market-sec-factors-20260820-v1/factor_database/missing_reason_coverage.parquet",
+      "row_count": 76,
+      "sha256": "d8b8d05200b469867f15612515d0fe2660073ad86cc5777eefce72a31278a84a",
+      "source_version": "xs-market-sec-factors-20260820-v1",
+      "view_name": "v_factor_missing_reason_coverage"
+    },
+    {
+      "component_id": "factor_readiness",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/derived/cross_sectional_alpha/xs-market-sec-factors-20260820-v1/factor_database/factor_readiness.parquet",
+      "row_count": 17,
+      "sha256": "15a0e2afafe9d5b1aaced2dd1b007a9549acf7819bd8f9ccee90c3bc9af42834",
+      "source_version": "xs-market-sec-factors-20260820-v1",
+      "view_name": "v_factor_readiness"
+    },
+    {
+      "component_id": "factor_values",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/derived/cross_sectional_alpha/xs-market-sec-factors-20260820-v1/factor_database/factor_values.parquet",
+      "row_count": 1380944,
+      "sha256": "1c6db421f0bb5acb115f02bbf77fabc66447d7fa3d9cc9886b72c07de337e114",
+      "source_version": "xs-market-sec-factors-20260820-v1",
+      "view_name": "v_factor_values"
+    },
+    {
+      "component_id": "factor_year_coverage",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/derived/cross_sectional_alpha/xs-market-sec-factors-20260820-v1/factor_database/year_coverage.parquet",
+      "row_count": 238,
+      "sha256": "ee4fb5e7b07b702d60b68582fc0d9ddee4bcbcc3803825cda17eba48b10a4d16",
+      "source_version": "xs-market-sec-factors-20260820-v1",
+      "view_name": "v_factor_year_coverage"
+    },
+    {
+      "component_id": "fundamental_accounting_identity",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/curated/cross_sectional_alpha/xs-sec-fundamentals-20260820-v1/accounting_identity_qa.parquet",
+      "row_count": 29146,
+      "sha256": "2c7483ad02cbb2f08925a186ce93f59619f7c335754653509f4e7c6762200c11",
+      "source_version": "xs-sec-fundamentals-20260820-v1",
+      "view_name": "v_fundamental_accounting_identity"
+    },
+    {
+      "component_id": "fundamental_cik_manifest_index",
+      "component_kind": "json",
+      "logical_path": "runtime/data/curated/cross_sectional_alpha/xs-sec-fundamentals-20260820-v1/cik_manifest_index.json",
+      "row_count": null,
+      "sha256": "95749669421f21ddb8cfcf5f73d4f5ae6bb5b707405dffbbb22b8db850f840d1",
+      "source_version": "xs-sec-fundamentals-20260820-v1"
+    },
+    {
+      "component_id": "fundamental_factor_panel",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/derived/cross_sectional_alpha/xs-market-sec-factors-20260820-v1/fundamental_factor_panel.parquet",
+      "row_count": 489294,
+      "sha256": "7f7c3b136ffd5ae8cb673e6a052adfbc8b2db9a45f7bfe5cf85175d055068da6",
+      "source_version": "xs-market-sec-factors-20260820-v1",
+      "view_name": "v_fundamental_factor_panel"
+    },
+    {
+      "component_id": "fundamental_freeze",
+      "component_kind": "json",
+      "logical_path": "runtime/data/curated/cross_sectional_alpha/xs-sec-fundamentals-20260820-v1/FROZEN.json",
+      "row_count": null,
+      "sha256": "2ef190c73297c76876fd661b37766bbdac6488a237459c00f131a4c8f0220b2a",
+      "source_version": "xs-sec-fundamentals-20260820-v1"
+    },
+    {
+      "component_id": "fundamental_manifest",
+      "component_kind": "manifest",
+      "logical_path": "runtime/data/curated/cross_sectional_alpha/xs-sec-fundamentals-20260820-v1/manifest.json",
+      "row_count": null,
+      "sha256": "dcd24fd07e178d3dbd0afb483b7702a98a4404267c544755d895b0ab100442a2",
+      "source_version": "xs-sec-fundamentals-20260820-v1"
+    },
+    {
+      "component_id": "identifier_manifest",
+      "component_kind": "manifest",
+      "logical_path": "runtime/data/raw/cross_sectional_alpha/xs-sec-fundamentals-20260820-v1/identifiers/manifest.json",
+      "row_count": null,
+      "sha256": "249fa9070891c65960b6e41270d78e5eb8b3ea627f69e7a4c4556f0bb077ad10",
+      "source_version": "xs-sec-entity-bridge-20260820-v1"
+    },
+    {
+      "component_id": "identifier_mapping_qa",
+      "component_kind": "json",
+      "logical_path": "runtime/data/raw/cross_sectional_alpha/xs-sec-fundamentals-20260820-v1/identifiers/mapping_qa.json",
+      "row_count": null,
+      "sha256": "ccee41f8c46a207c5e9c2f11fee4b51e21df5c256b49a45b9e5b3998b8917a10",
+      "source_version": "xs-sec-entity-bridge-20260820-v1"
+    },
+    {
+      "component_id": "market_benchmark",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/curated/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate/benchmark_daily.parquet",
+      "row_count": 3393,
+      "sha256": "bbea6b654608d47a2da78e406b2bb8dfa06da5ad004f78f3a72f275434f70455",
+      "source_version": "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate",
+      "view_name": "v_market_benchmark"
+    },
+    {
+      "component_id": "market_calendar",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/curated/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate/calendar.parquet",
+      "row_count": 3393,
+      "sha256": "28275dc373f76a15c0c202c0c438fdce2e8f547e8930faf38519a97f81865565",
+      "source_version": "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate",
+      "view_name": "v_market_calendar"
+    },
+    {
+      "component_id": "market_factor_panel",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/derived/cross_sectional_alpha/xs-market-sec-factors-20260820-v1/market_factor_panel.parquet",
+      "row_count": 893552,
+      "sha256": "e53ad783d3b22263edd9f21854a8180fbcbabc0c0cd7b47ef904b1525d8a8be9",
+      "source_version": "xs-market-sec-factors-20260820-v1",
+      "view_name": "v_market_factor_panel"
+    },
+    {
+      "component_id": "market_freeze",
+      "component_kind": "json",
+      "logical_path": "runtime/data/curated/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate/FROZEN.json",
+      "row_count": null,
+      "sha256": "a3ef9ee72cd3d535c2e5bf06b3d1f520c54667a8552891543ee0f9ca50488296",
+      "source_version": "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate"
+    },
+    {
+      "component_id": "market_membership",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/curated/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate/membership.parquet",
+      "row_count": 754,
+      "sha256": "d118195a9eb52a862620c75d8984e0250f912184d39ff051f9868ed353615939",
+      "source_version": "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate",
+      "view_name": "v_market_membership"
+    },
+    {
+      "component_id": "market_prices_daily",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/curated/sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate/prices_daily.parquet",
+      "row_count": 2527785,
+      "sha256": "4a881854d2c278378955529c638193706ddfafb503e7a8a9c752cc7791ba2670",
+      "source_version": "sp500-pit-free-research-2013warmup-2018eval-2026-v3-final-candidate",
+      "view_name": "v_market_prices_daily"
+    },
+    {
+      "component_id": "sec_canonical_annual_facts",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/curated/cross_sectional_alpha/xs-sec-fundamentals-20260820-v1/canonical_annual_facts.parquet",
+      "row_count": 358303,
+      "sha256": "2836afbec6a1fa42907a48d5682250eb22b70774ec2c822f64634ab4ae8ae674",
+      "source_version": "xs-sec-fundamentals-20260820-v1",
+      "view_name": "v_sec_canonical_annual_facts"
+    },
+    {
+      "component_id": "sec_cik_overrides",
+      "component_kind": "csv",
+      "logical_path": "project/config/research/cross_sectional_alpha/sec_cik_overrides.csv",
+      "row_count": null,
+      "sha256": "064f4372e0f8ea43e51f5ae75aa8d71f35b05d40d0f65a12e6b20e887ada81d2",
+      "source_version": "xs-sec-entity-bridge-20260820-v1"
+    },
+    {
+      "component_id": "sec_companyfacts_exceptions",
+      "component_kind": "csv",
+      "logical_path": "project/config/research/cross_sectional_alpha/sec_companyfacts_exceptions.csv",
+      "row_count": null,
+      "sha256": "0a476c63a7145f579d879a1740b2497acd97e2abcf99613f0f22ad30854a0cbc",
+      "source_version": "xs-sec-fundamentals-20260820-v1"
+    },
+    {
+      "component_id": "sec_filings",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/curated/cross_sectional_alpha/xs-sec-fundamentals-20260820-v1/filings.parquet",
+      "row_count": 2386818,
+      "sha256": "8d5eb4eca5642cf680bc9d8d4f29a81558b746c2e9ef742ee7e8ac925e5f5ccc",
+      "source_version": "xs-sec-fundamentals-20260820-v1",
+      "view_name": "v_sec_filings"
+    },
+    {
+      "component_id": "sec_metric_registry",
+      "component_kind": "csv",
+      "logical_path": "project/config/research/cross_sectional_alpha/sec_metric_registry.csv",
+      "row_count": null,
+      "sha256": "3f8a0b881b69a1d39050f3dc9593a6263f165b0d0a39ef44e2b124a433e9dc46",
+      "source_version": "xs-sec-fundamentals-20260820-v1"
+    },
+    {
+      "component_id": "sec_registered_facts",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/curated/cross_sectional_alpha/xs-sec-fundamentals-20260820-v1/registered_facts.parquet",
+      "row_count": 1679666,
+      "sha256": "6fd86b4c55bc4571ddb77f7a43f40d32665f327420a39b1a44fb663ee30cadd2",
+      "source_version": "xs-sec-fundamentals-20260820-v1",
+      "view_name": "v_sec_registered_facts"
+    },
+    {
+      "component_id": "sec_source_applicability",
+      "component_kind": "parquet",
+      "logical_path": "runtime/data/curated/cross_sectional_alpha/xs-sec-fundamentals-20260820-v1/source_applicability.parquet",
+      "row_count": 753,
+      "sha256": "8a6cbdcd876d7c8d83500c2644f19b5cd85d15f3f11f4d9a694d2b5efd7aa61c",
+      "source_version": "xs-sec-fundamentals-20260820-v1",
+      "view_name": "v_sec_source_applicability"
+    }
+  ],
+  "data_bundle_id": "xs-market-sec-bundle-20260820-v1",
+  "evidence_policy": "runtime Parquet/raw objects are authoritative; this Git artifact contains hashes and compact QA only",
+  "raw_sec": {
+    "all_objects_size_and_sha256_verified": true,
+    "content_index_sha256": "5b5614edfb305614ea0b94030609a36f079c924c7820044b9e779368bc6bfaa4",
+    "failed_http_record_count": 8,
+    "ledger_sha256": "432d8c0337ee27ea34cf0dbb49dcdb3e2bd98c714c55506ef0d5993074f665e0",
+    "record_count": 2885,
+    "unique_object_count": 2770,
+    "verified_byte_count": 252770109
+  },
+  "schema_version": "cross_sectional_alpha.compact_evidence_index.v1"
+}

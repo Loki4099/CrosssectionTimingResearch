@@ -454,6 +454,38 @@ class CrossSectionalFundamentalTests(unittest.TestCase):
             "unverified_no_pit_sic",
         )
 
+    def test_cover_page_share_date_cannot_supersede_fiscal_year_filing(self) -> None:
+        facts = _base_facts()
+        cover_row = {
+            "cik": "320193",
+            "accession": "320193-23",
+            "accepted_at": "2024-03-14T16:30:00-04:00",
+            "available_session": "2024-03-15",
+            "fiscal_year": 2023,
+            "period_start": pd.NaT,
+            "period_end": "2024-02-01",
+            "metric_id": "shares_outstanding",
+            "value": 1_000.0,
+            "unit": "shares",
+            "sic": 3571,
+            "sic_is_pit": False,
+            "sic_provenance": "unverified_no_pit_sic",
+        }
+        facts = pd.concat([facts, pd.DataFrame([cover_row])], ignore_index=True)
+
+        panel = compute_fundamental_factor_panel(
+            facts,
+            _mapping(("S1", "320193")),
+            [pd.Timestamp("2024-04-30")],
+        )
+
+        gross_profitability = _row(panel, Factor.GROSS_PROFITABILITY)
+        self.assertAlmostEqual(gross_profitability["score"], 80.0 / 120.0)
+        self.assertEqual(
+            gross_profitability["source_period_end"],
+            pd.Timestamp("2023-12-31"),
+        )
+
     def test_requested_financial_filter_blocks_when_sic_is_not_pit(self) -> None:
         panel = compute_fundamental_factor_panel(
             _base_facts(sic=6200, sic_is_pit=False),

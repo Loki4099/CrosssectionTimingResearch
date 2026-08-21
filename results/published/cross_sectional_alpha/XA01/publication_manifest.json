@@ -1,0 +1,73 @@
+{
+  "files": {
+    "README.md": {
+      "sha256": "ee05c47fb5d72850ccd5a2b09dd57f45d15f7957d7c18e4b012de4f13649e9e8",
+      "size": 843
+    },
+    "decision.json": {
+      "sha256": "cf6483ad034ad41bdbe98f015ce94c029bf7fcf670d30a4aba7f726a961e390b",
+      "size": 592
+    },
+    "factor_correlations.csv": {
+      "sha256": "8022d73226fc530a2b00f757bab8a04940989a9c954e75b196adb45d510f5fa8",
+      "size": 11746
+    },
+    "final_assessment.csv": {
+      "sha256": "dba53eb2808906e20db6f9661d029e3dacd2c55aa08cffe45d9aef8867a5f7d9",
+      "size": 10324
+    },
+    "g00_identity_audit.csv": {
+      "sha256": "45027c0c9eb5e0a8af5e9805ed9b91c9ff55ed7ea07ae86663ce0dea127411be",
+      "size": 732
+    },
+    "manifest.json": {
+      "sha256": "c7c09b471732b11991ef301b005edf3b450f5ab3134ab5d85364f415d334f067",
+      "size": 2625
+    },
+    "paper_horizon_diagnostics.csv": {
+      "sha256": "2f3b26e1725722ab629baa1bd77d2341d25fec80618a03d3214bf21f65019609",
+      "size": 1379
+    },
+    "portfolio_metrics.csv": {
+      "sha256": "b579bbf7ef10341adebeb44c0800d35a30fe18b0ccda8e2c6d2f7e8a02e8553b",
+      "size": 213547
+    },
+    "portfolio_robustness.csv": {
+      "sha256": "c2e54f955fb6c3e16af02d36b0aebc51623ec5f0c55b974fe82b0b7b2ae42b1d",
+      "size": 1036
+    },
+    "primary_active_comparison.csv": {
+      "sha256": "497d44f5681bae7683c773442195e233bde71a984332c8726d97ce6b879f4969",
+      "size": 94977
+    },
+    "signal_summary.csv": {
+      "sha256": "e00608f2c2e94a8dbbf411eaea2ce30f92afb750619a2f1fb11c1625662974d1",
+      "size": 3737
+    },
+    "subperiod_robustness.csv": {
+      "sha256": "96434f168b808633ce37db0c77c4caa6e63d315806b20cd8c2f381807e87ad3d",
+      "size": 3187
+    },
+    "xa01a_summary.json": {
+      "sha256": "e417ca8550bed779a4fbff851cf1e9d72d694a58e1d5cd99a6862e3055ba7bed",
+      "size": 188
+    },
+    "xa01b_summary.json": {
+      "sha256": "09a21b67f54e8ae8cda0c86cf5abef411f9912cf93cf3cd520086cf85b10de47",
+      "size": 103
+    },
+    "xa01c_summary.json": {
+      "sha256": "82609348101f93d05b5dd62d2b98db2a80802f03bb29bbe5b005b04e7c4201f0",
+      "size": 132
+    },
+    "xa01d_summary.json": {
+      "sha256": "d68588bd7e84aba6808392bfbdc9ddf884e0e28fc944a613c4044dff8777a3f5",
+      "size": 303
+    },
+    "yearly_rank_ic.csv": {
+      "sha256": "8733c7d685bb2f440fe83829576e639095d30eaca5833a48ba91999068ecf335",
+      "size": 21250
+    }
+  },
+  "schema_version": "xa01.publication.v1"
+}
