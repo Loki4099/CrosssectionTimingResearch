@@ -11,10 +11,11 @@
 | G00 裸动量基准 | 已完成 | [design](./G00_baseline/design.md) · [config](../../config/experiments/G00.toml) | [factor](../../src/momentum_reversal/factors/momentum.py) · [runner](../../src/momentum_reversal/pipelines/g00.py) | [report](./G00_baseline/report.md) · [published](../../results/published/G00/) · [Round 1图集](../figures/round1/README.md) |
 | XA01 原子因子周/月 walk-forward | 已完成并硬停；EQ=0，XS003为两频率趋势维度代表；G00 Top50身份例外 | [design](./XA01_atomic_factor_walkforward/design.md) · [program](../44_xa01_atomic_factor_walkforward_program_v1.md) · [lock](../../config/experiments/xa01/PREREG_LOCK.json) | [runner](../../src/momentum_reversal/pipelines/xa01_experiments.py) · [audit](../../scripts/audit_xa01.py) | [report](./XA01_atomic_factor_walkforward/report.md) · [published](../../results/published/cross_sectional_alpha/XA01/) · [figures](../figures/cross_sectional_alpha/XA01/) |
 | XA02 因子路径与市场状态图谱 | 已完成并硬停；1D条件关系2个、稳健2D关系0个，模型/聚合/P00关闭 | [design](./XA02_factor_market_state_atlas/design.md) · [program](../45_xa02_factor_market_state_atlas_program_v1.md) · [lock](../../config/experiments/xa02/PREREG_LOCK.json) | [runner](../../src/momentum_reversal/pipelines/xa02_experiments.py) · [audit](../../scripts/audit_xa02.py) | [report](./XA02_factor_market_state_atlas/report.md) · [published](../../results/published/cross_sectional_alpha/XA02/) · [figures](../figures/cross_sectional_alpha/XA02/) |
+| XA03 滚动聚合模型比较 | 计划已冻结并授权，尚未执行；XA03E后硬停，P00/stacking/bagging关闭 | [design](./XA03_cross_sectional_aggregation/design.md) · [program](../46_xa03_cross_sectional_aggregation_program_v1.md) · [lock](../../config/experiments/xa03/PREREG_LOCK.json) | runner与audit将在执行阶段按锁实现 | 尚无report、published result或figure |
 | XS01 个股波动率参与排序 | 仅历史登记，未执行 | [config](../../config/experiments/XS01.toml) | catalog helper存在，但无可执行runner | 无design、report、published result或figure |
 | 市场+基本面新因子 | 数据层已就绪；14因子首轮由XA01完成 | [论文/因子登记](../43_cross_sectional_alpha_literature_and_factor_registry_v1.md) · [源数据](../../results/published/cross_sectional_data/xs-market-sec-source-data-20260820-v1/) · [因子数据库](../../results/published/cross_sectional_data/xs-market-sec-bundle-20260820-v1/) | 17因子面板与数据QA已完成 | 见XA01 |
 
-新的横截面研究不自动续编号为防御Round 11。命名空间、标签、Top-K、调仓频率和通过门将在后续计划中确定。
+新的横截面研究不自动续编号为防御Round 11。XA03继续独立的横截面命名空间；其标签、Top-K、调仓频率、模型矩阵和通过门均以冻结计划为准。
 
 ## B. 防御overlay九宫格
 

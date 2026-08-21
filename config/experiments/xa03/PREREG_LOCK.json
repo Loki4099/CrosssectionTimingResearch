@@ -1,0 +1,68 @@
+{
+  "schema_version": "xa03.prereg_lock.v1",
+  "program_id": "xa03_cross_sectional_walkforward_aggregation_v1",
+  "status": "locked_authorized",
+  "formal_eligible": false,
+  "models_authorized": true,
+  "factor_aggregation_authorized": true,
+  "factor_state_aggregation_authorized": true,
+  "p00_authorized": false,
+  "lockbox_authorized": false,
+  "hard_stop_after": "XA03E",
+  "processes_per_frequency": 57,
+  "process_frequency_cells": 114,
+  "topk_signal_paths": 456,
+  "cost_paths": 1824,
+  "common_ew_cost_control_paths": 8,
+  "absolute_candidates_per_frequency": 53,
+  "no_rsp_diagnostics_per_frequency": 4,
+  "paired_promotion_comparisons_per_frequency": 39,
+  "rsp_ablation_comparisons_per_frequency": 4,
+  "files": [
+    {
+      "path": "config/experiments/xa03/comparison_registry.csv",
+      "sha256": "bbfce870af8a5f42a595cc3dca1a8da90e68f1dc0ef094a7ea94bc3bbea093a3",
+      "size_bytes": 9265
+    },
+    {
+      "path": "config/experiments/xa03/factor_registry.csv",
+      "sha256": "498cab8cab8e9bf264cf14520255b596593406060b4af3e141a6ccc19df93d77",
+      "size_bytes": 2269
+    },
+    {
+      "path": "config/experiments/xa03/feature_bundles.csv",
+      "sha256": "e2b4659b452d2299296db19b2b465135bfdecb118d638888985f9dc8ada60b7e",
+      "size_bytes": 3361
+    },
+    {
+      "path": "config/experiments/xa03/model_recipes.csv",
+      "sha256": "d80d58333f49f2d5a18b3cebe5d4dbe7350ee85e0f9f15ac4584c962df0f0518",
+      "size_bytes": 851
+    },
+    {
+      "path": "config/experiments/xa03/process_registry.csv",
+      "sha256": "7fb09d3f404a4cf24d4deffc5b200ae7fae796c97f824ccf3a0bd49c14e39dee",
+      "size_bytes": 12835
+    },
+    {
+      "path": "config/experiments/xa03/program.toml",
+      "sha256": "60628e75de1fcdc697003812982395b368b4d1121c1729bd04e135f7ceae37ef",
+      "size_bytes": 24837
+    },
+    {
+      "path": "docs/20_experiments/XA03_cross_sectional_aggregation/design.md",
+      "sha256": "bbfd4bc710825c651430ba96fa67889d10f1105450afd363160b1c65f3242c0b",
+      "size_bytes": 36190
+    },
+    {
+      "path": "docs/46_xa03_cross_sectional_aggregation_program_v1.md",
+      "sha256": "7aa802582c82ae132ef1f2c4bc4f6e4a8c0bb87c4ee843021aa0cd811fed2641",
+      "size_bytes": 9599
+    },
+    {
+      "path": "scripts/build_xa03_prereg_lock.py",
+      "sha256": "43f0b3a71d9c4dc45a0d6978eac16a6be5fcc89414f7c3237223b66874649214",
+      "size_bytes": 57440
+    }
+  ]
+}

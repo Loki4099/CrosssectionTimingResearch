@@ -112,5 +112,17 @@ tests/test_fundamental_store.py text eol=lf
 tests/test_research_catalog.py text eol=lf whitespace=-blank-at-eof
 tests/test_sec_edgar.py text eol=lf
 tests/test_sec_fundamental_pipeline.py text eol=lf
+
+# Cross-sectional Alpha preregistration hashes are raw-byte hashes.  Keep the
+# XA01-XA03 plans, builders and lock tests stable across Windows/Unix clones.
+config/experiments/xa01/** text eol=lf
+config/experiments/xa02/** text eol=lf
+config/experiments/xa03/** text eol=lf
+docs/20_experiments/XA01*/** text eol=lf
+docs/20_experiments/XA02*/** text eol=lf
+docs/20_experiments/XA03*/** text eol=lf
+docs/4[3-6]_*.md text eol=lf
+scripts/build_xa0*_prereg_lock.py text eol=lf
+tests/test_xa0*_prereg.py text eol=lf
 *.png binary
 *.parquet binary

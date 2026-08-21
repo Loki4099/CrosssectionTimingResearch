@@ -1,0 +1,15 @@
+factor_id,display_name,dimension,xa01_status,xa02_primary_role,raw_control_authorized,single_factor_model_authorized,role5_member,all14_member,high_score_means,common10_missing_aware
+XS001_MOM_255_0,255-session momentum,trend_price_path,not_advanced,time_break_unexplained,true,true,false,true,stronger long momentum,true
+XS002_MOM_12_1,12-1 momentum,trend_price_path,not_advanced,conditional_sign_switch,true,true,true,true,stronger long momentum,true
+XS003_MOM_12_7,12-7 intermediate momentum,trend_price_path,dimension_representative,broad_static,true,true,true,true,stronger intermediate momentum,true
+XS004_HIGH_52W,52-week high proximity,trend_price_path,not_advanced,time_break_unexplained,true,true,false,true,closer to prior 52-week high,true
+XS007_ST_REV_21,21-session reversal,reversal_calendar,not_advanced,time_break_unexplained,true,true,false,true,stronger short-term reversal score,true
+XS008_SAME_MONTH_5Y,Same-month seasonality,reversal_calendar,not_advanced,conditional_sign_switch,true,true,true,true,stronger same-month seasonality,true
+XS013_LOW_BETA_FP,Frazzini-Pedersen low beta,low_risk_lottery,not_advanced,exploratory_state_candidate,true,true,false,true,lower shrunk market beta,true
+XS015_MAX_21,Low maximum daily return,low_risk_lottery,not_advanced,no_state_evidence,true,true,false,true,smaller prior-month maximum daily return,true
+XS018_AMIHUD_252,Amihud illiquidity,liquidity_attention,not_advanced,time_break_unexplained,true,true,false,true,larger price impact per dollar volume,true
+XS019_PRICE_DELAY_52W,Price delay,liquidity_attention,not_advanced,no_state_evidence,true,true,false,true,larger delayed market response,true
+XS020_VOLUME_SHOCK_50D,Abnormal volume,liquidity_attention,not_advanced,time_break_unexplained,true,true,false,true,larger abnormal recent volume,true
+XS032_GROSS_PROFIT_AT,Gross profitability to assets,operating_quality_cash,not_advanced,time_break_unexplained,true,true,false,true,higher gross profit to assets,true
+XS041_ASSET_GROWTH,Conservative asset growth,investment_conservatism,not_advanced,broad_static,true,true,true,true,lower asset growth,true
+XS056_CFO_ACCRUALS_PT,CFO accrual quality,operating_quality_cash,not_advanced,broad_static,true,true,true,true,higher cash-flow accrual quality,true
