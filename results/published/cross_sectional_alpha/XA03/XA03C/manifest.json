@@ -1,0 +1,43 @@
+{
+  "batch": "XA03C",
+  "dependency_manifests": {
+    "XA03A": "99a76da680d117ad75a0b159b547de3bdbbf180cb57a414374b29ae2c52006c1",
+    "XA03B": "14649550dcb9708067e3d090190a517699a1df1b0e331bb7f134f18f08098afe"
+  },
+  "files": {
+    "coefficient_and_importance_ledger.parquet": {
+      "sha256": "00f26c8c5241b5f55cdf95aac40209a67d1aac9723f2a60edef379aa1c686531",
+      "size_bytes": 43331
+    },
+    "invalid_process_ledger.csv": {
+      "sha256": "707a1e52d9f42fcf30c3569dcd3e95ac2667c19b146434c1846e5dfa090f8530",
+      "size_bytes": 340
+    },
+    "model_refit_ledger.parquet": {
+      "sha256": "4443638c9ccd046021f62be9e7fa4ce4a63cc1b3a35508f253e476b00c03139e",
+      "size_bytes": 15631
+    },
+    "model_selection_ledger.parquet": {
+      "sha256": "5de8e3da8cae1cae0345ba827579f12a3961295aa8835d796cb962bda1e26dab",
+      "size_bytes": 6153
+    },
+    "prediction_audit.csv": {
+      "sha256": "58a82d2f8bf9352df4a573fbf2d3f6e25d81e9136b53b2ebd9e5a535f9f58f25",
+      "size_bytes": 752
+    },
+    "prediction_ledger.parquet": {
+      "sha256": "392de5fe6656621ea0227dc48cba2c166f2867c81cbcb7641a91ffc1445f59fa",
+      "size_bytes": 11846203
+    },
+    "summary.json": {
+      "sha256": "0935b528082f42969d05af19f4d0e087f890ecc4d489512fa7c6af3448a0a8cb",
+      "size_bytes": 262
+    }
+  },
+  "git_commit": "7010666d6814f9ded130103cce730f6ce2158909",
+  "git_dirty": false,
+  "prereg_lock_sha256": "e69b6494719f5f6a8922d1c583c158655bfa0c0645d8906fc435e6fa117caa21",
+  "python": "3.12.13",
+  "run_id": "xa03c-factor-only-aggregation-20260821-v1",
+  "schema_version": "xa03.runtime_manifest.v1"
+}

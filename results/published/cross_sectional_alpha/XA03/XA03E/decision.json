@@ -1,0 +1,12 @@
+{
+  "automatic_champion_selected": false,
+  "bagging_run": false,
+  "formal_eligible": false,
+  "hard_stop": "XA03E",
+  "p00_run": false,
+  "qualified_process_frequency_cells": 0,
+  "rsp_incremental_supported_cells": 1,
+  "schema_version": "xa03.decision.v1",
+  "stacking_run": false,
+  "status": "completed_hard_stop"
+}

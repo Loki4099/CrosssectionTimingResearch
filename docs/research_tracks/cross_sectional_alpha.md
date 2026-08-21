@@ -1,6 +1,6 @@
 # 系统性 long-only 横截面 Alpha
 
-> 状态：**当前研究主线；市场与SEC数据已认证，XA01与XA02已完成；XA03滚动聚合模型比较计划已冻结并授权，尚未执行。**
+> 状态：**当前研究主线；市场与SEC数据已认证，XA01–XA03已完成；XA03未产生机械合格冠军。**
 > 股票池：历史时点 S&P 500 成分股。
 > 当前执行范围：市场数据与 SEC 基本面；新闻与文本研究由独立任务处理。
 
@@ -31,7 +31,7 @@
 | XS01 | 仅有历史配置与catalog登记；没有runner、报告、发布结果或图表 | [XS01配置](../../config/experiments/XS01.toml) |
 | XA01原子因子实验 | 已完成；严格EQ为0，XS003在周/月频作为趋势维度代表；G00 Top50存在已记录身份例外 | [计划](../44_xa01_atomic_factor_walkforward_program_v1.md) · [报告](../20_experiments/XA01_atomic_factor_walkforward/report.md) · [结果](../../results/published/cross_sectional_alpha/XA01/) |
 | XA02因子路径与市场状态图谱 | 已完成并硬停；336个1D与168个2D检验完整，2个1D条件关系通过全部门，稳健2D关系为0；模型关闭 | [计划](../45_xa02_factor_market_state_atlas_program_v1.md) · [设计](../20_experiments/XA02_factor_market_state_atlas/design.md) · [报告](../20_experiments/XA02_factor_market_state_atlas/report.md) · [结果](../../results/published/cross_sectional_alpha/XA02/) |
-| XA03滚动聚合模型比较 | 计划已冻结并授权，尚未执行；比较原始单因子、单因子拟合、透明聚合、factor-only及factor+state，并保留严格去RSP消融 | [计划](../46_xa03_cross_sectional_aggregation_program_v1.md) · [设计](../20_experiments/XA03_cross_sectional_aggregation/design.md) · [锁](../../config/experiments/xa03/PREREG_LOCK.json) |
+| XA03滚动聚合模型比较 | 已完成并硬停；0个过程×频率单元通过完整晋级门，原始XS003仍为最强周/月路径；月频ALL14 Ridge+状态仅在RSP消融中获得窄幅支持 | [计划](../46_xa03_cross_sectional_aggregation_program_v1.md) · [设计](../20_experiments/XA03_cross_sectional_aggregation/design.md) · [报告](../20_experiments/XA03_cross_sectional_aggregation/report.md) · [结果](../../results/published/cross_sectional_alpha/XA03/) |
 
 ## 3. 论文与因子知识层
 
@@ -68,4 +68,4 @@ Round 9–10把P00叠加到 `mom_255_0`，属于两条主线的接口实验，�
 - `results/published/` 下紧凑机器证据；
 - `docs/figures/` 下对应图表。
 
-XA03已另行冻结，授权XA03A–E完成训练标签补建、共同股票池、单因子模型、透明与拟合聚合、factor+state及RSP消融比较；它在XA03E后硬停，不授权P00、bagging、stacking、锁箱或自动选冠军。后续仍按“相关性与机制去冗余→透明聚合/低容量模型→组合构建→冻结P00迁移”的顺序推进，XA03之后的任何扩展仍需新计划授权。
+XA03A–E已完成训练标签补建、共同股票池、单因子模型、透明与拟合聚合、factor+state及RSP消融比较，并在XA03E后硬停；P00、bagging、stacking、锁箱与自动选冠军均未运行。后续需先审阅树模型容量失败与月频RSP交互证据，再决定是否授权新的模型设计或P00迁移。

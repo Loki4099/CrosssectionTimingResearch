@@ -1,0 +1,9 @@
+process_id,frequency,invalid,reason
+UNI_RIDGE__XS008_SAME_MONTH_5Y,weekly,True,insufficient inner folds: UNI_RIDGE__XS008_SAME_MONTH_5Y/weekly/2018
+UNI_RIDGE__XS008_SAME_MONTH_5Y,monthly,True,insufficient inner folds: UNI_RIDGE__XS008_SAME_MONTH_5Y/monthly/2018
+UNI_RIDGE__XS013_LOW_BETA_FP,weekly,True,insufficient inner folds: UNI_RIDGE__XS013_LOW_BETA_FP/weekly/2018
+UNI_RIDGE__XS013_LOW_BETA_FP,monthly,True,insufficient inner folds: UNI_RIDGE__XS013_LOW_BETA_FP/monthly/2018
+UNI_LGBM__XS008_SAME_MONTH_5Y,weekly,True,insufficient inner folds: UNI_LGBM__XS008_SAME_MONTH_5Y/weekly/2018
+UNI_LGBM__XS008_SAME_MONTH_5Y,monthly,True,insufficient inner folds: UNI_LGBM__XS008_SAME_MONTH_5Y/monthly/2018
+UNI_LGBM__XS013_LOW_BETA_FP,weekly,True,insufficient inner folds: UNI_LGBM__XS013_LOW_BETA_FP/weekly/2018
+UNI_LGBM__XS013_LOW_BETA_FP,monthly,True,insufficient inner folds: UNI_LGBM__XS013_LOW_BETA_FP/monthly/2018

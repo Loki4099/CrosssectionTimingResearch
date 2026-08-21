@@ -1,0 +1,9 @@
+process_id,frequency,invalid,reason
+FS_LGBM__ROLE5_S2,weekly,True,"missing inherited recipe: ('FO_LGBM__ROLE5', 'weekly', 2018)"
+FS_LGBM__ROLE5_S2,monthly,True,"missing inherited recipe: ('FO_LGBM__ROLE5', 'monthly', 2018)"
+FS_LGBM__ALL14_S6,weekly,True,"missing inherited recipe: ('FO_LGBM__ALL14', 'weekly', 2018)"
+FS_LGBM__ALL14_S6,monthly,True,"missing inherited recipe: ('FO_LGBM__ALL14', 'monthly', 2018)"
+AB_LGBM__ROLE5_S1_NO_RSP,weekly,True,"missing inherited recipe: ('FO_LGBM__ROLE5', 'weekly', 2018)"
+AB_LGBM__ROLE5_S1_NO_RSP,monthly,True,"missing inherited recipe: ('FO_LGBM__ROLE5', 'monthly', 2018)"
+AB_LGBM__ALL14_S5_NO_RSP,weekly,True,"missing inherited recipe: ('FO_LGBM__ALL14', 'weekly', 2018)"
+AB_LGBM__ALL14_S5_NO_RSP,monthly,True,"missing inherited recipe: ('FO_LGBM__ALL14', 'monthly', 2018)"

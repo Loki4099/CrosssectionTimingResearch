@@ -1,0 +1,42 @@
+{
+  "batch": "XA03B",
+  "dependency_manifests": {
+    "XA03A": "99a76da680d117ad75a0b159b547de3bdbbf180cb57a414374b29ae2c52006c1"
+  },
+  "files": {
+    "coefficient_and_importance_ledger.parquet": {
+      "sha256": "8917e62fd061564f69a672e6512c947558c986f2a306546c92b586723e8521b8",
+      "size_bytes": 33873
+    },
+    "invalid_process_ledger.csv": {
+      "sha256": "a75b3c53e72bbf0de9ac84b3a6f1545133eae99fe6fd33770ae796c6bad25f4c",
+      "size_bytes": 916
+    },
+    "model_refit_ledger.parquet": {
+      "sha256": "2b73aed88df9e7405ad4cb7c36958f0d0655e7e1b1deb0b1bb0f66038d3e1c38",
+      "size_bytes": 25102
+    },
+    "model_selection_ledger.parquet": {
+      "sha256": "2777d87616b06232a8b86ee7160efac5cf7104245883347a00e3a634909f446a",
+      "size_bytes": 10398
+    },
+    "prediction_audit.csv": {
+      "sha256": "a8b673d24380513c2b5bcf6ecc58945099f6124a3b923776989c0b06c480d705",
+      "size_bytes": 5062
+    },
+    "prediction_ledger.parquet": {
+      "sha256": "2f6ec53cb6e1cb25556164dd7d65f09152d227d4782155c70e63d675fef6eb25",
+      "size_bytes": 36780090
+    },
+    "summary.json": {
+      "sha256": "488e3aedbbf2f5c89c9ec4a57ee8489a9dcb5e147b8c4093240cdcd649c4cde7",
+      "size_bytes": 265
+    }
+  },
+  "git_commit": "7010666d6814f9ded130103cce730f6ce2158909",
+  "git_dirty": false,
+  "prereg_lock_sha256": "e69b6494719f5f6a8922d1c583c158655bfa0c0645d8906fc435e6fa117caa21",
+  "python": "3.12.13",
+  "run_id": "xa03b-atomic-models-20260821-v1",
+  "schema_version": "xa03.runtime_manifest.v1"
+}

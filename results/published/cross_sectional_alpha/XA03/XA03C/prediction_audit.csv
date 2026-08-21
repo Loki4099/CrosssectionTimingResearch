@@ -1,0 +1,15 @@
+process_id,frequency,prediction_rows,signal_dates,finite_predictions,unique_keys,passed
+FO_RIDGE__ALL14,monthly,50243,101,True,True,True
+FO_RIDGE__ALL14,weekly,220395,443,True,True,True
+FO_RIDGE__ROLE5,monthly,50243,101,True,True,True
+FO_RIDGE__ROLE5,weekly,220395,443,True,True,True
+STATIC_DIM6_ALL14,monthly,50243,101,True,True,True
+STATIC_DIM6_ALL14,weekly,220395,443,True,True,True
+STATIC_EQ_ALL14,monthly,50243,101,True,True,True
+STATIC_EQ_ALL14,weekly,220395,443,True,True,True
+STATIC_EQ_ROLE5,monthly,50243,101,True,True,True
+STATIC_EQ_ROLE5,weekly,220395,443,True,True,True
+FO_LGBM__ROLE5,weekly,0,0,False,True,True
+FO_LGBM__ROLE5,monthly,0,0,False,True,True
+FO_LGBM__ALL14,weekly,0,0,False,True,True
+FO_LGBM__ALL14,monthly,0,0,False,True,True

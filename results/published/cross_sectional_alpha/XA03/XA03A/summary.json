@@ -1,0 +1,12 @@
+{
+  "batch": "XA03A",
+  "factor_count": 14,
+  "feature_rows": 378423,
+  "inner_fold_rows": 206,
+  "minimum_common_names": 490,
+  "refit_rows": 202,
+  "state_rows": 799,
+  "status": "completed",
+  "target_rows": 378423,
+  "xa01_overlap_identity_passed": true
+}

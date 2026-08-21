@@ -1,0 +1,48 @@
+{
+  "batch": "XA03A",
+  "dependency_manifests": {},
+  "files": {
+    "causality_and_identity_audit.json": {
+      "sha256": "021cea2caa787393696c3b213f15b15f493f03e331d032c5f63dbfc722dd1782",
+      "size_bytes": 286
+    },
+    "common_universe_coverage.csv": {
+      "sha256": "277a4b577d73fba23c7be5b6573bf797b95cd0086dada72989f6e3f60e70d48b",
+      "size_bytes": 24204
+    },
+    "common_universe_ledger.parquet": {
+      "sha256": "b487d8263739cb73450164d7a6789b5411b7ad3ffa00079a40a221c9b8029ad0",
+      "size_bytes": 221658
+    },
+    "extended_target_ledger.parquet": {
+      "sha256": "1ca4afaba0ce51e7b7e0dc99b833030e483f39eb3ec6555ad512807f76adffb9",
+      "size_bytes": 7659693
+    },
+    "inner_fold_ledger.parquet": {
+      "sha256": "3e4371ef15ecdeb23b4417f4d765011208e87539917b9c46727cec401f41a57b",
+      "size_bytes": 7939
+    },
+    "model_feature_panel.parquet": {
+      "sha256": "3f2b4837cd614630c67f79a5d823a74e750424b758fc03ecdebd03b9d5a612c7",
+      "size_bytes": 11737594
+    },
+    "refit_ledger.parquet": {
+      "sha256": "2f889ad764da7e5a0b94b860257c11ebe50acdf3a7b7354676dc730ed3277c29",
+      "size_bytes": 10483
+    },
+    "state_feature_panel.parquet": {
+      "sha256": "144977246a82df4dbf8cb93b175505d45c0631c348a06129a796646fc86ec753",
+      "size_bytes": 52567
+    },
+    "summary.json": {
+      "sha256": "1dd2f3d014eeb726c49ee5745c722b0ea2ce325c1cf10cf86aef093053b59e6f",
+      "size_bytes": 260
+    }
+  },
+  "git_commit": "edd99d3d796b96dc4288f864a598377407e25499",
+  "git_dirty": false,
+  "prereg_lock_sha256": "e69b6494719f5f6a8922d1c583c158655bfa0c0645d8906fc435e6fa117caa21",
+  "python": "3.12.13",
+  "run_id": "xa03a-training-panel-20260821-v1",
+  "schema_version": "xa03.runtime_manifest.v1"
+}

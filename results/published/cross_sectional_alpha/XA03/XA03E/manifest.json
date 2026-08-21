@@ -1,0 +1,101 @@
+{
+  "batch": "XA03E",
+  "dependency_manifests": {
+    "XA03A": "99a76da680d117ad75a0b159b547de3bdbbf180cb57a414374b29ae2c52006c1",
+    "XA03B": "14649550dcb9708067e3d090190a517699a1df1b0e331bb7f134f18f08098afe",
+    "XA03C": "a3e80a5e2b223918f60a9ef3fe8f0099226546e342b3c064d071b4e35e0c15b4",
+    "XA03D": "ec79b393592cd8c1dd538a97f4cd51d55715bee8e7229de51e100e50b2a0c91b"
+  },
+  "files": {
+    "absolute_assessment.csv": {
+      "sha256": "e0f086259769704e0413c1e0abcdfc90a8f81cee97891c2a91888ef276be58ef",
+      "size_bytes": 12829
+    },
+    "calendar_and_rolling_performance.csv": {
+      "sha256": "4082623d97e59375c391759771133c93839e0cd985d0b8f8722324f9876aee71",
+      "size_bytes": 82303
+    },
+    "coefficient_and_importance_stability.csv": {
+      "sha256": "48a6f4a293e3bcb672a0b7b83337bedb969aa188b729308de1b2044514adda7a",
+      "size_bytes": 56773
+    },
+    "common_ew_period_returns.parquet": {
+      "sha256": "7f537050d5031f3fc90a5583a1769d23b3f0a9ca5d558578967068e8379c80d1",
+      "size_bytes": 29903
+    },
+    "coverage_and_concentration_audit.csv": {
+      "sha256": "c16a18ea59e072423bf117d22848635ab035553378c25ba35f4d110151d55a55",
+      "size_bytes": 4930
+    },
+    "daily_nav_paths.parquet": {
+      "sha256": "847a4658ba230cf9ac080b51fe9300751a2c9d8a043f00352da25a9da292f942",
+      "size_bytes": 49776311
+    },
+    "decision.json": {
+      "sha256": "de2c7738c4e7f87040e13c7f0b17839cb428b8e590c1188f98a87c0c3e0ef0bd",
+      "size_bytes": 321
+    },
+    "label_based_portfolio_proxy.parquet": {
+      "sha256": "4f2979aee18eb510aa765af08950aef887dd49c4f3a8de602b47616adadb3210",
+      "size_bytes": 1779534
+    },
+    "parent_child_incremental_assessment.csv": {
+      "sha256": "05dbc22faa285aa49ddf2af80745a74b081fb6147e21c9b3bdc07a02ea1e87b1",
+      "size_bytes": 12687
+    },
+    "path_cost_summary.csv": {
+      "sha256": "fd44b4f1501e96fc42ff9b98c2c0da6669c411cdf8f053c1dae69adb1293c31c",
+      "size_bytes": 463177
+    },
+    "path_summary.csv": {
+      "sha256": "e7bafe80c0ea575d09d014f264c6cf3344c9d1c00a2072d5c43c272f4f095b28",
+      "size_bytes": 117597
+    },
+    "period_return_ledger.parquet": {
+      "sha256": "350c1391cd630d45ba1f5448731ef74b0596dd4c942a002472098fc7b4a08cf2",
+      "size_bytes": 13929420
+    },
+    "portfolio_accounting_identity.csv": {
+      "sha256": "23fefa1bbb17635f897c608baf3ea6cff1e6bc89c31650153272c4021b04bb5a",
+      "size_bytes": 34788
+    },
+    "prediction_ledger_all.parquet": {
+      "sha256": "798af8c08d692c927a992105dd0d221b9aab7a573c5f5f0783a676de7e7882f9",
+      "size_bytes": 57731375
+    },
+    "process_registry_resolved.csv": {
+      "sha256": "76ebf04176207f2145e6f2cc5c94e8dbdb47c6d815cda3116f79af1917557df8",
+      "size_bytes": 14356
+    },
+    "qualification_role_ledger.csv": {
+      "sha256": "a65fa2c0815c1a3879cff69a289c988ed9ea763047f292ed7fb33bbe42cf2975",
+      "size_bytes": 6782
+    },
+    "rank_ic_ledger.parquet": {
+      "sha256": "9a484c64c8b6a8d1e123be80f52b6a182cfb13937cc6276626215373dd0b9326",
+      "size_bytes": 238892
+    },
+    "rsp_incremental_assessment.csv": {
+      "sha256": "1c6470f17c1df7cebaf7868c29c7ba3cf9d8ca5d7ab3537737f66fe72aab4467",
+      "size_bytes": 1289
+    },
+    "subperiod_and_mature_slice.csv": {
+      "sha256": "b593dec84a99806d63d2802f403743c3d64be05c09c6809b78ae6fc415ac46dd",
+      "size_bytes": 24809
+    },
+    "summary.json": {
+      "sha256": "cc0387552e826b9590acaa1feb636fe66584239a05747305c9030c2ae1a12148",
+      "size_bytes": 343
+    },
+    "topk_holdings.parquet": {
+      "sha256": "f8fa0ff9f0ba4118bbc07fb2a00771b27d1ffff343e36f7aee399b3bbb41aa84",
+      "size_bytes": 9311058
+    }
+  },
+  "git_commit": "cc8d75a173f3a8672d5e1a32171b06a7c5e9fedf",
+  "git_dirty": false,
+  "prereg_lock_sha256": "e69b6494719f5f6a8922d1c583c158655bfa0c0645d8906fc435e6fa117caa21",
+  "python": "3.12.13",
+  "run_id": "xa03e-paired-portfolio-comparison-20260821-v1",
+  "schema_version": "xa03.runtime_manifest.v1"
+}

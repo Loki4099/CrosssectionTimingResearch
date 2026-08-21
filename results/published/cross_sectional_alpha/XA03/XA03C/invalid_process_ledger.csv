@@ -1,0 +1,5 @@
+process_id,frequency,invalid,reason
+FO_LGBM__ROLE5,weekly,True,all recipes invalid: FO_LGBM__ROLE5/weekly/2018
+FO_LGBM__ROLE5,monthly,True,all recipes invalid: FO_LGBM__ROLE5/monthly/2018
+FO_LGBM__ALL14,weekly,True,all recipes invalid: FO_LGBM__ALL14/weekly/2018
+FO_LGBM__ALL14,monthly,True,all recipes invalid: FO_LGBM__ALL14/monthly/2018

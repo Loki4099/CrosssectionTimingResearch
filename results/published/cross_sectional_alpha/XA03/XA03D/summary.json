@@ -1,0 +1,11 @@
+{
+  "all_prediction_audits_passed": true,
+  "batch": "XA03D",
+  "importance_rows": 39996,
+  "invalid_process_frequency_cells": 8,
+  "prediction_rows": 1082552,
+  "processes_per_frequency": 8,
+  "refit_rows": 808,
+  "selection_rows": 72,
+  "status": "completed"
+}

@@ -1,0 +1,15 @@
+{
+  "absolute_rows": 106,
+  "batch": "XA03E",
+  "cost_paths": 1824,
+  "daily_nav_rows": 3226608,
+  "p00_run": false,
+  "paired_rows": 78,
+  "period_rows": 409088,
+  "portfolio_accounting_identity_passed": true,
+  "process_frequency_cells": 114,
+  "qualified_cells": 0,
+  "rsp_rows": 8,
+  "status": "completed_hard_stop",
+  "topk_paths": 456
+}

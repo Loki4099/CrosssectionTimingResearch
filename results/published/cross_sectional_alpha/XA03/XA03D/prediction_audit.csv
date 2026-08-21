@@ -1,0 +1,17 @@
+process_id,frequency,prediction_rows,signal_dates,finite_predictions,unique_keys,passed
+AB_RIDGE__ALL14_S5_NO_RSP,monthly,50243,101,True,True,True
+AB_RIDGE__ALL14_S5_NO_RSP,weekly,220395,443,True,True,True
+AB_RIDGE__ROLE5_S1_NO_RSP,monthly,50243,101,True,True,True
+AB_RIDGE__ROLE5_S1_NO_RSP,weekly,220395,443,True,True,True
+FS_RIDGE__ALL14_S6,monthly,50243,101,True,True,True
+FS_RIDGE__ALL14_S6,weekly,220395,443,True,True,True
+FS_RIDGE__ROLE5_S2,monthly,50243,101,True,True,True
+FS_RIDGE__ROLE5_S2,weekly,220395,443,True,True,True
+FS_LGBM__ROLE5_S2,weekly,0,0,False,True,True
+FS_LGBM__ROLE5_S2,monthly,0,0,False,True,True
+FS_LGBM__ALL14_S6,weekly,0,0,False,True,True
+FS_LGBM__ALL14_S6,monthly,0,0,False,True,True
+AB_LGBM__ROLE5_S1_NO_RSP,weekly,0,0,False,True,True
+AB_LGBM__ROLE5_S1_NO_RSP,monthly,0,0,False,True,True
+AB_LGBM__ALL14_S5_NO_RSP,weekly,0,0,False,True,True
+AB_LGBM__ALL14_S5_NO_RSP,monthly,0,0,False,True,True

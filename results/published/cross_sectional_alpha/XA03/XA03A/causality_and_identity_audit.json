@@ -1,0 +1,11 @@
+{
+  "future_perturbation_contract": "covered_by_causal_asof_inputs_and_target_availability",
+  "minimum_common_names": 490,
+  "parent_hashes_passed": true,
+  "prediction_uses_target_valid": false,
+  "target_rank_range": [
+    -1.0,
+    1.0
+  ],
+  "xa01_overlap_identity_passed": true
+}
