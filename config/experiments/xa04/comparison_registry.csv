@@ -1,0 +1,5 @@
+comparison_family,child_selector,parent_rule,count_per_frequency,formal
+absolute,all_34_processes,COMMON_EW_CORE10,34,true
+learned_parent,all_32_learned_processes,registered_exact_parent,32,true
+rsp_ablation,all_12_with_rsp_processes,registered_no_rsp_twin,12,true
+raw_anchor,all_34_processes,RAW_XS003_CORE10,34,false

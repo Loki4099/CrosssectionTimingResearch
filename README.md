@@ -6,7 +6,7 @@
 
 | 研究主线 | 当前状态 | 入口 |
 |---|---|---|
-| 系统性 long-only 横截面 Alpha | **当前主线**。XA01–XA03已完成；原始`XS003_MOM_12_7`仍是最强周/月经济路径，滚动聚合没有产生机械合格冠军 | [主线主页](docs/research_tracks/cross_sectional_alpha.md) |
+| 系统性 long-only 横截面 Alpha | **当前主线**。XA01–XA03已完成；XA04以统一CORE10完整样本补做公平的Ridge/LightGBM比较 | [主线主页](docs/research_tracks/cross_sectional_alpha.md) |
 | 防御择时与仓位控制 | **已完成研究档案**。Round 1–10闭合；RSP/SPY63有风险信息，但P00在2022–2026机械揭示中未通过联合门 | [主线主页](docs/research_tracks/defensive_timing.md) |
 
 项目总导航见[研究文档中心](docs/README.md)。实验设计与报告、机器结果和图表分别从[实验档案](docs/20_experiments/README.md)、[发布结果](results/published/README.md)和[图表索引](docs/figures/README.md)进入。
@@ -16,7 +16,7 @@
 - 股票池：历史时点（PIT）S&P 500成分股；long-only为主。
 - 市场数据：2013年开始暖机，统一评价期为2018-01-02开盘至2026-06-30收盘。
 - 数据状态：冻结免费研究数据通过内部门禁，但仍为 `formal_eligible=false`；完整行情和大体积运行产物保留在本地runtime。
-- 横截面下一阶段：审阅XA03的模型容量与RSP交互证据，再决定组合构建、模型修订及P00迁移；新闻和文本由独立任务研究。
+- 横截面下一阶段：执行已冻结的XA04统一模型比较；完成并硬停后，再决定合格树与`XS003_MOM_12_7`的P00迁移。新闻和文本由独立任务研究。
 - 实验方法：所有交易时点只能使用当时已知数据；失败、停止、无效和被替代路径均保留。
 - 证据语言：完整历史walk-forward解决基本前视问题，但不自动消除研究者择优偏差；历史结果称研究证据，不冒充未来确认。
 

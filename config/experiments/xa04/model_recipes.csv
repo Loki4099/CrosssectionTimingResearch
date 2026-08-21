@@ -1,0 +1,11 @@
+recipe_id,family,alpha,max_depth,num_leaves,n_estimators,capacity_rank
+STATIC_EQ10,static_equal,,,,,0
+STATIC_DIM5,static_dimension_equal,,,,,0
+RIDGE_A01,ridge,0.1,,,,1
+RIDGE_A1,ridge,1.0,,,,2
+RIDGE_A10,ridge,10.0,,,,3
+RIDGE_A100,ridge,100.0,,,,4
+LGBM_D1_N50,lightgbm,,1,2,50,1
+LGBM_D1_N100,lightgbm,,1,2,100,2
+LGBM_D2_N50,lightgbm,,2,4,50,3
+LGBM_D2_N100,lightgbm,,2,4,100,4

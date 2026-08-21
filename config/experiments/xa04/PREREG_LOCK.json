@@ -1,0 +1,37 @@
+{
+  "files": {
+    "config/experiments/xa04/comparison_registry.csv": {
+      "sha256": "3ceb6d94bc3b01098a54aa4a2f81c8499b123c5304a0a98e7bdceb0d4b99849e",
+      "size_bytes": 319
+    },
+    "config/experiments/xa04/model_recipes.csv": {
+      "sha256": "57d55607f209f69211ccaeb9f4cef6986bc2afd7b6dbaea238c1929abcad6d43",
+      "size_bytes": 374
+    },
+    "config/experiments/xa04/process_registry.csv": {
+      "sha256": "dd1f2656633c0a33b3b89fea604d156101800e4577fc0e6bc27d7bcea2ff93d2",
+      "size_bytes": 2705
+    },
+    "config/experiments/xa04/program.toml": {
+      "sha256": "63177be7babc423d002cfdbbd155cddf69719e260064e695d8901fef48ce81a3",
+      "size_bytes": 5772
+    },
+    "docs/20_experiments/XA04_unified_core10_lightgbm/design.md": {
+      "sha256": "67b3202ff193d50fad1ec3e2852da144144fd4441f826845358850b48cd14860",
+      "size_bytes": 2953
+    },
+    "docs/47_xa04_unified_core10_lightgbm_program_v1.md": {
+      "sha256": "f0d1810bdd0cde82beb7a84797f3d1731605da9ac918aa78af18d2a32ce3093e",
+      "size_bytes": 1076
+    },
+    "scripts/build_xa04_prereg_lock.py": {
+      "sha256": "0ff44f458a6d5e3a1c9b01682e7f7f7979655f3edc70a522684127522005e4ec",
+      "size_bytes": 4513
+    }
+  },
+  "formal_eligible": false,
+  "member_count": 7,
+  "program_id": "xa04_unified_core10_lightgbm_supplement_v1",
+  "schema_version": "xa04.prereg_lock.v1",
+  "status": "locked_authorized"
+}
