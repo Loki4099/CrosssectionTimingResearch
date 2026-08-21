@@ -1,0 +1,25 @@
+{
+  "files": {
+    "config/experiments/xa05/program.toml": {
+      "sha256": "1d5c747abc8c73765b3d48f865afc8e5dca6b7c817f577f0788c02d765226324",
+      "size_bytes": 4080
+    },
+    "docs/20_experiments/XA05_mom12_7_p00_final_transfer/design.md": {
+      "sha256": "fba66256cbcd1b97d14a6a5767782ab6b9fb8bb4dce092331cf6b2ffff92f2d7",
+      "size_bytes": 1986
+    },
+    "docs/48_xa05_mom12_7_p00_final_transfer_program_v1.md": {
+      "sha256": "aa6c2ded3d21ad18696cd1a6de542f6bcc6c2020ed77f220e5494b87d4d5d180",
+      "size_bytes": 932
+    },
+    "scripts/build_xa05_prereg_lock.py": {
+      "sha256": "7cf24942e8700099fd4928110cd9dca7261f8322a16411156ac6fb09c5564568",
+      "size_bytes": 2210
+    }
+  },
+  "formal_eligible": false,
+  "member_count": 4,
+  "program_id": "xa05_mom12_7_p00_final_transfer_v1",
+  "schema_version": "xa05.prereg_lock.v1",
+  "status": "locked_authorized"
+}

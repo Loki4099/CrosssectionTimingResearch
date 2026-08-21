@@ -1,0 +1,111 @@
+schema_version = "xa05.final_p00_transfer.v1"
+program_id = "xa05_mom12_7_p00_final_transfer_v1"
+status = "preregistered_authorized"
+formal_eligible = false
+evidence_label = "full_history_causal_prequential_final_system_assessment"
+
+[run_ids]
+xa05a = "xa05a-frozen-targets-20260821-v1"
+xa05b = "xa05b-union-event-replay-20260821-v1"
+xa05c = "xa05c-drawdown-report-20260821-v1"
+
+[batches]
+order = ["XA05A", "XA05B", "XA05C"]
+xa05a_depends_on = []
+xa05b_depends_on = ["XA05A"]
+xa05c_depends_on = ["XA05A", "XA05B"]
+hard_stop_after = "XA05C"
+
+[parent]
+xa04_prereg_lock_sha256 = "204dc95032fa261f43bd065b53e8a377cb44e8108f38b073158c170e85fbcd9f"
+xa04_decision_sha256 = "7bbc556c51e283ab7fc071b921a04d379d64efd2cedf6000e5fbc696f59186d2"
+xa04_holdings_sha256 = "e64916077830d18fb08e4a0c698f98135448fe75099ff79134ffcce4dfd49da9"
+xa04_target_sha256 = "a4f85e4fd7e38878a79d5132ee1085d0296642e048514d74af51b5872bf4b28a"
+r8a_states_sha256 = "ccee1ef2e29f418a6d8f7bbbf30e1a94389d1d63a29a8e50f39b34076d038bcf"
+r10b_states_sha256 = "ba62cf82f06723b83464df70ec699621d48ac0550e725462e70ed8aa07b2a27e"
+union_engine_sha256 = "2f22a802796b08bb36631475a3f6931ad6873d6f2fda10cbc80158bc592d9e20"
+
+[paths]
+xa04_holdings = "results/experiments/xa04/XA04C/runs/xa04c-portfolios-inference-20260821-v1/topk_holdings.parquet"
+xa04_target = "results/experiments/xa04/XA04A/runs/xa04a-core10-panel-20260821-v1/target_ledger.parquet"
+xa04_decision = "results/experiments/xa04/XA04D/runs/xa04d-audit-decision-20260821-v1/decision.json"
+r8a_states = "results/published/round8/R8A/policy_states_weekly.parquet"
+r10b_states = "results/published/round10/R10B/p00_states_weekly.parquet"
+
+[sample]
+first_execution = "2018-01-02"
+last_valuation = "2026-06-30"
+frequencies = ["weekly", "monthly"]
+top_k = [5, 10, 20, 50]
+primary_frequency = "monthly"
+primary_top_k = 20
+primary_cost_bps = 5
+cost_bps = [0, 5, 10, 20]
+
+[base]
+process_id = "RAW_XS003_CORE10"
+factor_id = "XS003_MOM_12_7"
+weighting = "equal"
+rerank_only_on_base_events = true
+
+[p00]
+policy_id = "P00_RSP_Y5_CLEAR"
+risk_atom = "negative_63_session_log_rsp_spy_relative_return"
+threshold = "annual_expanding_linear_q75_with_13_week_purge"
+normal_allocation = 1.0
+defense_allocation = 0.5
+risk_priority = true
+minimum_defense_weeks = 1
+parameter_search = false
+stitched_schedule = "R8A_through_2021_09_24_then_R10B_from_2021_10_01"
+
+[paths_under_test]
+path_types = ["naked", "p00_overlay", "matched_static"]
+matched_static_solver = "bisection_match_zero_cost_mean_actual_long_exposure"
+matched_static_tolerance = 0.00000001
+matched_static_iterations = 50
+cost_once_on_union_event = true
+
+[performance]
+annualization_days = 252
+metrics = ["terminal", "cagr", "annualized_volatility", "sharpe", "sortino", "calmar", "maximum_drawdown", "maximum_drawdown_duration_sessions", "maximum_recovery_sessions", "underwater_fraction", "average_drawdown", "pain_index", "ulcer_index", "cdar_95", "daily_var_95", "daily_expected_shortfall_95", "worst_day", "worst_week", "worst_month", "skew", "excess_kurtosis", "cumulative_turnover", "mean_long_exposure"]
+drawdown_episode_limit = 10
+rolling_windows_sessions = [63, 126, 252]
+
+[inference]
+paired_active_series = "log_nav_p00_minus_log_nav_matched_static"
+moving_block_weeks = 13
+bootstrap_draws = 5000
+bootstrap_seed = 20260821
+leave_one_calendar_year = true
+
+[decision]
+primary_requires_overlay_to_naked_terminal_ratio_gt = 1.0
+primary_requires_timing_vs_static_gt = 0.0
+primary_requires_delta_sharpe_gt = 0.0
+primary_requires_delta_mdd_gt = 0.0
+family_minimum_passed_of_8 = 5
+each_frequency_minimum_passed_of_4 = 2
+cost20_timing_direction_positive = true
+no_automatic_deployment = true
+
+[charts]
+formats = ["png"]
+dpi = 160
+primary_nav = true
+primary_underwater = true
+primary_rolling_drawdown = true
+primary_exposure_and_state = true
+annual_returns = true
+drawdown_episode_chart = true
+cross_cell_heatmaps = true
+
+[authorization]
+model_training = false
+factor_changes = false
+p00_changes = false
+candidate_changes = false
+new_thresholds = false
+new_allocations = false
+short_books = false
+automatic_deployment = false
