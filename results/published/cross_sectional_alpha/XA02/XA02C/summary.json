@@ -1,0 +1,11 @@
+{
+  "batch": "XA02C",
+  "descriptive_2d_cells": 756,
+  "one_dimensional_expected": 336,
+  "one_dimensional_fdr_positive": 2,
+  "one_dimensional_tests": 336,
+  "status": "completed",
+  "two_dimensional_expected": 168,
+  "two_dimensional_fdr_positive": 0,
+  "two_dimensional_tests": 168
+}

@@ -1,0 +1,76 @@
+{
+  "batch": "XA02A",
+  "code_sha256": "2155116b3fcc97a7d405fb45d32dab5dde0e0efe142e4bf1d291f6d8fcd364ff",
+  "dependencies": {},
+  "direct_input_hashes": {
+    "cross_sectional_bundle_id": "xs-market-sec-bundle-20260820-v1",
+    "cross_sectional_evidence_index_sha256": "e0cdc17d5f8dc2d089bb4623714df342682096798aabeb535727d2c7943d0a80",
+    "cross_sectional_publication_manifest_sha256": "e6bbaa067d1bd5f45d098c8080a02b98c80a819495ceb8b33db5ba1a7c42edda",
+    "cross_sectional_runtime_bundle_manifest_sha256": "4fb1751080613d610884b913f27d800084a054741b5cfdbf8bc8d09585a510ed",
+    "market_benchmark_sha256": "bbea6b654608d47a2da78e406b2bb8dfa06da5ad004f78f3a72f275434f70455",
+    "market_calendar_sha256": "28275dc373f76a15c0c202c0c438fdce2e8f547e8930faf38519a97f81865565",
+    "market_corporate_actions_sha256": "1e90c67e030a2efaa1a43badcf4b22751e6e6a76242ffe4179d9f242733f0c1d",
+    "market_membership_sha256": "d118195a9eb52a862620c75d8984e0250f912184d39ff051f9868ed353615939",
+    "market_prices_daily_sha256": "4a881854d2c278378955529c638193706ddfafb503e7a8a9c752cc7791ba2670",
+    "market_risk_free_sha256": "fcdedda1132947ba9da575d4ae7b66835bcd6eb72e36f1cc17b26b7be21b1975",
+    "r10a_acceptance_sha256": "8fc5c598e06ba1d27c31d5b17d9fc186e2fa83a1ee411de55a707500ea70e20b",
+    "r10a_publication_manifest_sha256": "052836c8acb7df650d295a17e3dbe35b8548df6cfea83b5d0eccd46e4da75e62",
+    "r10a_rsp_daily_sha256": "a968e85475849e059e272b7748f25e0326a8214783d1d64d9a9fd7f05c2cff8c",
+    "r10a_run_id": "r10a-rsp-lockbox-feature-20260818-v1",
+    "r10a_runtime_manifest_sha256": "c672ff39501b322bc8bcf14ad3880b3f131df0ee1b068d4fc2ebc72c283551a4",
+    "xa01_factor_registry_sha256": "8480676445aa0903753f3b575caf23fa4fb781106c4391a3043d3ce3ae37d688",
+    "xa01_factor_values_sha256": "14d50a6a0c8415497ed093a65d21fe1268fb6cd261daff4a13c4adb1cf8a4148",
+    "xa01_prereg_lock_sha256": "2051160be4674f0bde8192fc659e17d5ec1e728046468c91abe1e9c91705c20c",
+    "xa01_publication_manifest_sha256": "11ebd3093eb40a438f882f64a85fcb7dda219636b00696a7b18af745fb7de18f",
+    "xa01_run_id": "xa01-atomic-factor-walkforward-20260820-v1",
+    "xa01_runtime_manifest_sha256": "c7c09b471732b11991ef301b005edf3b450f5ab3134ab5d85364f415d334f067",
+    "xa01_target_ledger_sha256": "1da386f28f0d85cee72869b1f2ef5fcc21319b3b187ba7d4bd500059858ba7ef"
+  },
+  "files": {
+    "daily_nav_paths.parquet": {
+      "sha256": "4cfc74df29e3ab023cf54f58136e56dedaed5fed7dd1cf1e76f01c41bbc33630",
+      "size": 45158234
+    },
+    "holding_period_ledger.parquet": {
+      "sha256": "be1e4bc051001f9e9ac7e3fd72ef6de994a1a2af9d370ff52dd13aabfed550b6",
+      "size": 6597263
+    },
+    "path_summary.csv": {
+      "sha256": "f50d82b182b982ea7c0c7826e025cb8d1e071a42379aa807594f4d84adf27bf5",
+      "size": 213513
+    },
+    "ranking_audit.csv": {
+      "sha256": "8440fab8d43ec1e22cad010cdff4869819168ce66831a7ce83e50d39a5061ffe",
+      "size": 1666743
+    },
+    "ranking_ledger.parquet": {
+      "sha256": "b76a4b95ec6580199bec18395d5df3294e00f9250a8c9a167b1346a7e6e94216",
+      "size": 3824807
+    },
+    "summary.json": {
+      "sha256": "ae1e132ac95f8e174e158b5ed039dd29c1e709fb95b406f60276a997fcb2a39a",
+      "size": 341
+    },
+    "topk_holdings.parquet": {
+      "sha256": "9d2cdb2170e0f891875ef5b135df8562b2b9149219796dcabfc08d29221e3d2c",
+      "size": 2154247
+    },
+    "xa01_path_identity.csv": {
+      "sha256": "7281999760cfbf6e9b91553a15ab1e2747e47c6126918974b8acd58427b6484a",
+      "size": 39210
+    },
+    "xs056_twelve_month_repair.csv": {
+      "sha256": "ff1ae51d58eab499254ed3cefc368f0541a7fd8ea190b275763a27226c501954",
+      "size": 256
+    }
+  },
+  "git_commit": "8d6562edddce1fd15d84d4e885914e4ba7a94988",
+  "git_dirty": false,
+  "lockbox_read": false,
+  "models_run": false,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "prereg_lock_sha256": "000949be5b9bda004070ec6f52a7db0e37fffd238a9acca892ce1669c6402108",
+  "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "run_id": "xa02a-factor-path-ledger-20260821-v1",
+  "schema_version": "xa02.runtime_manifest.v1"
+}

@@ -1,0 +1,45 @@
+{
+  "batch": "XA02B",
+  "code_sha256": "2155116b3fcc97a7d405fb45d32dab5dde0e0efe142e4bf1d291f6d8fcd364ff",
+  "dependencies": {
+    "XA02A": "a6205c23c0bd6002fdec5331e916b6af25068ce52701b583605d50445fdcb73b"
+  },
+  "direct_input_hashes": {
+    "XA02A": "a6205c23c0bd6002fdec5331e916b6af25068ce52701b583605d50445fdcb73b"
+  },
+  "files": {
+    "causality_audit.json": {
+      "sha256": "8d8ef15c2f06eae79b7f50ea3a86f183836f61fb778feb859f0bf953131898c0",
+      "size": 136
+    },
+    "market_state_coverage.parquet": {
+      "sha256": "c7624c6f995a27aa0c4007f9a6730fd92014624cae87538af1542635ace5a82c",
+      "size": 38066
+    },
+    "market_state_daily.parquet": {
+      "sha256": "2c88e868e27f9814bb1d58cd3787eac04c9977bcc421251c8fb12b542d3b9e75",
+      "size": 560916
+    },
+    "market_state_features.parquet": {
+      "sha256": "92b1fb192a53db0f3e62d265da4efe8b2bbefc5411fa61e4c0a23986dec89f3d",
+      "size": 104325
+    },
+    "state_bin_coverage.csv": {
+      "sha256": "677b5fa24f7feb1f6b589e4ae8a60e9586f7eb44350da982e1ebfd481540afbb",
+      "size": 1769
+    },
+    "summary.json": {
+      "sha256": "7702fe536cdebe48e3a3bf5dd05ae80caee7469a78c9386738a986d267f00447",
+      "size": 178
+    }
+  },
+  "git_commit": "8d6562edddce1fd15d84d4e885914e4ba7a94988",
+  "git_dirty": false,
+  "lockbox_read": false,
+  "models_run": false,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "prereg_lock_sha256": "000949be5b9bda004070ec6f52a7db0e37fffd238a9acca892ce1669c6402108",
+  "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "run_id": "xa02b-market-state-features-20260821-v1",
+  "schema_version": "xa02.runtime_manifest.v1"
+}

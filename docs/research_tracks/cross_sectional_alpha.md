@@ -1,6 +1,6 @@
 # 系统性 long-only 横截面 Alpha
 
-> 状态：**当前研究主线；市场与SEC数据已认证，XA01首轮单因子实验已完成；XA02因子路径与市场状态图谱已预注册，等待执行。**
+> 状态：**当前研究主线；市场与SEC数据已认证，XA01首轮单因子实验与XA02因子路径/市场状态图谱均已完成；等待用户审阅后另行设计XA03。**
 > 股票池：历史时点 S&P 500 成分股。
 > 当前执行范围：市场数据与 SEC 基本面；新闻与文本研究由独立任务处理。
 
@@ -30,7 +30,7 @@
 | 裸策略基准 | G00 已完成；`mom_255_0 / Top20 / monthly` 是后续比较锚，不代表未来冠军 | [G00报告](../20_experiments/G00_baseline/report.md) |
 | XS01 | 仅有历史配置与catalog登记；没有runner、报告、发布结果或图表 | [XS01配置](../../config/experiments/XS01.toml) |
 | XA01原子因子实验 | 已完成；严格EQ为0，XS003在周/月频作为趋势维度代表；G00 Top50存在已记录身份例外 | [计划](../44_xa01_atomic_factor_walkforward_program_v1.md) · [报告](../20_experiments/XA01_atomic_factor_walkforward/report.md) · [结果](../../results/published/cross_sectional_alpha/XA01/) |
-| XA02因子路径与市场状态图谱 | 已预注册、未执行；只做完整路径、因果状态图谱、稳定性与冗余审计，模型关闭 | [计划](../45_xa02_factor_market_state_atlas_program_v1.md) · [设计](../20_experiments/XA02_factor_market_state_atlas/design.md) · [锁](../../config/experiments/xa02/PREREG_LOCK.json) |
+| XA02因子路径与市场状态图谱 | 已完成并硬停；336个1D与168个2D检验完整，2个1D条件关系通过全部门，稳健2D关系为0；模型关闭 | [计划](../45_xa02_factor_market_state_atlas_program_v1.md) · [设计](../20_experiments/XA02_factor_market_state_atlas/design.md) · [报告](../20_experiments/XA02_factor_market_state_atlas/report.md) · [结果](../../results/published/cross_sectional_alpha/XA02/) |
 | 聚合与模型 | 等待XA02结果；之后另行设计factor-only与factor+state滚动模型 | 本页 |
 
 ## 3. 论文与因子知识层
@@ -68,4 +68,4 @@ Round 9–10把P00叠加到 `mom_255_0`，属于两条主线的接口实验，�
 - `results/published/` 下紧凑机器证据；
 - `docs/figures/` 下对应图表。
 
-XA01之后先执行XA02，获取完整因子表现与市场状态图谱并硬停。用户审阅后再冻结XA03的factor-only与factor+state滚动模型；其Target、训练记忆、refit节奏、模型容量和输入集合都不由XA02自动决定。后续仍按“相关性与机制去冗余→透明聚合/低容量模型→组合构建→冻结P00迁移”的顺序推进；任何聚合、模型或P00实验都需要新计划授权。
+XA02已经完成并硬停。用户审阅后再冻结XA03的factor-only与factor+state滚动模型；其Target、训练记忆、refit节奏、模型容量和输入集合都不由XA02自动决定。后续仍按“相关性与机制去冗余→透明聚合/低容量模型→组合构建→冻结P00迁移”的顺序推进；任何聚合、模型或P00实验都需要新计划授权。

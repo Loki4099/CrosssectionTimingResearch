@@ -1,0 +1,61 @@
+{
+  "batch": "XA02D",
+  "code_sha256": "2155116b3fcc97a7d405fb45d32dab5dde0e0efe142e4bf1d291f6d8fcd364ff",
+  "dependencies": {
+    "XA02A": "a6205c23c0bd6002fdec5331e916b6af25068ce52701b583605d50445fdcb73b",
+    "XA02B": "30d66203315204982c71d05df38e7e1ff114111be4132622403b13337b056efa",
+    "XA02C": "9f6fb702f2a1f9ba2eea885afab56bb4671b310df7286ed5c1617443301112b5"
+  },
+  "direct_input_hashes": {
+    "XA02A": "a6205c23c0bd6002fdec5331e916b6af25068ce52701b583605d50445fdcb73b",
+    "XA02B": "30d66203315204982c71d05df38e7e1ff114111be4132622403b13337b056efa",
+    "XA02C": "9f6fb702f2a1f9ba2eea885afab56bb4671b310df7286ed5c1617443301112b5"
+  },
+  "files": {
+    "atlas_2d_role_assessment.csv": {
+      "sha256": "2beef1336e850c326a72d343c4d4fcd49c203ebeaa58a19ce8df03332b804170",
+      "size": 21315
+    },
+    "calendar_performance.csv": {
+      "sha256": "2132cbf41a62754905a9c4ffafebf49e882d4a109aa108999264c48170c30634",
+      "size": 166065
+    },
+    "decision.json": {
+      "sha256": "f7758fca13bcb9293faf97c8d6afea89f14952a3b3bec2d8de875008b1ca59a6",
+      "size": 610
+    },
+    "empirical_clusters.csv": {
+      "sha256": "93dcb171cce6410e1e191193f7bc3fe29b08493b2f00e1de9d46b166a9c5798e",
+      "size": 1262
+    },
+    "factor_similarity.csv": {
+      "sha256": "81cf18d37f3ee1fb76d0cbc58b14cdf7cf81dfba5be969ef8a3a9eee3be41993",
+      "size": 23383
+    },
+    "factor_state_relationship_assessment.csv": {
+      "sha256": "5ea51b44f0e839b22ca8a96d9b15368c33aad0c1184ef9a3bfa80d62aa3e8a23",
+      "size": 62910
+    },
+    "factor_state_role_assessment.csv": {
+      "sha256": "573c19719324c4b98eda5321feb51fa490ab9df0a4c6841be8aa51694bf00991",
+      "size": 2752
+    },
+    "rolling_performance.csv": {
+      "sha256": "63396d0b89195fea93b98b0ee592d0ce0ce69bcdc44f95e83beb15d108745934",
+      "size": 2361713
+    },
+    "summary.json": {
+      "sha256": "f7758fca13bcb9293faf97c8d6afea89f14952a3b3bec2d8de875008b1ca59a6",
+      "size": 610
+    }
+  },
+  "git_commit": "8d6562edddce1fd15d84d4e885914e4ba7a94988",
+  "git_dirty": false,
+  "lockbox_read": false,
+  "models_run": false,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "prereg_lock_sha256": "000949be5b9bda004070ec6f52a7db0e37fffd238a9acca892ce1669c6402108",
+  "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "run_id": "xa02d-atlas-closure-20260821-v1",
+  "schema_version": "xa02.runtime_manifest.v1"
+}

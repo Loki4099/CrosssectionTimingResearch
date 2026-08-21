@@ -1,0 +1,14 @@
+{
+  "batch": "XA02A",
+  "control_cost_path_count": 112,
+  "daily_nav_rows": 1195040,
+  "factor_cost_path_count": 448,
+  "factor_count": 14,
+  "holding_period_rows": 121856,
+  "holding_rows": 4198589,
+  "signal_path_count": 112,
+  "status": "completed",
+  "xa01_identity_passed": true,
+  "xa01_identity_rows": 560,
+  "xs056_repair_rows": 1
+}

@@ -1,0 +1,9 @@
+{
+  "batch": "XA02B",
+  "causality_passed": true,
+  "daily_rows": 30537,
+  "primary_states": 6,
+  "scheduled_feature_rows": 4896,
+  "shadow_states": 3,
+  "status": "completed"
+}

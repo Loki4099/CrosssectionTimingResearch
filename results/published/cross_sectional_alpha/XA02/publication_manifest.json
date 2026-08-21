@@ -1,0 +1,132 @@
+{
+  "audit": {
+    "factor_cost_paths": 448,
+    "hard_stop": "XA02D",
+    "lockbox_read": false,
+    "manifests": {
+      "XA02A": "a6205c23c0bd6002fdec5331e916b6af25068ce52701b583605d50445fdcb73b",
+      "XA02B": "30d66203315204982c71d05df38e7e1ff114111be4132622403b13337b056efa",
+      "XA02C": "9f6fb702f2a1f9ba2eea885afab56bb4671b310df7286ed5c1617443301112b5",
+      "XA02D": "191df06eb28e6049f18437d6e3a62c369b4f83d5f75dddb83c22723fb977c69d"
+    },
+    "models_run": false,
+    "one_dimensional_tests": 336,
+    "status": "passed",
+    "two_dimensional_tests": 168
+  },
+  "files": {
+    "README.md": {
+      "sha256": "9215c593ce36453dd99a08ac079025d278f54f8cecce46e0ef777c39aa0b7031",
+      "size": 524
+    },
+    "XA02A/manifest.json": {
+      "sha256": "a6205c23c0bd6002fdec5331e916b6af25068ce52701b583605d50445fdcb73b",
+      "size": 4087
+    },
+    "XA02A/path_summary.csv": {
+      "sha256": "f50d82b182b982ea7c0c7826e025cb8d1e071a42379aa807594f4d84adf27bf5",
+      "size": 213513
+    },
+    "XA02A/ranking_audit.csv": {
+      "sha256": "8440fab8d43ec1e22cad010cdff4869819168ce66831a7ce83e50d39a5061ffe",
+      "size": 1666743
+    },
+    "XA02A/summary.json": {
+      "sha256": "ae1e132ac95f8e174e158b5ed039dd29c1e709fb95b406f60276a997fcb2a39a",
+      "size": 341
+    },
+    "XA02A/xa01_path_identity.csv": {
+      "sha256": "7281999760cfbf6e9b91553a15ab1e2747e47c6126918974b8acd58427b6484a",
+      "size": 39210
+    },
+    "XA02A/xs056_twelve_month_repair.csv": {
+      "sha256": "ff1ae51d58eab499254ed3cefc368f0541a7fd8ea190b275763a27226c501954",
+      "size": 256
+    },
+    "XA02B/causality_audit.json": {
+      "sha256": "8d8ef15c2f06eae79b7f50ea3a86f183836f61fb778feb859f0bf953131898c0",
+      "size": 136
+    },
+    "XA02B/manifest.json": {
+      "sha256": "30d66203315204982c71d05df38e7e1ff114111be4132622403b13337b056efa",
+      "size": 1652
+    },
+    "XA02B/state_bin_coverage.csv": {
+      "sha256": "677b5fa24f7feb1f6b589e4ae8a60e9586f7eb44350da982e1ebfd481540afbb",
+      "size": 1769
+    },
+    "XA02B/summary.json": {
+      "sha256": "7702fe536cdebe48e3a3bf5dd05ae80caee7469a78c9386738a986d267f00447",
+      "size": 178
+    },
+    "XA02C/atlas_1d_conditional_summary.csv": {
+      "sha256": "ee23dfb097ad3c4368f094e7dfb58050479db32a4803cb1718d87b9bfc0889f2",
+      "size": 157993
+    },
+    "XA02C/atlas_1d_tests.csv": {
+      "sha256": "3aeea0c49e0e09683a16a7d8f0dd91bbfad4200108fc94e96e53c4296fa72d29",
+      "size": 99819
+    },
+    "XA02C/atlas_2d_grid.csv": {
+      "sha256": "588b37264d3827a9da709ccb67ef0c367b09e80f2f478217178db23c541e9bd3",
+      "size": 128995
+    },
+    "XA02C/atlas_2d_tests.csv": {
+      "sha256": "dd6bdd018d3f83d47dbd69b8a7db7073faf99d59dcb124c816315a20066f012a",
+      "size": 35221
+    },
+    "XA02C/manifest.json": {
+      "sha256": "9f6fb702f2a1f9ba2eea885afab56bb4671b310df7286ed5c1617443301112b5",
+      "size": 1806
+    },
+    "XA02C/state_episode_contributions.csv": {
+      "sha256": "8ff1b9413f39b2607e51e7e6172f9bee3292071f113c99f3a61f7c6167ea85d5",
+      "size": 1259795
+    },
+    "XA02C/summary.json": {
+      "sha256": "d6428ac0b3070c8427e3acab098c51ee9328dfac2be3530d5cb5faa1ddfec135",
+      "size": 287
+    },
+    "XA02D/atlas_2d_role_assessment.csv": {
+      "sha256": "2beef1336e850c326a72d343c4d4fcd49c203ebeaa58a19ce8df03332b804170",
+      "size": 21315
+    },
+    "XA02D/calendar_performance.csv": {
+      "sha256": "2132cbf41a62754905a9c4ffafebf49e882d4a109aa108999264c48170c30634",
+      "size": 166065
+    },
+    "XA02D/decision.json": {
+      "sha256": "f7758fca13bcb9293faf97c8d6afea89f14952a3b3bec2d8de875008b1ca59a6",
+      "size": 610
+    },
+    "XA02D/empirical_clusters.csv": {
+      "sha256": "93dcb171cce6410e1e191193f7bc3fe29b08493b2f00e1de9d46b166a9c5798e",
+      "size": 1262
+    },
+    "XA02D/factor_similarity.csv": {
+      "sha256": "81cf18d37f3ee1fb76d0cbc58b14cdf7cf81dfba5be969ef8a3a9eee3be41993",
+      "size": 23383
+    },
+    "XA02D/factor_state_relationship_assessment.csv": {
+      "sha256": "5ea51b44f0e839b22ca8a96d9b15368c33aad0c1184ef9a3bfa80d62aa3e8a23",
+      "size": 62910
+    },
+    "XA02D/factor_state_role_assessment.csv": {
+      "sha256": "573c19719324c4b98eda5321feb51fa490ab9df0a4c6841be8aa51694bf00991",
+      "size": 2752
+    },
+    "XA02D/manifest.json": {
+      "sha256": "191df06eb28e6049f18437d6e3a62c369b4f83d5f75dddb83c22723fb977c69d",
+      "size": 2408
+    },
+    "XA02D/rolling_performance.csv": {
+      "sha256": "63396d0b89195fea93b98b0ee592d0ce0ce69bcdc44f95e83beb15d108745934",
+      "size": 2361713
+    },
+    "XA02D/summary.json": {
+      "sha256": "f7758fca13bcb9293faf97c8d6afea89f14952a3b3bec2d8de875008b1ca59a6",
+      "size": 610
+    }
+  },
+  "schema_version": "xa02.publication.v1"
+}

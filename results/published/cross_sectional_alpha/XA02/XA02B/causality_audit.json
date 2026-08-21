@@ -1,0 +1,5 @@
+{
+  "full_sample_thresholds_used": false,
+  "future_split_perturbation_invariant": true,
+  "strictly_past_percentile_invariant": true
+}

@@ -1,0 +1,47 @@
+{
+  "batch": "XA02C",
+  "code_sha256": "2155116b3fcc97a7d405fb45d32dab5dde0e0efe142e4bf1d291f6d8fcd364ff",
+  "dependencies": {
+    "XA02A": "a6205c23c0bd6002fdec5331e916b6af25068ce52701b583605d50445fdcb73b",
+    "XA02B": "30d66203315204982c71d05df38e7e1ff114111be4132622403b13337b056efa"
+  },
+  "direct_input_hashes": {
+    "XA02A": "a6205c23c0bd6002fdec5331e916b6af25068ce52701b583605d50445fdcb73b",
+    "XA02B": "30d66203315204982c71d05df38e7e1ff114111be4132622403b13337b056efa"
+  },
+  "files": {
+    "atlas_1d_conditional_summary.csv": {
+      "sha256": "ee23dfb097ad3c4368f094e7dfb58050479db32a4803cb1718d87b9bfc0889f2",
+      "size": 157993
+    },
+    "atlas_1d_tests.csv": {
+      "sha256": "3aeea0c49e0e09683a16a7d8f0dd91bbfad4200108fc94e96e53c4296fa72d29",
+      "size": 99819
+    },
+    "atlas_2d_grid.csv": {
+      "sha256": "588b37264d3827a9da709ccb67ef0c367b09e80f2f478217178db23c541e9bd3",
+      "size": 128995
+    },
+    "atlas_2d_tests.csv": {
+      "sha256": "dd6bdd018d3f83d47dbd69b8a7db7073faf99d59dcb124c816315a20066f012a",
+      "size": 35221
+    },
+    "state_episode_contributions.csv": {
+      "sha256": "8ff1b9413f39b2607e51e7e6172f9bee3292071f113c99f3a61f7c6167ea85d5",
+      "size": 1259795
+    },
+    "summary.json": {
+      "sha256": "d6428ac0b3070c8427e3acab098c51ee9328dfac2be3530d5cb5faa1ddfec135",
+      "size": 287
+    }
+  },
+  "git_commit": "8d6562edddce1fd15d84d4e885914e4ba7a94988",
+  "git_dirty": false,
+  "lockbox_read": false,
+  "models_run": false,
+  "platform": "Windows-11-10.0.26200-SP0",
+  "prereg_lock_sha256": "000949be5b9bda004070ec6f52a7db0e37fffd238a9acca892ce1669c6402108",
+  "python": "3.12.13 (main, Aug  7 2026, 02:26:41) [MSC v.1944 64 bit (AMD64)]",
+  "run_id": "xa02c-factor-state-atlas-20260821-v1",
+  "schema_version": "xa02.runtime_manifest.v1"
+}

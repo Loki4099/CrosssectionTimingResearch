@@ -1,0 +1,23 @@
+{
+  "automatic_xa03": false,
+  "batch": "XA02D",
+  "exploratory_2d_contexts": 0,
+  "factor_aggregation_run": false,
+  "factor_frequency_roles": 28,
+  "lockbox_read": false,
+  "market_state_classifier_run": false,
+  "models_run": false,
+  "p00_run": false,
+  "primary_role_counts": {
+    "broad_static": 4,
+    "conditional_sign_switch": 2,
+    "exploratory_state_candidate": 1,
+    "no_state_evidence": 7,
+    "time_break_unexplained": 14
+  },
+  "qualifying_1d_relationships": 2,
+  "robust_2d_contexts": 0,
+  "status": "completed_hard_stop",
+  "strategy_selection_run": false,
+  "user_review_required": true
+}

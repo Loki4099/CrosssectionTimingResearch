@@ -1,0 +1,2 @@
+factor_id,repair_status,reason,available_monthly_rows,historical_xa01_overwritten
+XS056_CFO_ACCRUALS_PT,documented_not_materialized,XA01 target ledger contains next-rebalance targets only; 252-session repair requires a separate target artifact,46348,False
