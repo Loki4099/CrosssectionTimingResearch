@@ -124,5 +124,8 @@ docs/20_experiments/XA03*/** text eol=lf
 docs/4[3-6]_*.md text eol=lf
 scripts/build_xa0*_prereg_lock.py text eol=lf
 tests/test_xa0*_prereg.py text eol=lf
+scripts/*xa03*.py text eol=lf
+src/momentum_reversal/pipelines/xa03_*.py text eol=lf
+tests/test_xa03_*.py text eol=lf
 *.png binary
 *.parquet binary
