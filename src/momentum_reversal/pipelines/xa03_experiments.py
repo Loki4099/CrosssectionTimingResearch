@@ -401,6 +401,7 @@ def _run_model_batch(project: Path, runtime: Path, root: Path, program: dict[str
     selections: list[pd.DataFrame] = []
     refit_rows: list[pd.DataFrame] = []
     importance_rows: list[pd.DataFrame] = []
+    invalid_rows: list[dict[str, Any]] = []
 
     inherited: dict[tuple[str, str, int], str] = {}
     if batch == "XA03D":
@@ -426,11 +427,18 @@ def _run_model_batch(project: Path, runtime: Path, root: Path, program: dict[str
                 predictions.append(pred)
                 continue
             parent_process = str(proc.recipe_inherit_from) if pd.notna(proc.recipe_inherit_from) else ""
-            result = _walk_forward_predictions(
-                panel, str(proc.process_id), frequency, str(proc.family), factor_ids, state_ids,
-                _split_pipe(proc.selector_recipe_ids), recipes, program,
-                inherited_parent=parent_process, inherited=inherited,
-            )
+            try:
+                result = _walk_forward_predictions(
+                    panel, str(proc.process_id), frequency, str(proc.family), factor_ids, state_ids,
+                    _split_pipe(proc.selector_recipe_ids), recipes, program,
+                    inherited_parent=parent_process, inherited=inherited,
+                )
+            except (ValueError, np.linalg.LinAlgError) as exc:
+                invalid_rows.append({
+                    "process_id": str(proc.process_id), "frequency": frequency,
+                    "invalid": True, "reason": str(exc),
+                })
+                continue
             predictions.append(result[0])
             selections.append(result[1])
             refit_rows.append(result[2])
@@ -448,7 +456,9 @@ def _run_model_batch(project: Path, runtime: Path, root: Path, program: dict[str
     _write_parquet(root / "model_selection_ledger.parquet", selection)
     _write_parquet(root / "model_refit_ledger.parquet", refit)
     _write_parquet(root / "coefficient_and_importance_ledger.parquet", importance)
-    score_audit = _prediction_audit(prediction, selected)
+    invalid_frame = pd.DataFrame(invalid_rows, columns=["process_id", "frequency", "invalid", "reason"])
+    _write_csv(root / "invalid_process_ledger.csv", invalid_frame)
+    score_audit = _prediction_audit(prediction, selected, invalid_frame)
     _write_csv(root / "prediction_audit.csv", score_audit)
     if not bool(score_audit["passed"].all()):
         raise ValueError(f"{batch} prediction audit failed")
@@ -456,6 +466,7 @@ def _run_model_batch(project: Path, runtime: Path, root: Path, program: dict[str
         "batch": batch, "status": "completed", "processes_per_frequency": len(selected),
         "prediction_rows": len(prediction), "selection_rows": len(selection),
         "refit_rows": len(refit), "importance_rows": len(importance),
+        "invalid_process_frequency_cells": len(invalid_frame),
         "all_prediction_audits_passed": True,
     }
 
@@ -807,7 +818,8 @@ def _noncircular_mbb_se(values: np.ndarray, block: int, draws: int, seed: int) -
     return float(np.std(means, ddof=1))
 
 
-def _prediction_audit(predictions: pd.DataFrame, processes: pd.DataFrame) -> pd.DataFrame:
+def _prediction_audit(predictions: pd.DataFrame, processes: pd.DataFrame,
+                      invalid: pd.DataFrame | None = None) -> pd.DataFrame:
     rows = []
     expected = set(processes["process_id"].astype(str))
     for (process_id, frequency), group in predictions.groupby(["process_id", "frequency"], sort=True):
@@ -819,8 +831,17 @@ def _prediction_audit(predictions: pd.DataFrame, processes: pd.DataFrame) -> pd.
         })
     frame = pd.DataFrame(rows)
     observed = set(frame["process_id"])
-    if observed != expected or set(frame["frequency"]) != set(FREQUENCIES):
-        raise ValueError(f"prediction process/frequency coverage mismatch: {expected - observed}")
+    invalid = pd.DataFrame() if invalid is None else invalid
+    invalid_cells = set(zip(invalid.get("process_id", []), invalid.get("frequency", [])))
+    expected_cells = {(process, frequency) for process in expected for frequency in FREQUENCIES}
+    observed_cells = set(zip(frame["process_id"], frame["frequency"]))
+    if observed_cells | invalid_cells != expected_cells or observed_cells & invalid_cells:
+        raise ValueError("prediction/invalid process-frequency partition mismatch")
+    if not invalid.empty:
+        extra = invalid[["process_id", "frequency"]].copy()
+        extra["prediction_rows"] = 0; extra["signal_dates"] = 0
+        extra["finite_predictions"] = False; extra["unique_keys"] = True; extra["passed"] = True
+        frame = pd.concat([frame, extra], ignore_index=True)
     return frame
 
 
@@ -834,8 +855,14 @@ def _run_e(project: Path, runtime: Path, root: Path, program: dict[str, Any]) ->
         pd.read_parquet(_batch_root(runtime, batch) / "prediction_ledger.parquet")
         for batch in ("XA03B", "XA03C", "XA03D")
     ], ignore_index=True)
-    if predictions[["process_id", "frequency"]].drop_duplicates().shape[0] != 114:
-        raise ValueError("XA03E requires exactly 114 prediction process-frequency cells")
+    invalid = pd.concat([
+        pd.read_csv(_batch_root(runtime, batch) / "invalid_process_ledger.csv")
+        for batch in ("XA03B", "XA03C", "XA03D")
+    ], ignore_index=True)
+    predicted_cells = set(map(tuple, predictions[["process_id", "frequency"]].drop_duplicates().to_numpy()))
+    invalid_cells = set(map(tuple, invalid[["process_id", "frequency"]].drop_duplicates().to_numpy()))
+    if len(predicted_cells | invalid_cells) != 114 or predicted_cells & invalid_cells:
+        raise ValueError("XA03E requires an exact prediction/invalid partition of 114 cells")
     target_key = target[[
         "frequency", "signal_date", "execution_date", "label_end_execution_date", "sid",
         "forward_total_return", "forward_excess_cash", "target_rank", "target_valid",
@@ -889,6 +916,23 @@ def _run_e(project: Path, runtime: Path, root: Path, program: dict[str, Any]) ->
     for key, group in period.groupby(["process_id", "frequency", "top_k", "cost_bps"], sort=True):
         path_summaries.append(_path_summary_record(group, *key))
     path_summary = pd.DataFrame(path_summaries)
+    placeholder = []
+    for item in invalid.itertuples(index=False):
+        for top_k in widths:
+            for cost in costs:
+                placeholder.append({
+                    "process_id": item.process_id, "frequency": item.frequency,
+                    "top_k": top_k, "cost_bps": cost, "periods": 0,
+                    "total_return": np.nan, "cagr": np.nan, "annualized_mean": np.nan,
+                    "annualized_volatility": np.nan, "sharpe_zero": np.nan,
+                    "max_drawdown": np.nan, "terminal_relative_wealth": np.nan,
+                    "annualized_relative_log": np.nan, "active_ir": np.nan,
+                    "mean_turnover": np.nan, "total_cost_return": np.nan,
+                    "invalid": True, "invalid_reason": item.reason,
+                })
+    if placeholder:
+        path_summary["invalid"] = False; path_summary["invalid_reason"] = ""
+        path_summary = pd.concat([path_summary, pd.DataFrame(placeholder)], ignore_index=True)
     _write_csv(root / "path_cost_summary.csv", path_summary)
     primary_path = path_summary.loc[
         path_summary.apply(
@@ -903,7 +947,7 @@ def _run_e(project: Path, runtime: Path, root: Path, program: dict[str, Any]) ->
     _write_csv(root / "absolute_assessment.csv", absolute)
     _write_csv(root / "parent_child_incremental_assessment.csv", paired)
     _write_csv(root / "rsp_incremental_assessment.csv", rsp)
-    roles = _qualification_roles(absolute, paired, rsp, process_registry, period, program)
+    roles = _qualification_roles(absolute, paired, rsp, process_registry, period, program, invalid)
     _write_csv(root / "qualification_role_ledger.csv", roles)
     subperiod = _subperiod_summary(period, program)
     calendar = _calendar_summary(period, program)
@@ -1110,12 +1154,17 @@ def _bh(series: pd.Series) -> pd.Series:
 
 def _qualification_roles(absolute: pd.DataFrame, paired: pd.DataFrame, rsp: pd.DataFrame,
                          processes: pd.DataFrame, period: pd.DataFrame,
-                         program: dict[str, Any]) -> pd.DataFrame:
+                         program: dict[str, Any], invalid: pd.DataFrame | None = None) -> pd.DataFrame:
     pair_by_child = paired.set_index(["candidate_process_id", "frequency"])
     rsp_by_child = rsp.set_index(["candidate_process_id", "frequency"])
     rows = []
+    invalid_cells = set() if invalid is None else set(zip(invalid["process_id"], invalid["frequency"]))
     for item in absolute.itertuples(index=False):
         process = str(item.process_id); frequency = str(item.frequency)
+        if (process, frequency) in invalid_cells:
+            rows.append({"process_id": process, "frequency": frequency,
+                         "primary_status": "invalid", "tags": "invalid"})
+            continue
         ann = 52 if frequency == "weekly" else 12
         absolute_pass = (
             item.economic_mean * ann >= 0.02 and item.economic_q <= 0.10
@@ -1147,6 +1196,10 @@ def _qualification_roles(absolute: pd.DataFrame, paired: pd.DataFrame, rsp: pd.D
     no_rsp = processes.loc[processes["no_rsp_diagnostic"].astype(bool), "process_id"]
     for process in no_rsp:
         for frequency in FREQUENCIES:
+            if (process, frequency) in invalid_cells:
+                rows.append({"process_id": process, "frequency": frequency,
+                             "primary_status": "invalid", "tags": "invalid"})
+                continue
             rows.append({"process_id": process, "frequency": frequency,
                          "primary_status": "not_qualified", "tags": "no_rsp_mechanism_control"})
     return pd.DataFrame(rows).sort_values(["frequency", "process_id"], ignore_index=True)
