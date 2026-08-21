@@ -1089,7 +1089,7 @@ def _absolute_assessment(period: pd.DataFrame, rank_ic: pd.DataFrame,
 
 def _paired_assessment(period: pd.DataFrame, rank_ic: pd.DataFrame, comparisons: pd.DataFrame,
                        comparison_type: str, program: dict[str, Any]) -> pd.DataFrame:
-    registry = comparisons.loc[comparisons["comparison_type"].eq(comparison_type)]
+    registry = comparisons.loc[comparisons["family"].eq(comparison_type)]
     rows = []
     for frequency in FREQUENCIES:
         cost = int(program["paths"][f"{frequency}_primary_cost_bps"])
